@@ -1,0 +1,20 @@
+header {
+  margin: $base-spacing-unit 0;
+
+  .logo {
+    color: #34495e;
+    text-align: center;
+
+    a {
+      color: #34495e;
+    }
+
+    .logo__image {
+      background: url(images/logo.svg) center center no-repeat;
+      display: inline-block;
+      height: 80px;
+      vertical-align: middle;
+      width: 90px;
+    }
+  }
+}

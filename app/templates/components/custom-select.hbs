@@ -1,0 +1,11 @@
+<div class="btn-group select">
+  <button class="btn btn--select" data-toggle="dropdown" {{action 'toggleSelect'}}>
+    <span class="filter-option">{{selectedOptionName}}</span>
+    <i class="octicon octicon-chevron-down">{{value}}</i>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    {{#each options}}
+      <li {{bind-attr rel=id}}><a tabindex="0" {{action 'select' this}}>{{optionName}}</a></li>
+    {{/each}}
+  </ul>
+</div>

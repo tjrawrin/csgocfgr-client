@@ -1,0 +1,161 @@
+<div id="shade" class="shade"></div>
+<div id="keybind" class="keybind-modal">
+  <div class="keybind-modal__container">
+    <div class="keybind-modal__content">
+      <div class="keybind-modal__header">
+        <h4 class="keybind-modal__header--name">Bind to </h4>
+        <button class="keybind--close mega-octicon octicon-circle-slash" {{action 'close'}}></button>
+      </div>
+      <div class="keybind-modal__body">
+        {{view Ember.TextArea value=tempValue class="keybind__textarea"}}
+      </div>
+      <div class="keybind-modal__footer">
+        <a class="get-help octicon octicon-question"> Get Help</a>
+        <button class="btn" {{action 'save'}}>Save Changes</button>
+        <div class="get-help">
+         <div class="collapse-group" id="collapse">
+          <div class="panel">
+            <div class="panel__header">
+              <a>RIFLES <i class="octicon octicon-chevron-down"></i></a>
+            </div>
+            <div class="panel__body">
+              <div class="panel__body-content">
+                <dl class="cf">
+                  <dt class="command">Command</dt>
+                    <dd class="description">Description</dd>
+                  <dt class="command">ssg08</dt>
+                    <dd class="description">Scout</dd>
+                  <dt class="command">galilar</dt>
+                    <dd class="description">Galil</dd>
+                  <dt class="command">famas</dt>
+                    <dd class="description">Famas</dd>
+                  <dt class="command">sg550</dt>
+                    <dd class="description">SG550</dd>
+                  <dt class="command">aug</dt>
+                    <dd class="description">AUG</dd>
+                  <dt class="command">m4a1</dt>
+                    <dd class="description">M4A1</dd>
+                  <dt class="command">ak47</dt>
+                    <dd class="description">AK47</dd>
+                  <dt class="command">g3sg1</dt>
+                    <dd class="description">Terrorist Auto Sniper</dd>
+                  <dt class="command">scar20</dt>
+                    <dd class="description">Counter-Terrorist Auto Sniper</dd>
+                  <dt class="command">awp</dt>
+                    <dd class="description">AWP</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__header">
+              <a>SMGS <i class="octicon octicon-chevron-down"></i></a>
+            </div>
+            <div class="panel__body">
+              <div class="panel__body-content">
+                <dl class="cf">
+                  <dt class="command">Command</dt>
+                    <dd class="description">Description</dd>
+                  <dt class="command">mac10</dt>
+                    <dd class="description">Mac 10</dd>
+                  <dt class="command">ump45</dt>
+                    <dd class="description">UMP</dd>
+                  <dt class="command">p90</dt>
+                    <dd class="description">P90</dd>
+                  <dt class="command">bizon</dt>
+                    <dd class="description">Bizon</dd>
+                  <dt class="command">mp7</dt>
+                    <dd class="description">MP7</dd>
+                  <dt class="command">mp9</dt>
+                    <dd class="description">MP9</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__header">
+              <a>HEAVY <i class="octicon octicon-chevron-down"></i></a>
+            </div>
+            <div class="panel__body">
+              <div class="panel__body-content">
+                <dl class="cf">
+                  <dt class="command">Command</dt>
+                    <dd class="description">Description</dd>
+                  <dt class="command">xm1014</dt>
+                    <dd class="description">Auto Shotgun</dd>
+                  <dt class="command">mag7</dt>
+                    <dd class="description">Mag7</dd>
+                  <dt class="command">sawedoff</dt>
+                    <dd class="description">Sawed Off Shotgun</dd>
+                  <dt class="command">m249</dt>
+                    <dd class="description">M249</dd>
+                  <dt class="command">negev</dt>
+                    <dd class="description">Negev</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__header">
+              <a>PISTOLS <i class="octicon octicon-chevron-down"></i></a>
+            </div>
+            <div class="panel__body">
+              <div class="panel__body-content">
+                <dl class="cf">
+                  <dt class="command">Command</dt>
+                    <dd class="description">Description</dd>
+                  <dt class="command">p228</dt>
+                    <dd class="description">228 Compact</dd>
+                  <dt class="command">glock</dt>
+                    <dd class="description">Glock</dd>
+                  <dt class="command">elite</dt>
+                    <dd class="description">Duel Elites</dd>
+                  <dt class="command">tec9</dt>
+                    <dd class="description">Tec9</dd>
+                  <dt class="command">hkp2000</dt>
+                    <dd class="description">HKP2000</dd>
+                  <dt class="command">p250</dt>
+                    <dd class="description">P250/CZ75-Auto</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel__header">
+              <a>GRENADES &amp; GEAR <i class="octicon octicon-chevron-down"></i></a>
+            </div>
+            <div class="panel__body">
+              <div class="panel__body-content">
+                <dl class="cf">
+                  <dt class="command">Command</dt>
+                    <dd class="description">Description</dd>
+                  <dt class="command">incgrenade</dt>
+                    <dd class="description">Incendiary Grenade</dd>
+                  <dt class="command">flashbang</dt>
+                    <dd class="description">Flashbang</dd>
+                  <dt class="command">smokegrenade</dt>
+                    <dd class="description">Smoke Grenade</dd>
+                  <dt class="command">hegrenade</dt>
+                    <dd class="description">HE Grenade</dd>
+                  <dt class="command">molotov</dt>
+                    <dd class="description">Molotov</dd>
+                  <dt class="command">decoy</dt>
+                    <dd class="description">Decoy Grenade</dd>
+                  <dt class="command">kevlar</dt>
+                    <dd class="description">Kevlar</dd>
+                  <dt class="command">vesthelm</dt>
+                    <dd class="description">Kevlar + Helmet</dd>
+                  <dt class="command">taser</dt>
+                    <dd class="description">Zeus x27</dd>
+                  <dt class="command">defuser</dt>
+                    <dd class="description">Defuse Kit</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

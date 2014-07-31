@@ -1,0 +1,134 @@
+<section>
+  <h3>Miscellaneous</h3>
+  <div class="settings">
+    <div class="settings__inputs">
+      <div class="settings__inputs-option">
+        <label for="filter-effect-slider">Filter Effect <i class="octicon octicon-info"></i></label>
+        {{custom-select data=model.conFilterEnable options=filterEnableOptions dataCommand="con_filter_enable"}}
+      </div>
+      <div class="settings__inputs-option">
+        <label for="filter-setting-1-text">Filter Setting 1 <i class="octicon octicon-info"></i></label>
+        {{input data-command="con_filter_text" id="filter-setting-1-text" type="text" value=conFilterText}}
+      </div>
+      <div class="settings__inputs-option">
+        <label for="filter-setting-2-text">Filter Setting 2 <i class="octicon octicon-info"></i></label>
+        {{input data-command="con_filter_text_out" id="filter-setting-2-text" type="text" value=conFilterTextOut}}
+      </div>
+      <div class="settings__inputs-option">
+        <label for="max-ping-mm-servers-slider">Max Ping Allowed <i class="octicon octicon-info"></i></label>
+        {{input data-command="mm_dedicated_search_maxping" id="max-ping-mm-servers-slider" type="range" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+        {{input type="number" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+      </div>
+      <div class="settings__inputs-option">
+        <label for="steam-notification-position-text">Steam Notifications Position <i class="octicon octicon-info"></i></label>
+        {{custom-select data=model.uiSteamOverlayNotificationPosition options=notificationOptions dataCommand="ui_steam_overlay_notification_position"}}
+      </div>
+      <div class="settings__inputs-option">
+        <label for="download-filter-select">Download Filter <i class="octicon octicon-info"></i></label>
+        {{custom-select data=model.clDownloadfilter options=downloadOptions dataCommand="cl_downloadfilter"}}
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="developer-box">Developer <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="developer" id="developer-box" type="checkbox" checked=developer}}
+          <label for="developer-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="enable-console-box">Enable Console <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="con_enable" id="enable-console-box" type="checkbox" checked=conEnable}}
+          <label for="enable-console-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="community-message-box">Community Server Message <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="player_nevershow_communityservermessage" id="community-message-box" type="checkbox" checked=playerNevershowCommunityservermessage}}
+          <label for="community-message-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="game-instructor-box">Game Instructor <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="gameinstructor_enable" id="game-instructor-box" type="checkbox" checked=gameinstructorEnable}}
+          <label for="game-instructor-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="option-duck-method-box">Option Duck Method <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="option_duck_method" id="option-duck-method-box" type="checkbox" checked=optionDuckMethod}}
+          <label for="option-duck-method-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="option-speed-method-box">Option Speed Method <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="option_speed_method" id="option-speed-method-box" type="checkbox" checked=optionSpeedMethod}}
+          <label for="option-speed-method-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="force-preload-box">Force Preload <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_forcepreload" id="force-preload-box" type="checkbox" checked=clForcepreload}}
+          <label for="force-preload-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="disable-html-motd-box">Disable HTML MOTD <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_disablehtmlmotd" id="disable-html-motd-box" type="checkbox" checked=clDisablehtmlmotd}}
+          <label for="disable-html-motd-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="automatic-help-box">Automatic Help <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_autohelp" id="automatic-help-box" type="checkbox" checked=clAutohelp}}
+          <label for="automatic-help-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="show-help-box">Show Help <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_showhelp" id="show-help-box" type="checkbox" checked=clShowhelp}}
+          <label for="show-help-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="disable-freeze-cam-box">Disable Freeze Cam <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_disablefreezecam" id="disable-freeze-cam-box" type="checkbox" checked=clDisablefreezecam}}
+          <label for="disable-freeze-cam-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option">
+        <label for="show-teammate-colors-box">Show Teammate Colors <i class="octicon octicon-info"></i></label>
+        {{custom-select data=model.clTeammateColorsShow options=teammateColorsOptions dataCommand="cl_teammate_colors_show"}}
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="auto-weapon-switch-box">Auto Weapon Switch <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_autowepswitch" id="auto-weapon-switch-box" type="checkbox" checked=clAutowepswitch}}
+          <label for="auto-weapon-switch-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="use-opens-buy-menu-box">Use Opens Buy Menu <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="cl_use_opens_buy_menu" id="use-opens-buy-menu-box" type="checkbox" checked=clUseOpensBuyMenu}}
+          <label for="use-opens-buy-menu-box"></label>
+        </div>
+      </div>
+      <div class="settings__inputs-option settings__inputs-option--checkbox">
+        <label for="close-on-buy-box">Close on Buy <i class="octicon octicon-info"></i></label>
+        <div class="checkbox-slider">
+          {{input data-command="closeonbuy" id="close-on-buy-box" type="checkbox" checked=closeonbuy}}
+          <label for="close-on-buy-box"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

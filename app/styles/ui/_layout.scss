@@ -1,0 +1,40 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 $half-spacing-unit / 2;
+  width: 100%;
+}
+.four-oh-four {
+  background-image: url(images/csgo404.jpg);
+  background-repeat: no-repeat;
+  height: 0;
+  background-size: 100%;
+  width: 100%;
+  padding-top: 57.89%;
+  position: relative;
+
+  .four-oh-four__notice {
+    position: absolute;
+    top: 36%;
+    left: 0;
+    max-width: 80%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 0 $base-spacing-unit;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .wrapper {
+    padding: 0 $half-spacing-unit;
+  }
+  .four-oh-four {
+    .four-oh-four__notice {
+      left: 6%;
+    }
+  }
+}

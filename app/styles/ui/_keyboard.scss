@@ -1,0 +1,156 @@
+.keyboard {
+  width: 100%;
+
+  .keyboard__inner {
+    @extend .cf;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .keyboard--main,
+  .keyboard--arrows,
+  .keyboard--tenkey,
+  .keyboard--mouse {
+    margin-bottom: $half-spacing-unit;
+  }
+  .keyboard--main {
+    width: 547px;
+    display: inline-block;
+  }
+  .keyboard--arrows {
+    width: 107px;
+    display: inline-block;
+    margin-left: $base-spacing-unit;
+  }
+  .keyboard--tenkey {
+    width: 144px;
+    display: inline-block;
+    margin-left: $base-spacing-unit;
+  }
+  .keyboard--mouse {
+    display: inline-block;
+    margin-left: $base-spacing-unit;
+  }
+  .keyboard__row {
+    white-space: nowrap;
+
+    .keyboard__row--middle-mouse {
+      width: 33px;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+  .keyboard__key {
+    border: 2px solid #bdc3c7;
+    background: #ebedef;
+    outline: none;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 1px;
+    height: 29px;
+    text-align: center;
+    position: relative;
+    min-width: 0;
+    max-width: 500px;
+    min-height: 0;
+    color: #4c4c4c;
+    width: 29px;
+    font-size: 14px;
+
+    &:focus {
+      border-color: #3498db;
+      background: #d9edf7;
+    }
+    &:hover {
+      background: #d9edf7;
+    }
+    &:disabled {
+      color: #cfcfcf;
+    }
+    &.keyboard__key--hidden {
+      visibility: hidden;
+      vertical-align: bottom;
+    }
+    &.keyboard__key--pr {
+      margin-right: 25px;
+    }
+    &.keyboard__key--pr2 {
+      margin-right: 45px;
+    }
+    &.keyboard__key--pr3 {
+      margin-right: 80px;
+    }
+    &.keyboard__key--bs {
+      width: 62px;
+    }
+    &.keyboard__key--tb,
+    &.keyboard__key--sb {
+      width: 45px;
+    }
+    &.keyboard__key--cp {
+      width: 54px;
+    }
+    &.keyboard__key--rt {
+      width: 73px;
+    }
+    &.keyboard__key--sft {
+      width: 82px;
+    }
+    &.keyboard__key--cl {
+      width: 53px;
+    }
+    &.keyboard__key--at {
+      width: 43px;
+    }
+    &.keyboard__key--sp {
+      width: 197px;
+    }
+    &.keyboard__key--pl,
+    &.keyboard__key--ent {
+      height: 62px;
+      float: right;
+    }
+    &.keyboard__key--zd {
+      width: 66px;
+    }
+    &.keyboard__key--lmb {
+      height: 73px;
+      width: 36px;
+      border-radius: 50% 50% 3px 3px / 60% 0% 3px 3px;
+    }
+    &.keyboard__key--mmbu {
+      display: block;
+      border-radius: 50% 50% 3px 3px / 25% 25% 3px 3px;
+      height: 23px;
+    }
+    &.keyboard__key--mmbc {
+      display: block;
+      height: 23px;
+    }
+    &.keyboard__key--mmbd {
+      display: block;
+      border-radius: 3px 3px 50% 50% / 3px 3px 25% 25%;
+      height: 23px;
+    }
+    &.keyboard__key--rmb {
+      height: 73px;
+      width: 36px;
+      border-radius: 50% 50% 3px 3px / 0% 60% 3px 3px;
+    }
+    &.keyboard__key--mb4 {
+      width: 36px;
+    }
+    &.keyboard__key--mb5 {
+      width: 36px;
+    }
+  }
+  .has-bind {
+    border-color: #2ecc71;
+    background: rgba(49, 217, 120, 0.21);
+  }
+}
