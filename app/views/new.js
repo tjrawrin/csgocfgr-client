@@ -1,13 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-  didInsertElement: function() {
+  initPlugin: function() {
     var hoverPopup = new HoverPopup();
     hoverPopup.Init();
-
-    this.stickyNavbar();
-    this.bindEvents();
-  },
+  }.on('didInsertElement'),
   stickyNavbar: function() {
     var $navbar = Ember.$('div.navbar__inner');
 
@@ -24,7 +21,7 @@ export default Ember.View.extend({
       }
       $navbar.removeClass('fixed-nav');
     }
-  },
+  }.on('didInsertElement'),
   hideInstructions: function($container) {
     $container.slideUp('fast', Ember.$.proxy(this.removeInstructions, this, $container));
   },
@@ -50,7 +47,7 @@ export default Ember.View.extend({
     $container.on('click', '.instructions--close', Ember.$.proxy(this.hideInstructions, this, $container));
     $menuButton.on('click', Ember.$.proxy(this.activateMenu, this));
     Ember.$('.navbar').on('click', 'a', Ember.$.proxy(this.collapseMenu, this));
-  },
+  }.on('didInsertElement'),
   willDestroyElement: function() {
     this.$().off('click');
   }

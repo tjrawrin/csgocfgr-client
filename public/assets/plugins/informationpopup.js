@@ -161,4 +161,3 @@ HoverPopup.prototype.KeepPopup = function (context) {
   this.$popup.stop();
   this.$popup.css({opacity: '1'});
 };
-

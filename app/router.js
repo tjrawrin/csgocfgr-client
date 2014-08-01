@@ -24,10 +24,14 @@ Router.map(function() {
 
 Router.reopen({
   notifyGoogleAnalytics: function() {
-    return ga('send', 'pageview', {
-      'page': this.get('url'),
-      'title': this.get('url')
-    });
+    if (!window.ga) {
+      return;
+    } else {
+      return ga('send', 'pageview', {
+        'page': this.get('url'),
+        'title': this.get('url')
+      });
+    }
   }.on('didTransition')
 });
 
