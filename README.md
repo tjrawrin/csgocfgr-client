@@ -4,28 +4,24 @@
 
 This README outlines the details of collaborating on this Ember application.
 
-### Installation
-
+#### Installation
 * `git clone` this repository
 * `npm install`
 * `bower install`
 
-### Running
-
+#### Running
 * `ember server` (application with no connection to local server)
 * `ember server --proxy http://localhost:3000` (application able to proxy GET and POST requests to local server) server
 * Visit your app at http://0.0.0.0:4200.
 
-### Running Tests
-
+#### Running Tests
 * `ember test`
 * `ember test --server`
 
-### Building
-
+#### Building
 * `ember build`
 
-### Things to Do
+#### Things to Do
 
 * Clean up dist dir when running ember build.
 * Clean up and optimize code when possible.
