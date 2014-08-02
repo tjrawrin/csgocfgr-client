@@ -8,7 +8,7 @@ export default Ember.View.extend({
   stickyNavbar: function() {
     var $navbar = Ember.$('div.navbar__inner');
 
-    if (window.scrollY >= 98) {
+    if (window.scrollY >= 126) {
       if (!$navbar.hasClass('fixed-nav')) {
         $navbar.css({ 'opacity': '0.0' });
         $navbar.animate({ 'opacity': '1.0' }, 'fast');
