@@ -11,7 +11,7 @@ export default Ember.ObjectController.extend({
   renderConfig: function() {
     var string =
       '// AutoExec created with CS:GO Configr \n' +
-      '// http://www.csgocfgr.com/' + this.get('model.slug') + '\n' +
+      '// http://csgocfgr.com/' + this.get('model.slug') + '\n' +
       '\n' +
       '// === Rates === \n' +
       'rate ' + '"' + this.get('model.rate') + '"' + '\n' +
