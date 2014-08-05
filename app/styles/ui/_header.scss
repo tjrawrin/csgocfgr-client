@@ -4,9 +4,11 @@ header {
   .logo {
     color: #34495e;
     text-align: center;
+    position: relative;
 
     a {
       color: #34495e;
+      position: relative;
     }
 
     .logo__image {
@@ -15,6 +17,15 @@ header {
       height: 80px;
       vertical-align: middle;
       width: 90px;
+    }
+
+    .logo__stage {
+      font-size: 12px;
+      vertical-align: top;
+      position: absolute;
+      top: 0px;
+      right: -$base-spacing-unit;
+      color: #c0392b;
     }
   }
 }
