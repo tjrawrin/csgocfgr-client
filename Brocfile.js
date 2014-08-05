@@ -2,7 +2,11 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  fingerprint: {
+    exclude: ['images']
+  }
+});
 
 app.import('vendor/csgocfgr-plugins/informationpopup.js');
 app.import('vendor/csgocfgr-plugins/informationlookup.js');
