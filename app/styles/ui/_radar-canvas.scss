@@ -1,0 +1,32 @@
+.radar-preview {
+  width: 100%;
+  margin-bottom: $inuit-base-spacing-unit--small;
+  position: relative;
+
+  .radar-preview__inner {
+    @extend .cf;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    .radar-image {
+      background: url(images/radar-scale-spritesheet.jpg) 0 0 no-repeat;
+      background-size: auto 100%;
+      border: 2px solid #000;
+      border-radius: 50%;
+      box-shadow: 0 3px 24px #000;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto;
+      z-index: -1;
+    }
+    .radar-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}

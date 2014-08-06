@@ -1,0 +1,103 @@
+.keybind-modal {
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+
+  .keybind-modal__container {
+    position: relative;
+    width: auto;
+    margin: 30px 10px;
+  }
+  .keybind-modal__content {
+    position: relative;
+    background: #fafafa;
+    border: 1px solid #cfcfcf;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    outline: 0;
+    border-radius: 6px;
+  }
+  .keybind-modal__header {
+    padding: $inuit-base-spacing-unit--small;
+
+    h4 {
+      border-bottom: 2px solid #bdc3c7;
+      font-size: 18px;
+      padding-bottom: $inuit-base-spacing-unit--small;
+      margin: 0;
+    }
+    .keybind--close {
+      background: transparent;
+      color: #bdc3c7;
+      top: $inuit-base-spacing-unit--small / 2;
+      right: 0;
+      width: 40px;
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      outline: 0;
+      display: block;
+      z-index: 1052;
+
+      &:hover {
+        color: #4c4c4c;
+      }
+    }
+  }
+  .keybind-modal__body {
+    padding: $inuit-base-spacing-unit--small;
+    position: relative;
+  }
+  .keybind__textarea {
+    height: 100px;
+  }
+  .keybind-modal__footer {
+    padding: $inuit-base-spacing-unit--small;
+    position: relative;
+    text-align: right;
+
+    a.get-help {
+      float: left;
+      line-height: 36px;
+    }
+    div.get-help {
+      display: none;
+    }
+    button {
+      margin-bottom: $inuit-base-spacing-unit;
+    }
+  }
+}
+.modal-open {
+  overflow: hidden;
+}
+.shade {
+  z-index: 1050;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+@media screen and (min-width: 768px) {
+  .keybind-modal {
+    .keybind-modal__container {
+      width: 450px;
+      margin: 30px auto;
+    }
+  }
+}

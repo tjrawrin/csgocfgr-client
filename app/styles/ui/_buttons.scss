@@ -1,0 +1,114 @@
+.btn {
+  background: #3498db;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;;
+  white-space: normal;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+  box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background: #4da1da;
+    color: #fff;
+    -webkit-box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+    box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
+  }
+  &:active {
+    -webkit-box-shadow: 0px 1px 0px #2980b9, 0px 1px 3px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 1px 0px #2980b9, 0px 1px 3px rgba(0,0,0,0.7);
+    box-shadow: 0px 1px 0px #2980b9, 0px 1px 3px rgba(0,0,0,0.7);
+    position: relative;
+    top: 3px;
+  }
+  &.btn--quick-use {
+    position: absolute;
+    top: $inuit-base-spacing-unit--small / 2;
+    right: $inuit-base-spacing-unit--small;
+  }
+  &.btn--download,
+  &.btn--download__save,
+  &.btn--download__full {
+    font-size: 1.5em;
+    max-width: 100%;
+    width: 100%;
+  }
+  &.btn--download__save {
+    background: #2ecc71;
+    margin-top: $inuit-base-spacing-unit--small;
+    -webkit-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+    box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+
+    &:hover {
+      background: #31d978;
+      color: #fff;
+      -webkit-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+      -moz-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+      box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
+    }
+    &:active {
+      -webkit-box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
+      -moz-box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
+      box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
+      position: relative;
+      top: 3px;
+    }
+  }
+  &.btn--select {
+    background: #ebedef;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #3498db;
+    text-align: left;
+    font-size: inherit;
+    padding: $inuit-base-spacing-unit--small;
+    width: 99%;
+
+    &:hover {
+      color: #3498db;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      background: #ebedef;
+    }
+    &:active {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      position: relative;
+      top: 0;
+    }
+    &:focus {
+      border-color: #3498db;
+    }
+    span,
+    i {
+      pointer-events: none;
+    }
+    i {
+      float: right;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    &.btn--download,
+    &.btn--download__save {
+      max-width: 49%;
+      width: 100%;
+    }
+    &.btn--download__save {
+      margin-top: 0;
+    }
+  }
+}
