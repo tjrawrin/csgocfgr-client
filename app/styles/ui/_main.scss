@@ -43,4 +43,9 @@ section {
     padding-bottom: $inuit-base-spacing-unit--small;
     margin-top: 0;
   }
+  .quick-use {
+    position: absolute;
+    top: $inuit-base-spacing-unit--small / 2 + 2;
+    right: $inuit-base-spacing-unit--small;
+  }
 }

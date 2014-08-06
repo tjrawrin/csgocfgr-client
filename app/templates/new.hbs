@@ -39,7 +39,9 @@
 
 <section>
   <h3>Preview</h3>
-  <button type="button" class="btn btn--quick-use octicon octicon-clippy" {{action 'quickUseSelection'}}></button>
+  <div class="quick-use">
+    <button type="button" class="btn octicon octicon-clippy" {{action 'quickUseSelection'}}></button>
+  </div>
   <div class="output">
     <div class="output__options">
       {{textarea value=renderConfig class="output__textarea" id="autoexec-output" readonly="readonly" disabled="disabled"}}

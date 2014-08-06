@@ -26,11 +26,6 @@
     position: relative;
     top: 3px;
   }
-  &.btn--quick-use {
-    position: absolute;
-    top: $inuit-base-spacing-unit--small / 2;
-    right: $inuit-base-spacing-unit--small;
-  }
   &.btn--download,
   &.btn--download__save,
   &.btn--download__full {
