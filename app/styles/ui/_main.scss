@@ -16,9 +16,9 @@
   }
   .instructions--close {
     position: absolute;
-    padding: 6px;
-    top: 3px;
-    right: $inuit-base-spacing-unit--small / 2;
+    padding: 15px $inuit-base-spacing-unit--small;
+    top: 0;
+    right: $inuit-base-spacing-unit--small;
     color: #fff;
 
     &:hover {
@@ -36,10 +36,11 @@ section {
   border-right: 1px solid #e7e6e6;
   border-left: 1px solid #e7e6e6;
   border-bottom: 1px solid #cfcfcf;
-  border-radius: 6px;
+  border-radius: $inuit-base-spacing-unit--small / 2;
 
   h3 {
     border-bottom: 2px solid #cfcfcf;
     padding-bottom: $inuit-base-spacing-unit--small;
+    margin-top: 0;
   }
 }

@@ -49,6 +49,8 @@
   .nav {
     margin-bottom: 0;
     padding-bottom: $inuit-base-spacing-unit--small;
+    padding-left: 0;
+    margin-top: 0;
     display: none;
 
     &.nav--open {

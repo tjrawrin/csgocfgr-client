@@ -31,9 +31,9 @@
   .panel__body-content {
     border-top-color: #cfcfcf;
     border-top: 2px solid #cfcfcf;
-    padding: $inuit-base-spacing-unit--small;
 
     dl {
+      margin-top: 0;
       margin-bottom: 0;
     }
     dt.command {

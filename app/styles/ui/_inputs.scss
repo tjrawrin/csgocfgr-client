@@ -28,6 +28,7 @@ input[type='range'] {
   border: 2px solid #bdc3c7;
   width: 99%;
   vertical-align: middle;
+  cursor: pointer;
 
   &:focus {
     border-color: #3498db;
@@ -122,6 +123,7 @@ textarea {
     width: 34px;
     height: 20px;
     border-radius: 50px;
+    cursor: pointer;
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
