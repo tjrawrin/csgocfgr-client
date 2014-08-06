@@ -14,6 +14,7 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
     "inuit-starter-kit": "~0.2.8",
     "inuit-lists": "~0.1.0",
-    "inuit-headings": "~0.2.2"
+    "inuit-headings": "~0.2.2",
+    "csgocfgr-plugins": "git@bitbucket.org:tjwarr/csgocfgr-plugins.git"
   }
 }
