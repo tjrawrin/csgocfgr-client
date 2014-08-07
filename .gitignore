@@ -98,5 +98,6 @@ log/*
 /libpeerconnection.log
 npm-debug.log
 testem.log
+dummy/
 
 deploy.sh
