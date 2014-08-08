@@ -3,9 +3,7 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   actions: {
     download: function() {
-      var outputText = Ember.$('#autoexec-output').val();
-      var blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
+      return this.send('downloadSavedFile');
     }
   },
   renderConfig: function() {

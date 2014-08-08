@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  controllerName: 'show.index',
   model: function(params) {
     return this.store.findById('cfg', params.cfg_id);
   },
@@ -13,6 +14,11 @@ export default Ember.Route.extend({
         this.flashMessage('Oh snaps! Something seriously went wrong. We\'re working on it!', 'error');
         this.transitionTo('new');
       }
+    },
+    downloadSavedFile: function() {
+      var outputText = this.get('controller.renderConfig');
+      var blob = new Blob([outputText], { type: 'text/plain' });
+      saveAs(blob, 'autoexec.cfg');
     }
   }
 });

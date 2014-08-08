@@ -3,17 +3,14 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   actions: {
     download: function() {
-      var outputText = Ember.$('#autoexec-output').val();
-      var blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
+      return this.send('downloadUnsavedFile');
     },
     saveAndDownload: function() {
       var self = this;
-      var outputText = Ember.$('#autoexec-output').val();
-      var blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
       this.get('model').save().then(function(data) {
-        self.transitionToRoute('show', data);
+        self.transitionToRoute('show', data).then(function() {
+            return self.send('downloadSavedFile');
+        });
       });
     },
     quickUseSelection: function () {

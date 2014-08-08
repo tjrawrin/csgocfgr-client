@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // beforeModel: function() {
-  //   this.store.unloadAll('cfg');
-  // },
   model: function() {
     return this.store.createRecord('cfg', {
       rate: 80000,
@@ -198,5 +195,12 @@ export default Ember.Route.extend({
       clCrosshairgap: 1,
       clCrosshairdot: true
     });
+  },
+  actions: {
+    downloadUnsavedFile: function() {
+      var outputText = this.get('controller.renderConfig');
+      var blob = new Blob([outputText], { type: 'text/plain' });
+      saveAs(blob, 'autoexec.cfg');
+    }
   }
 });
