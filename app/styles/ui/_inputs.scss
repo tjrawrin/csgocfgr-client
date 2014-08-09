@@ -139,3 +139,16 @@ textarea {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
   }
 }
+.hp {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+  visibility: hidden;
+
+  label {
+    display: none;
+  }
+  input[type='text'] {
+    display: none;
+  }
+}

@@ -1,17 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  honeyPot: '',
   actions: {
     download: function() {
-      return this.send('downloadUnsavedFile');
+      if (this.get('honeyPot').length > 0) {
+        return false;
+      } else {
+        return this.send('downloadUnsavedFile');
+      }
     },
     saveAndDownload: function() {
       var self = this;
-      this.get('model').save().then(function(data) {
-        self.transitionToRoute('show', data).then(function() {
-            return self.send('downloadSavedFile');
+      if (this.get('honeyPot').length > 0) {
+        return false;
+      } else {
+        Ember.$('button.btn--download__save').attr('disabled', 'disabled');
+        this.get('model').save().then(function(data) {
+          self.transitionToRoute('show', data).then(function() {
+              return self.send('downloadSavedFile');
+          });
         });
-      });
+      }
     },
     quickUseSelection: function () {
       var element = document.getElementById('autoexec-output');
