@@ -99,6 +99,5 @@ log/*
 npm-debug.log
 testem.log
 dummy/
-/app/adapters/
 
 deploy.sh
