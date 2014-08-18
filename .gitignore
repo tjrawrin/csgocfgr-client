@@ -99,6 +99,6 @@ log/*
 npm-debug.log
 testem.log
 dummy/
-app/adapters/*
+/app/adapters/*
 
 deploy.sh
