@@ -11,7 +11,6 @@ This README outlines the details of collaborating on this Ember application.
 
 #### Running
 * `ember server` (application with no connection to a local server)
-* `ember server --proxy http://localhost:3000` (application able to proxy GET and POST requests to local **rails** server)
 * Visit your app at http://0.0.0.0:4200.
 
 #### Running Tests
