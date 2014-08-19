@@ -8,10 +8,10 @@ export default Ember.Route.extend({
   actions: {
     error: function(error) {
       if (error.status === 404) {
-        this.flashMessage('The config file you requested does not exist or could not be found.', 'error');
+        this.simpleFlashMessage('The config file you requested does not exist or could not be found.', 'error');
         this.transitionTo('new');
       } else {
-        this.flashMessage('Oh snaps! Something seriously went wrong. We\'re working on it!', 'error');
+        this.simpleFlashMessage('Oh snaps! Something seriously went wrong. We\'re working on it!', 'error');
         this.transitionTo('new');
       }
     },

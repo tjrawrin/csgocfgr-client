@@ -24,8 +24,8 @@
     "broccoli-sass": "^0.2.1",
     "ember-cli": "0.0.40",
     "ember-cli-ember-data": "0.1.0",
-    "ember-cli-flash-message": "^0.0.1",
     "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-simple-flash-message": "git://github.com/tjwarrin/ember-cli-simple-flash-message.git",
     "express": "^4.1.1",
     "glob": "^3.2.9",
     "originate": "0.1.5"
