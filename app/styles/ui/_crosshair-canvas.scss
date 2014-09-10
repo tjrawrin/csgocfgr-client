@@ -2,9 +2,10 @@
   width: 100%;
   margin-bottom: $inuit-base-spacing-unit--small;
   position: relative;
+  background: #fff;
 
   .crosshair-preview__inner {
-    @extend .cf;
+    @extend .clearfix;
     white-space: nowrap;
     width: 100%;
     margin: 0 auto;
@@ -14,12 +15,6 @@
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
 
-    .crosshair-image-select {
-      position: absolute;
-      top: $inuit-base-spacing-unit--small;
-      left: $inuit-base-spacing-unit--small;
-      z-index: 2;
-    }
     .crosshair-image {
       background: url('images/de_dust2_01.jpg') 0 0 no-repeat;
       background-position-x: -450px;
@@ -33,40 +28,46 @@
       top: 0;
       left: 0;
     }
-    .preview-note {
-      margin: 6px 0;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 0.875em;
-    }
   }
-}
-
-.fixed-preview {
-  position: fixed;
-  top: 46px;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-
-  .crosshair-preview__inner {
-    width: auto;
-    margin: 0 25px;
-    background: #fff;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+  .crosshair-image-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: $inuit-base-spacing-unit--small;
+    margin-top: $inuit-base-spacing-unit--small;
+    display: inline-block;
   }
-}
-
-.fixed-settings {
-  margin-top: 565px;
+  .preview-note {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.875em;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  .fixed-preview {
-    .crosshair-preview__inner {
-      width: 950px;
-      margin: 0 auto;
+  .crosshair-preview {
+    max-width: 560px;
+    float: left;
+
+    &.fixed-preview {
+      position: fixed;
+      top: 46px;
+      right: initial;
+      left: initial;
+      margin: 0;
+      width: auto;
+      box-shadow: none;
+      max-width: 560px;
+      z-index: 1000;
     }
+  }
+  .crosshair-settings {
+    float: right;
+  }
+
+
+  .fixed-settings {
+    margin-top: 0;
   }
 }
 

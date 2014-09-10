@@ -10,17 +10,15 @@ export default Ember.View.extend({
 
     var topPosition = 0;
     if(Ember.$('.instructions').length) {
-      topPosition = 445;
+      topPosition = 460;
     } else {
-      topPosition = 225;
+      topPosition = 228;
     }
 
-    if(window.scrollY >= topPosition) {
+    if (window.scrollY >= topPosition) {
       $container.addClass('fixed-preview');
-      $settings.addClass('fixed-settings');
     } else {
       $container.removeClass('fixed-preview');
-      $settings.removeClass('fixed-settings');
     }
   }
 });

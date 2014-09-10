@@ -37,6 +37,7 @@ section {
   border-left: 1px solid #e7e6e6;
   border-bottom: 1px solid #cfcfcf;
   border-radius: $inuit-base-spacing-unit--small / 2;
+  @extend .clearfix;
 
   h3 {
     border-bottom: 2px solid #cfcfcf;
@@ -47,5 +48,12 @@ section {
     position: absolute;
     top: $inuit-base-spacing-unit--small / 2 + 2;
     right: $inuit-base-spacing-unit--small;
+  }
+  &.preview {
+    z-index: 1001;
+    outline-color: #f6f8f8;
+    outline-width: 24px;
+    outline-style: solid;
+    box-shadow: 0 -13px #f6f8f8, 0 -25px #cfcfcf;
   }
 }
