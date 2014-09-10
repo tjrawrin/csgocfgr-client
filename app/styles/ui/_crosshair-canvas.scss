@@ -3,6 +3,8 @@
   margin-bottom: $inuit-base-spacing-unit--small;
   position: relative;
   background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 0 0 6px 6px;
 
   .crosshair-preview__inner {
     @extend .clearfix;
@@ -42,13 +44,21 @@
     text-transform: uppercase;
     font-size: 0.875em;
   }
+  &.mobile-preview {
+    max-width: 950px !important;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .crosshair-preview {
     max-width: 560px;
     float: left;
+    position: absolute;
+    z-index: 1000;
 
+    .crosshair-preview__inner {
+      overflow-x: hidden;
+    }
     &.fixed-preview {
       position: fixed;
       top: 46px;
@@ -63,11 +73,6 @@
   }
   .crosshair-settings {
     float: right;
-  }
-
-
-  .fixed-settings {
-    margin-top: 0;
   }
 }
 

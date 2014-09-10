@@ -7,3 +7,4 @@
 * [ENHANCEMENT] Change button font size and padding for download and save buttons
 * [ENHANCEMENT] Clear data store when visiting landing page
 * [ENHANCEMENT] Change crosshair preview to not overlap fields on desktop, remove fixed preview for smaller devices
+* [ENHANCEMENT] Add Mouse over to expand crosshair preview on desktop
