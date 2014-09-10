@@ -12,9 +12,9 @@ module('Integration - Video Page', {
 });
 
 test('Should navigate to the Video page', function() {
-  visit('/').then(function() {
+  visit('/n/rate').then(function() {
     click("a:contains('Video')").then(function() {
-      equal(find('h1.logo').text(), 'CS:GO  Configr');
+      equal(find('h1.logo').text(), 'CS:GO  Configr BETA');
       equal(find('div.instructions').find('h3').text(), 'Instructions');
       equal(find('section').eq(0).find('h3').text(), 'Video');
       equal(find('section').eq(1).find('h3').text(), 'Preview');
