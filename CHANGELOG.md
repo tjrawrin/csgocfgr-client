@@ -6,3 +6,4 @@
 * [ENHANCEMENT] Change base font size to 16px
 * [ENHANCEMENT] Change button font size and padding for download and save buttons
 * [ENHANCEMENT] Clear data store when visiting landing page
+* [ENHANCEMENT] Change crosshair preview to not overlap fields on desktop, remove fixed preview for smaller devices

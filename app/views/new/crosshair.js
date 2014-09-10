@@ -6,7 +6,6 @@ export default Ember.View.extend({
   },
   lockCanvasPosition: function() {
     var $container = Ember.$('.crosshair-preview');
-    var $settings = Ember.$('#crosshair-settings');
 
     var topPosition = 0;
     if(Ember.$('.instructions').length) {
