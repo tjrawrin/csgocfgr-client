@@ -39,6 +39,8 @@ export default Ember.View.extend({
   expandPreviewWindow: function() {
     var $previewWindow = Ember.$('.crosshair-preview');
 
+    $previewWindow.stop();
+    $previewWindow.clearQueue();
     $previewWindow.animate(
     {
       'position': 'absolute',
@@ -49,6 +51,8 @@ export default Ember.View.extend({
   shrinkPreviewWindow: function() {
     var $previewWindow = Ember.$('.crosshair-preview');
 
+    $previewWindow.stop();
+    $previewWindow.clearQueue();
     $previewWindow.animate(
     {
       'max-width': '560px'
