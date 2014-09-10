@@ -27,7 +27,7 @@ export default Ember.View.extend({
 
     function checkWidth() {
       var windowSize = $window.width();
-      if (windowSize < 1024) {
+      if (windowSize < 1009) {
         $previewWindow.addClass('mobile-preview');
       } else {
         $previewWindow.removeClass('mobile-preview');

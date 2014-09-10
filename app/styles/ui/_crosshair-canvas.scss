@@ -19,8 +19,7 @@
 
     .crosshair-image {
       background: url('images/de_dust2_01.jpg') 0 0 no-repeat;
-      background-position-x: -450px;
-      background-position-y: -260px;
+      background-position: -450px -260px;
       width: 950px;
       height: 480px;
       z-index: -1;
@@ -73,6 +72,7 @@
   }
   .crosshair-settings {
     float: right;
+    max-width: 382px;
   }
 }
 
