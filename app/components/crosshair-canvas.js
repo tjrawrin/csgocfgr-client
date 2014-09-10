@@ -118,7 +118,27 @@ export default Ember.Component.extend({
       $canvas.css( { 'cursor': 'default' } );
     }
   },
+  expandPreviewWindow: function() {
+    var $canvas = Ember.$('canvas-crosshair-canvas');
+    $canvas.animate(
+    {
+      width: '800px',
+      height: '600px'
+    },
+    400);
+  },
+  shrinkPreviewWindow: function() {
+    var $canvas = Ember.$('canvas-crosshair-canvas');
+    $canvas.animate(
+    {
+      width: '400px',
+      height: '300px'
+    },
+    400);
+  },
   bindEvents: function() {
     Ember.$('canvas.crosshair-canvas').on('click', Ember.$.proxy(this.toggleInteractivePreview, this));
+    Ember.$('canvas.crosshair-canvas').on('mouseenter', Ember.$.proxy(this.expandPreviewWindow, this));
+    Ember.$('canvas.crosshair-canvas').on('mouseleave', Ember.$.proxy(this.shrinkPreviewWindow, this));
   }
 });
