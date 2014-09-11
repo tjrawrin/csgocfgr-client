@@ -9,6 +9,11 @@ export default Ember.Route.extend({
       var outputText = this.get('controller.renderConfig');
       var blob = new Blob([outputText], { type: 'text/plain' });
       saveAs(blob, 'autoexec.cfg');
+    },
+    setToDefaultValue: function() {
+      var $element = Ember.$(event.target);
+      var
+      console.log(currentField);
     }
   },
   defaultValues: {

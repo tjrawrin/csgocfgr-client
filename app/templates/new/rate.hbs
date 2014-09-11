@@ -3,7 +3,7 @@
   <div class="settings">
     <div class="settings__inputs">
       <div class="settings__inputs-option">
-        <label for="rate-slider">Rate <i class="octicon octicon-info"></i></label>
+        <label for="rate-slider">Rate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue'}}></i></label>
         {{input data-command="rate" id="rate-slider" type="range" min="0" max="128000" value=rate}}
         {{input type="number" min="0" max="128000" value=rate}}
       </div>
