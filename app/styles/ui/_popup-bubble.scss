@@ -29,6 +29,10 @@
 }
 .popup-bubble__body {
   font-size: 0.875em;
+
+  ul {
+    padding-left: $inuit-base-spacing-unit;
+  }
 }
 .popup-bubble__arrow {
   width: 0;
