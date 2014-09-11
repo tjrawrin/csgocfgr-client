@@ -12,9 +12,9 @@ module('Integration - Keybind Page', {
 });
 
 test('Should navigate to the Keybind page', function() {
-  visit('/').then(function() {
+  visit('/n/rate').then(function() {
     click("a:contains('Keybind')").then(function() {
-      equal(find('h1.logo').text(), 'CS:GO  Configr');
+      equal(find('h1.logo').text(), 'CS:GO  Configr BETA');
       equal(find('div.instructions').find('h3').text(), 'Instructions');
       equal(find('section').eq(0).find('h3').text(), 'Key Binds');
       equal(find('section').eq(1).find('h3').text(), 'Preview');

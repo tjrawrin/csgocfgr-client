@@ -10,6 +10,8 @@
 @import "vendor/inuit-headings/base.headings";
 @import "vendor/inuit-lists/base.lists";
 
+@import "vendor/inuit-clearfix/trumps.clearfix";
+
 @import "ui/base";
 @import "ui/layout";
 
@@ -17,6 +19,7 @@
 @import "ui/main";
 @import "ui/footer";
 
+@import "ui/landing";
 @import "ui/alerts";
 @import "ui/octicons";
 @import "ui/navigation";

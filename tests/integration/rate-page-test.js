@@ -12,8 +12,8 @@ module('Integration - Rate Page', {
 });
 
 test('Should redirect to the Rate page', function() {
-  visit('/').then(function() {
-    equal(find('h1.logo').text(), 'CS:GO  Configr');
+  visit('/n/rate').then(function() {
+    equal(find('h1.logo').text(), 'CS:GO  Configr BETA');
     equal(find('div.instructions').find('h3').text(), 'Instructions');
     equal(find('section').eq(0).find('h3').text(), 'Rate');
     equal(find('section').eq(1).find('h3').text(), 'Preview');

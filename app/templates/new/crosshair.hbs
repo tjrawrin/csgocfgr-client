@@ -2,16 +2,16 @@
   <h3>Crosshair</h3>
   <div class="crosshair-preview">
     <div class="crosshair-preview__inner">
-      <div class="crosshair-image-select">
-        <button class="btn octicon octicon-chevron-left" {{action prev}}></button>
-        <button class="btn octicon octicon-chevron-right" {{action next}}></button>
-      </div>
       <div class="crosshair-image"></div>
       {{crosshair-canvas data=model}}
-      <p class="preview-note">Click the image to toggle interactive preview</p>
     </div>
+    <div class="crosshair-image-select">
+      <button class="btn octicon octicon-chevron-left" {{action prev}}></button>
+      <button class="btn octicon octicon-chevron-right" {{action next}}></button>
+    </div>
+    <p class="preview-note">Click the image to toggle interactive preview</p>
   </div>
-  <div class="settings" id="crosshair-settings">
+  <div class="settings crosshair-settings" id="crosshair-settings">
     <div class="settings__inputs">
       <div class="settings__inputs-option">
         <label for="crosshair-style-select">Style <i class="octicon octicon-info"></i></label>

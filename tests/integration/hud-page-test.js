@@ -12,9 +12,9 @@ module('Integration - HUD Page', {
 });
 
 test('Should navigate to the HUD page', function() {
-  visit('/').then(function() {
+  visit('/n/rate').then(function() {
     click("a:contains('HUD')").then(function() {
-      equal(find('h1.logo').text(), 'CS:GO  Configr');
+      equal(find('h1.logo').text(), 'CS:GO  Configr BETA');
       equal(find('div.instructions').find('h3').text(), 'Instructions');
       equal(find('section').eq(0).find('h3').text(), 'HUD');
       equal(find('section').eq(1).find('h3').text(), 'Preview');

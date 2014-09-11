@@ -32,7 +32,7 @@ export default Ember.ObjectController.extend({
     '0': {
       'url': 'assets/images/de_dust2_01.jpg',
       'x': -450,
-      'y': -160
+      'y': -260
     },
     '1': {
       'url': 'assets/images/de_dust2_02.jpg',

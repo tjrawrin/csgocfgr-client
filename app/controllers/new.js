@@ -16,6 +16,9 @@ export default Ember.ObjectController.extend({
         return false;
       } else {
         Ember.$('button.btn--download__save').attr('disabled', 'disabled');
+        setTimeout(function() {
+          Ember.$('button.btn--download__save').removeAttr('disabled');
+        }, 3000);
         this.get('model').save().then(function(data) {
           self.transitionToRoute('show', data).then(function() {
               return self.send('downloadSavedFile');
