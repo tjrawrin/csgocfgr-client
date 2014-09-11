@@ -56,4 +56,15 @@ section {
     outline-style: solid;
     box-shadow: 0 -13px #f6f8f8, 0 -25px #cfcfcf;
   }
+  &.config-select {
+
+    span {
+      font-size: 1.5em;
+    }
+    .config-list {
+      width: 100%;
+      max-width: 430px;
+      display: inline-block;
+    }
+  }
 }
