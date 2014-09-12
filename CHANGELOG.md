@@ -1,5 +1,10 @@
 # CS:GO Configr Changelog
 
+### 0.1.2
+
+* [ENHANCEMENT] Add reset to defaul values button for most input fields. Radar size and scale were having issues so it is left out for now on those
+* [ENHANCEMENT] Decreased font size inside popup bubbles
+
 ### 0.1.1
 
 * [BUGFIX] Add new landing page to hopefully prevent redirect loop (not allowing browser back button to leave site)
