@@ -11,6 +11,7 @@ export default Ember.Component.extend({
   imageSize: 368,
   startOffset: 25,
   radarIconSize: 20,
+  defaultBGPosition: '-12420px',
   previewConfig: {
     '0': {
       'icons': {

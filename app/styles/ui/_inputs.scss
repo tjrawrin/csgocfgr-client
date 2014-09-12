@@ -1,5 +1,10 @@
 label {
   font-weight: bold;
+
+  .reset-value {
+    margin-left: $inuit-base-spacing-unit--small / 2;
+    cursor: pointer;
+  }
 }
 .settings__inputs {
   margin-right: 100px;

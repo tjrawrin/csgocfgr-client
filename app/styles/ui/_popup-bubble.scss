@@ -22,9 +22,16 @@
   margin: 0 0 10px 0;
 
   h4 {
-    font-size: 18px;
+    font-size: 0.875em;
     padding-bottom: $inuit-base-spacing-unit--small;
     margin: 0;
+  }
+}
+.popup-bubble__body {
+  font-size: 0.875em;
+
+  ul {
+    padding-left: $inuit-base-spacing-unit;
   }
 }
 .popup-bubble__arrow {

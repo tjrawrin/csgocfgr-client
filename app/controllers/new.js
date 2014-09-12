@@ -39,6 +39,9 @@ export default Ember.ObjectController.extend({
 
       element.selectionStart = 0;
       element.selectionEnd = 0;
+    },
+    setToDefaultValue: function() {
+      return this.send('setToDefaultValue');
     }
   },
   renderConfig: function() {

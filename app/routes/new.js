@@ -9,6 +9,11 @@ export default Ember.Route.extend({
       var outputText = this.get('controller.renderConfig');
       var blob = new Blob([outputText], { type: 'text/plain' });
       saveAs(blob, 'autoexec.cfg');
+    },
+    setToDefaultValue: function(command) {
+      var defaultValue = this.get('defaultValues.' + command);
+
+      return this.set('controller.model.' + command, defaultValue);
     }
   },
   defaultValues: {
@@ -132,9 +137,9 @@ export default Ember.Route.extend({
     keyRbracket: '',
     keyBkslash: '',
     keyCapslock: '',
-    keyA: '+left;',
+    keyA: '+moveleft;',
     keyS: '+back;',
-    keyD: '+right;',
+    keyD: '+moveright;',
     keyF: '+lookatweapon;',
     keyG: 'drop;',
     keyH: '',
@@ -155,7 +160,7 @@ export default Ember.Route.extend({
     keyComma: '',
     keyPeriod: '',
     keyFwslash: '',
-    keyCtrl: '+crouch;',
+    keyCtrl: '+duck;',
     keyAlt: '',
     keySpace: '+jump;',
     keyPause: 'pause',
