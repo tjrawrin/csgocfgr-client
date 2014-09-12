@@ -39,5 +39,22 @@ export default Ember.Component.extend({
         }
       });
     }
-  }
+  },
+  reset: function(event) {
+    var $menu = this.$('.dropdown-menu');
+    var selected = this.get('data');
+    var options = this.get('options');
+
+    function getIndex(array, attr, value) {
+      for (var i = 0; i < array.length; i += 1) {
+        if (array[i][attr] === value) {
+          return i;
+        }
+      }
+    }
+    this.set('selectedOptionName', options[getIndex(options, 'id', selected)].optionName);
+
+    $menu.find('li.selected').removeClass('selected');
+    $menu.find('li[rel=' + selected + ']').addClass('selected');
+  }.observes('data')
 });

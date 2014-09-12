@@ -3,21 +3,21 @@
   <div class="settings">
     <div class="settings__inputs">
       <div class="settings__inputs-option">
-        <label for="sensitivity-slider">Sensitivity <i class="octicon octicon-info"></i></label>
+        <label for="sensitivity-slider">Sensitivity <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sensitivity'}}></i></label>
         {{input data-command="sensitivity" id="sensitivity-slider" type="range" min="0" max="20" step="0.1" value=sensitivity}}
         {{input type="number" min="0" max="20" step="0.1" value=sensitivity}}
       </div>
       <div class="settings__inputs-option">
-        <label for="zoom-sensitivity-slider">Zoom Sensitivity <i class="octicon octicon-info"></i></label>
+        <label for="zoom-sensitivity-slider">Zoom Sensitivity <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'zoomSensitivityRatioMouse'}}></i></label>
         {{input data-command="zoom_sensitivity_ratio_mouse" id="zoom-sensitivity-slider" type="range" min="0" max="20" step="0.01" value=zoomSensitivityRatioMouse}}
         {{input type="number" min="0" max="20" step="0.01" value=zoomSensitivityRatioMouse}}
       </div>
       <div class="settings__inputs-option">
-        <label for="mouse-acceleration-slider">Mouse Acceleration <i class="octicon octicon-info"></i></label>
+        <label for="mouse-acceleration-slider">Mouse Acceleration <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mCustomaccel'}}></i></label>
         {{custom-select data=model.mCustomaccel options=customAccelOptions dataCommand="m_customaccel"}}
       </div>
       <div class="settings__inputs-option settings__inputs-option--checkbox">
-        <label for="mouse-raw-input-box">Raw Input <i class="octicon octicon-info"></i></label>
+        <label for="mouse-raw-input-box">Raw Input <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mRawinput'}}></i></label>
         <div class="checkbox-slider">
           {{input data-command="m_rawinput" id="mouse-raw-input-box" type="checkbox" checked=mRawinput}}
           <label for="mouse-raw-input-box"></label>

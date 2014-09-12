@@ -10,10 +10,10 @@ export default Ember.Route.extend({
       var blob = new Blob([outputText], { type: 'text/plain' });
       saveAs(blob, 'autoexec.cfg');
     },
-    setToDefaultValue: function() {
-      var $element = Ember.$(event.target);
-      var
-      console.log(currentField);
+    setToDefaultValue: function(command) {
+      var defaultValue = this.get('defaultValues.' + command);
+
+      return this.set('controller.model.' + command, defaultValue);
     }
   },
   defaultValues: {
