@@ -41,8 +41,9 @@
 </div>
 
 <section class="config-select">
-  <span>Load Config:</span>
-  {{custom-select customClass='config-list' options=configList}}
+  <h3>Options</h3>
+  <label for="config-list-select">Import Config</label>
+  <button type="button" class="btn" {{action 'uploadConfig'}}><i class="mega-octicon octicon-cloud-upload"></i> Import</button>
 </section>
 
 {{outlet}}
