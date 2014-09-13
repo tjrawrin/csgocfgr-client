@@ -45,7 +45,7 @@
   <h3>Import Settings</h3>
   <div class="import-settings__location-buttons">
     <label class="radio-button">
-      <input type="radio" name="importLocations" checked="checked"></input>
+      <input type="radio" name="importLocations" checked id="fileImport"></input>
       <span class="radio-button__icons">
         <span class="radio-button__icons--unchecked"></span>
         <span class="radio-button__icons--checked"></span>
@@ -53,7 +53,7 @@
       File
     </label>
     <label class="radio-button">
-      <input type="radio" name="importLocations"></input>
+      <input type="radio" name="importLocations" id="textImport"></input>
       <span class="radio-button__icons">
         <span class="radio-button__icons--unchecked"></span>
         <span class="radio-button__icons--checked"></span>
@@ -61,7 +61,13 @@
       Clipboard
     </label>
   </div>
-  {{file-upload}}
+  <div class="file-upload-container">
+    {{file-upload customClass="file-upload-input"}}
+  </div>
+  <div class="config-paste-container">
+    {{textarea class="config-paste-input"}}
+  </div>
+  <button type="button" class="btn btn--import-config" {{action 'parseConfig'}}><i class="octicon octicon-cloud-upload"></i> Import</button>
 </section>
 
 {{outlet}}

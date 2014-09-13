@@ -1,7 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  classNameBindings: ['customClassName'],
   selectedFileName: 'No file selected...',
+  customClassName: function() {
+    return this.get('customClass');
+  }.property(),
   setSelectedFileName: function() {
     var $input = Ember.$('.file-upload__input');
     var fileName;

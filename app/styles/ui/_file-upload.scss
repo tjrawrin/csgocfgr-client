@@ -1,6 +1,5 @@
 .file-upload {
   width: 100%;
-  max-width: 250px;
   cursor: pointer;
   overflow: hidden;
   padding: $inuit-base-spacing-unit--small / 2;
@@ -36,7 +35,6 @@
     top: -$inuit-base-spacing-unit;
     left: 0;
     width: 100%;
-    max-width: 246px;
     height: 64px;
     cursor: pointer;
     background: transparent;

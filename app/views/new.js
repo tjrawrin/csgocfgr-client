@@ -39,6 +39,28 @@ export default Ember.View.extend({
           $menu.removeClass('nav--open');
       }
   },
+  showHideImportFields: function() {
+    var $fileContainer = Ember.$('.file-upload-container'),
+        $textContainer = Ember.$('.config-paste-container').hide(),
+        $importOptions = Ember.$('input#fileImport, input#textImport'),
+        $fileRadioButton = Ember.$('input#fileImport'),
+        $fileValue = Ember.$('.file-upload-input input.file-upload__input'),
+        $textValue = Ember.$('.config-paste-input');
+
+    $importOptions.on('change', function() {
+      if ($fileRadioButton.prop('checked')) {
+        $fileContainer.show();
+        $textContainer.hide();
+        $textValue.val('');
+      } else {
+        $fileContainer.hide();
+        $textContainer.show();
+        console.log($fileValue.val());
+        $fileValue.val('');
+      }
+    });
+
+  }.on('didInsertElement'),
   bindEvents: function() {
     var $container = Ember.$('.instructions');
     var $menuButton = Ember.$('button.navbar__menu');
