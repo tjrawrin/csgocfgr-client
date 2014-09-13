@@ -4,6 +4,8 @@
 
 * [ENHANCEMENT] Add reset to defaul values button for most input fields. Radar size and scale were having issues so it is left out for now on those
 * [ENHANCEMENT] Decreased font size inside popup bubbles
+* [BUGFIX] Fix issue with escape key not updating in preview window
+* [BUGFIX] Fix issue with ' key outputting incorrect text in preview window
 
 ### 0.1.1
 

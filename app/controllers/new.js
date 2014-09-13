@@ -186,7 +186,7 @@ export default Ember.ObjectController.extend({
       this.showOrHide(this.get('model.keyK'), 'bind k ' + '"' + this.get('model.keyK') + '"' + '\n') +
       this.showOrHide(this.get('model.keyL'), 'bind l ' + '"' + this.get('model.keyL') + '"' + '\n') +
       this.showOrHide(this.get('model.keySemicolon'), 'bind ; ' + '"' + this.get('model.keySemicolon') + '"' + '\n') +
-      this.showOrHide(this.get('model.keyApostrophe'), 'bind &#39; ' + '"' + this.get('model.keyApostrophe') + '"' + '\n') +
+      this.showOrHide(this.get('model.keyApostrophe'), 'bind \'\ ' + '"' + this.get('model.keyApostrophe') + '"' + '\n') +
       this.showOrHide(this.get('model.keyEnter'), 'bind enter ' + '"' + this.get('model.keyEnter') + '"' + '\n') +
       this.showOrHide(this.get('model.keyShift'), 'bind shift ' + '"' + this.get('model.keyShift') + '"' + '\n') +
       this.showOrHide(this.get('model.keyZ'), 'bind z ' + '"' + this.get('model.keyZ') + '"' + '\n') +
