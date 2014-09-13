@@ -144,6 +144,63 @@ textarea {
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
   }
 }
+.radio-button {
+  position: relative;
+
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    outline: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: -1;
+
+    &:hover + .radio-button__icons .radio-button__icons--unchecked {
+      opacity: 1;
+      -webkit-filter: none;
+      filter: none;
+    }
+    &:checked + .radio-button__icons .radio-button__icons--checked {
+      opacity: 1;
+      -webkit-filter: none;
+      filter: none;
+    }
+  }
+  .radio-button__icons {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #bdc3c7;
+    vertical-align: text-top;
+    position: relative;
+    cursor: pointer;
+
+    .radio-button__icons--unchecked,
+    .radio-button__icons--checked {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      vertical-align: text-top;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+    .radio-button__icons--unchecked {
+      background: #bdc3c7;
+    }
+    .radio-button__icons--checked {
+      background: #3498db;
+    }
+  }
+}
 .hp {
   position: absolute;
   top: 0;

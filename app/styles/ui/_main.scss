@@ -56,15 +56,16 @@ section {
     outline-style: solid;
     box-shadow: 0 -13px #f6f8f8, 0 -25px #cfcfcf;
   }
-  &.config-select {
+  &.import-settings {
 
-    span {
-      font-size: 1.5em;
-    }
-    .config-list {
-      width: 100%;
-      max-width: 430px;
-      display: inline-block;
+    .import-settings__location-buttons {
+      position: absolute;
+      top: 15px;
+      left: 196px;
+
+      .radio-button:first-child {
+        margin-right: $inuit-base-spacing-unit--small;
+      }
     }
   }
 }

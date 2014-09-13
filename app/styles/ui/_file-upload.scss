@@ -1,0 +1,48 @@
+.file-upload {
+  width: 100%;
+  max-width: 250px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: $inuit-base-spacing-unit--small / 2;
+  border: 2px solid #bdc3c7;
+  border-radius: $inuit-base-spacing-unit--small / 2;
+  position: relative;
+  display: inline-block;
+
+  .file-upload__browse {
+    padding: 0 $inuit-base-spacing-unit--small;
+    white-space: normal;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #2980b9;
+    border-radius: $inuit-base-spacing-unit--small / 2;
+    background: #3498db;
+    color: #fff;
+    float: right;
+    font-size: 1em;
+    font-weight: bold;
+    position: relative;
+    z-index: 100;
+  }
+  .file-upload__feedback {
+    display: block;
+    font-style: italic;
+    font-size: 1em;
+    margin: 2px 0;
+    white-space: nowrap;
+  }
+  .file-upload__input {
+    position: absolute;
+    top: -$inuit-base-spacing-unit;
+    left: 0;
+    width: 100%;
+    max-width: 246px;
+    height: 64px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: 999;
+  }
+}

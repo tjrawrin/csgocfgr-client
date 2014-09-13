@@ -40,10 +40,28 @@
   {{input id="email" type="text" value=honeyPot}}
 </div>
 
-<section class="config-select">
-  <h3>Options</h3>
-  <label for="config-list-select">Import Config</label>
-  <button type="button" class="btn" {{action 'uploadConfig'}}><i class="mega-octicon octicon-cloud-upload"></i> Import</button>
+
+<section class="import-settings">
+  <h3>Import Settings</h3>
+  <div class="import-settings__location-buttons">
+    <label class="radio-button">
+      <input type="radio" name="importLocations" checked="checked"></input>
+      <span class="radio-button__icons">
+        <span class="radio-button__icons--unchecked"></span>
+        <span class="radio-button__icons--checked"></span>
+      </span>
+      File
+    </label>
+    <label class="radio-button">
+      <input type="radio" name="importLocations"></input>
+      <span class="radio-button__icons">
+        <span class="radio-button__icons--unchecked"></span>
+        <span class="radio-button__icons--checked"></span>
+      </span>
+      Clipboard
+    </label>
+  </div>
+  {{file-upload}}
 </section>
 
 {{outlet}}
