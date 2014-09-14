@@ -58,13 +58,20 @@ section {
   }
   &.import-settings {
 
-    .import-settings__location-buttons {
+    .import-settings__options {
       position: absolute;
       top: 15px;
       left: 196px;
 
       .radio-button:first-child {
         margin-right: $inuit-base-spacing-unit--small;
+      }
+    }
+    .upload-config-text {
+      display: none;
+
+      textarea {
+        height: 250px;
       }
     }
   }

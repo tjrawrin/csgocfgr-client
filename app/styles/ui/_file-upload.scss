@@ -2,7 +2,7 @@
   width: 100%;
   cursor: pointer;
   overflow: hidden;
-  padding: $inuit-base-spacing-unit--small / 2;
+  padding: $inuit-base-spacing-unit--small;
   border: 2px solid #bdc3c7;
   border-radius: $inuit-base-spacing-unit--small / 2;
   position: relative;
@@ -35,7 +35,7 @@
     top: -$inuit-base-spacing-unit;
     left: 0;
     width: 100%;
-    height: 64px;
+    height: 76px;
     cursor: pointer;
     background: transparent;
     border: 0;

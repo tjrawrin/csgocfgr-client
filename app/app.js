@@ -12,6 +12,7 @@ var App = Ember.Application.extend({
 Ember.TextField.reopen({ attributeBindings: ['data-command'] });
 Ember.Checkbox.reopen({ attributeBindings: ['data-command'] });
 Ember.Select.reopen({ attributeBindings: ['data-command'] });
+Ember.TextArea.reopen({ attributeBindings: ['data-upload'] });
 
 loadInitializers(App, 'csgocfgr');
 

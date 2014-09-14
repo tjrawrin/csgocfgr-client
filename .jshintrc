@@ -5,7 +5,8 @@
     "CsgocfgrENV": true,
     "saveAs": true,
     "ga": true,
-    "HoverPopup": true
+    "HoverPopup": true,
+    "ConfigParser": true
   },
   "browser" : true,
   "boss" : true,

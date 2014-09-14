@@ -1,5 +1,5 @@
 <div class="file-upload">
   <span class="file-upload__browse" aria-hidden="true">Browse</span>
   <span class="file-upload__feedback" aria-hidden="true">{{selectedFileName}}</span>
-  <input type="file" name="file" class="file-upload__input">
+  <input type="file" name="file" class="file-upload__input" {{bind-attr data-upload=dataUploadName}}>
 </div>

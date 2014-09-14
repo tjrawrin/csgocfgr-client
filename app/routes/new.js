@@ -14,6 +14,12 @@ export default Ember.Route.extend({
       var defaultValue = this.get('defaultValues.' + command);
 
       return this.set('controller.model.' + command, defaultValue);
+    },
+    parseFileConfig: function(command, value) {
+        console.log('Parsing a file...');
+    },
+    parseTextConfig: function(command, value) {
+        console.log('Parsing some text...');
     }
   },
   defaultValues: {

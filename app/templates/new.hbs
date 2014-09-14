@@ -40,32 +40,31 @@
   {{input id="email" type="text" value=honeyPot}}
 </div>
 
-
 <section class="import-settings">
   <h3>Import Settings</h3>
-  <div class="import-settings__location-buttons">
+  <div class="import-settings__options">
     <label class="radio-button">
       <input type="radio" name="importLocations" checked id="fileImport"></input>
-      <span class="radio-button__icons">
-        <span class="radio-button__icons--unchecked"></span>
-        <span class="radio-button__icons--checked"></span>
+      <span class="radio-button__status">
+        <span class="radio-button__status--unchecked"></span>
+        <span class="radio-button__status--checked"></span>
       </span>
       File
     </label>
     <label class="radio-button">
       <input type="radio" name="importLocations" id="textImport"></input>
-      <span class="radio-button__icons">
-        <span class="radio-button__icons--unchecked"></span>
-        <span class="radio-button__icons--checked"></span>
+      <span class="radio-button__status">
+        <span class="radio-button__status--unchecked"></span>
+        <span class="radio-button__status--checked"></span>
       </span>
       Clipboard
     </label>
   </div>
-  <div class="file-upload-container">
-    {{file-upload customClass="file-upload-input"}}
+  <div class="upload-config-file">
+    {{file-upload dataUpload="file"}}
   </div>
-  <div class="config-paste-container">
-    {{textarea class="config-paste-input"}}
+  <div class="upload-config-text">
+    {{textarea data-upload="text"}}
   </div>
   <button type="button" class="btn btn--import-config" {{action 'parseConfig'}}><i class="octicon octicon-cloud-upload"></i> Import</button>
 </section>

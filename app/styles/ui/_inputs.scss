@@ -85,10 +85,6 @@ textarea {
   max-width: 100%;
   width: 100%;
   height: 500px;
-
-  &.config-paste-input {
-    height: 250px;
-  }
 }
 .checkbox-slider {
   width: 80px;
@@ -162,18 +158,18 @@ textarea {
     filter: alpha(opacity=0);
     z-index: -1;
 
-    &:hover + .radio-button__icons .radio-button__icons--unchecked {
+    &:hover + .radio-button__status .radio-button__status--unchecked {
       opacity: 1;
       -webkit-filter: none;
       filter: none;
     }
-    &:checked + .radio-button__icons .radio-button__icons--checked {
+    &:checked + .radio-button__status .radio-button__status--checked {
       opacity: 1;
       -webkit-filter: none;
       filter: none;
     }
   }
-  .radio-button__icons {
+  .radio-button__status {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -184,8 +180,8 @@ textarea {
     position: relative;
     cursor: pointer;
 
-    .radio-button__icons--unchecked,
-    .radio-button__icons--checked {
+    .radio-button__status--unchecked,
+    .radio-button__status--checked {
       display: inline-block;
       width: 10px;
       height: 10px;
@@ -197,10 +193,10 @@ textarea {
       opacity: 0;
       filter: alpha(opacity=0);
     }
-    .radio-button__icons--unchecked {
+    .radio-button__status--unchecked {
       background: #bdc3c7;
     }
-    .radio-button__icons--checked {
+    .radio-button__status--checked {
       background: #3498db;
     }
   }

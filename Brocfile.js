@@ -16,6 +16,7 @@ app.import('vendor/csgocfgr-plugins/informationpopup.js');
 app.import('vendor/csgocfgr-plugins/informationlookup.js');
 app.import('vendor/csgocfgr-plugins/blob.js');
 app.import('vendor/csgocfgr-plugins/filesaver.js');
+app.import('vendor/csgocfgr-plugins/parserv2.js');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

@@ -3,7 +3,10 @@ import Ember from 'ember';
 export default Ember.View.extend({
   initPlugin: function() {
     var hoverPopup = new HoverPopup();
+    var configParser = new ConfigParser();
+
     hoverPopup.Init();
+    configParser.Init();
   }.on('didInsertElement'),
   stickyNavbar: function() {
     var $navbar = Ember.$('div.navbar__inner');
@@ -39,24 +42,19 @@ export default Ember.View.extend({
           $menu.removeClass('nav--open');
       }
   },
-  showHideImportFields: function() {
-    var $fileContainer = Ember.$('.file-upload-container'),
-        $textContainer = Ember.$('.config-paste-container').hide(),
-        $importOptions = Ember.$('input#fileImport, input#textImport'),
-        $fileRadioButton = Ember.$('input#fileImport'),
-        $fileValue = Ember.$('.file-upload-input input.file-upload__input'),
-        $textValue = Ember.$('.config-paste-input');
+  showHideConfigImport: function() {
+    var $importOptions = Ember.$('input#fileImport, input#textImport'),
+        $fileRadio = Ember.$('input#fileImport'),
+        $configFile = Ember.$('.upload-config-file'),
+        $configText = Ember.$('.upload-config-text');
 
     $importOptions.on('change', function() {
-      if ($fileRadioButton.prop('checked')) {
-        $fileContainer.show();
-        $textContainer.hide();
-        $textValue.val('');
+      if ($fileRadio.prop('checked')) {
+        $configFile.show();
+        $configText.hide();
       } else {
-        $fileContainer.hide();
-        $textContainer.show();
-        console.log($fileValue.val());
-        $fileValue.val('');
+        $configFile.hide();
+        $configText.show();
       }
     });
 
