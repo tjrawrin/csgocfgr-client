@@ -4,6 +4,17 @@ export default Ember.Route.extend({
   model: function() {
     return this.store.createRecord('cfg', this.get('defaultValues'));
   },
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    this.controllerFor('new.import').set('model', model);
+  },
+  renderTemplate: function() {
+    this.render();
+    this.render('new.import', {
+      into: 'new',
+      outlet: 'import'
+    });
+  },
   actions: {
     downloadUnsavedFile: function() {
       var outputText = this.get('controller.renderConfig');
@@ -15,11 +26,11 @@ export default Ember.Route.extend({
 
       return this.set('controller.model.' + command, defaultValue);
     },
-    parseFileConfig: function(command, value) {
-        console.log('Parsing a file...');
+    parseFileConfig: function() {
+      console.log('Parsing file...');
     },
-    parseTextConfig: function(command, value) {
-        console.log('Parsing some text...');
+    parseTextConfig: function() {
+      console.log('Parsing text...');
     }
   },
   defaultValues: {

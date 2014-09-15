@@ -42,18 +42,6 @@ export default Ember.ObjectController.extend({
     },
     setToDefaultValue: function() {
       return this.send('setToDefaultValue');
-    },
-    parseConfig: function() {
-      var $fileRadio = Ember.$('input#fileImport').prop('checked'),
-          $textRadio = Ember.$('input#textImport').prop('checked');
-
-      if ($fileRadio) {
-        return this.send('parseFileConfig');
-      }
-
-      if ($textRadio) {
-        return this.send('parseTextConfig');
-      }
     }
   },
   renderConfig: function() {
@@ -300,7 +288,14 @@ export default Ember.ObjectController.extend({
     return value ? 1 : 0;
   },
   showOrHide: function(value, string) {
-    if (value.length > 0) {
+    // if (value.length > 0) {
+    //   return string;
+    // } else {
+    //   return '';
+    // }
+    if (value === null || value === undefined) {
+      return '';
+    } else if (value.length > 0) {
       return string;
     } else {
       return '';
