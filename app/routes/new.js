@@ -26,11 +26,21 @@ export default Ember.Route.extend({
 
       return this.set('controller.model.' + command, defaultValue);
     },
-    parseFileConfig: function() {
-      console.log('Parsing file...');
+    parseFileConfig: function(config) {
+      var configArray = config;
+
+      for (var i = 0; i < configArray.length; i++) {
+        this.set('controller.model.' + configArray[i].key, configArray[i].value);
+      }
     },
-    parseTextConfig: function() {
-      console.log('Parsing text...');
+    parseTextConfig: function(config) {
+      var configArray = config;
+
+      console.log(configArray);
+
+      for (var i = 0; i < configArray.length; i++) {
+        this.set('controller.model.' + configArray[i].key, configArray[i].value);
+      }
     }
   },
   defaultValues: {
