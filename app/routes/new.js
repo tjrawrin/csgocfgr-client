@@ -32,6 +32,8 @@ export default Ember.Route.extend({
       for (var i = 0; i < configArray.length; i++) {
         this.set('controller.model.' + configArray[i].key, configArray[i].value);
       }
+
+      this.simpleFlashMessage('Settings successfully imported.', 'success');
     },
     parseTextConfig: function(config) {
       var configArray = config;
@@ -41,6 +43,8 @@ export default Ember.Route.extend({
       for (var i = 0; i < configArray.length; i++) {
         this.set('controller.model.' + configArray[i].key, configArray[i].value);
       }
+
+      this.simpleFlashMessage('Settings successfully imported.', 'success');
     }
   },
   defaultValues: {

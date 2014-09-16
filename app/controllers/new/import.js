@@ -18,11 +18,23 @@ export default Ember.ObjectController.extend({
       var config = this.get('config');
 
       if ($fileRadio) {
-        return this.send('parseFileConfig', config);
+        if (this.get('config').length > 0) {
+          return this.send('parseFileConfig', config);
+        } else {
+          this.simpleFlashMessage('No file selected for import.', 'error');
+          return false;
+        }
+
       }
 
       if ($textRadio) {
-        return this.send('parseTextConfig', config);
+        if (this.get('config').length > 0) {
+          return this.send('parseTextConfig', config);
+        } else {
+          this.simpleFlashMessage('Text input field empty.', 'error');
+          return false;
+        }
+
       }
     }
   }
