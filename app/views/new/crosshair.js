@@ -10,9 +10,9 @@ export default Ember.View.extend({
     var topPosition = 0;
 
     if(Ember.$('.instructions').length) {
-      topPosition = 684;
+      topPosition = 742;
     } else {
-      topPosition = 452;
+      topPosition = 510;
     }
 
     if (window.scrollY >= topPosition) {

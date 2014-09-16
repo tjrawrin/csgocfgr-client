@@ -67,9 +67,18 @@ section {
         margin-right: $inuit-base-spacing-unit--small;
       }
     }
+    .upload-config-file {
+
+      p {
+        margin-top: -8px;
+      }
+    }
     .upload-config-text {
       display: none;
 
+      p {
+        margin-top: -8px;
+      }
       textarea {
         height: 250px;
       }
