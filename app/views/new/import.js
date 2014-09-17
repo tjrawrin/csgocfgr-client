@@ -29,7 +29,7 @@ export default Ember.View.extend({
   * Returns true if a parse task was successfully started.
   */
   doParse: function(event) {
-    console.log('DoParse: %o', event);
+    // console.log('DoParse: %o', event);
     var success = false;
 
     if (event.type === 'change') {
@@ -45,7 +45,7 @@ export default Ember.View.extend({
   * Parse text input into a text field as a config.
   */
   parseFromPaste: function() {
-    console.log('ParseFromPaste');
+    // console.log('ParseFromPaste');
     var pasteContent = this.get('inputText').val();
     Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
 
@@ -64,7 +64,7 @@ export default Ember.View.extend({
   * Returns true if the file was successfully opened and parsed.
   */
   parseFromFile: function(event) {
-    console.log('ParseFromFile');
+    // console.log('ParseFromFile');
     if (!this.clientCanReadFiles()) {
       console.error('The client is unable to read files.');
       return false;
@@ -85,7 +85,7 @@ export default Ember.View.extend({
   * Returns true if the client is capable of opening files.
   */
   clientCanReadFiles: function() {
-    console.log('ClientCanReadFiles');
+    // console.log('ClientCanReadFiles');
     if (!FileReader) {
       return false;
     }
@@ -101,7 +101,7 @@ export default Ember.View.extend({
   * file - A file object to read from.
   */
   parseContentsFromFile: function(file) {
-    console.log('GetContentsFromFile');
+    // console.log('GetContentsFromFile');
 
     var fileReader = new FileReader();
     fileReader.onload = Ember.$.proxy(this.fileReader_OnLoad, this, fileReader);
@@ -113,7 +113,7 @@ export default Ember.View.extend({
   * fileReader - the FileReader object for which this method is set to.
   */
   fileReader_OnLoad: function(fileReader) {
-    console.log('FileReader_OnLoad');
+    // console.log('FileReader_OnLoad');
     var content = fileReader.result;
     content = this.cleanFileContents(content);
 
@@ -128,7 +128,7 @@ export default Ember.View.extend({
   * Returns a string of the contents after removing whitespace and comments.
   */
   cleanFileContents: function(content) {
-    console.log('CleanFileContents');
+    // console.log('CleanFileContents');
     var newContent = content;
 
     // remove comments to the end of the line
@@ -147,7 +147,7 @@ export default Ember.View.extend({
   * Returns the content string converted to an array of arrays.
   */
   contentStringToArray: function(content) {
-    console.log('ContentStringToArray');
+    // console.log('ContentStringToArray');
     var contentArray = content.split('\n');
     for (var i = 0, length = contentArray.length; i < length; i++) {
       contentArray[i] = contentArray[i].split(' ');
@@ -211,7 +211,7 @@ export default Ember.View.extend({
     }
     var newValue = value;
 
-    newValue = newValue.replace(/^"|$"/g, '');
+    newValue = newValue.replace(/"/g, '');
 
     return newValue;
   },
@@ -222,7 +222,7 @@ export default Ember.View.extend({
   * Returns a string of the converted key.
   */
   formatKeyAsModelKeybind: function(key) {
-    key = key.replace(/^"|$"/g, '');
+    key = key.replace(/"/g, '');
     key = key.toLowerCase();
     var newKey = 'key';
 
