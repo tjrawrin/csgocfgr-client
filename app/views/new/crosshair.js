@@ -7,20 +7,23 @@ export default Ember.View.extend({
   },
   lockCanvasPosition: function() {
     var $container = Ember.$('.crosshair-preview');
+    var $instructions = Ember.$('.instructions');
     var $section = Ember.$('#crosshair');
     var topPosition = 0;
 
-    if (Ember.$('.instructions').length) {
-      if ($section.position().top > 902) {
-        topPosition = 932;
+    if ($section.length) {
+      if ($instructions.length) {
+        if ($section.position().top > 902) {
+          topPosition = 932;
+        } else {
+          topPosition = 742;
+        }
       } else {
-        topPosition = 742;
-      }
-    } else {
-      if ($section.position().top > 668) {
-        topPosition = 694;
-      } else {
-        topPosition = 510;
+        if ($section.position().top > 668) {
+          topPosition = 694;
+        } else {
+          topPosition = 510;
+        }
       }
     }
 
@@ -29,7 +32,7 @@ export default Ember.View.extend({
     } else {
       $container.removeClass('fixed-preview');
     }
-  },
+  }.on('didInsertElement'),
   setCanvasWidth: function() {
     var $window = Ember.$(window);
     var $previewWindow = Ember.$('.crosshair-preview');
