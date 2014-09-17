@@ -4,6 +4,17 @@ export default Ember.Route.extend({
   model: function() {
     return this.store.createRecord('cfg', this.get('defaultValues'));
   },
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    this.controllerFor('new.import').set('model', model);
+  },
+  renderTemplate: function() {
+    this.render();
+    this.render('new.import', {
+      into: 'new',
+      outlet: 'import'
+    });
+  },
   actions: {
     downloadUnsavedFile: function() {
       var outputText = this.get('controller.renderConfig');
@@ -14,6 +25,24 @@ export default Ember.Route.extend({
       var defaultValue = this.get('defaultValues.' + command);
 
       return this.set('controller.model.' + command, defaultValue);
+    },
+    parseFileConfig: function(config) {
+      var configArray = config;
+
+      for (var i = 0; i < configArray.length; i++) {
+        this.set('controller.model.' + configArray[i].key, configArray[i].value);
+      }
+
+      this.simpleFlashMessage('Settings successfully imported.', 'success');
+    },
+    parseTextConfig: function(config) {
+      var configArray = config;
+
+      for (var i = 0; i < configArray.length; i++) {
+        this.set('controller.model.' + configArray[i].key, configArray[i].value);
+      }
+
+      this.simpleFlashMessage('Settings successfully imported.', 'success');
     }
   },
   defaultValues: {

@@ -56,4 +56,35 @@ section {
     outline-style: solid;
     box-shadow: 0 -13px #f6f8f8, 0 -25px #cfcfcf;
   }
+  &.import-settings {
+
+    .import-settings__options {
+      position: absolute;
+      top: 15px;
+      left: 196px;
+
+      .radio-button:first-child {
+        margin-right: $inuit-base-spacing-unit--small;
+      }
+    }
+    .upload-config-file {
+
+      p {
+        margin-top: -8px;
+      }
+    }
+    .upload-config-text {
+      display: none;
+
+      p {
+        margin-top: -8px;
+      }
+      textarea {
+        resize: none;
+        min-height: 250px;
+        max-height: 250px;
+        height: auto;
+      }
+    }
+  }
 }

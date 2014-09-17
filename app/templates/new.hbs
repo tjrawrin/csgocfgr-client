@@ -40,6 +40,8 @@
   {{input id="email" type="text" value=honeyPot}}
 </div>
 
+{{outlet import}}
+
 {{outlet}}
 
 <section class="preview">
@@ -49,7 +51,7 @@
   </div>
   <div class="output">
     <div class="output__options">
-      {{textarea value=renderConfig class="output__textarea" id="autoexec-output" readonly="readonly" disabled="disabled"}}
+      {{textarea value=renderConfig class="output__textarea" id="autoexec-output" readonly="readonly"}}
       <div class="output__actions">
         <button type="button" class="btn btn--download" {{action 'download'}}><i class="mega-octicon octicon-file-text"></i> Download</button>
         <button type="button" class="btn btn--download__save" {{action 'saveAndDownload'}}><i class="mega-octicon octicon-cloud-download"></i> Save &amp; Download</button>

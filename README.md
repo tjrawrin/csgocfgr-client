@@ -23,5 +23,7 @@ This README outlines the details of collaborating on this Ember application.
 #### Things to Do
 
 * Clean up and optimize code when possible.
+* Add Load Config option to load in different values into the store. Pull data from the server into the store or contain the data in an object.
+* Add disable button for all fields to shorten config files
 
 For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).

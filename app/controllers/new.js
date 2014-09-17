@@ -288,7 +288,9 @@ export default Ember.ObjectController.extend({
     return value ? 1 : 0;
   },
   showOrHide: function(value, string) {
-    if (value.length > 0) {
+    if (value === null || value === undefined) {
+      return '';
+    } else if (value.length > 0) {
       return string;
     } else {
       return '';

@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   attributeBindings: ['dataCommand:data-command'],
+  classNameBindings: ['customClassName'],
   selectedOptionName: null,
   didInsertElement: function() {
     var selected = this.get('data');
@@ -10,6 +11,9 @@ export default Ember.Component.extend({
     this.set('selectedOptionName', name);
     $menu.find('li[rel=' + selected + ']').addClass('selected');
   },
+  customClassName: function() {
+    return this.get('customClass');
+  }.property(),
   dataCommand: function() {
     return this.get('dataCommand').property();
   },

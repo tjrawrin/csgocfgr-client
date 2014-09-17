@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-  initPlugin: function() {
+  initPlugins: function() {
     var hoverPopup = new HoverPopup();
+
     hoverPopup.Init();
   }.on('didInsertElement'),
   stickyNavbar: function() {

@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
+  becomeFocused: function() {
+    this.$('.keybind__textarea').focus();
+  }.on('didInsertElement'),
   togglePanel: function(event) {
     var $element = Ember.$(event.target);
     var $panelBody = $element.closest('.panel').find('.panel__body');
