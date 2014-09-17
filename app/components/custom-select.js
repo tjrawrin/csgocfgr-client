@@ -44,7 +44,7 @@ export default Ember.Component.extend({
       });
     }
   },
-  reset: function(event) {
+  reset: function() {
     var $menu = this.$('.dropdown-menu');
     var selected = this.get('data');
     var options = this.get('options');
