@@ -211,7 +211,7 @@ export default Ember.View.extend({
     }
     var newValue = value;
 
-    newValue = newValue.replace(/"/g, '');
+    newValue = newValue.replace(/^"|$"/g, '');
 
     return newValue;
   },
@@ -222,7 +222,7 @@ export default Ember.View.extend({
   * Returns a string of the converted key.
   */
   formatKeyAsModelKeybind: function(key) {
-    key = key.replace(/"/g, '');
+    key = key.replace(/^"|$"/g, '');
     key = key.toLowerCase();
     var newKey = 'key';
 

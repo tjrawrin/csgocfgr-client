@@ -7,12 +7,21 @@ export default Ember.View.extend({
   },
   lockCanvasPosition: function() {
     var $container = Ember.$('.crosshair-preview');
+    var $section = Ember.$('#crosshair');
     var topPosition = 0;
 
-    if(Ember.$('.instructions').length) {
-      topPosition = 742;
+    if (Ember.$('.instructions').length) {
+      if ($section.position().top > 902) {
+        topPosition = 932;
+      } else {
+        topPosition = 742;
+      }
     } else {
-      topPosition = 510;
+      if ($section.position().top > 668) {
+        topPosition = 694;
+      } else {
+        topPosition = 510;
+      }
     }
 
     if (window.scrollY >= topPosition) {
