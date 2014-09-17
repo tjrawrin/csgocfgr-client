@@ -38,8 +38,6 @@ export default Ember.Route.extend({
     parseTextConfig: function(config) {
       var configArray = config;
 
-      console.log(configArray);
-
       for (var i = 0; i < configArray.length; i++) {
         this.set('controller.model.' + configArray[i].key, configArray[i].value);
       }
