@@ -80,7 +80,10 @@ section {
         margin-top: -8px;
       }
       textarea {
-        height: 250px;
+        resize: none;
+        min-height: 250px;
+        max-height: 250px;
+        height: auto;
       }
     }
   }

@@ -60,6 +60,7 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  resize: none;
 
   &:focus {
     border-color: #3498db;
