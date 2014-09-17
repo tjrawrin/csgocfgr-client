@@ -1,5 +1,15 @@
 # CS:GO Configr Changelog
 
+### 0.1.3
+
+* [ENHANCEMENT] Update dependency csgocfgr-plugins
+* [ENHANCEMENT] Update dependency ember-cli-simple-flash-message
+* [ENHANCEMENT] Add ability to import settings via .cfg file or pasting in some config settings
+* [BUGFIX] Fix text spilling out of keyboard buttons on keybinds page
+* [BUGFIX] Improve crosshair preview lock positioning to compensate for new import module
+* [ENHANCEMENT] Add auto focus text box when opening keybind modal
+
+
 ### 0.1.2
 
 * [ENHANCEMENT] Add reset to defaul values button for most input fields. Radar size and scale were having issues so it is left out for now on those
