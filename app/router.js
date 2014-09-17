@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('configure', { path: '/' }, function() {
-    this.resource('new', { path: 'n' }, function() {
+    this.resource('new', { path: '/n' }, function() {
       this.route('rate');
       this.route('audio');
       this.route('video');

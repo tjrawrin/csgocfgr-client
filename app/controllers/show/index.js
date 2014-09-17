@@ -4,6 +4,9 @@ export default Ember.ObjectController.extend({
   actions: {
     download: function() {
       return this.send('downloadSavedFile');
+    },
+    newFromExisting: function() {
+      return this.send('newEdit');
     }
   },
   renderConfig: function() {
