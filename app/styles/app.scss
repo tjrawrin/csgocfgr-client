@@ -1,16 +1,16 @@
-@import "vendor/inuit-defaults/settings.defaults";
+@import "bower_components/inuit-defaults/settings.defaults";
 
-@import "vendor/inuit-functions/tools.functions";
-@import "vendor/inuit-mixins/tools.mixins";
+@import "bower_components/inuit-functions/tools.functions";
+@import "bower_components/inuit-mixins/tools.mixins";
 
-@import "vendor/inuit-normalize/generic.normalize";
-@import "vendor/inuit-box-sizing/generic.box-sizing";
+@import "bower_components/inuit-normalize/generic.normalize";
+@import "bower_components/inuit-box-sizing/generic.box-sizing";
 
-@import "vendor/inuit-page/base.page";
-@import "vendor/inuit-headings/base.headings";
-@import "vendor/inuit-lists/base.lists";
+@import "bower_components/inuit-page/base.page";
+@import "bower_components/inuit-headings/base.headings";
+@import "bower_components/inuit-lists/base.lists";
 
-@import "vendor/inuit-clearfix/trumps.clearfix";
+@import "bower_components/inuit-clearfix/trumps.clearfix";
 
 @import "ui/base";
 @import "ui/layout";

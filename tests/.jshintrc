@@ -1,9 +1,9 @@
 {
   "predef": [
-    "CsgocfgrENV": true,
-    "saveAs": true,
-    "ga": true,
-    "HoverPopup": true,
+    "CsgocfgrENV",
+    "saveAs",
+    "ga",
+    "HoverPopup",
     "document",
     "window",
     "location",
