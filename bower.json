@@ -17,6 +17,6 @@
     "inuit-lists": "~0.1.0",
     "inuit-headings": "~0.2.2",
     "inuit-clearfix": "~0.2.1",
-    "csgocfgr-plugins": "tjwarrin/csgocfgr-plugins",
+    "csgocfgr-plugins": "tjwarrin/csgocfgr-plugins"
   }
 }
