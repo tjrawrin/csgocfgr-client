@@ -19,6 +19,9 @@ export default Ember.Route.extend({
       var outputText = this.get('controller.renderConfig');
       var blob = new Blob([outputText], { type: 'text/plain' });
       saveAs(blob, 'autoexec.cfg');
+    },
+    newEdit: function(data) {
+      this.transitionTo('new', {queryParams: {id: data}});
     }
   }
 });

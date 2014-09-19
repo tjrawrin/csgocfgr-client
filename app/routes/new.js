@@ -1,8 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.createRecord('cfg', this.get('defaultValues'));
+  queryParams: {
+    id: {
+      refreshModel: true
+    }
+  },
+  model: function(params) {
+    if (!params.id) {
+      return this.store.createRecord('cfg', this.get('defaultValues'));
+    }
+    return this.store.findQuery('cfg', params);
   },
   setupController: function(controller, model) {
     controller.set('model', model);

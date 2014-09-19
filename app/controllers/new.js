@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  queryParams: ['id'],
+  id: null,
   honeyPot: '',
   actions: {
     download: function() {
