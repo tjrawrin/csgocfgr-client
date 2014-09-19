@@ -1,29 +1,46 @@
 # CS:GO Configr (client)
 
-`v0.1.0`
+`v0.1.4`
 
 This README outlines the details of collaborating on this Ember application.
 
-#### Installation
-* `git clone` this repository
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](http://git-scm.com/)
+* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+
+## Installation
+
+* `git clone git@github.com:tjwarrin/csgocfgr-client.git` this repository
+* change into the new directory
 * `npm install`
 * `bower install`
 
-#### Running
-* `ember server` (application with no connection to a local server)
-* Visit your app at http://0.0.0.0:4200.
+## Running / Development
 
-#### Running Tests
+* `ember server` (application with no connection to the API)
+* Visit your app at http://localhost:4200.
+
+### Code Generators
+
+Make use of the many generators for code, try `ember help generate` for more details
+
+### Running Tests
+
 * `ember test`
 * `ember test --server`
 
-#### Building
-* `ember build`
+### Building
 
-#### Things to Do
+* `ember build` (development)
+* `ember build --environment production` (production)
 
-* Clean up and optimize code when possible.
-* Add Load Config option to load in different values into the store. Pull data from the server into the store or contain the data in an object.
-* Add disable button for all fields to shorten config files
+## Further Reading / Useful Links
 
-For more information on using ember-cli, visit [http://iamstef.net/ember-cli/](http://iamstef.net/ember-cli/).
+* ember: http://emberjs.com/
+* ember-cli: http://www.ember-cli.com/
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
