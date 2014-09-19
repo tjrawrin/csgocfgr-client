@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CS:GO Configr</title>
-    <meta name="description" content="">
+    <meta name="description" content="Create, Download &amp; Save Counter-Strike: Global Offensive autoexec.cfg and config.cfg files.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{BASE_TAG}}
@@ -23,13 +23,12 @@
   </head>
   <body>
     <script>
-      window.CsgocfgrENV = {{ENV}};
-      window.EmberENV = window.CsgocfgrENV.EmberENV;
+      window.EmberENV = {{EMBER_ENV}};
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/csgocfgr.js"></script>
     <script>
-      window.Csgocfgr = require('csgocfgr/app')['default'].create(CsgocfgrENV.APP);
+      window.Csgocfgr = require('csgocfgr/app')['default'].create({{APP_CONFIG}});
     </script>
   </body>
 </html>
