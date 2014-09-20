@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel: function() {
-    this.store.unloadAll('Cfg');
+    this.store.unloadAll('cfg');
   },
   actions: {
     getStarted: function() {

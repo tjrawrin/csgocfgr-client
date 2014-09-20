@@ -1,16 +1,33 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  resetController: function (controller, isExiting, transition) {
+    if (isExiting) {
+      // isExiting would be false if only the route's model was changing
+      controller.set('slug', null);
+    }
+  },
   queryParams: {
-    id: {
-      refreshModel: true
+    slug: {
+      refreshModel: true,
+      replace: true
     }
   },
   model: function(params) {
-    if (!params.id) {
+    if (!params.slug) {
       return this.store.createRecord('cfg', this.get('defaultValues'));
     }
-    return this.store.findQuery('cfg', params);
+
+    var self = this;
+    return this.store.findQuery('cfg', params).then(function(results) {
+      if (results.content.length === 0) {
+        self.simpleFlashMessage('The config file you requested does not exist or could not be found.', 'error');
+        return self.store.createRecord('cfg', self.get('defaultValues'));
+      } else {
+        var attrs = results.content[0].toJSON();
+        return self.store.createRecord('cfg', attrs);
+      }
+    });
   },
   setupController: function(controller, model) {
     controller.set('model', model);

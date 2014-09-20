@@ -21,7 +21,7 @@ export default Ember.Route.extend({
       saveAs(blob, 'autoexec.cfg');
     },
     newEdit: function(data) {
-      this.transitionTo('new', {queryParams: {id: data}});
+      this.transitionTo('new', {queryParams: {slug: data}});
     }
   }
 });
