@@ -7,7 +7,7 @@ export default Ember.ObjectController.extend({
   * honeyPot: Sets the starting value, attempts to deter spam bots.
   */
   queryParams: {
-    slug: 'q'
+    slug: 'c'
   },
   slug: null,
   honeyPot: '',
