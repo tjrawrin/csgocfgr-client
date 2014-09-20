@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  /**
+  * Array of objects for the hud color options custom select compontent.
+  */
   hudcolorOptions: [
     {optionName: 'Default', id: 0},
     {optionName: 'White', id: 1},
@@ -14,11 +17,17 @@ export default Ember.ObjectController.extend({
     {optionName: 'Teal', id: 9},
     {optionName: 'Pink', id: 10}
   ],
+  /**
+  * Array of objects for the view model options custom select compontent.
+  */
   viewmodelOptions: [
     {optionName: 'Desktop', id: 1},
     {optionName: 'Couch', id: 2},
     {optionName: 'Classic', id: 3}
   ],
+  /**
+  * Array of objects for the show fps options custom select compontent.
+  */
   showFpsOptions: [
     {optionName: 'Disabled', id: 0},
     {optionName: 'FPS', id: 1},
@@ -27,6 +36,9 @@ export default Ember.ObjectController.extend({
     {optionName: 'Show & Log to File', id: 4},
     {optionName: 'Thread and Wait Times', id: 5}
   ],
+  /**
+  * Array of objects for the net graph options custom select compontent.
+  */
   netGraphOptions: [
     {optionName: 'Disabled', id: 0},
     {optionName: 'Show Network Data', id: 1},

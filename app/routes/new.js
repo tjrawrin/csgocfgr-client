@@ -1,18 +1,32 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  /**
+  * Method to reset the slug query param to null upon exiting the new route.
+  * Fixes an issue when visiting the new route when the slug isn't null and
+  * being put back into the non-default config settings.
+  */
   resetController: function (controller, isExiting, transition) {
     if (isExiting) {
       // isExiting would be false if only the route's model was changing
       controller.set('slug', null);
     }
   },
+  /**
+  * Query params settings, opts into a fill transition and updates the URL
+  * with a replaceState.
+  */
   queryParams: {
     slug: {
       refreshModel: true,
       replace: true
     }
   },
+  /**
+  * Sets the model for the new route, if no query params are passed to the URL
+  * then the a new record with default settings are added to the store. If
+  * query params are passed, then a record is loaded from the server.
+  */
   model: function(params) {
     if (!params.slug) {
       return this.store.createRecord('cfg', this.get('defaultValues'));
@@ -25,14 +39,21 @@ export default Ember.Route.extend({
         return self.store.createRecord('cfg', self.get('defaultValues'));
       } else {
         var attrs = results.content[0].toJSON();
+        self.controllerFor('new').set('slug', attrs.slug);
         return self.store.createRecord('cfg', attrs);
       }
     });
   },
+  /**
+  * Sets up the controller for new and the import compontent
+  */
   setupController: function(controller, model) {
     controller.set('model', model);
     this.controllerFor('new.import').set('model', model);
   },
+  /**
+  * Renders the import component into the new view.
+  */
   renderTemplate: function() {
     this.render();
     this.render('new.import', {
@@ -41,16 +62,26 @@ export default Ember.Route.extend({
     });
   },
   actions: {
+    /**
+    * Action to download the file without saving it to the database.
+    */
     downloadUnsavedFile: function() {
       var outputText = this.get('controller.renderConfig');
       var blob = new Blob([outputText], { type: 'text/plain' });
       saveAs(blob, 'autoexec.cfg');
     },
+    /**
+    * Action for resetting fields back to their default game values.
+    */
     setToDefaultValue: function(command) {
       var defaultValue = this.get('defaultValues.' + command);
 
       return this.set('controller.model.' + command, defaultValue);
     },
+    /**
+    * Action for taking the values from an imported file and
+    * setting the model values.
+    */
     parseFileConfig: function(config) {
       var configArray = config;
 
@@ -60,6 +91,10 @@ export default Ember.Route.extend({
 
       this.simpleFlashMessage('Settings successfully imported.', 'success');
     },
+    /**
+    * Action for taking the values from typed or pasted text and
+    * setting the model values.
+    */
     parseTextConfig: function(config) {
       var configArray = config;
 
@@ -70,6 +105,9 @@ export default Ember.Route.extend({
       this.simpleFlashMessage('Settings successfully imported.', 'success');
     }
   },
+  /**
+  * Object of default game values.
+  */
   defaultValues: {
     rate: 80000,
     clCmdrate: 64,

@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  /**
+  * Array of objects for the speaker options custom select compontent.
+  */
   speakerOptions: [
     {optionName: 'Default, Automatically Pick Best', id: -1},
     {optionName: 'Headphones', id: 1},

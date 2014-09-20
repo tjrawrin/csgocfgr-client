@@ -11,21 +11,6 @@ export default Ember.ObjectController.extend({
   },
   slug: null,
   honeyPot: '',
-  /**
-  * Method that sets the slug value depending on the current model.
-  * If the model's slug is undefined the slug query is not set, else
-  * the slug query value is set to the model's slug value.
-  * Observes the model's slug for any changes and updates.
-  */
-  setQuery: function() {
-    var slug = this.get('model.slug');
-
-    if (slug === undefined) {
-      return false;
-    } else {
-      return this.set('slug', slug);
-    }
-  }.observes('model.slug'),
   actions: {
     /**
     * Checks if the honey pot is empty. If it is, the file will download;

@@ -6,12 +6,11 @@ export default Ember.ObjectController.extend({
   */
   noFileName: 'No file selected...',
   config: [],
-  /**
-  * Actions to be called.
-  * parseConfig - An action that detects which import field is active
-  * and sends the appropriate action to the new route.
-  */
   actions: {
+    /**
+    * parseConfig - An action that detects which import field is active
+    * and sends the appropriate action to the new route.
+    */
     parseConfig: function() {
       var $fileRadio = Ember.$('input#fileImport').prop('checked');
       var $textRadio = Ember.$('input#textImport').prop('checked');
