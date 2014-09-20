@@ -27,7 +27,8 @@
     top: 3px;
   }
   &.btn--download,
-  &.btn--download__save,
+  &.btn--download__save,,
+  &.btn--edit,
   &.btn--download__full {
     font-size: 2em;
     max-width: 100%;
@@ -54,6 +55,28 @@
       -webkit-box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
       -moz-box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
       box-shadow: 0px 1px 0px #27ae60, 0px 1px 3px rgba(0,0,0,0.7);
+      position: relative;
+      top: 3px;
+    }
+  }
+  &.btn--edit {
+    background: #e67e22;
+    margin-top: $inuit-base-spacing-unit--small;
+    -webkit-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+    box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+
+    &:hover {
+      background: #f28424;
+      color: #fff;
+      -webkit-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+      -moz-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+      box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
+    }
+    &:active {
+      -webkit-box-shadow: 0px 1px 0px #d35400, 0px 1px 3px rgba(0,0,0,0.7);
+      -moz-box-shadow: 0px 1px 0px #d35400, 0px 1px 3px rgba(0,0,0,0.7);
+      box-shadow: 0px 1px 0px #d35400, 0px 1px 3px rgba(0,0,0,0.7);
       position: relative;
       top: 3px;
     }
@@ -142,11 +165,13 @@
 @media screen and (min-width: 768px) {
   .btn {
     &.btn--download,
+    &.btn--edit,
     &.btn--download__save {
       max-width: 49%;
       width: 100%;
     }
-    &.btn--download__save {
+    &.btn--download__save,
+    &.btn--edit {
       margin-top: 0;
     }
     &.btn--landing__github {

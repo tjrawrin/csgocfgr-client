@@ -2,10 +2,27 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   actions: {
+    /**
+    * Sends an action to the route for downloading the file.
+    */
     download: function() {
       return this.send('downloadSavedFile');
+    },
+    /**
+    * Sends an action to the route for creating a new edit from
+    * an existing config.
+    */
+    edit: function() {
+      return this.send('newEdit', this.get('model.id'));
     }
   },
+  /**
+  * Very long string that provides the output for the preview window. Also
+  * observes every property of the model for changes inorder to update the
+  * preview.
+  *
+  * NOTE: Refactor!
+  */
   renderConfig: function() {
     var string =
       '// AutoExec created with CS:GO Configr \n' +
@@ -149,7 +166,7 @@ export default Ember.ObjectController.extend({
       this.showOrHide(this.get('model.keyK'), 'bind k ' + '"' + this.get('model.keyK') + '"' + '\n') +
       this.showOrHide(this.get('model.keyL'), 'bind l ' + '"' + this.get('model.keyL') + '"' + '\n') +
       this.showOrHide(this.get('model.keySemicolon'), 'bind ; ' + '"' + this.get('model.keySemicolon') + '"' + '\n') +
-      this.showOrHide(this.get('model.keyApostrophe'), 'bind &#39; ' + '"' + this.get('model.keyApostrophe') + '"' + '\n') +
+      this.showOrHide(this.get('model.keyApostrophe'), 'bind \' ' + '"' + this.get('model.keyApostrophe') + '"' + '\n') +
       this.showOrHide(this.get('model.keyEnter'), 'bind enter ' + '"' + this.get('model.keyEnter') + '"' + '\n') +
       this.showOrHide(this.get('model.keyShift'), 'bind shift ' + '"' + this.get('model.keyShift') + '"' + '\n') +
       this.showOrHide(this.get('model.keyZ'), 'bind z ' + '"' + this.get('model.keyZ') + '"' + '\n') +
@@ -247,9 +264,20 @@ export default Ember.ObjectController.extend({
              'model.keyMouse4', 'model.keyMouse5', 'model.clCrosshairstyle', 'model.clCrosshaircolorR', 'model.clCrosshaircolorG', 'model.clCrosshaircolorB',
              'model.clCrosshairDrawoutline', 'model.clCrosshairOutlinethickness', 'model.clCrosshairsize', 'model.clCrosshairthickness', 'model.clCrosshairgap',
              'model.clCrosshairdot'),
+  /**
+  * Changes the true and false values of the check boxes into 1s
+  * and 0s for the cfg files. Is called in the renderConfig method
+  * to display an accurate preview.
+  */
   boolToNum: function(value) {
     return value ? 1 : 0;
   },
+  /**
+  * Allows the ability to show or hide commands and values in the preview
+  * window. Is currently used for the different keybinds.
+  *
+  * NOTE: Refactor!
+  */
   showOrHide: function(value, string) {
     if (value === null || value === undefined) {
       return '';

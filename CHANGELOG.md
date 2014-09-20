@@ -1,5 +1,15 @@
 # CS:GO Configr Changelog
 
+### 0.1.4
+
+* [ENHANCEMENT] Update dependency ember to 1.8.0-beta.1
+* [ENHANCEMENT] Update dependency ember-data to 1.0.0-beta.10
+* [ENHANCEMENT] Update to ember-cli 0.0.46
+* [ENHANCEMENT] Update README with more instructions and helpful links (provided by ember-cli)
+* [ENHANCEMENT] Added the ability to edit an existing config. It doesn't overwrite the old one, it makes a new config with its own unique URL
+* [ENHANCEMENT] Added some comments to the code to explain what's going on in some parts
+* [BUGFIX] Fix issue with ' key outputting incorrect text in preview window (this time at config url)
+
 ### 0.1.3
 
 * [ENHANCEMENT] Update dependency csgocfgr-plugins
@@ -8,7 +18,6 @@
 * [BUGFIX] Fix text spilling out of keyboard buttons on keybinds page
 * [BUGFIX] Improve crosshair preview lock positioning to compensate for new import module
 * [ENHANCEMENT] Add auto focus text box when opening keybind modal
-
 
 ### 0.1.2
 

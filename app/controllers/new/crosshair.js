@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  /**
+  * Sets the currentImage property to 0.
+  */
   currentImage: 0,
   actions: {
+    /**
+    * Action for moving to the previous image.
+    */
     prev: function() {
       if (this.currentImage <= 0) {
         this.set('currentImage', Object.keys(this.backgroundOptions).length - 1);
@@ -12,6 +18,9 @@ export default Ember.ObjectController.extend({
         return this.backgroundSwitch();
       }
     },
+    /**
+    * Action for moving to the next image.
+    */
     next: function() {
       if (this.currentImage === Object.keys(this.backgroundOptions).length - 1) {
         this.set('currentImage', 0);
@@ -22,12 +31,19 @@ export default Ember.ObjectController.extend({
       }
     }
   },
+  /**
+  * Sets the background image and position when switching images.
+  */
   backgroundSwitch: function() {
     return Ember.$('div.crosshair-image').css({
       'background': 'url(' + this.backgroundOptions[this.currentImage].url + ')',
       'background-position': this.backgroundOptions[this.currentImage].x + 'px ' + this.backgroundOptions[this.currentImage].y + 'px'
     });
   },
+  /**
+  * An object of objects setting the various images to be used in
+  * the crosshair preview.
+  */
   backgroundOptions: {
     '0': {
       'url': 'assets/images/de_dust2_01.jpg',
@@ -90,6 +106,9 @@ export default Ember.ObjectController.extend({
       'y': -160
     }
   },
+  /**
+  * Array of objects for the crosshair style options custom select compontent.
+  */
   styleOptions: [
     {optionName: '0: Default', id: 0},
     {optionName: '1: Default Static', id: 1},

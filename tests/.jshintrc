@@ -1,10 +1,15 @@
 {
   "predef": [
+    "CsgocfgrENV",
+    "saveAs",
+    "ga",
+    "HoverPopup",
     "document",
     "window",
     "location",
     "setTimeout",
     "$",
+    "-Promise",
     "QUnit",
     "define",
     "console",
@@ -33,6 +38,7 @@
     "fillIn",
     "click",
     "keyEvent",
+    "triggerEvent",
     "find",
     "findWithAssert",
     "wait",

@@ -1,8 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  /**
+  * queryParams: Defines the type of query params being used.
+  * slug: Sets the starting value.
+  * honeyPot: Sets the starting value, attempts to deter spam bots.
+  */
+  queryParams: {
+    slug: 'c'
+  },
+  slug: null,
   honeyPot: '',
   actions: {
+    /**
+    * Checks if the honey pot is empty. If it is, the file will download;
+    * otherwise the button will do nothing.
+    */
     download: function() {
       if (this.get('honeyPot').length > 0) {
         return false;
@@ -10,6 +23,12 @@ export default Ember.ObjectController.extend({
         return this.send('downloadUnsavedFile');
       }
     },
+    /**
+    * Checks if the honey pot is empty. If it is, the file will download;
+    * otherwise the button will do nothing. Also sets a timeout and disables
+    * the save button to prevent spam while request is sent to the server.
+    * Once successful, user is redirected to their config page.
+    */
     saveAndDownload: function() {
       var self = this;
       if (this.get('honeyPot').length > 0) {
@@ -26,6 +45,11 @@ export default Ember.ObjectController.extend({
         });
       }
     },
+    /**
+    * A button that takes the users selected text from the preview window,
+    * and provides a formatted string of the selected text ready to be used
+    * in the games console.
+    */
     quickUseSelection: function () {
       var element = document.getElementById('autoexec-output');
 
@@ -40,10 +64,21 @@ export default Ember.ObjectController.extend({
       element.selectionStart = 0;
       element.selectionEnd = 0;
     },
+    /**
+    * sends an action to the route for resetting fields to their default
+    * game values.
+    */
     setToDefaultValue: function() {
       return this.send('setToDefaultValue');
     }
   },
+  /**
+  * Very long string that provides the output for the preview window. Also
+  * observes every property of the model for changes inorder to update the
+  * preview.
+  *
+  * NOTE: Refactor!
+  */
   renderConfig: function() {
     var string =
       '// AutoExec created with CS:GO Configr \n' +
@@ -284,9 +319,20 @@ export default Ember.ObjectController.extend({
              'model.keyMouse4', 'model.keyMouse5', 'model.clCrosshairstyle', 'model.clCrosshaircolorR', 'model.clCrosshaircolorG', 'model.clCrosshaircolorB',
              'model.clCrosshairalpha', 'model.clCrosshairDrawoutline', 'model.clCrosshairOutlinethickness', 'model.clCrosshairsize', 'model.clCrosshairthickness', 'model.clCrosshairgap',
              'model.clCrosshairdot'),
+  /**
+  * Changes the true and false values of the check boxes into 1s
+  * and 0s for the cfg files. Is called in the renderConfig method
+  * to display an accurate preview.
+  */
   boolToNum: function(value) {
     return value ? 1 : 0;
   },
+  /**
+  * Allows the ability to show or hide commands and values in the preview
+  * window. Is currently used for the different keybinds.
+  *
+  * NOTE: Refactor!
+  */
   showOrHide: function(value, string) {
     if (value === null || value === undefined) {
       return '';
