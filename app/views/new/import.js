@@ -47,14 +47,10 @@ export default Ember.View.extend({
   parseFromPaste: function() {
     // console.log('ParseFromPaste');
     var pasteContent = this.get('inputText').val();
-    Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
 
     pasteContent = this.cleanFileContents(pasteContent);
-    Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
     var contentArray = this.contentStringToArray(pasteContent);
-    Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
     contentArray = this.reformatContentArray(contentArray);
-    Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
 
     this.writeConfigToModel(contentArray);
   },
