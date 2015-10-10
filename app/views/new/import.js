@@ -66,14 +66,14 @@ export default Ember.View.extend({
   parseFromFile: function(event) {
     // console.log('ParseFromFile');
     if (!this.clientCanReadFiles()) {
-      console.error('The client is unable to read files.');
+      //console.error('The client is unable to read files.');
       return false;
     }
 
     // get the first file only
     var file = event.target.files[0];
     if(!file) {
-      console.error('File not available.');
+      //console.error('File not available.');
       return false;
     }
 
