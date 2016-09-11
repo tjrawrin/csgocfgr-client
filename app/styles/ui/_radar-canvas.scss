@@ -4,7 +4,7 @@
   position: relative;
 
   .radar-preview__inner {
-    @extend .cf;
+    @extend %clearfix;
     white-space: nowrap;
     width: 100%;
     margin: 0 auto;

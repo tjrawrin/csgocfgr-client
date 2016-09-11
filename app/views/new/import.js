@@ -175,9 +175,9 @@ export default Ember.View.extend({
         }
       }
       else {
-        for (var j = 2; j < newContentArray[i].length; j++) {  // handle commands
-          newContentArray[i][1] += ' ' + newContentArray[i][j];
-          newContentArray[i][j] = null;
+        for (var k = 2; k < newContentArray[i].length; k++) {  // handle commands
+          newContentArray[i][1] += ' ' + newContentArray[i][k];
+          newContentArray[i][k] = null;
         }
       }
     }

@@ -2,7 +2,7 @@
   width: 100%;
 
   .keyboard__inner {
-    @extend .cf;
+    @extend %clearfix;
     white-space: nowrap;
     width: 100%;
     margin: 0 auto;
