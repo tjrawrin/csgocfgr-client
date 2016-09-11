@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('configure', { path: '/' }, function() {
-    this.resource('new', { path: '/n' }, function() {
+  this.route('configure', { resetNamespace: true, path: '/' }, function() {
+    this.route('new', { resetNamespace: true, path: '/n' }, function() {
       this.route('rate');
       this.route('audio');
       this.route('video');
@@ -19,8 +19,8 @@ Router.map(function() {
       this.route('keybind');
       this.route('crosshair');
     });
-    this.resource('show', { path: ':cfg_id' }, function() {});
-    this.resource('404', { path: '*path' });
+    this.route('show', { resetNamespace: true, path: ':cfg_id' }, function() {});
+    this.route('404', { resetNamespace: true, path: '*path' });
   });
 });
 
