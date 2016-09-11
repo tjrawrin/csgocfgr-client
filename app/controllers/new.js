@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   /**
   * queryParams: Defines the type of query params being used.
   * slug: Sets the starting value.

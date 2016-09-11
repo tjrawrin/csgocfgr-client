@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   /**
   * Array of objects for the custom acceleration options custom select compontent.
   */
