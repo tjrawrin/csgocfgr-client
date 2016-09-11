@@ -10,7 +10,8 @@
     {{BASE_TAG}}
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/csgocfgr.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets//csgocfgr.css">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,8 +26,8 @@
     <script>
       window.EmberENV = {{EMBER_ENV}};
     </script>
-    <script src="assets/vendor.js"></script>
-    <script src="assets/csgocfgr.js"></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/csgocfgr.js"></script>
     <script>
       window.Csgocfgr = require('csgocfgr/app')['default'].create({{APP_CONFIG}});
     </script>
