@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.ActiveModelSerializer.extend({
+export default DS.RESTSerializer.extend({
   /**
   * Serialize the slug returned from the server as the ID for
   * the ember model being shown
