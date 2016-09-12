@@ -23,5 +23,9 @@
     @include fs-attention {
       color: $cAccent;
     }
+
+    &.active {
+      color: $cAccent;
+    }
   }
 }

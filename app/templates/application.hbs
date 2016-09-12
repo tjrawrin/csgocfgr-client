@@ -3,31 +3,31 @@
     <h1 class="Logo">{{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}</h1>
     <ul class="Navigation" role="navigation">
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Rate{{/link-to}}
+        {{#link-to "create.rate" class="Navigation-link" activeClass="active"}}Rate{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Audio{{/link-to}}
+        {{#link-to "create.audio" class="Navigation-link" activeClass="active"}}Audio{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Video{{/link-to}}
+        {{#link-to "create.video" class="Navigation-link" activeClass="active"}}Video{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Mouse{{/link-to}}
+        {{#link-to "create.mouse" class="Navigation-link" activeClass="active"}}Mouse{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Misc{{/link-to}}
+        {{#link-to "create.misc" class="Navigation-link" activeClass="active"}}Misc{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Hud{{/link-to}}
+        {{#link-to "create.hud" class="Navigation-link" activeClass="active"}}Hud{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Radar{{/link-to}}
+        {{#link-to "create.radar" class="Navigation-link" activeClass="active"}}Radar{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Keybind{{/link-to}}
+        {{#link-to "create.keybind" class="Navigation-link" activeClass="active"}}Keybind{{/link-to}}
       </li>
       <li class="Navigation-item">
-        {{#link-to "index" class="Navigation-link"}}Crosshair{{/link-to}}
+        {{#link-to "create.crosshair" class="Navigation-link" activeClass="active"}}Crosshair{{/link-to}}
       </li>
     </ul>
   </div>
@@ -35,6 +35,7 @@
 
 <div role="main">
   <div class="layout-widthDefault">
+    {{simple-flash-message}}
     {{outlet}}
   </div>
 </div>

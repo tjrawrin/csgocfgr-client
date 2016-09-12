@@ -1,28 +1,26 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
+const Router = Ember.Router.extend({
   location: config.locationType,
   rootURL: config.rootURL
 });
 
 Router.map(function() {
   this.route('index', { path: '/' });
-  this.route('create', { path: '/create' });
-  // this.route('create', { path: '/create' }, function() {
-  // this.route('rate');
-  // this.route('audio');
-  // this.route('video');
-  // this.route('mouse');
-  // this.route('misc');
-  // this.route('hud');
-  // this.route('radar');
-  // this.route('keybind');
-  // this.route('crosshair');
-  // });
+  this.route('create', { path: '/create' }, function() {
+    this.route('rate');
+    this.route('audio');
+    this.route('video');
+    this.route('mouse');
+    this.route('misc');
+    this.route('hud');
+    this.route('radar');
+    this.route('keybind');
+    this.route('crosshair');
+  });
   // this.route('show', { resetNamespace: true, path: ':cfg_id' }, function() {});
-  // this.route('404', { resetNamespace: true, path: '*path' });
-  this.route('create');
+  this.route('404', { path: '*path' });
 });
 
 Router.reopen({
