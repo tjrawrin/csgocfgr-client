@@ -1,17 +1,48 @@
-<div role="banner">
-  <div class="wrapper">
-    <h1 class="logo">{{#link-to "index"}}CS:GO Configr{{/link-to}}</h1>
+<div class="Header" role="banner">
+  <div class="layout-widthDefault">
+    <h1 class="Logo">{{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}</h1>
+    <ul class="Navigation" role="navigation">
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Rate{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Audio{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Video{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Mouse{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Misc{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Hud{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Radar{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Keybind{{/link-to}}
+      </li>
+      <li class="Navigation-item">
+        {{#link-to "index" class="Navigation-link"}}Crosshair{{/link-to}}
+      </li>
+    </ul>
   </div>
 </div>
 
 <div role="main">
-  <div class="wrapper">
+  <div class="layout-widthDefault">
     {{outlet}}
   </div>
 </div>
 
-<div role="contentinfo">
-  <div class="wrapper">
-    &copy; 2016 CS:GO Configr &bull; <a href="https://github.com/haskly/csgocfgr-client/issues" target="_blank">found a bug</a>?
+<div class="Footer" role="contentinfo">
+  <div class="layout-widthDefault">
+    <div class="Footer-content">
+      <p>&copy; 2014-2016 CS:GO Configr &bull; <a href="https://github.com/haskly/csgocfgr-client/issues" target="_blank" class="Footer-link">found a bug</a>?</p>
+    </div>
   </div>
 </div>

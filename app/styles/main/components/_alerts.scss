@@ -3,8 +3,8 @@
 .message-info {
   border-radius: 6px;
   border: 1px solid;
-  padding: $inuit-base-spacing-unit--small;
-  margin-bottom: $inuit-base-spacing-unit;
+  padding: 8px;
+  margin-bottom: 16px;
   position: relative;
 }
 .message-error {
@@ -24,8 +24,8 @@
 }
 .message--close {
   position: absolute;
-  padding: 15px $inuit-base-spacing-unit--small;
+  padding: 15px 8px;
   top: 0;
-  right: $inuit-base-spacing-unit--small;
+  right: 8px;
   color: #fff;
 }

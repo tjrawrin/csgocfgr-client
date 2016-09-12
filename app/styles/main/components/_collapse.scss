@@ -14,7 +14,7 @@
     text-align: left;
 
     a {
-      padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
+      padding: 4px 8px;
       display: block;
       cursor: pointer;
 
@@ -62,6 +62,6 @@
   }
 
   &+.panel {
-    margin-top: $inuit-base-spacing-unit--small / 2;
+    margin-top: 4px;
   }
 }

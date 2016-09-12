@@ -1,7 +1,7 @@
 .wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 $inuit-base-spacing-unit--small / 2;
+  padding: 0 8px;
   width: 100%;
 }
 .four-oh-four {
@@ -24,13 +24,13 @@
 
 @media screen and (min-width: 768px) {
   .wrapper {
-    padding: 0 $inuit-base-spacing-unit;
+    padding: 0 16px;
   }
 }
 
 @media screen and (min-width: 480px) {
   .wrapper {
-    padding: 0 $inuit-base-spacing-unit--small;
+    padding: 0 8px;
   }
   .four-oh-four {
     .four-oh-four__notice {

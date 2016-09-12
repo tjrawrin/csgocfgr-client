@@ -1,0 +1,7 @@
+%vertcenter {
+  @include fs-vert-center($position: absolute);
+}
+
+%clearfix {
+  @include fs-clearfix;
+}

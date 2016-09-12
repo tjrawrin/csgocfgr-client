@@ -1,7 +1,7 @@
 .btn-group {
   position: relative;
-  margin-top: $inuit-base-spacing-unit--small - 4;
-  margin-bottom: $inuit-base-spacing-unit--small;
+  margin-top: 4px;
+  margin-bottom: 8px;
 
   .dropdown-menu {
     position: absolute;
@@ -25,7 +25,7 @@
 
     li > a {
       color: #3498db;
-      padding: $inuit-base-spacing-unit--small;
+      padding: 8px;
       display: block;
       white-space: nowrap;
 

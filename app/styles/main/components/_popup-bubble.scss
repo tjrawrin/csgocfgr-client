@@ -8,7 +8,7 @@
 .popup-bubble-container {
   border: 1px solid #cfcfcf;
   border-radius: 6px;
-  padding: $inuit-base-spacing-unit--small;
+  padding: 8px;
   position: relative;
   background: #fff;
   box-shadow: 0 0px 6px rgba(0,0,0,0.15);
@@ -23,7 +23,7 @@
 
   h4 {
     font-size: 0.875em;
-    padding-bottom: $inuit-base-spacing-unit--small;
+    padding-bottom: 8px;
     margin: 0;
   }
 }
@@ -31,7 +31,7 @@
   font-size: 0.875em;
 
   ul {
-    padding-left: $inuit-base-spacing-unit;
+    padding-left: 16px;
   }
 }
 .popup-bubble__arrow {

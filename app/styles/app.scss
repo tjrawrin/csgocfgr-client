@@ -1,35 +1,30 @@
-@import "node_modules/inuit-defaults/settings.defaults";
+@import "lib/normalize";
+@import "lib/frontline";
 
-@import "node_modules/inuit-functions/tools.functions";
-@import "node_modules/inuit-mixins/tools.mixins";
+@import "main/settings/breakpoints";
+@import "main/settings/colors";
+@import "main/settings/typography";
+@import "main/base";
+@import "main/helpers";
+@import "main/layouts/layout";
+@import "main/components/layout";
+@import "main/components/Header";
+@import "main/components/Navigation";
+@import "main/components/Logo";
+@import "main/components/Footer";
 
-@import "node_modules/inuit-normalize/generic.normalize";
-@import "node_modules/inuit-box-sizing/generic.box-sizing";
-
-@import "node_modules/inuit-page/base.page";
-@import "node_modules/inuit-headings/base.headings";
-@import "node_modules/inuit-lists/base.lists";
-
-@import "node_modules/inuit-clearfix/trumps.clearfix";
-
-@import "ui/base";
-@import "ui/layout";
-
-@import "ui/header";
-@import "ui/main";
-@import "ui/footer";
-
-@import "ui/landing";
-@import "ui/alerts";
-@import "ui/octicons";
-@import "ui/navigation";
-@import "ui/buttons";
-@import "ui/popup-bubble";
-@import "ui/inputs";
-@import "ui/keyboard";
-@import "ui/modal-popup";
-@import "ui/collapse";
-@import "ui/dropdown-select";
-@import "ui/crosshair-canvas";
-@import "ui/radar-canvas";
-@import "ui/config-import";
+@import "main/components/main";
+@import "main/components/landing";
+@import "main/components/alerts";
+@import "main/components/octicons";
+@import "main/components/navigation";
+@import "main/components/buttons";
+@import "main/components/popup-bubble";
+@import "main/components/inputs";
+@import "main/components/keyboard";
+@import "main/components/modal-popup";
+@import "main/components/collapse";
+@import "main/components/dropdown-select";
+@import "main/components/crosshair-canvas";
+@import "main/components/radar-canvas";
+@import "main/components/config-import";

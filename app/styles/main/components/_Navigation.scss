@@ -1,0 +1,27 @@
+.Navigation {
+  margin: 16px 0 0 0;
+  padding: 0;
+  text-align: center;
+
+  &-item {
+    display: inline-block;
+    list-style: none;
+    margin: 0 16px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &-link {
+    color: $cWhite;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 200ms ease-in-out;
+
+    @include fs-attention {
+      color: $cAccent;
+    }
+  }
+}

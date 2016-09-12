@@ -27,18 +27,18 @@
     border-radius: 6px;
   }
   .keybind-modal__header {
-    padding: $inuit-base-spacing-unit--small;
+    padding: 8px;
 
     h4 {
       border-bottom: 2px solid #bdc3c7;
       font-size: 18px;
-      padding-bottom: $inuit-base-spacing-unit--small;
+      padding-bottom: 8px;
       margin: 0;
     }
     .keybind--close {
       background: transparent;
       color: #bdc3c7;
-      top: $inuit-base-spacing-unit--small / 2;
+      top: 4px;
       right: 0;
       width: 40px;
       position: absolute;
@@ -55,14 +55,14 @@
     }
   }
   .keybind-modal__body {
-    padding: $inuit-base-spacing-unit--small;
+    padding: 8px;
     position: relative;
   }
   .keybind__textarea {
     height: 100px;
   }
   .keybind-modal__footer {
-    padding: $inuit-base-spacing-unit--small;
+    padding: 8px;
     position: relative;
     text-align: right;
 
@@ -74,7 +74,7 @@
       display: none;
     }
     button {
-      margin-bottom: $inuit-base-spacing-unit--small;
+      margin-bottom: 8px;
     }
   }
 }

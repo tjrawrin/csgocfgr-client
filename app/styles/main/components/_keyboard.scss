@@ -16,7 +16,7 @@
   .keyboard--arrows,
   .keyboard--tenkey,
   .keyboard--mouse {
-    margin-bottom: $inuit-base-spacing-unit--small;
+    margin-bottom: 8px;
   }
   .keyboard--main {
     width: 547px;
@@ -25,16 +25,16 @@
   .keyboard--arrows {
     width: 107px;
     display: inline-block;
-    margin-left: $inuit-base-spacing-unit;
+    margin-left: 16px;
   }
   .keyboard--tenkey {
     width: 144px;
     display: inline-block;
-    margin-left: $inuit-base-spacing-unit;
+    margin-left: 16px;
   }
   .keyboard--mouse {
     display: inline-block;
-    margin-left: $inuit-base-spacing-unit;
+    margin-left: 16px;
   }
   .keyboard__row {
     white-space: nowrap;

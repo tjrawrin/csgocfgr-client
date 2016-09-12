@@ -2,7 +2,7 @@ label {
   font-weight: bold;
 
   .reset-value {
-    margin-left: $inuit-base-spacing-unit--small / 2;
+    margin-left: 4px;
     cursor: pointer;
   }
 }
@@ -11,7 +11,7 @@ label {
 }
 .settings__inputs-option {
   position: relative;
-  margin-bottom: $inuit-base-spacing-unit;
+  margin-bottom: 16px;
 
   &.settings__inputs-option--checkbox {
     display: inline-block;
@@ -20,8 +20,8 @@ label {
   }
 }
 .output__actions {
-  margin-top: $inuit-base-spacing-unit;
-  margin-bottom: $inuit-base-spacing-unit--small;
+  margin-top: 16px;
+  margin-bottom: 8px;
   text-align: center;
 }
 input[type='range'] {
@@ -53,8 +53,8 @@ textarea {
   font-weight: 400;
   border: 2px solid #bdc3c7;
   color: #4c4c4c;
-  padding: $inuit-base-spacing-unit--small;
-  border-radius: $inuit-base-spacing-unit--small / 2;
+  padding: 8px;
+  border-radius: 4px;
   outline: none;
   vertical-align: middle;
   -webkit-appearance: none;
@@ -76,7 +76,7 @@ input[type='number'] {
 input[type='text'],
 select {
   width: 99%;
-  margin-top: $inuit-base-spacing-unit--small - 4;
+  margin-top: 4px;
 }
 select {
   background: #ebedef;
@@ -91,7 +91,7 @@ textarea {
   width: 80px;
   height: 26px;
   background: #555;
-  margin-top: $inuit-base-spacing-unit--small - 4;
+  margin-top: 4px;
   border-radius: 50px;
   position: relative;
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);

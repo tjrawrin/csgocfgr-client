@@ -1,0 +1,15 @@
+.Logo {
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+
+  &-link {
+    color: $cWhite;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    @include fs-attention {
+      color: $cAccent;
+    }
+  }
+}

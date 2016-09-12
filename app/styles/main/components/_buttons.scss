@@ -3,7 +3,7 @@
   border: none;
   border-radius: 3px;
   color: #fff;
-  padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;;
+  padding: 4px 8px;
   white-space: normal;
   text-align: center;
   -webkit-box-shadow: 0px 3px 0px #2980b9, 0px 3px 6px rgba(0,0,0,0.5);
@@ -39,7 +39,7 @@
   &.btn--download__save,
   &.btn--import-config {
     background: #2ecc71;
-    margin-top: $inuit-base-spacing-unit--small;
+    margin-top: 8px;
     -webkit-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
     box-shadow: 0px 3px 0px #27ae60, 0px 3px 6px rgba(0,0,0,0.5);
@@ -61,7 +61,7 @@
   }
   &.btn--edit {
     background: #e67e22;
-    margin-top: $inuit-base-spacing-unit--small;
+    margin-top: 8px;
     -webkit-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
     box-shadow: 0px 3px 0px #d35400, 0px 3px 6px rgba(0,0,0,0.5);
@@ -91,7 +91,7 @@
     color: #3498db;
     text-align: left;
     font-size: inherit;
-    padding: $inuit-base-spacing-unit--small;
+    padding: 8px;
     width: 99%;
 
     &:hover {
@@ -136,7 +136,7 @@
     }
   }
   &.btn--landing__github {
-    margin-bottom: $inuit-base-spacing-unit--small;
+    margin-bottom: 8px;
     color: #3498db;
     border-color: #3498db;
     &:hover {
@@ -146,7 +146,7 @@
     }
   }
   &.btn--landing__start {
-    margin-top: $inuit-base-spacing-unit--small;
+    margin-top: 8px;
     color: #2ecc71;
     border-color: #2ecc71;
     &:hover {
@@ -175,12 +175,12 @@
       margin-top: 0;
     }
     &.btn--landing__github {
-      margin-right: $inuit-base-spacing-unit--small;
+      margin-right: 8px;
       margin-bottom: 0;
       width: auto;
     }
     &.btn--landing__start {
-      margin-left: $inuit-base-spacing-unit--small;
+      margin-left: 8px;
       margin-top: 0;
       width: auto;
     }
