@@ -11,7 +11,11 @@
         Filter Effect
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.conFilterEnable options=filterEnableOptions dataCommand="con_filter_enable"}}
+        <select class="Category-input Category-input--select" data-command="con_filter_enable">
+          {{#each filterEnableOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -21,7 +25,7 @@
         Filter Setting 1
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--text" data-command="con_filter_text" id="filter-setting-1-text" type="text" value=conFilterText}}
+        {{input class="Category-input Category-input--text" data-command="con_filter_text" id="filter-setting-1-text" type="text" value=data.conFilterText}}
       </div>
     </li>
     <li class="Category-item">
@@ -31,7 +35,7 @@
         Filter Setting 2
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--text" data-command="con_filter_text_out" id="filter-setting-2-text" type="text" value=conFilterTextOut}}
+        {{input class="Category-input Category-input--text" data-command="con_filter_text_out" id="filter-setting-2-text" type="text" value=data.conFilterTextOut}}
       </div>
     </li>
     <li class="Category-item">
@@ -41,8 +45,8 @@
         Max Ping Allowed
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="mm_dedicated_search_maxping" id="max-ping-mm-servers-slider" type="range" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
-        {{input class="Category-input Category-input--number" type="number" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+        {{input class="Category-input Category-input--range" data-command="mm_dedicated_search_maxping" id="max-ping-mm-servers-slider" type="range" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
+        {{input class="Category-input Category-input--number" type="number" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
       </div>
     </li>
     <li class="Category-item">
@@ -52,7 +56,11 @@
         Steam Notifications Position
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.uiSteamOverlayNotificationPosition options=notificationOptions dataCommand="ui_steam_overlay_notification_position"}}
+        <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position">
+          {{#each notificationOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -62,7 +70,11 @@
         Download Filter
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.clDownloadfilter options=downloadOptions dataCommand="cl_downloadfilter"}}
+        <select class="Category-input Category-input--select" data-command="cl_downloadfilter">
+          {{#each downloadOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -72,7 +84,7 @@
         Developer
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="developer" id="developer-box" type="checkbox" checked=developer}}
+        {{input class="Category-input Category-input--checkbox" data-command="developer" id="developer-box" type="checkbox" checked=data.developer}}
       </div>
     </li>
     <li class="Category-item">
@@ -82,7 +94,7 @@
         Enable Console
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="con_enable" id="enable-console-box" type="checkbox" checked=conEnable}}
+        {{input class="Category-input Category-input--checkbox" data-command="con_enable" id="enable-console-box" type="checkbox" checked=data.conEnable}}
       </div>
     </li>
     <li class="Category-item">
@@ -92,7 +104,7 @@
         Community Server Message
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="player_nevershow_communityservermessage" id="community-message-box" type="checkbox" checked=playerNevershowCommunityservermessage}}
+        {{input class="Category-input Category-input--checkbox" data-command="player_nevershow_communityservermessage" id="community-message-box" type="checkbox" checked=data.playerNevershowCommunityservermessage}}
       </div>
     </li>
     <li class="Category-item">
@@ -102,7 +114,7 @@
         Game Instructor
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="gameinstructor_enable" id="game-instructor-box" type="checkbox" checked=gameinstructorEnable}}
+        {{input class="Category-input Category-input--checkbox" data-command="gameinstructor_enable" id="game-instructor-box" type="checkbox" checked=data.gameinstructorEnable}}
       </div>
     </li>
     <li class="Category-item">
@@ -112,7 +124,7 @@
         Option Duck Method
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="option_duck_method" id="option-duck-method-box" type="checkbox" checked=optionDuckMethod}}
+        {{input class="Category-input Category-input--checkbox" data-command="option_duck_method" id="option-duck-method-box" type="checkbox" checked=data.optionDuckMethod}}
       </div>
     </li>
     <li class="Category-item">
@@ -122,7 +134,7 @@
         Option Speed Method
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="option_speed_method" id="option-speed-method-box" type="checkbox" checked=optionSpeedMethod}}
+        {{input class="Category-input Category-input--checkbox" data-command="option_speed_method" id="option-speed-method-box" type="checkbox" checked=data.optionSpeedMethod}}
       </div>
     </li>
     <li class="Category-item">
@@ -132,7 +144,7 @@
         Force Preload
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_forcepreload" id="force-preload-box" type="checkbox" checked=clForcepreload}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_forcepreload" id="force-preload-box" type="checkbox" checked=data.clForcepreload}}
       </div>
     </li>
     <li class="Category-item">
@@ -142,7 +154,7 @@
         Disable HTML MOTD
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_disablehtmlmotd" id="disable-html-motd-box" type="checkbox" checked=clDisablehtmlmotd}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablehtmlmotd" id="disable-html-motd-box" type="checkbox" checked=data.clDisablehtmlmotd}}
       </div>
     </li>
     <li class="Category-item">
@@ -152,7 +164,7 @@
         Automatic Help
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_autohelp" id="automatic-help-box" type="checkbox" checked=clAutohelp}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autohelp" id="automatic-help-box" type="checkbox" checked=data.clAutohelp}}
       </div>
     </li>
     <li class="Category-item">
@@ -162,7 +174,7 @@
         Show Help
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_showhelp" id="show-help-box" type="checkbox" checked=clShowhelp}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showhelp" id="show-help-box" type="checkbox" checked=data.clShowhelp}}
       </div>
     </li>
     <li class="Category-item">
@@ -172,7 +184,7 @@
         Disable Freeze Cam
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_disablefreezecam" id="disable-freeze-cam-box" type="checkbox" checked=clDisablefreezecam}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablefreezecam" id="disable-freeze-cam-box" type="checkbox" checked=data.clDisablefreezecam}}
       </div>
     </li>
     <li class="Category-item">
@@ -182,7 +194,11 @@
         Show Teammate Colors
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.clTeammateColorsShow options=teammateColorsOptions dataCommand="cl_teammate_colors_show"}}
+        <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show">
+          {{#each teammateColorsOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -192,7 +208,7 @@
         Auto Weapon Switch
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_autowepswitch" id="auto-weapon-switch-box" type="checkbox" checked=clAutowepswitch}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autowepswitch" id="auto-weapon-switch-box" type="checkbox" checked=data.clAutowepswitch}}
       </div>
     </li>
     <li class="Category-item">
@@ -202,7 +218,7 @@
         Use Opens Buy Menu
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_use_opens_buy_menu" id="use-opens-buy-menu-box" type="checkbox" checked=clUseOpensBuyMenu}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_use_opens_buy_menu" id="use-opens-buy-menu-box" type="checkbox" checked=data.clUseOpensBuyMenu}}
       </div>
     </li>
     <li class="Category-item">
@@ -212,7 +228,7 @@
         Close on Buy
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="closeonbuy" id="close-on-buy-box" type="checkbox" checked=closeonbuy}}
+        {{input class="Category-input Category-input--checkbox" data-command="closeonbuy" id="close-on-buy-box" type="checkbox" checked=data.closeonbuy}}
       </div>
     </li>
   </ul>

@@ -203,23 +203,23 @@ export default Ember.Route.extend({
   * Fixes an issue when visiting the new route when the slug isn't null and
   * being put back into the non-default config settings.
   */
-  resetController(controller, isExiting) {
-    if (isExiting) {
-      // isExiting would be false if only the route's model was changing
-      controller.set('slug', null);
-    }
-  },
+  // resetController(controller, isExiting) {
+  //   if (isExiting) {
+  //     // isExiting would be false if only the route's model was changing
+  //     controller.set('slug', null);
+  //   }
+  // },
 
   /**
   * Query params settings, opts into a fill transition and updates the URL
   * with a replaceState.
   */
-  queryParams: {
-    slug: {
-      refreshModel: true,
-      replace: true
-    }
-  },
+  // queryParams: {
+  //   slug: {
+  //     refreshModel: true,
+  //     replace: true
+  //   }
+  // },
 
   /**
   * Sets the model for the new route, if no query params are passed to the URL
@@ -228,7 +228,7 @@ export default Ember.Route.extend({
   */
   model(params) {
     if (!params.slug) {
-      return this.store.createRecord('cfg', defaultValues);
+      this.store.createRecord('cfg', defaultValues);
     }
     //
     // const self = this;

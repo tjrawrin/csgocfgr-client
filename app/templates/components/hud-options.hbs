@@ -11,8 +11,8 @@
         HUD Scale
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="hud_scaling" id="hud-scale-slider" type="range" min="0.5" max="0.95" step="0.01" value=hudScaling}}
-        {{input class="Category-input Category-input--number" type="number" min="0.5" max="0.95" step="0.01" value=hudScaling}}
+        {{input class="Category-input Category-input--range" data-command="hud_scaling" id="hud-scale-slider" type="range" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
+        {{input class="Category-input Category-input--number" type="number" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
       </div>
     </li>
     <li class="Category-item">
@@ -22,8 +22,8 @@
         HUD Background Alpha
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_hud_background_alpha" id="hud-background-alpha-slider" type="range" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
-        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
+        {{input class="Category-input Category-input--range" data-command="cl_hud_background_alpha" id="hud-background-alpha-slider" type="range" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
       </div>
     </li>
     <li class="Category-item">
@@ -33,7 +33,11 @@
         HUD Color
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.clHudColor options=hudcolorOptions dataCommand="cl_hud_color"}}
+        <select class="Category-input Category-input--select" data-command="cl_hud_color">
+          {{#each hudcolorOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -43,7 +47,7 @@
         Color Weapon Name
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_loadout_colorweaponnames" id="color-wrapon-name-box" type="checkbox" checked=clLoadoutColorweaponnames}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_loadout_colorweaponnames" id="color-wrapon-name-box" type="checkbox" checked=data.clLoadoutColorweaponnames}}
       </div>
     </li>
     <li class="Category-item">
@@ -53,7 +57,7 @@
         Simple Health and Ammo
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_healthammo_style" id="simple-healh-and-ammo-box" type="checkbox" checked=clHudHealthammoStyle}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_healthammo_style" id="simple-healh-and-ammo-box" type="checkbox" checked=data.clHudHealthammoStyle}}
       </div>
     </li>
     <li class="Category-item">
@@ -63,7 +67,7 @@
         Show Player Count
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_showcount" id="show-player-count-box" type="checkbox" checked=clHudPlayercountShowcount}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_showcount" id="show-player-count-box" type="checkbox" checked=data.clHudPlayercountShowcount}}
       </div>
     </li>
     <li class="Category-item">
@@ -73,7 +77,7 @@
         Player Count at Bottom
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_pos" id="player-count-at-bottom-box" type="checkbox" checked=clHudPlayercountPos}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_pos" id="player-count-at-bottom-box" type="checkbox" checked=data.clHudPlayercountPos}}
       </div>
     </li>
     <li class="Category-item">
@@ -83,8 +87,8 @@
         Field of View
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="viewmodel_fov" id="FOV-slider" type="range" min="54" max="68" step="1" value=viewmodelFov}}
-        {{input class="Category-input Category-input--number" type="number" min="54" max="68" step="1" value=viewmodelFov}}
+        {{input class="Category-input Category-input--range" data-command="viewmodel_fov" id="FOV-slider" type="range" min="54" max="68" step="1" value=data.viewmodelFov}}
+        {{input class="Category-input Category-input--number" type="number" min="54" max="68" step="1" value=data.viewmodelFov}}
       </div>
     </li>
     <li class="Category-item">
@@ -94,8 +98,8 @@
         Viewmodel Offset X
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_x" id="viewmodel-offset-x-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
-        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_x" id="viewmodel-offset-x-slider" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
       </div>
     </li>
     <li class="Category-item">
@@ -105,8 +109,8 @@
         Viewmodel Offset Y
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_y" id="viewmodel-offset-y-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
-        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_y" id="viewmodel-offset-y-slider" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
       </div>
     </li>
     <li class="Category-item">
@@ -116,8 +120,8 @@
         Viewmodel Offset Z
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_z" id="viewmodel-offset-z-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
-        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_z" id="viewmodel-offset-z-slider" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
       </div>
     </li>
     <li class="Category-item">
@@ -127,7 +131,11 @@
         Preset Viewmodel
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.viewmodelPresetpos options=viewmodelOptions dataCommand="viewmodel_presetpos"}}
+        <select class="Category-input Category-input--select" data-command="viewmodel_presetpos">
+          {{#each viewmodelOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -137,8 +145,8 @@
         Shooting Movement Left
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_left_amt" id="shooting-movement-left-slider" type="range" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
-        {{input class="Category-input Category-input--number" type="number" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
+        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_left_amt" id="shooting-movement-left-slider" type="range" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
       </div>
     </li>
     <li class="Category-item">
@@ -148,8 +156,8 @@
         Shooting Movement Right
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_right_amt" id="shooting-movement-right-slider" type="range" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
-        {{input class="Category-input Category-input--number" type="number" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
+        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_right_amt" id="shooting-movement-right-slider" type="range" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
       </div>
     </li>
     <li class="Category-item">
@@ -159,8 +167,8 @@
         Bobcycle
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_bobcycle" id="bobcycle-slider" type="range" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
-        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
+        {{input class="Category-input Category-input--range" data-command="cl_bobcycle" id="bobcycle-slider" type="range" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
       </div>
     </li>
     <li class="Category-item">
@@ -170,8 +178,8 @@
         Bob (Lower Limit)
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_bob_lower_amt" id="bob-lower-limit-slider" type="range" min="5" max="30" step="1" value=clBobLowerAmt}}
-        {{input class="Category-input Category-input--number" type="number" min="5" max="30" step="1" value=clBobLowerAmt}}
+        {{input class="Category-input Category-input--range" data-command="cl_bob_lower_amt" id="bob-lower-limit-slider" type="range" min="5" max="30" step="1" value=data.clBobLowerAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="5" max="30" step="1" value=data.clBobLowerAmt}}
       </div>
     </li>
     <li class="Category-item">
@@ -181,8 +189,8 @@
         Bob Lat
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_bobamt_lat" id="bob-lat-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
-        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
+        {{input class="Category-input Category-input--range" data-command="cl_bobamt_lat" id="bob-lat-slider" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
       </div>
     </li>
     <li class="Category-item">
@@ -192,8 +200,8 @@
         Bob Vertical
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_bobamt_vert" id="bob-vertical-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
-        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
+        {{input class="Category-input Category-input--range" data-command="cl_bobamt_vert" id="bob-vertical-slider" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
       </div>
     </li>
     <li class="Category-item">
@@ -203,7 +211,7 @@
         Show Target ID
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="hud_showtargetid" id="show-target-id-box" type="checkbox" checked=hudShowtargetid}}
+        {{input class="Category-input Category-input--checkbox" data-command="hud_showtargetid" id="show-target-id-box" type="checkbox" checked=data.hudShowtargetid}}
       </div>
     </li>
     <li class="Category-item">
@@ -213,7 +221,7 @@
         Draw Only Deathnotices
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_draw_only_deathnotices" id="draw-only-deathnotices-box" type="checkbox" checked=clDrawOnlyDeathnotices}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_draw_only_deathnotices" id="draw-only-deathnotices-box" type="checkbox" checked=data.clDrawOnlyDeathnotices}}
       </div>
     </li>
     <li class="Category-item">
@@ -223,7 +231,7 @@
         Right Handed
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_righthand" id="right-handed-box" type="checkbox" checked=clRighthand}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_righthand" id="right-handed-box" type="checkbox" checked=data.clRighthand}}
       </div>
     </li>
     <li class="Category-item">
@@ -233,7 +241,7 @@
         Show Loadout
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_showloadout" id="show-loadout-box" type="checkbox" checked=clShowloadout}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showloadout" id="show-loadout-box" type="checkbox" checked=data.clShowloadout}}
       </div>
     </li>
     <li class="Category-item">
@@ -243,7 +251,7 @@
         Speed and Detailed Position
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_showpos" id="speed-and-detailed-position-box" type="checkbox" checked=clShowpos}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showpos" id="speed-and-detailed-position-box" type="checkbox" checked=data.clShowpos}}
       </div>
     </li>
     <li class="Category-item">
@@ -253,7 +261,11 @@
         Show FPS
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.clShowfps options=showFpsOptions dataCommand="cl_showfps"}}
+        <select class="Category-input Category-input--select" data-command="cl_showfps">
+          {{#each showFpsOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -263,7 +275,11 @@
         Net Graph
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.netGraph options=netGraphOptions dataCommand="net_graph"}}
+        <select class="Category-input Category-input--select" data-command="net_graph">
+          {{#each netGraphOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -273,7 +289,7 @@
         Net Graph Proportional Font
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="net_graphproportionalfont" id="net-graph-proportional-font-box" type="checkbox" checked=netGraphproportionalfont}}
+        {{input class="Category-input Category-input--checkbox" data-command="net_graphproportionalfont" id="net-graph-proportional-font-box" type="checkbox" checked=data.netGraphproportionalfont}}
       </div>
     </li>
   </ul>

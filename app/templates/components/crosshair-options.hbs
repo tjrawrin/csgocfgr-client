@@ -11,7 +11,11 @@
         Style
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.clCrosshairstyle options=styleOptions dataCommand="cl_crosshairstyle"}}
+        <select class="Category-input Category-input--select" data-command="cl_crosshairstyle">
+          {{#each styleOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -21,8 +25,8 @@
         Red
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_r" id="crosshair-color-r-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorR}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorR}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_r" id="crosshair-color-r-slider" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
       </div>
     </li>
     <li class="Category-item">
@@ -32,8 +36,8 @@
         Green
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_g" id="crosshair-color-g-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorG}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorG}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_g" id="crosshair-color-g-slider" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
       </div>
     </li>
     <li class="Category-item">
@@ -43,8 +47,8 @@
         Blue
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_b" id="crosshair-color-b-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorB}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorB}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_b" id="crosshair-color-b-slider" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
       </div>
     </li>
     <li class="Category-item">
@@ -54,8 +58,8 @@
         Alpha
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairalpha" id="crosshair-alpha-slider" type="range" min="0" max="255" step="1" value=clCrosshairalpha}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshairalpha}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairalpha" id="crosshair-alpha-slider" type="range" min="0" max="255" step="1" value=data.clCrosshairalpha}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshairalpha}}
       </div>
     </li>
     <li class="Category-item">
@@ -65,7 +69,7 @@
         Draw Outline
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshair_drawoutline" id="crosshair-draw-outline-box" type="checkbox" checked=clCrosshairDrawoutline}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshair_drawoutline" id="crosshair-draw-outline-box" type="checkbox" checked=data.clCrosshairDrawoutline}}
       </div>
     </li>
     <li class="Category-item">
@@ -75,8 +79,8 @@
         Outline Thickness
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshair_outlinethickness" id="crosshair-outline-thickness-slider" type="range" min="0" max="3" step="1" value=clCrosshairOutlinethickness}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="3.0" step="1" value=clCrosshairOutlinethickness}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshair_outlinethickness" id="crosshair-outline-thickness-slider" type="range" min="0" max="3" step="1" value=data.clCrosshairOutlinethickness}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="3.0" step="1" value=data.clCrosshairOutlinethickness}}
       </div>
     </li>
     <li class="Category-item">
@@ -86,8 +90,8 @@
         Size
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairsize" id="crosshair-size-slider" type="range" min="-1" max="200" step="0.5" value=clCrosshairsize}}
-        {{input class="Category-input Category-input--number" type="number" min="-1" max="200" step="0.5" value=clCrosshairsize}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairsize" id="crosshair-size-slider" type="range" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
+        {{input class="Category-input Category-input--number" type="number" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
       </div>
     </li>
     <li class="Category-item">
@@ -97,8 +101,8 @@
         Thickness
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairthickness" id="crosshair-thickness-slider" type="range" min="0" max="200" step="0.5" value=clCrosshairthickness}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="200" step="0.5" value=clCrosshairthickness}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairthickness" id="crosshair-thickness-slider" type="range" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
       </div>
     </li>
     <li class="Category-item">
@@ -108,8 +112,8 @@
         Gap
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairgap" id="crosshair-gap-slider" type="range" min="-100" max="100" step="1" value=clCrosshairgap}}
-        {{input class="Category-input Category-input--number" type="number" min="-100" max="100" step="1" value=clCrosshairgap}}
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairgap" id="crosshair-gap-slider" type="range" min="-100" max="100" step="1" value=data.clCrosshairgap}}
+        {{input class="Category-input Category-input--number" type="number" min="-100" max="100" step="1" value=data.clCrosshairgap}}
       </div>
     </li>
     <li class="Category-item">
@@ -119,7 +123,7 @@
         Dot
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshairdot" id="crosshair-dot-box" type="checkbox" checked=clCrosshairdot}}
+        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshairdot" id="crosshair-dot-box" type="checkbox" checked=data.clCrosshairdot}}
       </div>
     </li>
   </ul>

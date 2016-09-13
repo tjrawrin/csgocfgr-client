@@ -11,8 +11,8 @@
         Sensitivity
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="sensitivity" id="sensitivity-slider" type="range" min="0" max="20" step="0.1" value=sensitivity}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.1" value=sensitivity}}
+        {{input class="Category-input Category-input--range" data-command="sensitivity" id="sensitivity-slider" type="range" min="0" max="20" step="0.1" value=data.sensitivity}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.1" value=data.sensitivity}}
       </div>
     </li>
     <li class="Category-item">
@@ -22,8 +22,8 @@
         Zoom Sensitivity
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="zoom_sensitivity_ratio_mouse" id="zoom-sensitivity-slider" type="range" min="0" max="20" step="0.01" value=zoomSensitivityRatioMouse}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.01" value=zoomSensitivityRatioMouse}}
+        {{input class="Category-input Category-input--range" data-command="zoom_sensitivity_ratio_mouse" id="zoom-sensitivity-slider" type="range" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
       </div>
     </li>
     <li class="Category-item">
@@ -33,7 +33,11 @@
         Mouse Acceleration
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.mCustomaccel options=customAccelOptions dataCommand="m_customaccel"}}
+        <select class="Category-input Category-input--select" data-command="m_customaccel">
+          {{#each customAccelOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -43,7 +47,7 @@
         Raw Input
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="m_rawinput" id="mouse-raw-input-box" type="checkbox" checked=mRawinput}}
+        {{input class="Category-input Category-input--checkbox" data-command="m_rawinput" id="mouse-raw-input-box" type="checkbox" checked=data.mRawinput}}
       </div>
     </li>
   </ul>

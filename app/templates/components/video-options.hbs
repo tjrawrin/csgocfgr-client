@@ -11,8 +11,8 @@
         Monitor Gamma
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="mat_monitorgamma" id="monitor-gamma-slider" type="range" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
-        {{input class="Category-input Category-input--number" type="number" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
+        {{input class="Category-input Category-input--range" data-command="mat_monitorgamma" id="monitor-gamma-slider" type="range" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
+        {{input class="Category-input Category-input--number" type="number" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
       </div>
     </li>
     <li class="Category-item">
@@ -22,7 +22,11 @@
         Video Processing Queue
       </label>
       <div class="Category-inputs">
-        {{custom-select data=model.matQueueMode options=queueModeOptions dataCommand="mat_queue_mode"}}
+        <select class="Category-input Category-input--select" data-command="mat_queue_mode">
+          {{#each queueModeOptions as |option|}}
+            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+          {{/each}}
+        </select>
       </div>
     </li>
     <li class="Category-item">
@@ -32,8 +36,8 @@
         Max FPS
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max" id="max-fps-slider" type="range" min="0" max="999" step="1" value=fpsMax}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=fpsMax}}
+        {{input class="Category-input Category-input--range" data-command="fps_max" id="max-fps-slider" type="range" min="0" max="999" step="1" value=data.fpsMax}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMax}}
       </div>
     </li>
     <li class="Category-item">
@@ -43,8 +47,8 @@
         Max FPS (In Menu)
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max_menu" id="max-fps-menu-slider" type="range" min="0" max="999" step="1" value=fpsMaxMenu}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=fpsMaxMenu}}
+        {{input class="Category-input Category-input--range" data-command="fps_max_menu" id="max-fps-menu-slider" type="range" min="0" max="999" step="1" value=data.fpsMaxMenu}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMaxMenu}}
       </div>
     </li>
     <li class="Category-item">
@@ -54,7 +58,7 @@
         Dynamic Shadows
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="r_dynamic" id="dynamic-shadows-box" type="checkbox" checked=rDynamic}}
+        {{input class="Category-input Category-input--checkbox" data-command="r_dynamic" id="dynamic-shadows-box" type="checkbox" checked=data.rDynamic}}
       </div>
     </li>
     <li class="Category-item">
@@ -64,7 +68,7 @@
         Draw Tracers in First Person
       </label>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="r_drawtracers_firstperson" id="draw-firstperson-tracers-box" type="checkbox" checked=rDrawtracersFirstperson}}
+        {{input class="Category-input Category-input--checkbox" data-command="r_drawtracers_firstperson" id="draw-firstperson-tracers-box" type="checkbox" checked=data.rDrawtracersFirstperson}}
       </div>
     </li>
   </ul>
