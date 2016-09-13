@@ -1,0 +1,97 @@
+.Category {
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-top: 32px;
+
+  &-title {
+    background-color: $cPrimary;
+    border: 0;
+    border-radius: 3px;
+    color: $cWhite;
+    cursor: pointer;
+    display: block;
+    font-weight: 300;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 8px 16px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    transition: color 200ms ease-in-out;
+    width: 100%;
+
+    @include fs-attention {
+      color: $cAccent;
+    }
+
+    &--open {
+      border-radius: 3px 3px 0 0;
+    }
+
+    &-text {
+      margin-left: 16px;
+    }
+
+    .octicon {
+      @extend %vertcenter;
+    }
+  }
+
+  &-items {
+    background-color: $cWhite;
+    border-radius: 0 0 3px 3px;
+    margin: 0;
+    // height: 0;
+    // opacity: 0;
+    overflow: hidden;
+    // padding: 0 16px;
+    padding: 16px;
+    // visibility: hidden;
+
+    &--open {
+      height: 100%;
+      opacity: 1;
+      padding: 16px;
+      visibility: visible;
+    }
+  }
+
+  &-item {
+    list-style: none;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-label {
+    display: block;
+
+    .octicon-info,
+    .octicon-sync {
+      cursor: pointer;
+    }
+  }
+
+  &-inputs {
+    display: flex;
+  }
+
+  &-input {
+
+    &--range {
+      flex: 4;
+      margin-right: 16px;
+    }
+
+    &--number {
+      flex: 1;
+      min-width: 100px;
+    }
+
+    &--checkbox {
+    }
+  }
+}

@@ -195,7 +195,7 @@ const defaultValues = {
   clCrosshairthickness: 0.5,
   clCrosshairgap: 1,
   clCrosshairdot: true
-}
+};
 
 export default Ember.Route.extend({
   /**

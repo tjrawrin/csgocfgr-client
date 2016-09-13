@@ -1,119 +1,124 @@
 <div class="Category">
-  <h2 class="Category-title">HUD</h2>
-  <div class="Category-input-container">
-    <label for="hude-scale-slider">HUD Scale <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'hudScaling'}}></i></label>
-    {{input data-command="hud_scaling" id="hud-scale-slider" type="range" min="0.5" max="0.95" step="0.01" value=hudScaling}}
-    {{input type="number" min="0.5" max="0.95" step="0.01" value=hudScaling}}
-  </div>
-  <div class="Category-input-container">
-    <label for="hud-background-alpha-slider">HUD Background Alpha <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudBackgroundAlpha'}}></i></label>
-    {{input data-command="cl_hud_background_alpha" id="hud-background-alpha-slider" type="range" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
-    {{input type="number" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
-  </div>
-  <div class="Category-input-container">
-      <label for="hud-color-select">HUD Color <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudColor'}}></i></label>
-      {{custom-select data=model.clHudColor options=hudcolorOptions dataCommand="cl_hud_color"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="color-wrapon-name-box">Color Weapon Name <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clLoadoutColorweaponnames'}}></i></label>
-    {{input data-command="cl_loadout_colorweaponnames" id="color-wrapon-name-box" type="checkbox" checked=clLoadoutColorweaponnames}}
-  </div>
-  <div class="Category-input-container">
-    <label for="simple-healh-and-ammo-box">Simple Health and Ammo <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudHealthammoStyle'}}></i></label>
-    {{input data-command="cl_hud_healthammo_style" id="simple-healh-and-ammo-box" type="checkbox" checked=clHudHealthammoStyle}}
-  </div>
-  <div class="Category-input-container">
-    <label for="show-player-count-box">Show Player Count <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudPlayercountShowcount'}}></i></label>
-    {{input data-command="cl_hud_playercount_showcount" id="show-player-count-box" type="checkbox" checked=clHudPlayercountShowcount}}
-  </div>
-  <div class="Category-input-container">
-    <label for="player-count-at-bottom-box">Player Count at Bottom <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudPlayercountPos'}}></i></label>
-    {{input data-command="cl_hud_playercount_pos" id="player-count-at-bottom-box" type="checkbox" checked=clHudPlayercountPos}}
-  </div>
-  <div class="Category-input-container">
-    <label for="FOV-slider">Field of View <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelFov'}}></i></label>
-    {{input data-command="viewmodel_fov" id="FOV-slider" type="range" min="54" max="68" step="1" value=viewmodelFov}}
-    {{input type="number" min="54" max="68" step="1" value=viewmodelFov}}
-  </div>
-  <div class="Category-input-container">
-    <label for="viewmodel-offset-x-slider">Viewmodel Offset X <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetX'}}></i></label>
-    {{input data-command="viewmodel_offset_x" id="viewmodel-offset-x-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
-    {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
-  </div>
-  <div class="Category-input-container">
-    <label for="viewmodel-offset-y-slider">Viewmodel Offset Y <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetY'}}></i></label>
-    {{input data-command="viewmodel_offset_y" id="viewmodel-offset-y-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
-    {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
-  </div>
-  <div class="Category-input-container">
-    <label for="viewmodel-offset-z-slider">Viewmodel Offset Z <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetZ'}}></i></label>
-    {{input data-command="viewmodel_offset_z" id="viewmodel-offset-z-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
-    {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
-  </div>
-  <div class="Category-input-container">
-    <label for="viewmodel-presetpos-select">Preset Viewmodel <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelPresetpos'}}></i></label>
-    {{custom-select data=model.viewmodelPresetpos options=viewmodelOptions dataCommand="viewmodel_presetpos"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="shooting-movement-left-slider">Shooting Movement Left <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clViewmodelShiftLeftAmt'}}></i></label>
-    {{input data-command="cl_viewmodel_shift_left_amt" id="shooting-movement-left-slider" type="range" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
-    {{input type="number" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
-  </div>
-  <div class="Category-input-container">
-    <label for="shooting-movement-right-slider">Shooting Movement Right <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clViewmodelShiftRightAmt'}}></i></label>
-    {{input data-command="cl_viewmodel_shift_right_amt" id="shooting-movement-right-slider" type="range" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
-    {{input type="number" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
-  </div>
-  <div class="Category-input-container">
-    <label for="bobcycle-slider">Bobcycle <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobcycle'}}></i></label>
-    {{input data-command="cl_bobcycle" id="bobcycle-slider" type="range" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
-    {{input type="number" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
-  </div>
-  <div class="Category-input-container">
-    <label for="bob-lower-limit-slider">Bob (Lower Limit) <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobLowerAmt'}}></i></label>
-    {{input data-command="cl_bob_lower_amt" id="bob-lower-limit-slider" type="range" min="5" max="30" step="1" value=clBobLowerAmt}}
-    {{input type="number" min="5" max="30" step="1" value=clBobLowerAmt}}
-  </div>
-  <div class="Category-input-container">
-    <label for="bob-lat-slider">Bob Lat <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobamtLat'}}></i></label>
-    {{input data-command="cl_bobamt_lat" id="bob-lat-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
-    {{input type="number" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
-  </div>
-  <div class="Category-input-container">
-    <label for="bob-vertical-slider">Bob Vertical <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobamtVert'}}></i></label>
-    {{input data-command="cl_bobamt_vert" id="bob-vertical-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
-    {{input type="number" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
-  </div>
-  <div class="Category-input-container">
-    <label for="show-target-id-box">Show Target ID <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'hudShowtargetid'}}></i></label>
-    {{input data-command="hud_showtargetid" id="show-target-id-box" type="checkbox" checked=hudShowtargetid}}
-  </div>
-  <div class="Category-input-container">
-    <label for="draw-only-deathnotices-box">Draw Only Deathnotices <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDrawOnlyDeathnotices'}}></i></label>
-    {{input data-command="cl_draw_only_deathnotices" id="draw-only-deathnotices-box" type="checkbox" checked=clDrawOnlyDeathnotices}}
-  </div>
-  <div class="Category-input-container">
-    <label for="right-handed-box">Right Handed <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRighthand'}}></i></label>
-    {{input data-command="cl_righthand" id="right-handed-box" type="checkbox" checked=clRighthand}}
-  </div>
-  <div class="Category-input-container">
-    <label for="show-loadout-box">Show Loadout <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowloadout'}}></i></label>
-    {{input data-command="cl_showloadout" id="show-loadout-box" type="checkbox" checked=clShowloadout}}
-  </div>
-  <div class="Category-input-container">
-    <label for="speed-and-detailed-position-box">Speed and Detailed Position <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowpos'}}></i></label>
-    {{input data-command="cl_showpos" id="speed-and-detailed-position-box" type="checkbox" checked=clShowpos}}
-  </div>
-  <div class="Category-input-container">
-    <label for="show-fps-box">Show FPS <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowfps'}}></i></label>
-    {{custom-select data=model.clShowfps options=showFpsOptions dataCommand="cl_showfps"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="net-graph-box">Net Graph <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'netGraph'}}></i></label>
-    {{custom-select data=model.netGraph options=netGraphOptions dataCommand="net_graph"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="net-graph-proportional-font-box">Net Graph Proportional Font <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'netGraphproportionalfont'}}></i></label>
-    {{input data-command="net_graphproportionalfont" id="net-graph-proportional-font-box" type="checkbox" checked=netGraphproportionalfont}}
-  </div>
+  <button class="Category-title {{if isOpen "Category-title--open"}}" {{action 'toggleDisplay'}}>
+    <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
+    <span class="Category-title-text">HUD</span>
+  </button>
+  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+    <li class="Category-item">
+      <label for="hude-scale-slider">HUD Scale <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'hudScaling'}}></i></label>
+      {{input data-command="hud_scaling" id="hud-scale-slider" type="range" min="0.5" max="0.95" step="0.01" value=hudScaling}}
+      {{input type="number" min="0.5" max="0.95" step="0.01" value=hudScaling}}
+    </li>
+    <li class="Category-item">
+      <label for="hud-background-alpha-slider">HUD Background Alpha <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudBackgroundAlpha'}}></i></label>
+      {{input data-command="cl_hud_background_alpha" id="hud-background-alpha-slider" type="range" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
+      {{input type="number" min="0.0" max="1.0" step="0.05" value=clHudBackgroundAlpha}}
+    </li>
+    <li class="Category-item">
+        <label for="hud-color-select">HUD Color <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudColor'}}></i></label>
+        {{custom-select data=model.clHudColor options=hudcolorOptions dataCommand="cl_hud_color"}}
+    </li>
+    <li class="Category-item">
+      <label for="color-wrapon-name-box">Color Weapon Name <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clLoadoutColorweaponnames'}}></i></label>
+      {{input data-command="cl_loadout_colorweaponnames" id="color-wrapon-name-box" type="checkbox" checked=clLoadoutColorweaponnames}}
+    </li>
+    <li class="Category-item">
+      <label for="simple-healh-and-ammo-box">Simple Health and Ammo <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudHealthammoStyle'}}></i></label>
+      {{input data-command="cl_hud_healthammo_style" id="simple-healh-and-ammo-box" type="checkbox" checked=clHudHealthammoStyle}}
+    </li>
+    <li class="Category-item">
+      <label for="show-player-count-box">Show Player Count <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudPlayercountShowcount'}}></i></label>
+      {{input data-command="cl_hud_playercount_showcount" id="show-player-count-box" type="checkbox" checked=clHudPlayercountShowcount}}
+    </li>
+    <li class="Category-item">
+      <label for="player-count-at-bottom-box">Player Count at Bottom <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clHudPlayercountPos'}}></i></label>
+      {{input data-command="cl_hud_playercount_pos" id="player-count-at-bottom-box" type="checkbox" checked=clHudPlayercountPos}}
+    </li>
+    <li class="Category-item">
+      <label for="FOV-slider">Field of View <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelFov'}}></i></label>
+      {{input data-command="viewmodel_fov" id="FOV-slider" type="range" min="54" max="68" step="1" value=viewmodelFov}}
+      {{input type="number" min="54" max="68" step="1" value=viewmodelFov}}
+    </li>
+    <li class="Category-item">
+      <label for="viewmodel-offset-x-slider">Viewmodel Offset X <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetX'}}></i></label>
+      {{input data-command="viewmodel_offset_x" id="viewmodel-offset-x-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
+      {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetX}}
+    </li>
+    <li class="Category-item">
+      <label for="viewmodel-offset-y-slider">Viewmodel Offset Y <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetY'}}></i></label>
+      {{input data-command="viewmodel_offset_y" id="viewmodel-offset-y-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
+      {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetY}}
+    </li>
+    <li class="Category-item">
+      <label for="viewmodel-offset-z-slider">Viewmodel Offset Z <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelOffsetZ'}}></i></label>
+      {{input data-command="viewmodel_offset_z" id="viewmodel-offset-z-slider" type="range" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
+      {{input type="number" min="-2.0" max="2.5" step="0.1" value=viewmodelOffsetZ}}
+    </li>
+    <li class="Category-item">
+      <label for="viewmodel-presetpos-select">Preset Viewmodel <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'viewmodelPresetpos'}}></i></label>
+      {{custom-select data=model.viewmodelPresetpos options=viewmodelOptions dataCommand="viewmodel_presetpos"}}
+    </li>
+    <li class="Category-item">
+      <label for="shooting-movement-left-slider">Shooting Movement Left <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clViewmodelShiftLeftAmt'}}></i></label>
+      {{input data-command="cl_viewmodel_shift_left_amt" id="shooting-movement-left-slider" type="range" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
+      {{input type="number" min="0.5" max="2.0" step="0.05" value=clViewmodelShiftLeftAmt}}
+    </li>
+    <li class="Category-item">
+      <label for="shooting-movement-right-slider">Shooting Movement Right <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clViewmodelShiftRightAmt'}}></i></label>
+      {{input data-command="cl_viewmodel_shift_right_amt" id="shooting-movement-right-slider" type="range" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
+      {{input type="number" min="0.25" max="2.0" step="0.05" value=clViewmodelShiftRightAmt}}
+    </li>
+    <li class="Category-item">
+      <label for="bobcycle-slider">Bobcycle <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobcycle'}}></i></label>
+      {{input data-command="cl_bobcycle" id="bobcycle-slider" type="range" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
+      {{input type="number" min="0.1" max="2.0" step="0.01" value=clBobcycle}}
+    </li>
+    <li class="Category-item">
+      <label for="bob-lower-limit-slider">Bob (Lower Limit) <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobLowerAmt'}}></i></label>
+      {{input data-command="cl_bob_lower_amt" id="bob-lower-limit-slider" type="range" min="5" max="30" step="1" value=clBobLowerAmt}}
+      {{input type="number" min="5" max="30" step="1" value=clBobLowerAmt}}
+    </li>
+    <li class="Category-item">
+      <label for="bob-lat-slider">Bob Lat <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobamtLat'}}></i></label>
+      {{input data-command="cl_bobamt_lat" id="bob-lat-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
+      {{input type="number" min="0.1" max="2.0" step="0.1" value=clBobamtLat}}
+    </li>
+    <li class="Category-item">
+      <label for="bob-vertical-slider">Bob Vertical <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clBobamtVert'}}></i></label>
+      {{input data-command="cl_bobamt_vert" id="bob-vertical-slider" type="range" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
+      {{input type="number" min="0.1" max="2.0" step="0.1" value=clBobamtVert}}
+    </li>
+    <li class="Category-item">
+      <label for="show-target-id-box">Show Target ID <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'hudShowtargetid'}}></i></label>
+      {{input data-command="hud_showtargetid" id="show-target-id-box" type="checkbox" checked=hudShowtargetid}}
+    </li>
+    <li class="Category-item">
+      <label for="draw-only-deathnotices-box">Draw Only Deathnotices <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDrawOnlyDeathnotices'}}></i></label>
+      {{input data-command="cl_draw_only_deathnotices" id="draw-only-deathnotices-box" type="checkbox" checked=clDrawOnlyDeathnotices}}
+    </li>
+    <li class="Category-item">
+      <label for="right-handed-box">Right Handed <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRighthand'}}></i></label>
+      {{input data-command="cl_righthand" id="right-handed-box" type="checkbox" checked=clRighthand}}
+    </li>
+    <li class="Category-item">
+      <label for="show-loadout-box">Show Loadout <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowloadout'}}></i></label>
+      {{input data-command="cl_showloadout" id="show-loadout-box" type="checkbox" checked=clShowloadout}}
+    </li>
+    <li class="Category-item">
+      <label for="speed-and-detailed-position-box">Speed and Detailed Position <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowpos'}}></i></label>
+      {{input data-command="cl_showpos" id="speed-and-detailed-position-box" type="checkbox" checked=clShowpos}}
+    </li>
+    <li class="Category-item">
+      <label for="show-fps-box">Show FPS <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowfps'}}></i></label>
+      {{custom-select data=model.clShowfps options=showFpsOptions dataCommand="cl_showfps"}}
+    </li>
+    <li class="Category-item">
+      <label for="net-graph-box">Net Graph <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'netGraph'}}></i></label>
+      {{custom-select data=model.netGraph options=netGraphOptions dataCommand="net_graph"}}
+    </li>
+    <li class="Category-item">
+      <label for="net-graph-proportional-font-box">Net Graph Proportional Font <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'netGraphproportionalfont'}}></i></label>
+      {{input data-command="net_graphproportionalfont" id="net-graph-proportional-font-box" type="checkbox" checked=netGraphproportionalfont}}
+    </li>
+  </ul>
 </div>

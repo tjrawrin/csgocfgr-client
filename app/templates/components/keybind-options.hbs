@@ -1,4 +1,9 @@
 <div class="Category">
-  <h2 class="Category-title">Keybind</h2>
-  <p>Comming Soon</p>
+  <button class="Category-title {{if isOpen "Category-title--open"}}" {{action 'toggleDisplay'}}>
+    <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
+    <span class="Category-title-text">Keybind</span>
+  </button>
+  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+    <li class="Category-item">Comming Soon</li>
+  </ul>
 </div>

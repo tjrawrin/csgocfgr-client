@@ -1,54 +1,124 @@
 <div class="Category">
-  <h2 class="Category-title">Audio</h2>
-  <div class="Category-input-container">
-    <label for="volume-slider">Volume <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'volume'}}></i></label>
-    {{input data-command="volume" id="volume-slider" type="range" min="0.0" max="1.0" step="0.01" value=volume}}
-    {{input type="number" min="0.0" max="1.0" step="0.01" value=volume}}
-  </div>
-  <div class="Category-input-container">
-    <label for="music-volume-slider">Music Volume <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMusicvolume'}}></i></label>
-    {{input data-command="snd_musicvolume" id="music-volume-slider" type="range" min="0.0" max="1.0" step="0.01" value=sndMusicvolume}}
-    {{input type="number" min="0.0" max="1.0" step="0.01" value=sndMusicvolume}}
-  </div>
-  <div class="Category-input-container">
-    <label for="speaker-config-select">Speaker Config <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'windowsSpeakerConfig'}}></i></label>
-    {{custom-select data=model.windowsSpeakerConfig options=speakerOptions dataCommand="windows_speaker_config"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="mix-ahead-slider">Mix Ahead <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMixahead'}}></i></label>
-    {{input data-command="snd_mixahead" id="mix-ahead-slider" type="range" min="0.0" max="1.0" step="0.05" value=sndMixahead}}
-    {{input type="number" min="0.0" max="1.0" step="0.05" value=sndMixahead}}
-  </div>
-  <div class="Category-input-container">
-    <label for="headphone-pan-exponent-slider">Pan Exponent <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndHeadphonePanExponent'}}></i></label>
-    {{input data-command="snd_headphone_pan_exponent" id="headphone-pan-exponent-slider" type="range" min="0" max="100" step="1" value=sndHeadphonePanExponent}}
-    {{input type="number" min="0" max="100" step="1" value=sndHeadphonePanExponent}}
-  </div>
-  <div class="Category-input-container">
-    <label for="headphone-pan-radial-weight-slider">Pan Radial Weight <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndHeadphonePanRadialWeight'}}></i></label>
-    {{input data-command="snd_headphone_pan_radial_weight" id="headphone-pan-radial-weight-slider" type="range" min="0" max="100" step="1" value=sndHeadphonePanRadialWeight}}
-    {{input type="number" min="0" max="100" step="1" value=sndHeadphonePanRadialWeight}}
-  </div>
-  <div class="Category-input-container">
-    <label for="legacy-surround-box">Legacy Surround <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndLegacySurround'}}></i></label>
-    {{input data-command="snd_legacy_surround" id="legacy-surround-box" type="checkbox" checked=sndLegacySurround}}
-  </div>
-  <div class="Category-input-container">
-    <label for="sound-in-background-box">Mute Lose Focus <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMuteLosefocus'}}></i></label>
-    {{input data-command="snd_mute_losefocus" id="sound-in-background-box" type="checkbox" checked=sndMuteLosefocus}}
-    <label for="sound-in-background-box"></label>
-  </div>
-  <div class="Category-input-container">
-    <label for="voice-scale-slider">Voice Scale <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'voiceScale'}}></i></label>
-    {{input data-command="voice_scale" id="voice-scale-slider" type="range" min="0.0" max="1.0" step="0.05" value=voiceScale}}
-    {{input type="number" min="0.0" max="1.0" step="0.05" value=voiceScale}}
-  </div>
-  <div class="Category-input-container">
-    <label for="voice-enable-box">Voice Enable <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'voiceEnable'}}></i></label>
-    {{input data-command="voice_enable" id="voice-enable-box" type="checkbox" checked=voiceEnable}}
-  </div>
-  <div class="Category-input-container">
-    <label for="voice-chat-in-lobby-box">Lobby Voice Chat <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'lobbyVoiceChatEnabled'}}></i></label>
-    {{input data-command="lobby_voice_chat_enabled" id="voice-chat-in-lobby-box" type="checkbox" checked=lobbyVoiceChatEnabled}}
-  </div>
+  <button class="Category-title {{if isOpen "Category-title--open"}}" {{action 'toggleDisplay'}}>
+    <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
+    <span class="Category-title-text">Audio</span>
+  </button>
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
+    <li class="Category-item">
+      <label for="volume-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'volume'}}></i>
+        Volume
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="volume" id="volume-slider" type="range" min="0.0" max="1.0" step="0.01" value=volume}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.01" value=volume}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="music-volume-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMusicvolume'}}></i>
+        Music Volume
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="snd_musicvolume" id="music-volume-slider" type="range" min="0.0" max="1.0" step="0.01" value=sndMusicvolume}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.01" value=sndMusicvolume}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="speaker-config-select">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'windowsSpeakerConfig'}}></i>
+        Speaker Config
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.windowsSpeakerConfig options=speakerOptions dataCommand="windows_speaker_config"}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="mix-ahead-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMixahead'}}></i>
+        Mix Ahead
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="snd_mixahead" id="mix-ahead-slider" type="range" min="0.0" max="1.0" step="0.05" value=sndMixahead}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=sndMixahead}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="headphone-pan-exponent-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndHeadphonePanExponent'}}></i>
+        Pan Exponent
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="snd_headphone_pan_exponent" id="headphone-pan-exponent-slider" type="range" min="0" max="100" step="1" value=sndHeadphonePanExponent}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="100" step="1" value=sndHeadphonePanExponent}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="headphone-pan-radial-weight-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndHeadphonePanRadialWeight'}}></i>
+        Pan Radial Weight
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="snd_headphone_pan_radial_weight" id="headphone-pan-radial-weight-slider" type="range" min="0" max="100" step="1" value=sndHeadphonePanRadialWeight}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="100" step="1" value=sndHeadphonePanRadialWeight}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="legacy-surround-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndLegacySurround'}}></i>
+        Legacy Surround
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="snd_legacy_surround" id="legacy-surround-box" type="checkbox" checked=sndLegacySurround}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="sound-in-background-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sndMuteLosefocus'}}></i>
+        Mute Lose Focus
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="snd_mute_losefocus" id="sound-in-background-box" type="checkbox" checked=sndMuteLosefocus}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="voice-scale-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'voiceScale'}}></i>
+        Voice Scale
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="voice_scale" id="voice-scale-slider" type="range" min="0.0" max="1.0" step="0.05" value=voiceScale}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=voiceScale}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="voice-enable-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'voiceEnable'}}></i>
+        Voice Enable
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="voice_enable" id="voice-enable-box" type="checkbox" checked=voiceEnable}}
+      </div>
+    </li>
+    <li class="Category-item">
+      <label for="voice-chat-in-lobby-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'lobbyVoiceChatEnabled'}}></i>
+        Lobby Voice Chat
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="lobby_voice_chat_enabled" id="voice-chat-in-lobby-box" type="checkbox" checked=lobbyVoiceChatEnabled}}
+      </div>
+    </li>
+  </ul>
 </div>

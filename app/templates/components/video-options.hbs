@@ -1,30 +1,35 @@
 <div class="Category">
-  <h2 class="Category-title">Video</h2>
-  <div class="Category-input-container">
-    <label for="monitor-gamma-slider">Monitor Gamma <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'matMonitorgamma'}}></i></label>
-    {{input data-command="mat_monitorgamma" id="monitor-gamma-slider" type="range" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
-    {{input type="number" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
-  </div>
-  <div class="Category-input-container">
-    <label for="video-processing-queue-mode-slider">Video Processing Queue <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'matQueueMode'}}></i></label>
-    {{custom-select data=model.matQueueMode options=queueModeOptions dataCommand="mat_queue_mode"}}
-  </div>
-  <div class="Category-input-container">
-    <label for="max-fps-slider">Max FPS <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'fpsMax'}}></i></label>
-    {{input data-command="fps_max" id="max-fps-slider" type="range" min="0" max="999" step="1" value=fpsMax}}
-    {{input type="number" min="0" max="999" step="1" value=fpsMax}}
-  </div>
-  <div class="Category-input-container">
-    <label for="max-fps-menu-slider">Max FPS (In Menu) <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'fpsMaxMenu'}}></i></label>
-    {{input data-command="fps_max_menu" id="max-fps-menu-slider" type="range" min="0" max="999" step="1" value=fpsMaxMenu}}
-    {{input type="number" min="0" max="999" step="1" value=fpsMaxMenu}}
-  </div>
-  <div class="Category-input-container">
-    <label for="dynamic-shadows-box">Dynamic Shadows <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'rDynamic'}}></i></label>
-    {{input data-command="r_dynamic" id="dynamic-shadows-box" type="checkbox" checked=rDynamic}}
-  </div>
-  <div class="Category-input-container">
-    <label for="draw-firstperson-tracers-box">Draw Tracers in First Person <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'rDrawtracersFirstperson'}}></i></label>
-    {{input data-command="r_drawtracers_firstperson" id="draw-firstperson-tracers-box" type="checkbox" checked=rDrawtracersFirstperson}}
-  </div>
+  <button class="Category-title {{if isOpen "Category-title--open"}}" {{action 'toggleDisplay'}}>
+    <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
+    <span class="Category-title-text">Video</span>
+  </button>
+  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+    <li class="Category-item">
+      <label for="monitor-gamma-slider">Monitor Gamma <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'matMonitorgamma'}}></i></label>
+      {{input data-command="mat_monitorgamma" id="monitor-gamma-slider" type="range" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
+      {{input type="number" min="1.6" max="2.6" step="0.1" value=matMonitorgamma}}
+    </li>
+    <li class="Category-item">
+      <label for="video-processing-queue-mode-slider">Video Processing Queue <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'matQueueMode'}}></i></label>
+      {{custom-select data=model.matQueueMode options=queueModeOptions dataCommand="mat_queue_mode"}}
+    </li>
+    <li class="Category-item">
+      <label for="max-fps-slider">Max FPS <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'fpsMax'}}></i></label>
+      {{input data-command="fps_max" id="max-fps-slider" type="range" min="0" max="999" step="1" value=fpsMax}}
+      {{input type="number" min="0" max="999" step="1" value=fpsMax}}
+    </li>
+    <li class="Category-item">
+      <label for="max-fps-menu-slider">Max FPS (In Menu) <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'fpsMaxMenu'}}></i></label>
+      {{input data-command="fps_max_menu" id="max-fps-menu-slider" type="range" min="0" max="999" step="1" value=fpsMaxMenu}}
+      {{input type="number" min="0" max="999" step="1" value=fpsMaxMenu}}
+    </li>
+    <li class="Category-item">
+      <label for="dynamic-shadows-box">Dynamic Shadows <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'rDynamic'}}></i></label>
+      {{input data-command="r_dynamic" id="dynamic-shadows-box" type="checkbox" checked=rDynamic}}
+    </li>
+    <li class="Category-item">
+      <label for="draw-firstperson-tracers-box">Draw Tracers in First Person <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'rDrawtracersFirstperson'}}></i></label>
+      {{input data-command="r_drawtracers_firstperson" id="draw-firstperson-tracers-box" type="checkbox" checked=rDrawtracersFirstperson}}
+    </li>
+  </ul>
 </div>

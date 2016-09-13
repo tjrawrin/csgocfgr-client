@@ -1,32 +1,31 @@
 <div class="Category">
-  <h2 class="Category-title">Radar</h2>
-  <div class="radar-preview">
-    <div class="radar-preview__inner">
-      <div class="radar-image"></div>
-      {{radar-canvas data=model selectedPreview=controller.currentImage}}
-    </div>
-  </div>
-  <div class="Category-input-container">
-    <label for="radar-hud-scale-slider">Radar HUD Scale <i class="octicon octicon-info"></i></label>
-    {{input data-command="cl_hud_radar_scale" id="radar-hud-scale-slider" type="range" min="0.8" max="1.3" step="0.01" value=clHudRadarScale}}
-    {{input type="number" min="0.25" max="1.3" step="0.01" value=clHudRadarScale}}
-  </div>
-  <div class="Category-input-container">
-    <label for="radar-scale-slider">Radar Scale <i class="octicon octicon-info"></i></label>
-    {{input data-command="cl_radar_scale" id="radar-scale-slider" type="range" min="0.25" max="1" step="0.01" value=clRadarScale}}
-    {{input type="number" min="0.25" max="1" step="0.01" value=clRadarScale}}
-  </div>
-  <div class="Category-input-container">
-    <label for="radar-icon-scale-slider">Radar Icon Scale <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarIconScaleMin'}}></i></label>
-    {{input data-command="cl_radar_icon_scale_min" id="radar-icon-scale-slider" type="range" min="0.4" max="1.0" step="0.01" value=clRadarIconScaleMin}}
-    {{input type="number" min="0.4" max="1.0" step="0.01" value=clRadarIconScaleMin}}
-  </div>
-  <div class="Category-input-container">
-    <label for="radar-always-centered-box">Radar Always Centered <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarAlwaysCentered'}}></i></label>
-    {{input data-command="cl_radar_always_centered" id="radar-always-centered-box" type="checkbox" checked=clRadarAlwaysCentered}}
-  </div>
-  <div class="Category-input-container">
-    <label for="radar-rotate-box">Radar Rotate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarRotate'}}></i></label>
-    {{input data-command="cl_radar_rotate" id="radar-rotate-box" type="checkbox" checked=clRadarRotate}}
-  </div>
+  <button class="Category-title {{if isOpen "Category-title--open"}}" {{action 'toggleDisplay'}}>
+    <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
+    <span class="Category-title-text">Radar</span>
+  </button>
+  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+    <li class="Category-item">
+      <label for="radar-hud-scale-slider">Radar HUD Scale <i class="octicon octicon-info"></i></label>
+      {{input data-command="cl_hud_radar_scale" id="radar-hud-scale-slider" type="range" min="0.8" max="1.3" step="0.01" value=clHudRadarScale}}
+      {{input type="number" min="0.25" max="1.3" step="0.01" value=clHudRadarScale}}
+    </li>
+    <li class="Category-item">
+      <label for="radar-scale-slider">Radar Scale <i class="octicon octicon-info"></i></label>
+      {{input data-command="cl_radar_scale" id="radar-scale-slider" type="range" min="0.25" max="1" step="0.01" value=clRadarScale}}
+      {{input type="number" min="0.25" max="1" step="0.01" value=clRadarScale}}
+    </li>
+    <li class="Category-item">
+      <label for="radar-icon-scale-slider">Radar Icon Scale <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarIconScaleMin'}}></i></label>
+      {{input data-command="cl_radar_icon_scale_min" id="radar-icon-scale-slider" type="range" min="0.4" max="1.0" step="0.01" value=clRadarIconScaleMin}}
+      {{input type="number" min="0.4" max="1.0" step="0.01" value=clRadarIconScaleMin}}
+    </li>
+    <li class="Category-item">
+      <label for="radar-always-centered-box">Radar Always Centered <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarAlwaysCentered'}}></i></label>
+      {{input data-command="cl_radar_always_centered" id="radar-always-centered-box" type="checkbox" checked=clRadarAlwaysCentered}}
+    </li>
+    <li class="Category-item">
+      <label for="radar-rotate-box">Radar Rotate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clRadarRotate'}}></i></label>
+      {{input data-command="cl_radar_rotate" id="radar-rotate-box" type="checkbox" checked=clRadarRotate}}
+    </li>
+  </ul>
 </div>
