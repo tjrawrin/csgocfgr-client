@@ -3,91 +3,217 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Miscellaneous</span>
   </button>
-  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
     <li class="Category-item">
-      <label for="filter-effect-slider">Filter Effect <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterEnable'}}></i></label>
-      {{custom-select data=model.conFilterEnable options=filterEnableOptions dataCommand="con_filter_enable"}}
+      <label for="filter-effect-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterEnable'}}></i>
+        Filter Effect
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.conFilterEnable options=filterEnableOptions dataCommand="con_filter_enable"}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="filter-setting-1-text">Filter Setting 1 <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterText'}}></i></label>
-      {{input data-command="con_filter_text" id="filter-setting-1-text" type="text" value=conFilterText}}
+      <label for="filter-setting-1-text">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterText'}}></i>
+        Filter Setting 1
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--text" data-command="con_filter_text" id="filter-setting-1-text" type="text" value=conFilterText}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="filter-setting-2-text">Filter Setting 2 <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterTextOut'}}></i></label>
-      {{input data-command="con_filter_text_out" id="filter-setting-2-text" type="text" value=conFilterTextOut}}
+      <label for="filter-setting-2-text">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conFilterTextOut'}}></i>
+        Filter Setting 2
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--text" data-command="con_filter_text_out" id="filter-setting-2-text" type="text" value=conFilterTextOut}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="max-ping-mm-servers-slider">Max Ping Allowed <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mmDedicatedSearchMaxping'}}></i></label>
-      {{input data-command="mm_dedicated_search_maxping" id="max-ping-mm-servers-slider" type="range" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
-      {{input type="number" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+      <label for="max-ping-mm-servers-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mmDedicatedSearchMaxping'}}></i>
+        Max Ping Allowed
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="mm_dedicated_search_maxping" id="max-ping-mm-servers-slider" type="range" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+        {{input class="Category-input Category-input--number" type="number" min="50" max="350" step="1" value=mmDedicatedSearchMaxping}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="steam-notification-position-text">Steam Notifications Position <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'uiSteamOverlayNotificationPosition'}}></i></label>
-      {{custom-select data=model.uiSteamOverlayNotificationPosition options=notificationOptions dataCommand="ui_steam_overlay_notification_position"}}
+      <label for="steam-notification-position-text">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'uiSteamOverlayNotificationPosition'}}></i>
+        Steam Notifications Position
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.uiSteamOverlayNotificationPosition options=notificationOptions dataCommand="ui_steam_overlay_notification_position"}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="download-filter-select">Download Filter <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDownloadfilter'}}></i></label>
-      {{custom-select data=model.clDownloadfilter options=downloadOptions dataCommand="cl_downloadfilter"}}
+      <label for="download-filter-select">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDownloadfilter'}}></i>
+        Download Filter
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.clDownloadfilter options=downloadOptions dataCommand="cl_downloadfilter"}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="developer-box">Developer <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'developer'}}></i></label>
-      {{input data-command="developer" id="developer-box" type="checkbox" checked=developer}}
+      <label for="developer-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'developer'}}></i>
+        Developer
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="developer" id="developer-box" type="checkbox" checked=developer}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="enable-console-box">Enable Console <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conEnable'}}></i></label>
-      {{input data-command="con_enable" id="enable-console-box" type="checkbox" checked=conEnable}}
+      <label for="enable-console-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'conEnable'}}></i>
+        Enable Console
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="con_enable" id="enable-console-box" type="checkbox" checked=conEnable}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="community-message-box">Community Server Message <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'playerNevershowCommunityservermessage'}}></i></label>
-      {{input data-command="player_nevershow_communityservermessage" id="community-message-box" type="checkbox" checked=playerNevershowCommunityservermessage}}
+      <label for="community-message-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'playerNevershowCommunityservermessage'}}></i>
+        Community Server Message
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="player_nevershow_communityservermessage" id="community-message-box" type="checkbox" checked=playerNevershowCommunityservermessage}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="game-instructor-box">Game Instructor <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'gameinstructorEnable'}}></i></label>
-      {{input data-command="gameinstructor_enable" id="game-instructor-box" type="checkbox" checked=gameinstructorEnable}}
+      <label for="game-instructor-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'gameinstructorEnable'}}></i>
+        Game Instructor
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="gameinstructor_enable" id="game-instructor-box" type="checkbox" checked=gameinstructorEnable}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="option-duck-method-box">Option Duck Method <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'optionDuckMethod'}}></i></label>
-      {{input data-command="option_duck_method" id="option-duck-method-box" type="checkbox" checked=optionDuckMethod}}
+      <label for="option-duck-method-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'optionDuckMethod'}}></i>
+        Option Duck Method
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="option_duck_method" id="option-duck-method-box" type="checkbox" checked=optionDuckMethod}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="option-speed-method-box">Option Speed Method <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'optionSpeedMethod'}}></i></label>
-      {{input data-command="option_speed_method" id="option-speed-method-box" type="checkbox" checked=optionSpeedMethod}}
+      <label for="option-speed-method-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'optionSpeedMethod'}}></i>
+        Option Speed Method
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="option_speed_method" id="option-speed-method-box" type="checkbox" checked=optionSpeedMethod}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="force-preload-box">Force Preload <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clForcepreload'}}></i></label>
-      {{input data-command="cl_forcepreload" id="force-preload-box" type="checkbox" checked=clForcepreload}}
+      <label for="force-preload-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clForcepreload'}}></i>
+        Force Preload
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_forcepreload" id="force-preload-box" type="checkbox" checked=clForcepreload}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="disable-html-motd-box">Disable HTML MOTD <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDisablehtmlmotd'}}></i></label>
-      {{input data-command="cl_disablehtmlmotd" id="disable-html-motd-box" type="checkbox" checked=clDisablehtmlmotd}}
+      <label for="disable-html-motd-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDisablehtmlmotd'}}></i>
+        Disable HTML MOTD
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablehtmlmotd" id="disable-html-motd-box" type="checkbox" checked=clDisablehtmlmotd}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="automatic-help-box">Automatic Help <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clAutohelp'}}></i></label>
-      {{input data-command="cl_autohelp" id="automatic-help-box" type="checkbox" checked=clAutohelp}}
+      <label for="automatic-help-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clAutohelp'}}></i>
+        Automatic Help
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autohelp" id="automatic-help-box" type="checkbox" checked=clAutohelp}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="show-help-box">Show Help <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowhelp'}}></i></label>
-      {{input data-command="cl_showhelp" id="show-help-box" type="checkbox" checked=clShowhelp}}
+      <label for="show-help-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clShowhelp'}}></i>
+        Show Help
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showhelp" id="show-help-box" type="checkbox" checked=clShowhelp}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="disable-freeze-cam-box">Disable Freeze Cam <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDisablefreezecam'}}></i></label>
-      {{input data-command="cl_disablefreezecam" id="disable-freeze-cam-box" type="checkbox" checked=clDisablefreezecam}}
+      <label for="disable-freeze-cam-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clDisablefreezecam'}}></i>
+        Disable Freeze Cam
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablefreezecam" id="disable-freeze-cam-box" type="checkbox" checked=clDisablefreezecam}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="show-teammate-colors-box">Show Teammate Colors <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clTeammateColorsShow'}}></i></label>
-      {{custom-select data=model.clTeammateColorsShow options=teammateColorsOptions dataCommand="cl_teammate_colors_show"}}
+      <label for="show-teammate-colors-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clTeammateColorsShow'}}></i>
+        Show Teammate Colors
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.clTeammateColorsShow options=teammateColorsOptions dataCommand="cl_teammate_colors_show"}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="auto-weapon-switch-box">Auto Weapon Switch <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clAutowepswitch'}}></i></label>
-      {{input data-command="cl_autowepswitch" id="auto-weapon-switch-box" type="checkbox" checked=clAutowepswitch}}
+      <label for="auto-weapon-switch-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clAutowepswitch'}}></i>
+        Auto Weapon Switch
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autowepswitch" id="auto-weapon-switch-box" type="checkbox" checked=clAutowepswitch}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="use-opens-buy-menu-box">Use Opens Buy Menu <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clUseOpensBuyMenu'}}></i></label>
-      {{input data-command="cl_use_opens_buy_menu" id="use-opens-buy-menu-box" type="checkbox" checked=clUseOpensBuyMenu}}
+      <label for="use-opens-buy-menu-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clUseOpensBuyMenu'}}></i>
+        Use Opens Buy Menu
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_use_opens_buy_menu" id="use-opens-buy-menu-box" type="checkbox" checked=clUseOpensBuyMenu}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="close-on-buy-box">Close on Buy <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'closeonbuy'}}></i></label>
-      {{input data-command="closeonbuy" id="close-on-buy-box" type="checkbox" checked=closeonbuy}}
+      <label for="close-on-buy-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'closeonbuy'}}></i>
+        Close on Buy
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="closeonbuy" id="close-on-buy-box" type="checkbox" checked=closeonbuy}}
+      </div>
     </li>
   </ul>
 </div>

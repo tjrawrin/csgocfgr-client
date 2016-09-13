@@ -19,6 +19,7 @@
     text-align: left;
     text-transform: uppercase;
     transition: color 200ms ease-in-out;
+    user-select: none;
     width: 100%;
 
     @include fs-attention {
@@ -42,12 +43,11 @@
     background-color: $cWhite;
     border-radius: 0 0 3px 3px;
     margin: 0;
-    // height: 0;
-    // opacity: 0;
+    height: 0;
+    opacity: 0;
     overflow: hidden;
-    // padding: 0 16px;
-    padding: 16px;
-    // visibility: hidden;
+    padding: 0 16px;
+    visibility: hidden;
 
     &--open {
       height: 100%;
@@ -92,6 +92,9 @@
     }
 
     &--checkbox {
+    }
+
+    &--text {
     }
   }
 }

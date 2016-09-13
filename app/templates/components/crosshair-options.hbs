@@ -3,58 +3,124 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Crosshair</span>
   </button>
-  <ul class="Category-inputs {{if isOpen "Category-inputs--open"}}">
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
     <li class="Category-item">
-      <label for="crosshair-style-select">Style <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairstyle'}}></i></label>
-      {{custom-select data=model.clCrosshairstyle options=styleOptions dataCommand="cl_crosshairstyle"}}
+      <label for="crosshair-style-select">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairstyle'}}></i>
+        Style
+      </label>
+      <div class="Category-inputs">
+        {{custom-select data=model.clCrosshairstyle options=styleOptions dataCommand="cl_crosshairstyle"}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-color-r-slider">Red <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorR'}}></i></label>
-      {{input data-command="cl_crosshaircolor_r" id="crosshair-color-r-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorR}}
-      {{input type="number" min="0" max="255" step="1" value=clCrosshaircolorR}}
+      <label for="crosshair-color-r-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorR'}}></i>
+        Red
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_r" id="crosshair-color-r-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorR}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorR}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-color-g-slider">Green <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorG'}}></i></label>
-      {{input data-command="cl_crosshaircolor_g" id="crosshair-color-g-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorG}}
-      {{input type="number" min="0" max="255" step="1" value=clCrosshaircolorG}}
+      <label for="crosshair-color-g-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorG'}}></i>
+        Green
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_g" id="crosshair-color-g-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorG}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorG}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-color-b-slider">Blue <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorB'}}></i></label>
-      {{input data-command="cl_crosshaircolor_b" id="crosshair-color-b-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorB}}
-      {{input type="number" min="0" max="255" step="1" value=clCrosshaircolorB}}
+      <label for="crosshair-color-b-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshaircolorB'}}></i>
+        Blue
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_b" id="crosshair-color-b-slider" type="range" min="0" max="255" step="1" value=clCrosshaircolorB}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshaircolorB}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-alpha-slider">Alpha <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairalpha'}}></i></label>
-      {{input data-command="cl_crosshairalpha" id="crosshair-alpha-slider" type="range" min="0" max="255" step="1" value=clCrosshairalpha}}
-      {{input type="number" min="0" max="255" step="1" value=clCrosshairalpha}}
+      <label for="crosshair-alpha-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairalpha'}}></i>
+        Alpha
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairalpha" id="crosshair-alpha-slider" type="range" min="0" max="255" step="1" value=clCrosshairalpha}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=clCrosshairalpha}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-draw-outline-box">Draw Outline <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairDrawoutline'}}></i></label>
-      {{input data-command="cl_crosshair_drawoutline" id="crosshair-draw-outline-box" type="checkbox" checked=clCrosshairDrawoutline}}
+      <label for="crosshair-draw-outline-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairDrawoutline'}}></i>
+        Draw Outline
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshair_drawoutline" id="crosshair-draw-outline-box" type="checkbox" checked=clCrosshairDrawoutline}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-outline-thickness-slider">Outline Thickness <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairOutlinethickness'}}></i></label>
-      {{input data-command="cl_crosshair_outlinethickness" id="crosshair-outline-thickness-slider" type="range" min="0" max="3" step="1" value=clCrosshairOutlinethickness}}
-      {{input type="number" min="0" max="3.0" step="1" value=clCrosshairOutlinethickness}}
+      <label for="crosshair-outline-thickness-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairOutlinethickness'}}></i>
+        Outline Thickness
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshair_outlinethickness" id="crosshair-outline-thickness-slider" type="range" min="0" max="3" step="1" value=clCrosshairOutlinethickness}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="3.0" step="1" value=clCrosshairOutlinethickness}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-size-slider">Size <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairsize'}}></i></label>
-      {{input data-command="cl_crosshairsize" id="crosshair-size-slider" type="range" min="-1" max="200" step="0.5" value=clCrosshairsize}}
-      {{input type="number" min="-1" max="200" step="0.5" value=clCrosshairsize}}
+      <label for="crosshair-size-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairsize'}}></i>
+        Size
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairsize" id="crosshair-size-slider" type="range" min="-1" max="200" step="0.5" value=clCrosshairsize}}
+        {{input class="Category-input Category-input--number" type="number" min="-1" max="200" step="0.5" value=clCrosshairsize}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-thickness-slider">Thickness <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairthickness'}}></i></label>
-      {{input data-command="cl_crosshairthickness" id="crosshair-thickness-slider" type="range" min="0" max="200" step="0.5" value=clCrosshairthickness}}
-      {{input type="number" min="0" max="200" step="0.5" value=clCrosshairthickness}}
+      <label for="crosshair-thickness-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairthickness'}}></i>
+        Thickness
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairthickness" id="crosshair-thickness-slider" type="range" min="0" max="200" step="0.5" value=clCrosshairthickness}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="200" step="0.5" value=clCrosshairthickness}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-gap-slider">Gap <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairgap'}}></i></label>
-      {{input data-command="cl_crosshairgap" id="crosshair-gap-slider" type="range" min="-100" max="100" step="1" value=clCrosshairgap}}
-      {{input type="number" min="-100" max="100" step="1" value=clCrosshairgap}}
+      <label for="crosshair-gap-slider">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairgap'}}></i>
+        Gap
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_crosshairgap" id="crosshair-gap-slider" type="range" min="-100" max="100" step="1" value=clCrosshairgap}}
+        {{input class="Category-input Category-input--number" type="number" min="-100" max="100" step="1" value=clCrosshairgap}}
+      </div>
     </li>
     <li class="Category-item">
-      <label for="crosshair-dot-box">Dot <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairdot'}}></i></label>
-      {{input data-command="cl_crosshairdot" id="crosshair-dot-box" type="checkbox" checked=clCrosshairdot}}
+      <label for="crosshair-dot-box">
+        <i class="octicon octicon-info"></i>
+        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCrosshairdot'}}></i>
+        Dot
+      </label>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshairdot" id="crosshair-dot-box" type="checkbox" checked=clCrosshairdot}}
+      </div>
     </li>
   </ul>
 </div>
