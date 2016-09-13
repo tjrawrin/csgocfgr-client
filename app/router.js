@@ -7,20 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('index', { path: '/' });
-  this.route('create', { path: '/create' }, function() {
-    this.route('rate');
-    this.route('audio');
-    this.route('video');
-    this.route('mouse');
-    this.route('misc');
-    this.route('hud');
-    this.route('radar');
-    this.route('keybind');
-    this.route('crosshair');
-  });
+  this.route('create');
+  this.route('import');
   // this.route('show', { resetNamespace: true, path: ':cfg_id' }, function() {});
-  this.route('404', { path: '*path' });
+  this.route('notfound', { path: '*path' });
 });
 
 Router.reopen({

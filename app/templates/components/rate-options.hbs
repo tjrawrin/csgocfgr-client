@@ -1,0 +1,32 @@
+<div class="Category">
+  <h2 class="Category-title">Rate</h2>
+  <div class="Category-input-container">
+    <label for="rate-slider">Rate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'rate'}}></i></label>
+    {{input data-command="rate" id="rate-slider" type="range" min="0" max="128000" value=rate}}
+    {{input type="number" min="0" max="128000" value=rate}}
+  </div>
+  <div class="Category-input-container">
+    <label for="cmd-rate-slider">CMD Rate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clCmdrate'}}></i></label>
+    {{input data-command="cl_cmdrate" id="cmd-rate-slider" type="range" min="10" max="128" value=clCmdrate}}
+    {{input type="number" min="10" max="128" value=clCmdrate}}
+  </div>
+  <div class="Category-input-container">
+    <label for="update-rate-slider">Update Rate <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clUpdaterate'}}></i></label>
+    {{input data-command="cl_updaterate" id="update-rate-slider" type="range" min="10" max="128" value=clUpdaterate}}
+    {{input type="number" min="10" max="128" value=clUpdaterate}}
+  </div>
+  <div class="Category-input-container">
+    <label for="interp-slider">Interp <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clInterp'}}></i></label>
+    {{input data-command="cl_interp" id="interp-slider" type="range" min="0.0" max="0.5" step="0.01" value=clInterp}}
+    {{input type="number" min="0.0" max="0.5" step="0.01" value=clInterp}}
+  </div>
+  <div class="Category-input-container">
+    <label for="interp-ratio-slider">Interp Ratio <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clInterpRatio'}}></i></label>
+    {{input data-command="cl_interp_ratio" id="interp-ratio-slider" type="range" min="1.0" max="2.0" step="0.01" value=clInterpRatio}}
+    {{input type="number" min="1.0" max="2.0" step="0.01" value=clInterpRatio}}
+  </div>
+  <div class="Category-input-container">
+    <label for="lag-compensation-box">Lag Compensation <i class="octicon octicon-info"></i> <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'clLagcompensation'}}></i></label>
+    {{input data-command="cl_lagcompensation" id="lag-compensation-box" type="checkbox" checked=clLagcompensation}}
+  </div>
+</div>
