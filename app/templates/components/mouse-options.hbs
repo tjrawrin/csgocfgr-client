@@ -4,34 +4,37 @@
     <span class="Category-title-text">Mouse</span>
   </button>
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
+
     <li class="Category-item">
-      <label for="sensitivity-slider">
-        <i class="octicon octicon-info"></i>
-        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'sensitivity'}}></i>
-        Sensitivity
-      </label>
+      <label class="Category-label">sensitivity</label>
+      <div class="Category-description">
+        <p>sets the mouse sensitivity.</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 999, <strong>default</strong>: 6.0</p>
+      </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="sensitivity" id="sensitivity-slider" type="range" min="0" max="20" step="0.1" value=data.sensitivity}}
+        {{input class="Category-input Category-input--range" data-command="sensitivity" type="range" min="0" max="999" step="0.1" value=data.sensitivity}}
         {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.1" value=data.sensitivity}}
       </div>
     </li>
+
     <li class="Category-item">
-      <label for="zoom-sensitivity-slider">
-        <i class="octicon octicon-info"></i>
-        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'zoomSensitivityRatioMouse'}}></i>
-        Zoom Sensitivity
-      </label>
+      <label class="Category-label">zoom_sensitivity_ratio_mouse</label>
+      <div class="Category-description">
+        <p>is the additional mouse sensitivity scale factor applied when FOV is zoomed in.</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 20, <strong>default</strong>: 1</p>
+      </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="zoom_sensitivity_ratio_mouse" id="zoom-sensitivity-slider" type="range" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
+        {{input class="Category-input Category-input--range" data-command="zoom_sensitivity_ratio_mouse" type="range" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
         {{input class="Category-input Category-input--number" type="number" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
       </div>
     </li>
+
     <li class="Category-item">
-      <label for="mouse-acceleration-slider">
-        <i class="octicon octicon-info"></i>
-        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mCustomaccel'}}></i>
-        Mouse Acceleration
-      </label>
+      <label class="Category-label">m_customaccel</label>
+      <div class="Category-description">
+        <p>sets custom mouse acceleration:</p>
+        <p><strong>default</strong>: 0</p>
+      </div>
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="m_customaccel">
           {{#each customAccelOptions as |option|}}
@@ -40,15 +43,17 @@
         </select>
       </div>
     </li>
+
     <li class="Category-item">
-      <label for="mouse-raw-input-box">
-        <i class="octicon octicon-info"></i>
-        <i class="reset-value octicon octicon-sync" {{action 'setToDefaultValue' 'mRawinput'}}></i>
-        Raw Input
-      </label>
+      <label class="Category-label">m_rawinput</label>
+      <div class="Category-description">
+        <p>uses raw input for mouse input.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+      </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="m_rawinput" id="mouse-raw-input-box" type="checkbox" checked=data.mRawinput}}
+        {{input class="Category-input Category-input--checkbox" data-command="m_rawinput" type="checkbox" checked=data.mRawinput}}
       </div>
     </li>
+
   </ul>
 </div>

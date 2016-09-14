@@ -27,24 +27,24 @@ const defaultValues = {
 export default Ember.Component.extend({
   data: defaultValues,
   filterEnableOptions: [
-    {optionName: 'Disabled', id: 0},
-    {optionName: 'Filters Completely', id: 1},
-    {optionName: 'Displays Filtered Text Brighter', id: 2}
+    {optionName: '0: Disabled', id: 0},
+    {optionName: '1: Filters Completely', id: 1},
+    {optionName: '2: Displays Filtered Text Brighter', id: 2}
   ],
   notificationOptions: [
-    {optionName: 'Bottom Right', id: 'bottomright'},
-    {optionName: 'Bottom Left', id: 'bottomleft'},
-    {optionName: 'Top Right', id: 'topright'},
-    {optionName: 'Top Left', id: 'topleft'}
+    {optionName: 'bottomright', id: 'bottomright'},
+    {optionName: 'bottomleft', id: 'bottomleft'},
+    {optionName: 'topright', id: 'topright'},
+    {optionName: 'topleft', id: 'topleft'}
   ],
   downloadOptions: [
-    {optionName: 'All', id: 'all'},
-    {optionName: 'No Sounds', id: 'nosounds'},
-    {optionName: 'None', id: 'none'}
+    {optionName: 'all', id: 'all'},
+    {optionName: 'nosounds', id: 'nosounds'},
+    {optionName: 'none', id: 'none'}
   ],
   teammateColorsOptions: [
-    {optionName: 'Show Teammates as Seperate Colors in The Radar, Scoreboard, Etc...', id: 1},
-    {optionName: 'Show Colors and Letters', id: 2}
+    {optionName: '1: Show Teammates as Seperate Colors in The Radar, Scoreboard, Etc...', id: 1},
+    {optionName: '2: Show Colors and Letters', id: 2}
   ],
   isOpen: false,
   actions: {

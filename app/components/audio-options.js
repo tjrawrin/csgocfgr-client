@@ -17,11 +17,11 @@ const defaultValues = {
 export default Ember.Component.extend({
   data: defaultValues,
   speakerOptions: [
-    {optionName: 'Default, Automatically Pick Best', id: -1},
-    {optionName: 'Headphones', id: 1},
-    {optionName: '4 Speakers', id: 3},
-    {optionName: '2 Speakers', id: 4},
-    {optionName: '5.1 Surround', id: 6},
+    {optionName: '-1: Default, Automatically Pick Best', id: -1},
+    {optionName: '1: Headphones', id: 1},
+    {optionName: '3: 4 Speakers', id: 3},
+    {optionName: '4: 2 Speakers', id: 4},
+    {optionName: '6: 5.1 Surround', id: 6},
   ],
   isOpen: false,
   actions: {
