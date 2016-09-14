@@ -32,36 +32,36 @@ const defaultValues = {
 export default Ember.Component.extend({
   data: defaultValues,
   hudcolorOptions: [
-    {optionName: 'Default', id: 0},
-    {optionName: 'White', id: 1},
-    {optionName: 'Light Blue', id: 2},
-    {optionName: 'Blue', id: 3},
-    {optionName: 'Purple', id: 4},
-    {optionName: 'Red', id: 5},
-    {optionName: 'Orange', id: 6},
-    {optionName: 'Yellow', id: 7},
-    {optionName: 'Green', id: 8},
-    {optionName: 'Teal', id: 9},
-    {optionName: 'Pink', id: 10}
+    {optionName: '0: Default', id: 0},
+    {optionName: '1: White', id: 1},
+    {optionName: '2: Light Blue', id: 2},
+    {optionName: '3: Blue', id: 3},
+    {optionName: '4: Purple', id: 4},
+    {optionName: '5: Red', id: 5},
+    {optionName: '6: Orange', id: 6},
+    {optionName: '7: Yellow', id: 7},
+    {optionName: '8: Green', id: 8},
+    {optionName: '9: Teal', id: 9},
+    {optionName: '10: Pink', id: 10}
   ],
   viewmodelOptions: [
-    {optionName: 'Desktop', id: 1},
-    {optionName: 'Couch', id: 2},
-    {optionName: 'Classic', id: 3}
+    {optionName: '1: Desktop', id: 1},
+    {optionName: '2: Couch', id: 2},
+    {optionName: '3: Classic', id: 3}
   ],
   showFpsOptions: [
-    {optionName: 'Disabled', id: 0},
-    {optionName: 'FPS', id: 1},
-    {optionName: 'Smooth', id: 2},
-    {optionName: 'Server', id: 3},
-    {optionName: 'Show & Log to File', id: 4},
-    {optionName: 'Thread and Wait Times', id: 5}
+    {optionName: '0: Disabled', id: 0},
+    {optionName: '1: FPS', id: 1},
+    {optionName: '2: Smooth', id: 2},
+    {optionName: '3: Server', id: 3},
+    {optionName: '4: Show & Log to File', id: 4},
+    {optionName: '5: Thread and Wait Times', id: 5}
   ],
   netGraphOptions: [
-    {optionName: 'Disabled', id: 0},
-    {optionName: 'Show Network Data', id: 1},
-    {optionName: 'Show in/out Data', id: 2},
-    {optionName: 'Draw Data on Payload', id: 3}
+    {optionName: '0: Disabled', id: 0},
+    {optionName: '1: Show Network Data', id: 1},
+    {optionName: '2: Show in/out Data', id: 2},
+    {optionName: '3: Draw Data on Payload', id: 3}
   ],
   isOpen: false,
   actions: {

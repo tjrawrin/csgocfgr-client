@@ -43,7 +43,7 @@ export default Ember.Component.extend({
     {optionName: 'none', id: 'none'}
   ],
   teammateColorsOptions: [
-    {optionName: '1: Show Teammates as Seperate Colors in The Radar, Scoreboard, Etc...', id: 1},
+    {optionName: '1: Show Teammates as Seperate Colors', id: 1},
     {optionName: '2: Show Colors and Letters', id: 2}
   ],
   isOpen: false,

@@ -9,7 +9,7 @@
       <label class="Category-label">rate</label>
       <div class="Category-description">
         <p>is the <em>maximum</em> bytes per second that the host can receive data.</p>
-        <p><strong>min</strong>: 500, <strong>max</strong>: 128000, <strong>default</strong>: 80000</p>
+        <p><strong>min</strong>: 500, <strong>max</strong>: 128000, <span class="Category-description-default"><strong>default value</strong>: 80000</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="rate" type="range" min="0" max="128000" value=data.rate}}
@@ -21,7 +21,7 @@
       <label class="Category-label">cl_cmdrate</label>
       <div class="Category-description">
         <p>is the <em>maximum</em> number of command packets sent to the server per second.</p>
-        <p><strong>min</strong>: 10, <strong>max</strong>: 128, <strong>default</strong>: 64</p>
+        <p><strong>min</strong>: 10, <strong>max</strong>: 128, <span class="Category-description-default"><strong>default value</strong>: 64</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="cl_cmdrate" type="range" min="10" max="128" value=data.clCmdrate}}
@@ -33,7 +33,7 @@
       <label class="Category-label">cl_updaterate</label>
       <div class="Category-description">
         <p>is the number of packets per second of updates you are requesting from the server.</p>
-        <p><strong>min</strong>: 10, <strong>max</strong>: 128, <strong>default</strong>: 64</p>
+        <p><strong>min</strong>: 10, <strong>max</strong>: 128, <span class="Category-description-default"><strong>default value</strong>: 64</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="cl_updaterate" type="range" min="10" max="128" value=data.clUpdaterate}}
@@ -45,7 +45,7 @@
       <label class="Category-label">cl_interp</label>
       <div class="Category-description">
         <p>sets the interpolation amount (bounded on the low side by server interp ratio settings).</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 0.50, <strong>default</strong>: 0.03</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 0.50, <span class="Category-description-default"><strong>default value</strong>: 0.03</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="cl_interp" type="range" min="0.0" max="0.5" step="0.01" value=data.clInterp}}
@@ -57,7 +57,7 @@
       <label class="Category-label">cl_interp_ratio</label>
       <div class="Category-description">
         <p>sets the interpolation amount. Final amount is (cl_interp_ratio / cl_updaterate)</p>
-        <p><strong>min</strong>: 1, <strong>max</strong>: 2, <strong>default</strong>: 2</p>
+        <p><strong>min</strong>: 1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 2</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="cl_interp_ratio" type="range" min="1.0" max="2.0" step="0.01" value=data.clInterpRatio}}
@@ -69,7 +69,7 @@
       <label class="Category-label">cl_lagcompensation</label>
       <div class="Category-description">
         <p>performs server side lag compensation of weapon firing events.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="cl_lagcompensation" type="checkbox" checked=data.clLagcompensation}}

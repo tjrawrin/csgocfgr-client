@@ -9,7 +9,7 @@
       <label class="Category-label">sensitivity</label>
       <div class="Category-description">
         <p>sets the mouse sensitivity.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 999, <strong>default</strong>: 6.0</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 6.0</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="sensitivity" type="range" min="0" max="999" step="0.1" value=data.sensitivity}}
@@ -21,7 +21,7 @@
       <label class="Category-label">zoom_sensitivity_ratio_mouse</label>
       <div class="Category-description">
         <p>is the additional mouse sensitivity scale factor applied when FOV is zoomed in.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 20, <strong>default</strong>: 1</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 20, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="zoom_sensitivity_ratio_mouse" type="range" min="0" max="20" step="0.01" value=data.zoomSensitivityRatioMouse}}
@@ -33,7 +33,7 @@
       <label class="Category-label">m_customaccel</label>
       <div class="Category-description">
         <p>sets custom mouse acceleration:</p>
-        <p><strong>default</strong>: 0</p>
+        <p><strong>disabled</strong>: 0, <strong>enabled</strong>: 1, <strong>enabled with separate yaw/pitch rescale</strong>: 2, <strong>enabled with exponent off by one</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="m_customaccel">
@@ -48,7 +48,7 @@
       <label class="Category-label">m_rawinput</label>
       <div class="Category-description">
         <p>uses raw input for mouse input.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="m_rawinput" type="checkbox" checked=data.mRawinput}}

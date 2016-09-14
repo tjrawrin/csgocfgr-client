@@ -9,7 +9,7 @@
       <label class="Category-label">volume</label>
       <div class="Category-description">
         <p>Sets the volume of sounds in game.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="volume" type="range" min="0.0" max="1.0" step="0.01" value=data.volume}}
@@ -21,7 +21,7 @@
       <label class="Category-label">snd_musicvolume</label>
       <div class="Category-description">
         <p>Sets the volume of music in game.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <strong>default</strong>: 0.7</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0.7</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="snd_musicvolume" type="range" min="0.0" max="1.0" step="0.01" value=data.sndMusicvolume}}
@@ -33,7 +33,7 @@
       <label class="Category-label">windows_speaker_config</label>
       <div class="Category-description">
         <p>sets the configuration of sound channels.</p>
-        <p><strong>automatically pick best</strong>: -1, <strong>headphones</strong>: 1, <strong>4 speakers</strong>: 3, <strong>2 speakers</strong>: 4, <strong>5.1 surround</strong>: 6, <strong>default</strong>: -1</p>
+        <p><strong>automatically pick best</strong>: -1, <strong>headphones</strong>: 1, <strong>4 speakers</strong>: 3, <strong>2 speakers</strong>: 4, <strong>5.1 surround</strong>: 6, <span class="Category-description-default"><strong>default value</strong>: -1</span></p>
       </div>
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="windows_speaker_config">
@@ -48,7 +48,7 @@
       <label class="Category-label">snd_mixahead</label>
       <div class="Category-description">
         <p>sets the buffer time to play audio.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <strong>default</strong>: 0.1</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0.1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="snd_mixahead" type="range" min="0.0" max="1.0" step="0.05" value=data.sndMixahead}}
@@ -60,7 +60,7 @@
       <label class="Category-label">snd_headphone_pan_exponent</label>
       <div class="Category-description">
         <p>specifies the exponent for the pan crossfade from phone to phone if the exp pan law is being used.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 100, <strong>default</strong>: 2</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 100, <span class="Category-description-default"><strong>default value</strong>: 2</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="snd_headphone_pan_exponent" type="range" min="0" max="100" step="1" value=data.sndHeadphonePanExponent}}
@@ -72,7 +72,7 @@
       <label class="Category-label">snd_headphone_pan_radial_weight</label>
       <div class="Category-description">
         <p>apply <em>cos(angle) * weight</em> before pan law.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 100, <strong>default</strong>: 1</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 100, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="snd_headphone_pan_radial_weight" type="range" min="0" max="100" step="1" value=data.sndHeadphonePanRadialWeight}}
@@ -84,7 +84,7 @@
       <label class="Category-label">snd_legacy_surround</label>
       <div class="Category-description">
         <p>sometimes helps correct 3D surround issues, enable this only if you are experiencing problems with 3D sound.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 0</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="snd_legacy_surround" type="checkbox" checked=data.sndLegacySurround}}
@@ -95,7 +95,7 @@
       <label class="Category-label">snd_mute_losefocus</label>
       <div class="Category-description">
         <p>disables sound when the game loses focus.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="snd_mute_losefocus" type="checkbox" checked=data.sndMuteLosefocus}}
@@ -106,7 +106,7 @@
       <label class="Category-label">voice_scale</label>
       <div class="Category-description">
         <p>sets the volume of voice chat.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--range" data-command="voice_scale" type="range" min="0.0" max="1.0" step="0.05" value=data.voiceScale}}
@@ -118,7 +118,7 @@
       <label class="Category-label">voice_enable</label>
       <div class="Category-description">
         <p>enables voice communcation.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="voice_enable" type="checkbox" checked=data.voiceEnable}}
@@ -129,7 +129,7 @@
       <label class="Category-label">lobby_voice_chat_enabled</label>
       <div class="Category-description">
         <p>enables your microphone in the game lobby.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <strong>default</strong>: 1</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
         {{input class="Category-input Category-input--checkbox" data-command="lobby_voice_chat_enabled" type="checkbox" checked=data.lobbyVoiceChatEnabled}}

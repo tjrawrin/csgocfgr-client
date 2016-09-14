@@ -1,7 +1,7 @@
 .Category {
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  margin-top: 32px;
+  margin-top: 24px;
   transition: box-shadow 200ms ease-in-out;
 
   @include fs-attention {
@@ -87,6 +87,13 @@
 
     >:last-child {
       margin-bottom: 0;
+    }
+
+    &-default {
+      background-color: $cPrimary;
+      border-radius: 3px;
+      color: $cWhite;
+      padding: 2px 4px;
     }
   }
 
