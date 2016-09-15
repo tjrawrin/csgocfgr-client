@@ -4,6 +4,181 @@
     <span class="Category-title-text">Keybind</span>
   </button>
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
-    <li class="Category-item">Comming Soon</li>
+    <li class="Category-item">
+      <div class="Keyboard">
+        <div class="Keyboard-main">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--pr" {{action 'openModal' 'keyEsc' keyEsc model}}>Esc</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF1' keyF1 model}}>F1</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF2' keyF2 model}}>F2</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF3' keyF3 model}}>F3</button>
+            <button class="Keyboard-key Keyboard-key--pr" {{action 'openModal' 'keyF4' keyF4 model}}>F4</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF5' keyF5 model}}>F5</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF6' keyF6 model}}>F6</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF7' keyF7 model}}>F7</button>
+            <button class="Keyboard-key Keyboard-key--pr" {{action 'openModal' 'keyF8' keyF8 model}}>F8</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF9' keyF9 model}}>F9</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF10' keyF10 model}}>F10</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF11' keyF11 model}}>F11</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF12' keyF12 model}}>F12</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">`</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK1' keyK1 model}}>1</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK2' keyK2 model}}>2</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK3' keyK3 model}}>3</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK4' keyK4 model}}>4</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK5' keyK5 model}}>5</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK6' keyK6 model}}>6</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK7' keyK7 model}}>7</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK8' keyK8 model}}>8</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK9' keyK9 model}}>9</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK0' keyK0 model}}>0</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyHyphen' keyHyphen model}}>-</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyEquals' keyEquals model}}>=</button>
+            <button class="Keyboard-key Keyboard-key--bs" {{action 'openModal' 'keyBackspace' keyBackspace model}}>&#8592;</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--tb" {{action 'openModal' 'keyTab' keyTab model}}>Tab</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyQ' keyQ model}}>q</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyW' keyW model}}>w</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyE' keyE model}}>e</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyR' keyR model}}>r</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyT' keyT model}}>t</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyY' keyY model}}>y</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyU' keyU model}}>u</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyI' keyI model}}>i</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyO' keyO model}}>o</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyP' keyP model}}>p</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyLbracket' keyLbracket model}}>[</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyRbracket' keyRbracket model}}>]</button>
+            <button class="Keyboard-key Keyboard-key--sb" {{action 'openModal' 'keyBkslash' keyBkslash model}}>\</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--cp" {{action 'openModal' 'keyCapslock' keyCapslock model}}>Caps</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyA' keyA model}}>a</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyS' keyS model}}>s</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyD' keyD model}}>d</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyF' keyF model}}>f</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyG' keyG model}}>g</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyH' keyH model}}>h</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyJ' keyJ model}}>j</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyK' keyK model}}>k</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyL' keyL model}}>l</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keySemicolon' keySemicolon model}}>;</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyApostrophe' keyApostrophe model}}>&#39;</button>
+            <button class="Keyboard-key Keyboard-key--rt" {{action 'openModal' 'keyEnter' keyEnter model}}>&#8629;</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--sft" {{action 'openModal' 'keyShift' keyShift model}}>&#8679;</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyZ' keyZ model}}>z</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyX' keyX model}}>x</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyC' keyC model}}>c</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyV' keyV model}}>v</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyB' keyB model}}>b</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyN' keyN model}}>n</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyM' keyM model}}>m</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyComma' keyComma model}}>,</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyPeriod' keyPeriod model}}>.</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyFwslash' keyFwslash model}}>/</button>
+            <button class="Keyboard-key Keyboard-key--sft" {{action 'openModal' 'keyShift' keyShift model}}>&#8679;</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--cl Keyboard-key--pr2" {{action 'openModal' 'keyCtrl' keyCtrl model}} {{bind-attr class="keyCtrl:has-bind Keyboard-key Keyboard-key--cl Keyboard-key--pr2"}}>Ctrl</button>
+            <button class="Keyboard-key Keyboard-key--at" {{action 'openModal' 'keyAlt' keyAlt model}} {{bind-attr class="keyAlt:has-bind Keyboard-key Keyboard-key--at"}}>Alt</button>
+            <button class="Keyboard-key Keyboard-key--sp" {{action 'openModal' 'keySpace' keySpace model}} {{bind-attr class="keySpace:has-bind Keyboard-key Keyboard-key--sp"}}>Space</button>
+            <button class="Keyboard-key Keyboard-key--at Keyboard-key--pr3" {{action 'openModal' 'keyAlt' keyAlt model}} {{bind-attr class="keyAlt:has-bind Keyboard-key Keyboard-key--at Keyboard-key--pr3"}}>Alt</button>
+            <button class="Keyboard-key Keyboard-key--cl" {{action 'openModal' 'keyCtrl' keyCtrl model}} {{bind-attr class="keyCtrl:has-bind Keyboard-key Keyboard-key--cl"}}>Ctrl</button>
+          </div>
+        </div>
+        <div class="Keyboard-arrows">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyPause' keyPause model}}>Pause</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyIns' keyIns model}}>Ins</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyHome' keyHome model}}>Home</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyPgup' keyPgup model}}>PgUp</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyDel' keyDel model}}>Del</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyEnd' keyEnd model}}>End</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyPgdn' keyPgdn model}}>PgDn</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyUparrow' keyUparrow model}}>&#8593;</button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyLeftarrow' keyLeftarrow model}}>&#8592;</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyDownarrow' keyDownarrow model}}>&#8595;</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyRightarrow' keyRightarrow model}}>&#8594;</button>
+          </div>
+        </div>
+        <div class="Keyboard-tenkey">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key" class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key" class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key" class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">Num Lock</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpSlash' keyKpSlash model}}>/</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpMultiply' keyKpMultiply model}}>*</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpMinus' keyKpMinus model}}>-</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpHome' keyKpHome model}}>7</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpUparrow' keyKpUparrow model}}>8</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpPgup' keyKpPgup model}}>9</button>
+            <button class="Keyboard-key Keyboard-key--pl" {{action 'openModal' 'keyKpPlus' keyKpPlus model}}>+</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpLeftarrow' keyKpLeftarrow model}}>4</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKp5' keyKp5 model}}>5</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpRightarrow' keyKpRightarrow model}}>6</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpEnd' keyKpEnd model}}>1</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpDownarrow' keyKpDownarrow model}}>2</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpPgdn' keyKpPgdn model}}>3</button>
+            <button class="Keyboard-key Keyboard-key--ent" {{action 'openModal' 'keyKpEnter' keyKpEnter model}}>Enter</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--zd" {{action 'openModal' 'keyKpIns' keyKpIns model}}>0</button>
+            <button class="Keyboard-key" {{action 'openModal' 'keyKpDel' keyKpDel model}}>.</button>
+          </div>
+        </div>
+        <div class="Keyboard-mouse">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--lmb" {{action 'openModal' 'keyMouse1' keyMouse1 model}}>MB1</button>
+            <div class="Keyboard-row--middle-mouse">
+              <button class="Keyboard-key Keyboard-key--mmbu" {{action 'openModal' 'keyMwheelup' keyMwheelup model}}>&#8593;</button>
+              <button class="Keyboard-key Keyboard-key--mmbc" {{action 'openModal' 'keyMouse3' keyMouse3 model}}>MB3</button>
+              <button class="Keyboard-key Keyboard-key--mmbd" {{action 'openModal' 'keyMwheeldown' keyMwheeldown model}}>&#8595;</button>
+            </div>
+            <button class="Keyboard-key Keyboard-key--rmb" {{action 'openModal' 'keyMouse2' keyMouse2 model}}>MB2</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--mb4" {{action 'openModal' 'keyMouse4' keyMouse4 model}}>MB4</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--mb5" {{action 'openModal' 'keyMouse5' keyMouse5 model}}>MB5</button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+        </div>
+      </div>
+    </li>
   </ul>
 </div>
