@@ -1,5 +1,6 @@
 .Keyboard {
   display: flex;
+  margin-top: 16px;
   overflow-y: hidden;
   overflow-x: scroll;
   padding-bottom: 24px;
@@ -36,11 +37,10 @@
   &-row {
     white-space: nowrap;
 
-    // .keyboard__row--middle-mouse {
-    //   width: 33px;
-    //   display: inline-block;
-    //   vertical-align: bottom;
-    // }
+    &--mm {
+      display: inline-block;
+      vertical-align: bottom;
+    }
   }
 
   &-key {
@@ -56,12 +56,21 @@
     padding: 2px;
     position: relative;
     text-align: center;
+    transition: background-color 200ms ease-in-out;
     width: 32px;
+
+    @include fs-attention {
+      background-color: $cAccent;
+    }
 
     &--disabled {
       background-color: $cGray;
       color: $cDarkGray;
       cursor: default;
+
+      @include fs-attention {
+        background-color: $cGray;
+      }
     }
 
     &--hidden {
@@ -161,17 +170,8 @@
       width: 36px;
     }
 
-
-
-
-
-
-
-
-
+    &--bound {
+      background-color: $cSecondary;
+    }
   }
-
-
-
-
 }

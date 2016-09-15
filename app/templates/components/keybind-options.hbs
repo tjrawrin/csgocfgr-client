@@ -5,6 +5,17 @@
   </button>
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
     <li class="Category-item">
+      <div class="Category-description">
+        <p>the following is a list of weapon and gear options you can use to bind to keys.</p>
+        <p><strong>rifles</strong>: ssg08, galilar, famas, ssg550, aug, m4a1, ak47, g3sg1, scar20, awp</p>
+        <p><strong>sub-machine guns</strong>: mac10, ump45, p90, bizon, mp7, mp9</p>
+        <p><strong>heavy</strong>: xm1014, mag7, sawedoff, m249, negev</p>
+        <p><strong>pistol</strong>: p228, glock, elite, tec9, hkp2000, p250</p>
+        <p><strong>grenades &amp; gear</strong>: incgrenade, flashbang, smokegrenade, hegrenade, molotov, decoy, kevlar, vesthelm, taser, defuser</p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--text" type="text" value="test"}}
+      </div>
       <div class="Keyboard">
         <div class="Keyboard-main">
           <div class="Keyboard-row">
@@ -84,11 +95,11 @@
             <button class="Keyboard-key Keyboard-key--sft" {{action 'openModal' 'keyShift' keyShift model}}>&#8679;</button>
           </div>
           <div class="Keyboard-row">
-            <button class="Keyboard-key Keyboard-key--cl Keyboard-key--pr2" {{action 'openModal' 'keyCtrl' keyCtrl model}} {{bind-attr class="keyCtrl:has-bind Keyboard-key Keyboard-key--cl Keyboard-key--pr2"}}>Ctrl</button>
-            <button class="Keyboard-key Keyboard-key--at" {{action 'openModal' 'keyAlt' keyAlt model}} {{bind-attr class="keyAlt:has-bind Keyboard-key Keyboard-key--at"}}>Alt</button>
-            <button class="Keyboard-key Keyboard-key--sp" {{action 'openModal' 'keySpace' keySpace model}} {{bind-attr class="keySpace:has-bind Keyboard-key Keyboard-key--sp"}}>Space</button>
-            <button class="Keyboard-key Keyboard-key--at Keyboard-key--pr3" {{action 'openModal' 'keyAlt' keyAlt model}} {{bind-attr class="keyAlt:has-bind Keyboard-key Keyboard-key--at Keyboard-key--pr3"}}>Alt</button>
-            <button class="Keyboard-key Keyboard-key--cl" {{action 'openModal' 'keyCtrl' keyCtrl model}} {{bind-attr class="keyCtrl:has-bind Keyboard-key Keyboard-key--cl"}}>Ctrl</button>
+            <button class="Keyboard-key Keyboard-key--cl Keyboard-key--pr2" {{action 'openModal' 'keyCtrl' keyCtrl model}}>Ctrl</button>
+            <button class="Keyboard-key Keyboard-key--at" {{action 'openModal' 'keyAlt' keyAlt model}}>Alt</button>
+            <button class="Keyboard-key Keyboard-key--sp" {{action 'openModal' 'keySpace' keySpace model}}>Space</button>
+            <button class="Keyboard-key Keyboard-key--at Keyboard-key--pr3" {{action 'openModal' 'keyAlt' keyAlt model}}>Alt</button>
+            <button class="Keyboard-key Keyboard-key--cl" {{action 'openModal' 'keyCtrl' keyCtrl model}}>Ctrl</button>
           </div>
         </div>
         <div class="Keyboard-arrows">
@@ -161,7 +172,7 @@
         <div class="Keyboard-mouse">
           <div class="Keyboard-row">
             <button class="Keyboard-key Keyboard-key--lmb" {{action 'openModal' 'keyMouse1' keyMouse1 model}}>MB1</button>
-            <div class="Keyboard-row--middle-mouse">
+            <div class="Keyboard-row Keyboard-row--mm">
               <button class="Keyboard-key Keyboard-key--mmbu" {{action 'openModal' 'keyMwheelup' keyMwheelup model}}>&#8593;</button>
               <button class="Keyboard-key Keyboard-key--mmbc" {{action 'openModal' 'keyMouse3' keyMouse3 model}}>MB3</button>
               <button class="Keyboard-key Keyboard-key--mmbd" {{action 'openModal' 'keyMwheeldown' keyMwheeldown model}}>&#8595;</button>
