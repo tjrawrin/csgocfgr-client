@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'canvas',
-  classNames: ['radar-canvas'],
-  width: 276,
-  height: 276,
+  classNames: ['RadarPreview-canvas'],
+  width: 280,
+  height: 280,
   attributeBindings: ['width', 'height'],
   ctx: null,
   previewBaseSize: 280,
@@ -94,7 +94,7 @@ export default Ember.Component.extend({
   },
   setPreviewScale: function() {
     var scaleSize = this.get('previewBaseSize') * parseFloat(this.get('data.clHudRadarScale'));
-    var $imageContainer = Ember.$('div.radar-image');
+    var $imageContainer = Ember.$('div.RadarPreview-image');
     scaleSize = Math.floor(scaleSize + 0.5);
 
     $imageContainer.css({
@@ -109,10 +109,10 @@ export default Ember.Component.extend({
 
   }.observes('data.clHudRadarScale', 'data.clRadarScale'),
   setRadarScale: function () {
-    var imageSize = Ember.$('div.radar-image').width();
+    var imageSize = Ember.$('div.RadarPreview-image').width();
     var scaleValue = Math.floor((this.get('data.clRadarScale') * 100) + 0.5);
     var scaleOffset = Math.floor(parseInt((imageSize * (scaleValue - this.get('startOffset'))) * -1));
-    var $imageContainer = Ember.$('div.radar-image');
+    var $imageContainer = Ember.$('div.RadarPreview-image');
 
     $imageContainer.css({
       'background-position-x': scaleOffset

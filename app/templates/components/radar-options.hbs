@@ -6,6 +6,13 @@
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
     <li class="Category-item">
+      <div class="RadarPreview">
+        <div class="RadarPreview-image"></div>
+        {{radar-canvas data=model selectedPreview=controller.currentImage}}
+      </div>
+    </li>
+
+    <li class="Category-item">
       <label class="Category-label">cl_hud_radar_scale</label>
       <div class="Category-description">
         <p>sets the scale of the radar HUD element.</p>
