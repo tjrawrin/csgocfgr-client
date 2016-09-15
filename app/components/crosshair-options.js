@@ -15,7 +15,26 @@ const defaultValues = {
 };
 
 export default Ember.Component.extend({
+  didInsertElement() {
+    Ember.$(`#crosshair-image-0`).addClass('CrosshairPreview-image--active');
+  },
+  canvasWidth: null,
+  canvasHeight: null,
   data: defaultValues,
+  previewImages: [
+    '/assets/images/de_dust2_01.jpg',
+    '/assets/images/de_dust2_02.jpg',
+    '/assets/images/de_dust2_03.jpg',
+    '/assets/images/de_inferno_01.jpg',
+    '/assets/images/de_inferno_02.jpg',
+    '/assets/images/de_inferno_03.jpg',
+    '/assets/images/de_mirage_01.jpg',
+    '/assets/images/de_mirage_02.jpg',
+    '/assets/images/de_mirage_03.jpg',
+    '/assets/images/de_nuke_01.jpg',
+    '/assets/images/de_nuke_02.jpg',
+    '/assets/images/de_nuke_03.jpg'
+  ],
   styleOptions: [
     {optionName: '0: Default Apperance and Animation Behavior', id: 0},
     {optionName: '1: Default Appearance With No Animation', id: 1},
@@ -25,9 +44,34 @@ export default Ember.Component.extend({
     {optionName: '5: Custom Apperance With Fake Recoil (Inaccurate Feedback)', id: 5}
   ],
   isOpen: false,
+  currentImage: 0,
   actions: {
     toggleDisplay() {
       this.toggleProperty('isOpen');
+    },
+    prevImage() {
+      const currentImage = this.currentImage;
+      if (currentImage <= 0) {
+        this.set('currentImage', this.previewImages.length - 1);
+        return this.actions.imageSwitch(currentImage, this.currentImage);
+      } else {
+        this.decrementProperty('currentImage');
+        return this.actions.imageSwitch(currentImage, this.currentImage);
+      }
+    },
+    nextImage() {
+      const currentImage = this.currentImage;
+      if (currentImage === this.previewImages.length - 1) {
+        this.set('currentImage', 0);
+        return this.actions.imageSwitch(currentImage, this.currentImage);
+      } else {
+        this.incrementProperty('currentImage');
+        return this.actions.imageSwitch(currentImage, this.currentImage);
+      }
+    },
+    imageSwitch(oldImage, newImage) {
+      Ember.$(`#crosshair-image-${oldImage}`).removeClass('CrosshairPreview-image--active');
+      Ember.$(`#crosshair-image-${newImage}`).addClass('CrosshairPreview-image--active');
     }
   }
 });

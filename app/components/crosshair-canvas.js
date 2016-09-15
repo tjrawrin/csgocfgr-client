@@ -6,10 +6,8 @@ export default Ember.Component.extend({
   * the component.
   */
   tagName: 'canvas',
-  classNames: ['crosshair-canvas'],
+  classNames: ['CrosshairPreview-canvas'],
   center: null,
-  width: 950,
-  height: 480,
   crosshairLength: null,
   crosshairWidth: null,
   crosshairGap: null,

@@ -6,6 +6,29 @@
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
     <li class="Category-item">
+      <div class="CrosshairPreview">
+        <ul class="CrosshairPreview-images">
+          {{#each previewImages as |image index|}}
+            <li class="CrosshairPreview-image" id="crosshair-image-{{index}}">
+              <img src={{image}} width="100%" height="auto"/>
+            </li>
+          {{/each}}
+          <li class="CrosshairPreview-canvasContainer">
+            {{crosshair-canvas data=model}}
+          </li>
+        </ul>
+        <ul class="CrosshairPreview-actions">
+          <li class="CrosshairPreview-action CrosshairPreview-action--prev">
+            <button class="CrosshairPreview-button" {{action 'prevImage'}}><span class="octicon octicon-chevron-left"></span></button>
+          </li>
+          <li class="CrosshairPreview-action CrosshairPreview-action--next">
+            <button class="CrosshairPreview-button" {{action 'nextImage'}}><span class="octicon octicon-chevron-right"></span></button>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="Category-item">
       <label class="Category-label">cl_crosshairstyle</label>
       <div class="Category-description">
         <p>Sets the animation behavior of the crosshair.</p>
