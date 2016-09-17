@@ -1,8 +1,5 @@
 import Ember from 'ember';
 
-/**
-* Object of default game values.
-*/
 const defaultValues = {
   rate: 80000,
   clCmdrate: 64,
@@ -228,7 +225,7 @@ export default Ember.Route.extend({
   */
   model(params) {
     if (!params.slug) {
-      this.store.createRecord('cfg', defaultValues);
+      return this.store.createRecord('cfg', defaultValues);
     }
     //
     // const self = this;

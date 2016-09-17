@@ -12,9 +12,9 @@
         <p><strong>disabled</strong>: 0, <strong>filters completely</strong>: 1, <strong>displays filtered text brighter</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="con_filter_enable">
+        <select class="Category-input Category-input--select" data-command="con_filter_enable" onchange={{action 'updateValue' 'conFilterEnable'}}>
           {{#each filterEnableOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}} selected="{{if 'setDefaultSelected(conFilterEnable, filterEnableOptions)' selected}}">{{option.optionName}}</option>
           {{/each}}
         </select>
       </div>
@@ -61,9 +61,9 @@
         <p><strong>topleft</strong>, <strong>topright</strong>, <strong>bottomright</strong>, <strong>bottomleft</strong>, <span class="Category-description-default"><strong>default value</strong>: topleft</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position">
+        <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position" onchange={{action 'updateValue' 'uiSteamOverlayNotificationPosition'}}>
           {{#each notificationOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}} selected="{{if 'setDefaultSelected(uiSteamOverlayNotificationPosition, notificationOptions)' selected}}">{{option.optionName}}</option>
           {{/each}}
         </select>
       </div>
@@ -73,12 +73,12 @@
       <label class="Category-label">cl_downloadfilter</label>
       <div class="Category-description">
         <p>determines which files can be downloaded from the server.</p>
-        <p><strong>all</strong>, <strong>nosounds</strong>, <strong>none</strong>, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        <p><strong>all</strong>, <strong>nosounds</strong>, <strong>none</strong>, <span class="Category-description-default"><strong>default value</strong>: all</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_downloadfilter">
+        <select class="Category-input Category-input--select" data-command="cl_downloadfilter" onchange={{action 'updateValue' 'clDownloadfilter'}}>
           {{#each downloadOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}} selected="{{if 'setDefaultSelected(clDownloadfilter, downloadOptions)' selected}}">{{option.optionName}}</option>
           {{/each}}
         </select>
       </div>
@@ -212,9 +212,9 @@
         <p><strong>show teammates as seperate colors</strong>: 1, <strong>show colors and letters</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show">
+        <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show" onchange={{action 'updateValue' 'clTeammateColorsShow'}}>
           {{#each teammateColorsOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}} selected="{{if 'setDefaultSelected(clTeammateColorsShow, teammateColorsOptions)' selected}}">{{option.optionName}}</option>
           {{/each}}
         </select>
       </div>

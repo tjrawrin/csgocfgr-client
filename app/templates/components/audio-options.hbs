@@ -36,9 +36,12 @@
         <p><strong>automatically pick best</strong>: -1, <strong>headphones</strong>: 1, <strong>4 speakers</strong>: 3, <strong>2 speakers</strong>: 4, <strong>5.1 surround</strong>: 6, <span class="Category-description-default"><strong>default value</strong>: -1</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="windows_speaker_config">
+
+        <select class="Category-input Category-input--select" data-command="windows_speaker_config" onchange={{action 'updateValue' 'windowsSpeakerConfig'}}>
           {{#each speakerOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{#select-option value=option.id initialValue=data.windowsSpeakerConfig}}
+              ({{option.id}}) {{option.optionName}}
+            {{/select-option}}
           {{/each}}
         </select>
       </div>

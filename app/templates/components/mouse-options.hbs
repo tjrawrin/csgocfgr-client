@@ -33,12 +33,12 @@
       <label class="Category-label">m_customaccel</label>
       <div class="Category-description">
         <p>sets custom mouse acceleration:</p>
-        <p><strong>disabled</strong>: 0, <strong>enabled</strong>: 1, <strong>enabled with separate yaw/pitch rescale</strong>: 2, <strong>enabled with exponent off by one</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+        <p><strong>disabled</strong>: 0, <strong>enabled</strong>: 1, <strong>enabled with separate yaw/pitch rescale</strong>: 2, <strong>enabled with exponent off by one</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 3</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="m_customaccel">
+        <select class="Category-input Category-input--select" data-command="m_customaccel" onchange={{action 'updateValue' 'mCustomaccel'}}>
           {{#each customAccelOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}}>{{option.id}}</option>
           {{/each}}
         </select>
       </div>

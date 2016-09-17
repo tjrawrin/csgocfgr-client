@@ -24,9 +24,9 @@
         <p><strong>default</strong>: -1, <strong>synchronus single thread</strong>: 0, <strong>queued single thread</strong>: 1, <strong>queued multithreaded</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: -1</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="mat_queue_mode">
+        <select class="Category-input Category-input--select" data-command="mat_queue_mode" onchange={{action 'updateValue' 'matQueueMode'}}>
           {{#each queueModeOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            <option value={{option.id}} selected="{{if 'setDefaultSelected(matQueueMode, option.id)' selected}}">{{option.optionName}}</option>
           {{/each}}
         </select>
       </div>
@@ -39,8 +39,8 @@
         <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 300</span></p>
       </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max" type="range" min="0" max="999" step="1" value=data.fpsmax}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsmax}}
+        {{input class="Category-input Category-input--range" data-command="fps_max" type="range" min="0" max="999" step="1" value=data.fpsMax}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMax}}
       </div>
     </li>
 
@@ -51,8 +51,8 @@
         <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 120</span></p>
       </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max_menu" type="range" min="0" max="999" step="1" value=data.fpsmaxMenu}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsmaxMenu}}
+        {{input class="Category-input Category-input--range" data-command="fps_max_menu" type="range" min="0" max="999" step="1" value=data.fpsMaxMenu}}
+        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMaxMenu}}
       </div>
     </li>
 
