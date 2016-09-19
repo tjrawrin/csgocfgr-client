@@ -44,6 +44,17 @@
     </li>
 
     <li class="Category-item">
+      <label class="Category-label">cl_crosshaircolor</label>
+      <div class="Category-description">
+        <p>determines if the the crosshair color should be green or a custom color set by the player. </p>
+        <p><strong>off (custom)</strong>: 0, <strong>(on) green</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshaircolor" type="checkbox" checked=data.clCrosshaircolor}}
+      </div>
+    </li>
+
+    <li class="Category-item">
       <label class="Category-label">cl_crosshaircolor_r</label>
       <div class="Category-description">
         <p>Sets the amount of red in the crosshair color.</p>

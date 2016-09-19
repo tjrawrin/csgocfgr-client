@@ -192,6 +192,7 @@ export default DS.Model.extend({
   keyMouse5: DS.attr('string'),
   // crosshair
   clCrosshairstyle: DS.attr('number'),
+  clCrosshaircolor: DS.attr('boolean'),
   clCrosshaircolorR: DS.attr('number'),
   clCrosshaircolorG: DS.attr('number'),
   clCrosshaircolorB: DS.attr('number'),

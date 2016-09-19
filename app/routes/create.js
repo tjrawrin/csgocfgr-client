@@ -182,6 +182,7 @@ const defaultValues = {
   keyMouse4: '',
   keyMouse5: '',
   clCrosshairstyle: 0,
+  clCrosshaircolor: true,
   clCrosshaircolorR: 50,
   clCrosshaircolorG: 250,
   clCrosshaircolorB: 50,
