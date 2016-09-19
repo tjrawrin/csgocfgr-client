@@ -26,7 +26,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="mat_queue_mode" onchange={{action 'updateValue' 'matQueueMode'}}>
           {{#each queueModeOptions as |option|}}
-            <option value={{option.id}} selected="{{if 'setDefaultSelected(matQueueMode, option.id)' selected}}">{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.matQueueMode}}
           {{/each}}
         </select>
       </div>

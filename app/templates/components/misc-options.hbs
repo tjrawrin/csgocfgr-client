@@ -14,7 +14,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="con_filter_enable" onchange={{action 'updateValue' 'conFilterEnable'}}>
           {{#each filterEnableOptions as |option|}}
-            <option value={{option.id}} selected="{{if 'setDefaultSelected(conFilterEnable, filterEnableOptions)' selected}}">{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.conFilterEnable}}
           {{/each}}
         </select>
       </div>
@@ -63,7 +63,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position" onchange={{action 'updateValue' 'uiSteamOverlayNotificationPosition'}}>
           {{#each notificationOptions as |option|}}
-            <option value={{option.id}} selected="{{if 'setDefaultSelected(uiSteamOverlayNotificationPosition, notificationOptions)' selected}}">{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.uiSteamOverlayNotificationPosition}}
           {{/each}}
         </select>
       </div>
@@ -78,7 +78,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="cl_downloadfilter" onchange={{action 'updateValue' 'clDownloadfilter'}}>
           {{#each downloadOptions as |option|}}
-            <option value={{option.id}} selected="{{if 'setDefaultSelected(clDownloadfilter, downloadOptions)' selected}}">{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clDownloadfilter}}
           {{/each}}
         </select>
       </div>
@@ -214,7 +214,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show" onchange={{action 'updateValue' 'clTeammateColorsShow'}}>
           {{#each teammateColorsOptions as |option|}}
-            <option value={{option.id}} selected="{{if 'setDefaultSelected(clTeammateColorsShow, teammateColorsOptions)' selected}}">{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clTeammateColorsShow}}
           {{/each}}
         </select>
       </div>

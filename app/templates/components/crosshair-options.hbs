@@ -35,9 +35,9 @@
         <p><strong>default</strong>: 0, <strong>default static</strong>: 1, <strong>accurate split</strong>: 2, <strong>accurate dynamic</strong>: 3, <strong>classic static</strong>: 4, <strong>cs 1.6 style</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_crosshairstyle">
+        <select class="Category-input Category-input--select" data-command="cl_crosshairstyle" onchange={{action 'updateValue' 'clCrosshairstyle'}}>
           {{#each styleOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshairstyle}}
           {{/each}}
         </select>
       </div>

@@ -19,13 +19,5 @@ export default Ember.Component.extend({
     updateValue(command, event) {
       this.set(`data.${command}`, event.target.value);
     }
-  },
-
-  setDefaultSelected(defaultValue, optionValue) {
-    if (defaultValue === value) {
-      return true;
-    } else {
-      return false;
-    }
   }
 });

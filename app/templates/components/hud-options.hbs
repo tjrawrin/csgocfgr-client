@@ -36,9 +36,9 @@
         <p><strong>default</strong>: 0, <strong>white</strong>: 1, <strong>light blue</strong>: 2, <strong>blue</strong>: 3, <strong>purple</strong>: 4, <strong>red</strong>: 5, <strong>orange</strong>: 6, <strong>yellow</strong>: 7, <strong>green</strong>: 8, <strong>teal</strong>: 9, <strong>pink</strong>: 10, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_hud_color">
+        <select class="Category-input Category-input--select" data-command="cl_hud_color" onchange={{action 'updateValue' 'clHudColor'}}>
           {{#each hudcolorOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clHudColor}}
           {{/each}}
         </select>
       </div>
@@ -143,9 +143,9 @@
         <p><strong>desktop</strong>: 1, <strong>couch</strong>: 2, <strong>classic</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="viewmodel_presetpos">
+        <select class="Category-input Category-input--select" data-command="viewmodel_presetpos" onchange={{action 'updateValue' 'viewmodelPresetpos'}}>
           {{#each viewmodelOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.viewmodelPresetpos}}
           {{/each}}
         </select>
       </div>
@@ -285,9 +285,9 @@
         <p><strong>disabled</strong>: 0, <strong>fps</strong>: 1, <strong>smooth</strong>: 2, <strong>server</strong>: 3, <strong>show &amp; log to file</strong>: 4, <strong>thread and wait times</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_showfps">
+        <select class="Category-input Category-input--select" data-command="cl_showfps" onchange={{action 'updateValue' 'clShowfps'}}>
           {{#each showFpsOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clShowfps}}
           {{/each}}
         </select>
       </div>
@@ -300,9 +300,9 @@
         <p><strong>disabled</strong>: 0, <strong>show network data</strong>: 1, <strong>show in/out data</strong>: 2, <strong>draw data on payload</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
       </div>
       <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="net_graph">
+        <select class="Category-input Category-input--select" data-command="net_graph" onchange={{action 'updateValue' 'netGraph'}}>
           {{#each netGraphOptions as |option|}}
-            <option {{bind-attr value=option.id}}>{{option.optionName}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.netGraph}}
           {{/each}}
         </select>
       </div>

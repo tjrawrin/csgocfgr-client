@@ -38,7 +38,7 @@
       <div class="Category-inputs">
         <select class="Category-input Category-input--select" data-command="m_customaccel" onchange={{action 'updateValue' 'mCustomaccel'}}>
           {{#each customAccelOptions as |option|}}
-            <option value={{option.id}}>{{option.id}}</option>
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.mCustomaccel}}
           {{/each}}
         </select>
       </div>
