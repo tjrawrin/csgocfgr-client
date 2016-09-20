@@ -6,10 +6,7 @@
   <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
     <li class="Category-item">
-      <div class="RadarPreview">
-        <div class="RadarPreview-image"></div>
-        {{radar-canvas data=model selectedPreview=controller.currentImage}}
-      </div>
+      {{radar-canvas data=data}}
     </li>
 
     <li class="Category-item">

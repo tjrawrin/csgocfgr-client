@@ -1,16 +1,15 @@
 .RadarPreview {
+  margin: 0 auto;
   position: relative;
+  white-space: nowrap;
   width: 100%;
 
   &-image {
     background: url('images/radar-scale-spritesheet.jpg') 0 0 no-repeat;
     background-size: auto 100%;
-    border: 2px solid $cBlack;
     border-radius: 50%;
     box-shadow: 0 3px 24px $cBlack;
-    height: 280px;
     margin: 0 auto;
-    width: 280px;
     z-index: -1;
   }
 
