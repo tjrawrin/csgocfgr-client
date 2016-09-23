@@ -3,7 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isOpen: false,
 
-  editingKey: null,
+  selectedKey: '',
+
+  selectedVal: '',
 
   actions: {
     toggleDisplay() {
@@ -11,7 +13,8 @@ export default Ember.Component.extend({
     },
 
     editKey(key) {
-      this.set('key', key);
+      this.set('selectedKey', key);
+      this.set('selectedVal', this.get(`data.${key}`));
     }
   }
 });

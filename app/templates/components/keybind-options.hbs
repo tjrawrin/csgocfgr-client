@@ -14,7 +14,7 @@
         <p><strong>grenades &amp; gear</strong>: incgrenade, flashbang, smokegrenade, hegrenade, molotov, decoy, kevlar, vesthelm, taser, defuser</p>
       </div>
       <div class="Category-inputs">
-        {{keyboard-input data=data key=key}}
+        {{keyboard-input data=data modelKey=selectedKey modelVal=selectedVal}}
       </div>
       <div class="Keyboard">
         <div class="Keyboard-main">
@@ -34,7 +34,7 @@
             {{#keyboard-key modelVal=data.keyF12 onEdit=(action "editKey" "keyF12")}}F12{{/keyboard-key}}
           </div>
           <div class="Keyboard-row">
-            {{#keyboard-key classMods="Keyboard-key--disabled" disabled="disabled"}}`{{/keyboard-key}}
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">`</button>
             {{#keyboard-key modelVal=data.keyK1}}1{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyK2}}2{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyK3}}3{{/keyboard-key}}
@@ -142,7 +142,7 @@
             {{#keyboard-key classMods="Keyboard-key--hidden"}}{{/keyboard-key}}
           </div>
           <div class="Keyboard-row">
-            {{#keyboard-key classMods="Keyboard-key--disabled" disabled="disabled"}}NumLk{{/keyboard-key}}
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">NumLk</button>
             {{#keyboard-key modelVal=data.keyKpSlash}}/{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyKpMultiply}}*{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyKpMinus}}-{{/keyboard-key}}
@@ -162,7 +162,7 @@
             {{#keyboard-key modelVal=data.keyKpEnd}}1{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyKpDownarrow}}2{{/keyboard-key}}
             {{#keyboard-key modelVal=data.keyKpPgdn}}3{{/keyboard-key}}
-            {{#keyboard-key classMods="Keyboard-key--ent" modelVal=data.keyKpEnter}}Enter{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--ent" modelVal=data.keyKpEnter}}&#8629;{{/keyboard-key}}
           </div>
           <div class="Keyboard-row">
             {{#keyboard-key classMods="Keyboard-key--zd" modelVal=data.keyKpIns}}0{{/keyboard-key}}
