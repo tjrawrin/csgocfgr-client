@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('create');
   this.route('import');
+  this.route('show');
   // this.route('show', { resetNamespace: true, path: ':cfg_id' }, function() {});
   this.route('notfound', { path: '*path' });
 });

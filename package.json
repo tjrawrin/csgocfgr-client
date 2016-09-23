@@ -22,6 +22,7 @@
     "broccoli-asset-rev": "^2.4.2",
     "broccoli-sass": "^0.7.0",
     "ember-ajax": "^2.0.1",
+    "ember-browserify": "^1.1.13",
     "ember-cli": "2.8.0",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-autoprefixer": "0.6.0",
@@ -47,6 +48,7 @@
     "inuit-headings": "^0.3.1",
     "inuit-lists": "^0.1.0",
     "inuit-starter-kit": "^0.2.9",
-    "loader.js": "^4.0.1"
+    "loader.js": "^4.0.1",
+    "spin.js": "^2.3.2"
   }
 }

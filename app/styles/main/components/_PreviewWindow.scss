@@ -70,6 +70,7 @@
     font-size: 32px;
     font-weight: 300;
     outline: 0;
+    position: relative;
     transition: all 200ms ease-in-out;
 
     @include fs-attention {
@@ -92,6 +93,25 @@
       @include fs-attention {
         color: $cSecondaryAccent;
       }
+    }
+
+    &--edit {
+      background-color: $cTertiary;
+      width: 100%;
+
+      @include fs-attention {
+        color: $cTertiaryAccent;
+      }
+    }
+
+    &--disabled {
+      background-color: $cDarkGray;
+      color: $cGray;
+      cursor: default;
+
+      @include fs-attention {
+        color: $cGray;
+      };
     }
   }
 }

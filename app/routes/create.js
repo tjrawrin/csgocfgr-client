@@ -197,27 +197,27 @@ const defaultValues = {
 
 export default Ember.Route.extend({
   /**
-  * Method to reset the slug query param to null upon exiting the new route.
-  * Fixes an issue when visiting the new route when the slug isn't null and
+  * Method to reset the slug query param to null upon exiting the create route.
+  * Fixes an issue when visiting the create route when the slug isn't null and
   * being put back into the non-default config settings.
   */
-  // resetController(controller, isExiting) {
-  //   if (isExiting) {
-  //     // isExiting would be false if only the route's model was changing
-  //     controller.set('slug', null);
-  //   }
-  // },
+  resetController(controller, isExiting) {
+    if (isExiting) {
+      // isExiting would be false if only the route's model was changing
+      controller.set('slug', null);
+    }
+  },
 
   /**
   * Query params settings, opts into a fill transition and updates the URL
   * with a replaceState.
   */
-  // queryParams: {
-  //   slug: {
-  //     refreshModel: true,
-  //     replace: true
-  //   }
-  // },
+  queryParams: {
+    slug: {
+      refreshModel: true,
+      replace: true
+    }
+  },
 
   /**
   * Sets the model for the new route, if no query params are passed to the URL
@@ -228,18 +228,17 @@ export default Ember.Route.extend({
     if (!params.slug) {
       return this.store.createRecord('cfg', defaultValues);
     }
-    //
-    // const self = this;
-    // return this.store.findQuery('cfg', params).then(function(results) {
-    //   if (results.content.length === 0) {
-    //     self.simpleFlashMessage('The config file you requested does not exist or could not be found.', 'error');
-    //     return self.store.createRecord('cfg', self.get('defaultValues'));
-    //   } else {
-    //     const attrs = results.content[0].toJSON();
-    //     self.controllerFor('new').set('slug', attrs.slug);
-    //     return self.store.createRecord('cfg', attrs);
-    //   }
-    // });
+
+    return this.store.query('cfg', params).then(results => {
+      if (results.content.length === 0) {
+        this.simpleFlashMessage('The config file you requested does not exist or could not be found.', 'error');
+        return this.store.createRecord('cfg', defaultValues);
+      } else {
+        const attrs = results.content[0].toJSON();
+        this.controllerFor('create').set('slug', attrs.slug);
+        return this.store.createRecord('cfg', attrs);
+      }
+    });
   },
 
   /**
@@ -261,48 +260,32 @@ export default Ember.Route.extend({
   //   });
   // },
 
-  actions: {
-    /**
-    * Action to download the file without saving it to the database.
-    */
-    downloadUnsavedFile: function() {
-      var outputText = this.get('controller.renderConfig');
-      var blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
-    },
-    /**
-    * Action for resetting fields back to their default game values.
-    */
-    setToDefaultValue: function(command) {
-      var defaultValue = this.get('defaultValues.' + command);
-
-      return this.set('controller.model.' + command, defaultValue);
-    },
-    /**
-    * Action for taking the values from an imported file and
-    * setting the model values.
-    */
-    parseFileConfig: function(config) {
-      var configArray = config;
-
-      for (var i = 0; i < configArray.length; i++) {
-        this.set('controller.model.' + configArray[i].key, configArray[i].value);
-      }
-
-      this.simpleFlashMessage('Settings successfully imported.', 'success');
-    },
-    /**
-    * Action for taking the values from typed or pasted text and
-    * setting the model values.
-    */
-    parseTextConfig: function(config) {
-      var configArray = config;
-
-      for (var i = 0; i < configArray.length; i++) {
-        this.set('controller.model.' + configArray[i].key, configArray[i].value);
-      }
-
-      this.simpleFlashMessage('Settings successfully imported.', 'success');
-    }
-  }
+  // actions: {
+  //   /**
+  //   * Action for taking the values from an imported file and
+  //   * setting the model values.
+  //   */
+  //   parseFileConfig: function(config) {
+  //     var configArray = config;
+  //
+  //     for (var i = 0; i < configArray.length; i++) {
+  //       this.set('controller.model.' + configArray[i].key, configArray[i].value);
+  //     }
+  //
+  //     this.simpleFlashMessage('Settings successfully imported.', 'success');
+  //   },
+  //   /**
+  //   * Action for taking the values from typed or pasted text and
+  //   * setting the model values.
+  //   */
+  //   parseTextConfig: function(config) {
+  //     var configArray = config;
+  //
+  //     for (var i = 0; i < configArray.length; i++) {
+  //       this.set('controller.model.' + configArray[i].key, configArray[i].value);
+  //     }
+  //
+  //     this.simpleFlashMessage('Settings successfully imported.', 'success');
+  //   }
+  // }
 });
