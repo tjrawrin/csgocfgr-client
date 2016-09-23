@@ -173,5 +173,9 @@
     &--bound {
       background-color: $cSecondary;
     }
+
+    &--editing {
+      background-color: $cAccent;
+    }
   }
 }
