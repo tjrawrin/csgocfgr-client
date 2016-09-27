@@ -1,0 +1,45 @@
+.FileUpload {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-button {
+    background-color: $cPrimary;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color: $cWhite;
+    cursor: pointer;
+    font-weight: 300;
+    outline: 0;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+    transition: all 200ms ease-in-out;
+
+    @include fs-attention {
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      color: $cAccent;
+    }
+  }
+
+  &-preview {
+    width: 100%;
+  }
+
+  &-input {
+
+    &--preview {
+      padding: 0 8px;
+      margin-right: 8px;
+    }
+
+    &--file {
+      cursor: pointer;
+      right: 0;
+      opacity: 0;
+      padding: 8px 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

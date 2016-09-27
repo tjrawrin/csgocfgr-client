@@ -44,41 +44,41 @@
 //   /**
 //   * Parse text input into a text field as a config.
 //   */
-//   parseFromPaste: function() {
-//     // console.log('ParseFromPaste');
-//     var pasteContent = this.get('inputText').val();
-//     Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
-//
-//     pasteContent = this.cleanFileContents(pasteContent);
-//     Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
-//     var contentArray = this.contentStringToArray(pasteContent);
-//     Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
-//     contentArray = this.reformatContentArray(contentArray);
-//     Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
-//
-//     this.writeConfigToModel(contentArray);
-//   },
+  // parseFromPaste: function() {
+  //   // console.log('ParseFromPaste');
+  //   var pasteContent = this.get('inputText').val();
+  //   Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
+  //
+  //   pasteContent = this.cleanFileContents(pasteContent);
+  //   Ember.$('.content-container').append('<hr><pre>' + pasteContent + '</pre>');
+  //   var contentArray = this.contentStringToArray(pasteContent);
+  //   Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
+  //   contentArray = this.reformatContentArray(contentArray);
+  //   Ember.$('.content-container').append('<hr><pre>' + contentArray + '</pre>');
+  //
+  //   this.writeConfigToModel(contentArray);
+  // },
 //   /**
 //   * Parse the contents of a file.
 //   * event - A change event triggered by a file input.
 //   * Returns true if the file was successfully opened and parsed.
 //   */
-//   parseFromFile: function(event) {
-//     // console.log('ParseFromFile');
-//     if (!this.clientCanReadFiles()) {
-//       //console.error('The client is unable to read files.');
-//       return false;
-//     }
-//
-//     // get the first file only
-//     var file = event.target.files[0];
-//     if(!file) {
-//       //console.error('File not available.');
-//       return false;
-//     }
-//
-//     this.parseContentsFromFile(file);
-//   },
+  // parseFromFile: function(event) {
+  //   // console.log('ParseFromFile');
+  //   if (!this.clientCanReadFiles()) {
+  //     //console.error('The client is unable to read files.');
+  //     return false;
+  //   }
+  //
+  //   // get the first file only
+  //   var file = event.target.files[0];
+  //   if(!file) {
+  //     //console.error('File not available.');
+  //     return false;
+  //   }
+  //
+  //   this.parseContentsFromFile(file);
+  // },
 //   /**
 //   * Determine whether or not a client browser is capable of opening and reading
 //   * files.
@@ -334,35 +334,4 @@
 //       'value': value
 //     });
 //   },
-//   /**
-//   * Allows the ability to switch between the two different config
-//   * loading options. Also clears the config array and input fields.
-//   * Resets the file input field if no file is selected.
-//   */
-//   showHideConfigImport: function() {
-//     var $importOptions = Ember.$('input#fileImport, input#textImport');
-//     var $fileRadio = Ember.$('input#fileImport');
-//     var $configFile = Ember.$('.upload-config-file');
-//     var $configText = Ember.$('.upload-config-text');
-//     var self = this;
-//
-//     $importOptions.on('change', function() {
-//       var $inputFile = Ember.$('input[data-upload="file"]');
-//       var $inputText = Ember.$('textarea[data-upload="text"]');
-//
-//       if ($fileRadio.prop('checked')) {
-//         $configFile.show();
-//         $configText.hide();
-//         $inputText.val('');
-//         self.set('controller.noFileName', 'No file selected...');
-//         self.set('controller.config', []);
-//       } else {
-//         $configFile.hide();
-//         $configText.show();
-//         $inputFile.val('');
-//         self.set('controller.noFileName', '');
-//         self.set('controller.config', []);
-//       }
-//     });
-//   }.on('didInsertElement')
 // });

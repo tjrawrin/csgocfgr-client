@@ -1,0 +1,90 @@
+.ImportSettings {
+  font-size: 14px;
+  margin-top: 24px;
+
+  @include fs-min-width($bpMid) {
+    font-size: 16px;
+  }
+
+  &-step {
+    background-color: $cWhite;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-top: 24px;
+    padding: 16px;
+    transition: box-shadow 200ms ease-in-out;
+
+    @include fs-attention {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &-directions {
+    border-bottom: 1px solid $cGray;
+
+    >:first-child {
+      margin-top: 0;
+    }
+
+    >:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-inputs,
+  &-actions {
+    display: flex;
+    margin-top: 16px;
+    text-align: center;
+
+    &-group {
+      width: 100%;
+    }
+  }
+
+  &-label {
+    display: block;
+  }
+
+  &-input {
+
+    &--radio {
+      display: block;
+      height: 24px;
+      margin: 0 auto;
+      width: 24px;
+    }
+
+    &--textarea {
+      font-family: monospace;
+      height: 150px;
+      max-width: 100%;
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  &-button {
+    background-color: $cPrimary;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    color: $cWhite;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 300;
+    outline: 0;
+    position: relative;
+    transition: all 200ms ease-in-out;
+    width: 100%;
+
+    @include fs-attention {
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      color: $cAccent;
+    }
+  }
+}

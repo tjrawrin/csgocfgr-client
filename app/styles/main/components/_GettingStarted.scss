@@ -1,8 +1,6 @@
 .GettingStarted {
   font-size: 14px;
-  font-weight: 400;
   margin-top: 24px;
-  padding: 16px;
 
   @include fs-min-width($bpMid) {
     font-size: 16px;
