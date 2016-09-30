@@ -1,12 +1,14 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
-export default DS.RESTSerializer.extend({
-  /**
-  * Serialize the slug returned from the server as the ID for
-  * the ember model being shown
-  */
-  normalize: function(type, hash, property) {
-    hash.id = hash.slug;
-    return this._super(type, hash, property);
+let underscore = Ember.String.underscore;
+
+export default DS.JSONAPISerializer.extend({
+  keyForAttribute(attr) {
+    return Ember.String.underscore(attr);
+  },
+
+  keyForRelationship(key) {
+    return Ember.String.underscore(key);
   }
 });

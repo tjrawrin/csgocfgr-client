@@ -1,17 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  flashMessages: Ember.inject.service(),
+
   model(params) {
-    return this.store.findById('cfg', params.cfg_id);
+    return this.store.findRecord('cfg', params.cfg_id);
   },
 
   actions: {
     error(error) {
       if (error.status === 404) {
-        this.simpleFlashMessage('The config you requested does not exist or could not be found.', 'error');
+        Ember.get(this, 'flashMessages').danger(`${error.message}`);
         this.transitionTo('index');
       } else {
-        this.simpleFlashMessage('Oh noes! Something seriously went wrong. We\'re working on it!', 'error');
+        Ember.get(this, 'flashMessages').danger(`${error.message}`);
         this.transitionTo('index');
       }
     }

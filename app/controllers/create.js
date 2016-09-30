@@ -1,6 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  flashMessages: Ember.inject.service(),
+
+  actions: {
+    redirectToShow(slug) {
+      Ember.get(this, 'flashMessages').success(`Configuration settings saved!`);
+      this.transitionToRoute('show', slug);
+    },
+
+    redirectToIndex(error) {
+      Ember.get(this, 'flashMessages').danger(`${error.message}`);
+      this.transitionToRoute('index');
+    }
+  },
+
   queryParams: ['slug'],
 
   slug: null,

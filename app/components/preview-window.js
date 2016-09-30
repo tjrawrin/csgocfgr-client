@@ -28,16 +28,16 @@ export default Ember.Component.extend({
       $btn.attr('disabled', 'disabled');
       $btn.append(spinner.el);
 
-      setTimeout(() => {
+      this.get('data').save().then(data => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('PreviewWindow-button--disabled');
-      }, 6000);
-
-      this.get('data').save().then(data => {
-        this.transitionToRoute('show', data).then(() => {
-            return this.sendAction('download');
-        });
+        return this.send('redirectToShow', this.get('data.slug'));
+      }, error => {
+        Ember.$(spinner.el).remove();
+        $btn.removeAttr('disabled');
+        $btn.removeClass('PreviewWindow-button--disabled');
+        return this.send('redirectToIndex', error);
       });
     },
 
