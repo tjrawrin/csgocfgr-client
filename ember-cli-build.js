@@ -30,8 +30,6 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('bower_components/csgocfgr-plugins/informationpopup.js');
-  app.import('bower_components/csgocfgr-plugins/informationlookup.js');
   app.import('bower_components/csgocfgr-plugins/blob.js');
   app.import('bower_components/csgocfgr-plugins/filesaver.js');
 

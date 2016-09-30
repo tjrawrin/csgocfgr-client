@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  queryParams: ['slug'],
+
+  slug: null,
+
   createConfig: function() {
 const config = `// https://csgocfgr.com
 // === rate ===

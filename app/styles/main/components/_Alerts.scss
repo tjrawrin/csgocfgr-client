@@ -1,0 +1,28 @@
+.Alerts {
+
+  &-message {
+    border: 1px solid;
+    border-radius: 3px;
+    margin: 16px 0;
+    padding: 8px;
+    position: relative;
+
+    &--Success {
+      background-color: #b9df90;
+      border: #a0d468;
+      color: #3c763d;
+    }
+
+    &--Danger {
+      background-color: #f2838f;
+      border: #ed5565;
+      color: #a94442;
+    }
+
+    &--Info {
+      background-color: #7cd1ef;
+      border: #4fc1e9;
+      color: #31708f;
+    }
+  }
+}

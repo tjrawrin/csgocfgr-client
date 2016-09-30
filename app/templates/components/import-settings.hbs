@@ -7,12 +7,12 @@
     <div class="ImportSettings-inputs">
       <div class="ImportSettings-inputs-group">
         <label class="ImportSettings-label">File
-          <input class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" checked onchange={{action 'fileImport'}}/>
+          <input id="file-radio" class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" checked onchange={{action 'fileImport'}}/>
         </label>
       </div>
       <div class="ImportSettings-inputs-group">
         <label class="ImportSettings-label">Text
-          <input class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" onchange={{action 'textImport'}}/>
+          <input id="text-radio" class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" onchange={{action 'textImport'}}/>
         </label>
       </div>
     </div>
