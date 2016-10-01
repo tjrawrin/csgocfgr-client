@@ -1,15 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  queryParams: {
-    slug: {
-      refreshModel: true,
-      replace: true
-    }
-  },
+  // queryParams: {
+  //   slug: {
+  //     refreshModel: true,
+  //     replace: true
+  //   }
+  // },
 
   model() {
-    return this.modelFor('application');
+    return this.store.createRecord('cfg');
 
     // return this.store.query('cfg', params).then(results => {
     //   if (results.content.length === 0) {

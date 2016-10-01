@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
 
   actions: {
     redirectToShow(slug) {
-      Ember.get(this, 'flashMessages').success(`Configuration settings saved!`);
+      Ember.get(this, 'flashMessages').success(`Configuration settings saved!`, { timeout: 6000 });
       this.transitionToRoute('show', slug);
     },
 
     redirectToIndex(error) {
-      Ember.get(this, 'flashMessages').danger(`${error.message}`);
+      Ember.get(this, 'flashMessages').danger(`${error.message}`, { timeout: 6000 });
       this.transitionToRoute('index');
     }
   },

@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   actions: {
     redirectToCreate(data) {
       this.setImportedData(data).then(count => {
-        Ember.get(this, 'flashMessages').success(`Imported ${count} setting(s) successfully!`);
+        Ember.get(this, 'flashMessages').success(`Imported ${count} setting(s) successfully!`, { timeout: 6000 });
         this.transitionToRoute('create');
       });
     }

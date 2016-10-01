@@ -7,8 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('create');
-  this.route('import');
+  this.route('create', function() {
+    this.route('import');
+  });
   this.route('show', { path: ':cfg_id' });
   this.route('notfound', { path: '*path' });
 });
