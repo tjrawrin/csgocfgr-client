@@ -50,6 +50,7 @@
     "inuit-lists": "^0.1.0",
     "inuit-starter-kit": "^0.2.9",
     "loader.js": "^4.0.1",
+    "node-uuid": "^1.4.7",
     "spin.js": "^2.3.2"
   }
 }

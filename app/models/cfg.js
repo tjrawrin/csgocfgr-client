@@ -2,7 +2,7 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 
 export default Model.extend({
-  slug: attr('string', { defaultValue: null }),
+  permalink: attr('string', { defaultValue: null }),
   //rate
   rate: attr('number', { defaultValue: 80000 }),
   clCmdrate: attr('number', { defaultValue: 64 }),

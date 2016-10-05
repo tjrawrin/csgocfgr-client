@@ -8,7 +8,8 @@ export default DS.JSONAPISerializer.extend({
     return Ember.String.underscore(attr);
   },
 
-  keyForRelationship(key) {
-    return Ember.String.underscore(key);
+  normalize(type, hash) {
+    hash.id = hash.attributes.permalink;
+    return this._super(type, hash);
   }
 });

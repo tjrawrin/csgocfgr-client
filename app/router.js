@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('create', function() {
     this.route('import');
   });
-  this.route('show', { path: ':cfg_id' });
+  this.route('show', { path: ':permalink' });
   this.route('notfound', { path: '*path' });
 });
 

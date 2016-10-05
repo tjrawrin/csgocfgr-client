@@ -4,9 +4,9 @@ export default Ember.Controller.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
-    redirectToShow(slug) {
+    redirectToShow(permalink) {
       Ember.get(this, 'flashMessages').success(`Configuration settings saved!`, { timeout: 6000 });
-      this.transitionToRoute('show', slug);
+      this.transitionToRoute('show', permalink);
     },
 
     redirectToIndex(error) {
@@ -15,9 +15,9 @@ export default Ember.Controller.extend({
     }
   },
 
-  queryParams: ['slug'],
+  queryParams: ['permalink'],
 
-  slug: null,
+  permalink: null,
 
   createConfig: function() {
 const config = `// https://csgocfgr.com

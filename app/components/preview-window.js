@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 
   inCreateRoute: Ember.computed(function() {
     const route = this.get('router.currentRouteName');
-    if (route === 'create') {
+    if (route === 'create.index') {
       return true;
     } else {
       return false;
@@ -28,11 +28,11 @@ export default Ember.Component.extend({
       $btn.attr('disabled', 'disabled');
       $btn.append(spinner.el);
 
-      this.get('data').save().then(data => {
+      this.get('data').save().then(() => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('PreviewWindow-button--disabled');
-        return this.send('redirectToShow', this.get('data.slug'));
+        return this.send('redirectToShow', this.get('data.permalink'));
       }, error => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     },
 
     createEdit(data) {
-      this.transitionTo('create', {queryParams: {slug: data}});
+      this.transitionTo('create', {queryParams: {permalinkId: data}});
     }
   }
 });
