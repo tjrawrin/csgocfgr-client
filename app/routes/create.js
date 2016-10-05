@@ -1,33 +1,41 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // queryParams: {
-  //   slug: {
-  //     refreshModel: true,
-  //     replace: true
-  //   }
-  // },
+  queryParams: {
+    permalink: {
+      refreshModel: true,
+      replace: true,
+      as: 'e'
+    }
+  },
 
-  model() {
-    if (!this.store.peekAll('cfg').content.length) {
+  model(params) {
+    if (!params.permalink && !this.store.peekAll('cfg').content.length) {
       return this.store.createRecord('cfg');
     }
-    
-    // return this.store.query('cfg', params).then(results => {
-    //   if (results.content.length === 0) {
-    //     this.simpleFlashMessage('The config file you requested does not exist or could not be found.', 'error');
-    //     return this.store.createRecord('cfg', defaultValues);
-    //   } else {
-    //     const attrs = results.content[0].toJSON();
-    //     this.controllerFor('create').set('slug', attrs.slug);
-    //     return this.store.createRecord('cfg', attrs);
-    //   }
-    // });
+
+    return this.store.findRecord('cfg', params.permalink).then(cfg => {
+      const attrs = cfg.toJSON();
+      this.store.unloadRecord(cfg);
+      let record = this.store.createRecord('cfg', attrs);
+      record.set('permalink', null);
+      return record;
+    });
   },
 
   resetController(controller, isExiting) {
     if (isExiting) {
-      return this.controller.set('permalinkId', null);
+      const queryParams = controller.get('queryParams');
+      for (let i = 0; i < queryParams.length; i++) {
+        controller.set(`${queryParams[i]}`, null);
+      }
+    }
+  },
+
+  actions: {
+    error(error) {
+      Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
+      return this.transitionTo('index');
     }
   }
 });

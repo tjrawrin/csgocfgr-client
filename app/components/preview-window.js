@@ -41,8 +41,8 @@ export default Ember.Component.extend({
       });
     },
 
-    createEdit(data) {
-      this.transitionTo('create', {queryParams: {permalinkId: data}});
+    createEdit(permalink) {
+      return this.send('redirectToCreate', permalink);
     }
   }
 });

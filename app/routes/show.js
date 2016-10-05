@@ -17,8 +17,12 @@ export default Ember.Route.extend({
     },
 
     error(error) {
-      Ember.get(this, 'flashMessages').danger(`${error.message}`);
+      Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
       return this.transitionTo('index');
+    },
+
+    redirectToCreate(permalink) {
+      return this.transitionTo('create.index', { queryParams: { permalink: permalink }})
     }
   }
 });

@@ -15,10 +15,6 @@ export default Ember.Controller.extend({
     }
   },
 
-  queryParams: ['permalink'],
-
-  permalink: null,
-
   createConfig: function() {
 const config = `// https://csgocfgr.com
 // === rate ===
