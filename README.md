@@ -11,7 +11,7 @@
 
 ## Running / Development
 
-* `npm start` (application with no connection to the API)
+* `ember server` (application with no connection to the API)
 * Visit your app at http://localhost:4200.
 
 ### Running Tests
