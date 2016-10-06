@@ -1,3 +1,4 @@
+// initializer for determining which route we are in
 export function initialize(application) {
   application.inject('route', 'router', 'router:main');
   application.inject('component', 'router', 'router:main');

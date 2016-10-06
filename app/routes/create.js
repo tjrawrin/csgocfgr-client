@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  // permalink query param
   queryParams: {
     permalink: {
       refreshModel: true,
@@ -9,6 +10,8 @@ export default Ember.Route.extend({
     }
   },
 
+  // if there is no record in the store and no query param is passed, then create a default new record
+  // if there is a query parm, load the record from the server
   model(params) {
     if (!params.permalink && !this.store.peekAll('cfg').content.length) {
       return this.store.createRecord('cfg');
@@ -23,6 +26,7 @@ export default Ember.Route.extend({
     });
   },
 
+  // clears the query param when exiting the route
   resetController(controller, isExiting) {
     if (isExiting) {
       const queryParams = controller.get('queryParams');
@@ -33,6 +37,7 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    // redirects to the index page if there is an error importing a config file from the server
     error(error) {
       Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
       return this.transitionTo('index');

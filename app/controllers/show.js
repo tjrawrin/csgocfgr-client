@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  // creates the config which shows up in the preview window, observes the model for changes
   createConfig: function() {
 const config = `// https://csgocfgr.com
 // === rate ===
@@ -209,10 +210,12 @@ cl_crosshairdot ${this.boolToNum(this.get('model.clCrosshairdot'))}`;
     return config.replace(/^\s*[\r\n]/gm, '');
   }.property('model.{rate,clCmdrate,clUpdaterate,clInterp,clInterpRatio,clLagcompensation,volume,sndMusicvolume,windowsSpeakerConfig,sndMixahead,sndHeadphonePanExponent,sndHeadphonePanRadialWeight,sndLegacySurround,sndMuteLosefocus,voiceScale,voiceEnable,lobbyVoiceChatEnabled,matMonitorgamma,matQueueMode,fpsMax,fpsMaxMenu,rDynamic,rDrawtracersFirstperson,sensitivity,zoomSensitivityRatioMouse,mCustomaccel,mRawinput,conFilterEnable,conFilterText,conFilterTextOut,mmDedicatedSearchMaxping,uiSteamOverlayNotificationPosition,clDownloadfilter,developer,conEnable,playerNevershowCommunityservermessage,gameinstructorEnable,optionDuckMethod,optionSpeedMethod,clForcepreload,clDisablehtmlmotd,clAutohelp,clShowhelp,clDisablefreezecam,clTeammateColorsShow,clAutowepswitch,clUseOpensBuyMenu,closeonbuy,hudScaling,clHudBackgroundAlpha,clHudColor,clLoadoutColorweaponnames,clHudHealthammoStyle,clHudPlayercountShowcount,clHudPlayercountPos,viewmodelFov,viewmodelOffsetX,viewmodelOffsetY,viewmodelOffsetZ,viewmodelPresetpos,clViewmodelShiftLeftAmt,clViewmodelShiftRightAmt,clBobcycle,clBobLowerAmt,clBobamtLat,clBobamtVert,hudShowtargetid,clDrawOnlyDeathnotices,clRighthand,clShowloadout,clShowpos,clShowfps,netGraph,netGraphproportionalfont,clHudRadarScale,clRadarScale,clRadarIconScaleMin,clRadarAlwaysCentered,clRadarRotate,keyEsc,keyF1,keyF2,keyF3,keyF4,keyF5,keyF6,keyF7,keyF8,keyF9,keyF10,keyF11,keyF12,keyK1,keyK2,keyK3,keyK4,keyK5,keyK6,keyK7,keyK8,keyK9,keyK0,keyHyphen,keyEquals,keyBackspace,keyTab,keyQ,keyW,keyE,keyR,keyT,keyY,keyU,keyI,keyO,keyP,keyLbracket,keyRbracket,keyBkslash,keyCapslock,keyA,keyS,keyD,keyF,keyG,keyH,keyJ,keyK,keyL,keySemicolon,keyApostrophe,keyEnter,keyShift,keyZ,keyX,keyC,keyV,keyB,keyN,keyM,keyComma,keyPeriod,keyFwslash,keyCtrl,keyAlt,keySpace,keyPause,keyIns,keyHome,keyPgup,keyDel,keyEnd,keyPgdn,keyUparrow,keyLeftarrow,keyDownarrow,keyRightarrow,keyKpSlash,keyKpMultiply,keyKpMinus,keyKpHome,keyKpUparrow,keyKpPgup,keyKpPlus,keyKpLeftarrow,keyKp5,keyKpRightarrow,keyKpEnd,keyKpDownarrow,keyKpPgdn,keyKpEnter,keyKpIns,keyKpDel,keyMouse1,keyMwheelup,keyMouse3,keyMwheeldown,keyMouse2,keyMouse4,keyMouse5,clCrosshairstyle,clCrosshaircolor,clCrosshaircolorR,clCrosshaircolorG,clCrosshaircolorB,clCrosshairalpha,clCrosshairDrawoutline,clCrosshairOutlinethickness,clCrosshairsize,clCrosshairthickness,clCrosshairgap,clCrosshairdot}'),
 
+  // changes a boolean value to either a 1 or a 0
   boolToNum(value) {
     return value ? 1 : 0;
   },
 
+  // shows or hides a command from the preview window if it is empty
   showOrHide(value, string) {
     if (value === null || value === undefined) {
       return '';
