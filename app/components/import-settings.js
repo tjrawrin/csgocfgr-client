@@ -48,7 +48,7 @@ export default Ember.Component.extend({
 
       if ($fileRadio) {
         if (this.get('config').length > 0) {
-          return this.send('redirectToCreate', this.get('config'));
+          return this.sendAction('redirectToCreate', this.get('config'));
         } else {
           Ember.get(this, 'flashMessages').danger('No file selected for import!');
           return false;
@@ -57,7 +57,7 @@ export default Ember.Component.extend({
 
       if ($textRadio) {
         if (this.get('config').length > 0) {
-          return this.send('redirectToCreate', this.get('config'));
+          return this.sendAction('redirectToCreate', this.get('config'));
         } else {
           Ember.get(this, 'flashMessages').danger('Text input field is empty!');
           return false;
