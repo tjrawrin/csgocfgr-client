@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
     },
 
     // redirects to the index page if saving fails
-    redirectToIndex(error) {
+    redirectToIndex() {
       Ember.get(this, 'flashMessages').danger('Oops, sometihng went wrong while trying to save. Please try again later.', { timeout: 6000 });
       this.transitionToRoute('index');
     }

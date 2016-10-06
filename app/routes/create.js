@@ -38,7 +38,7 @@ export default Ember.Route.extend({
 
   actions: {
     // redirects to the index page if there is an error importing a config file from the server
-    error(error) {
+    error() {
       Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
       return this.transitionTo('index');
     }

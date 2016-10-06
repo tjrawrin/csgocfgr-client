@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
 
   // function for setting the imported data to the model
   setImportedData(data) {
-    return new Promise(resolve => {
+    return new Promise(resolve => { // jshint ignore:line
       const count = data.length;
       while (data.length > 0) {
         this.set(`model.${data[0].key}`, data[0].value);

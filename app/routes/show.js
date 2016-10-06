@@ -21,14 +21,14 @@ export default Ember.Route.extend({
     },
 
     // redirects to the index page when there is an error
-    error(error) {
+    error() {
       Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
       return this.transitionTo('index');
     },
 
     // redirects to the create page and passes the permalink query param
     redirectToCreate(permalink) {
-      return this.transitionTo('create.index', { queryParams: { permalink: permalink }})
+      return this.transitionTo('create.index', { queryParams: { permalink: permalink }});
     }
   }
 });
