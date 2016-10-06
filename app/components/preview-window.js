@@ -36,18 +36,18 @@ export default Ember.Component.extend({
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('PreviewWindow-button--disabled');
-        return this.send('redirectToShow', this.get('data.permalink'));
+        return this.sendAction('redirectToShow', this.get('data.permalink'));
       }, error => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('PreviewWindow-button--disabled');
-        return this.send('redirectToIndex', error);
+        return this.sendAction('redirectToIndex', error);
       });
     },
 
     // sends action which redirects to the create page with loaded settings
     createEdit(permalink) {
-      return this.send('redirectToCreate', permalink);
+      return this.sendAction('redirectToCreate', permalink);
     }
   }
 });
