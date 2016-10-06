@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{audio-options}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#audio-options}}
-      template block text
-    {{/audio-options}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('button.Category-title').text().trim(), 'Audio');
 });

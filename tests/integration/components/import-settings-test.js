@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{import-settings}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#import-settings}}
-      template block text
-    {{/import-settings}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('h2').text().trim(), 'Import Settings');
 });

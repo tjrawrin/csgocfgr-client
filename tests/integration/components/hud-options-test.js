@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{hud-options}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#hud-options}}
-      template block text
-    {{/hud-options}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('button.Category-title').text().trim(), 'HUD');
 });

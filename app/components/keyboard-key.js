@@ -14,8 +14,12 @@ export default Ember.Component.extend({
 
   // determines if a key is bound and trims trailing white space
   isBound: Ember.computed(function() {
-    const str = this.get('modelVal').trim();
-    if (str.length === 0) {
+    let str = this.get('modelVal');
+    if (str === undefined) {
+      return false;
+    }
+
+    if (str.trim().length === 0) {
       return false;
     } else {
       return true;

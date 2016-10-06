@@ -11,14 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{select-option}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#select-option}}
-      template block text
-    {{/select-option}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('option').text().trim(), '()');
 });
