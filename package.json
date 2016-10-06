@@ -18,7 +18,6 @@
   "author": "Timothy James",
   "license": "MIT",
   "devDependencies": {
-    "awesome-urlsafe-base64": "^1.1.2",
     "body-parser": "^1.15.2",
     "broccoli-asset-rev": "^2.4.2",
     "broccoli-sass": "^0.7.0",
@@ -45,12 +44,7 @@
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.1",
     "glob": "^7.0.6",
-    "inuit-clearfix": "^0.2.2",
-    "inuit-headings": "^0.3.1",
-    "inuit-lists": "^0.1.0",
-    "inuit-starter-kit": "^0.2.9",
     "loader.js": "^4.0.1",
-    "node-uuid": "^1.4.7",
     "spin.js": "^2.3.2"
   }
 }
