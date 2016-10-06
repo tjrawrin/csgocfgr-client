@@ -1,19 +1,26 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  // inject ember services for flash message plugin
   flashMessages: Ember.inject.service(),
 
+  // setting for the file import element
   fileHidden: false,
 
+  // setting for the text import element
   textHidden: true,
 
+  // value of the file import input
   inputFile: null,
 
+  // value of the text import input
   inputText: null,
 
+  // array of import config settings
   config: [],
 
   actions: {
+    // action for importing a config file
     fileImport() {
       this.setProperties({ fileHidden: false, textHidden: true, config: {data: []} });
 
@@ -22,6 +29,7 @@ export default Ember.Component.extend({
       $textEl.val('');
     },
 
+    // action for importing a text config
     textImport() {
       this.setProperties({ fileHidden: true, textHidden: false, config: {data: []} });
 
@@ -33,6 +41,7 @@ export default Ember.Component.extend({
       $fileEl.unwrap();
     },
 
+    // action for pasring the config settings imported
     parseConfig() {
       const $fileRadio = Ember.$('#file-radio').prop('checked');
       const $textRadio = Ember.$('#text-radio').prop('checked');
@@ -57,6 +66,7 @@ export default Ember.Component.extend({
     }
   },
 
+  // executes functions and sets variables when the component is inserted into the dom
   didInsertElement() {
     const $inputFile = Ember.$('#import-file');
     const $inputText = Ember.$('#import-text');
@@ -68,6 +78,7 @@ export default Ember.Component.extend({
     $inputText.on('input', Ember.$.proxy(this.doParse, this));
   },
 
+  // attempt to parse a config based on the event that initiated the parse
   doParse(event) {
     let success = false;
 
@@ -80,6 +91,7 @@ export default Ember.Component.extend({
     return success;
   },
 
+  // parse text input into a text field as a config
   parseFromPaste() {
     let pasteContent = this.get('inputText').val();
     pasteContent = this.cleanFileContents(pasteContent);
@@ -90,11 +102,13 @@ export default Ember.Component.extend({
     this.writeConfigToModel(contentArray);
   },
 
+  // parse the contents of a file
   parseFromFile(event) {
     if (!this.clientCanReadFiles()) {
       return false;
     }
 
+    // get the first file only
     const file = event.target.files[0];
 
     if (!file) {
@@ -104,6 +118,7 @@ export default Ember.Component.extend({
     this.parseContentsFromFile(file);
   },
 
+  // determine whether or not a client browser is capable of opening and reading files
   clientCanReadFiles() {
     if (!FileReader) {
       return false;
@@ -116,12 +131,14 @@ export default Ember.Component.extend({
     return true;
   },
 
+  // retrieve the contents of a file
   parseContentsFromFile(file) {
     let fileReader = new FileReader();
     fileReader.onload = Ember.$.proxy(this.fileReaderOnLoad, this, fileReader);
     fileReader.readAsText(file);
   },
 
+  // method called by a FileReader object when it has successfully finished reading a file
   fileReaderOnLoad(fileReader) {
     let content = fileReader.result;
     content = this.cleanFileContents(content);
@@ -132,6 +149,7 @@ export default Ember.Component.extend({
     this.writeConfigToModel(contentArray);
   },
 
+  // remove extra whitespace and comments from the contents of a config
   cleanFileContents(content) {
     let newContent = content;
     newContent = newContent.replace(/\/{2,}.*/g, '');
@@ -140,6 +158,7 @@ export default Ember.Component.extend({
     return newContent;
   },
 
+  // convert a string into an array containing an arrays; splits the content string on news lines then splits each line by spaces
   contentStringToArray(content) {
     let contentArray = content.split('\n');
 
@@ -150,6 +169,7 @@ export default Ember.Component.extend({
     return contentArray;
   },
 
+  // reformat an array into a format easier to manipulate
   reformatContentArray(contentArray) {
     let newContentArray = contentArray;
 
@@ -172,6 +192,7 @@ export default Ember.Component.extend({
     return newContentArray;
   },
 
+  // load a parsed config array into the store model
   writeConfigToModel(contentArray) {
     this.set('config', []);
 
@@ -184,6 +205,7 @@ export default Ember.Component.extend({
     }
   },
 
+  // remove quotation marks from a string
   removeQuotes(value) {
     if (!value) {
       return '';
@@ -195,6 +217,7 @@ export default Ember.Component.extend({
     return newValue;
   },
 
+  // convert a string of text into a format used by the data store model to identify keybinds
   formatKeyAsModelKeybind(key) {
     key = key.replace(/"/g, '');
     key = key.toLowerCase();
@@ -216,6 +239,7 @@ export default Ember.Component.extend({
     return newKey;
   },
 
+  // convert a string of text into a format used by the data store model to identify commands
   formatKeyAsModelCommand(key) {
     let newKey = '';
 
@@ -231,6 +255,7 @@ export default Ember.Component.extend({
     return newKey;
   },
 
+  // get the model name of a keybinding key for special characters
   getKeyAsText(key) {
     let keyName = key;
 
@@ -285,6 +310,7 @@ export default Ember.Component.extend({
     return keyName;
   },
 
+  // add a key, value pair object to the this.config property
   addOptionToConfigExport(key, value) {
     let config = this.get('config');
 

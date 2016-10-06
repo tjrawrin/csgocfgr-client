@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  // list of preview images to test the crosshair on
   previewImages: [
     '/assets/images/de_dust2_01.jpg',
     '/assets/images/de_dust2_02.jpg',
@@ -16,23 +17,32 @@ export default Ember.Component.extend({
     '/assets/images/de_nuke_03.jpg'
   ],
 
+  // preview canvas value
   $previewCanvas: null,
 
+  // value for current previe image
   currentImage: 0,
 
+  // value for center of the canvas value
   center: null,
 
+  // value for crosshair length value
   crosshairLength: null,
 
+  // value for crosshair width value
   crosshairWidth: null,
 
+  // value for crosshair gap value
   crosshairGap: null,
 
+  // value for canvas context value
   canvasCtx: null,
 
+  // max crosshair alpha value
   maxAlphaValue: 255,
 
   actions: {
+    // action for moving to the previous preview image
     prevImage() {
       const currentImage = this.currentImage;
       if (currentImage <= 0) {
@@ -44,6 +54,7 @@ export default Ember.Component.extend({
       }
     },
 
+    // action for moving to the next preview image
     nextImage() {
       const currentImage = this.currentImage;
       if (currentImage === this.previewImages.length - 1) {
@@ -55,12 +66,14 @@ export default Ember.Component.extend({
       }
     },
 
+    // action for switching classes on which image is shown
     imageSwitch(oldImage, newImage) {
       Ember.$(`#crosshair-image-${oldImage}`).removeClass('CrosshairPreview-image--active');
       Ember.$(`#crosshair-image-${newImage}`).addClass('CrosshairPreview-image--active');
     }
   },
 
+  // executes functions and sets variables when the component is inserted into the dom
   didInsertElement() {
     Ember.$(`#crosshair-image-0`).addClass('CrosshairPreview-image--active');
     this.set('$previewCanvas', Ember.$('.CrosshairPreview-canvas'));
@@ -73,6 +86,7 @@ export default Ember.Component.extend({
     this.draw();
   },
 
+  // method for drawing the crosshair on the canvas
   draw: function() {
     this.clearCanvas();
     this.calculateSize();
@@ -137,10 +151,12 @@ export default Ember.Component.extend({
 
   }.observes('data.{clCrosshaircolorR,clCrosshaircolorG,clCrosshaircolorB,clCrosshairalpha,clCrosshairthickness,clCrosshairDrawoutline,clCrosshairOutlinethickness,clCrosshairsize,clCrosshairgap,clCrosshairdot}'),
 
+  // converts the RGB number into HEX for setting the crosshair color
   convertToHex(value) {
     return ('0' + parseInt(value).toString(16)).slice(-2);
   },
 
+  // detects when the cursor is inside of the canvas and updates the draw location of the crosshair
   updateCrosshairPosition(event) {
     const offset = this.get('$previewCanvas').offset();
     const x = parseInt(event.pageX - offset.left + 0.5);
@@ -149,6 +165,7 @@ export default Ember.Component.extend({
     this.draw();
   },
 
+  // method for calculating the size of the crosshair
   calculateSize() {
     this.set('crosshairLength', parseInt(this.get('data.clCrosshairsize') * 2));
     this.set('crosshairWidth', parseInt(this.get('data.clCrosshairthickness') * 2));
@@ -159,12 +176,14 @@ export default Ember.Component.extend({
     }
   },
 
+  // method for clearing the canvas drawing
   clearCanvas() {
     const width = this.get('$previewCanvas').width();
     const height = this.get('$previewCanvas').height();
     return this.get('canvasCtx').clearRect(0, 0, width, height);
   },
 
+  // method of toggling the interactive preview when clicking into the canvas
   toggleInteractivePreview() {
     this.interactivePreview = !this.interactivePreview;
     const $canvas = this.get('$previewCanvas');
@@ -177,6 +196,7 @@ export default Ember.Component.extend({
     }
   },
 
+  // binds events that map happen on the page
   bindEvents() {
     this.get('$previewCanvas').on('click', Ember.$.proxy(this.toggleInteractivePreview, this));
   }

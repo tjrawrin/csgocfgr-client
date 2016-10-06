@@ -1,18 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  // value of the preview image
   $previewImage: null,
 
+  // value of the canvas
   $previewCanvas: null,
 
+  // canvas context
   canvasCtx: null,
 
+  // base size of the image preview
   previewBaseSize: 276,
 
+  // starting offset for adjusting the scale of the radar
   startOffset: 25,
 
+  // radar icon size
   radarIconSize: 20,
 
+  // settings for random player dots on the radar
   previewConfig: {
     '0': {
       'icons': {
@@ -26,6 +33,7 @@ export default Ember.Component.extend({
     }
   },
 
+  // executes functions and sets variables when the component is inserted into the dom
   didInsertElement() {
     this.set('$previewImage', Ember.$('.RadarPreview-image'));
     this.set('$previewCanvas', Ember.$('.RadarPreview-canvas'));
@@ -35,6 +43,7 @@ export default Ember.Component.extend({
     this.draw();
   },
 
+  // adjusts the preview scale of the radar
   previewScale: function() {
     const scaleSize = Math.floor(this.get('previewBaseSize') * this.get('data.clHudRadarScale'));
     const scaleValue = this.get('data.clRadarScale') * 100;
@@ -52,6 +61,7 @@ export default Ember.Component.extend({
     });
   }.observes('data.{clHudRadarScale,clRadarScale}'),
 
+  // draws the random player dots on the canvas
   draw: function() {
     this.clearCanvas();
 
@@ -65,6 +75,7 @@ export default Ember.Component.extend({
 
   }.observes('data.{clHudRadarScale,clRadarScale,clRadarIconScaleMin,clRadarAlwaysCentered,clRadarRotate}'),
 
+  // creates the random player dots
   drawIcon(xPos, yPos, color) {
     const basePixels = 7;
     const scaleSteps = (1 - 0.25) * 100;
@@ -90,6 +101,7 @@ export default Ember.Component.extend({
     ctx.fill();
   },
 
+  // method for clearing the canvas drawing
   clearCanvas() {
     const width = this.get('$previewCanvas').width();
     const height = this.get('$previewCanvas').height();
