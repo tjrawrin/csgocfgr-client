@@ -1,36 +1,22 @@
-# CS:GO Configr (client)
+# csgocfgr-client
 
-`v0.1.4`
-
-This README outlines the details of collaborating on this Ember application.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+`v0.2.0`
 
 ## Installation
 
-* `git clone git@github.com:tjwarrin/csgocfgr-client.git` this repository
+* `git clone git@github.com:haskly/csgocfgr-client.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
-* `ember server` (application with no connection to the API)
+* `npm start` (application with no connection to the API)
 * Visit your app at http://localhost:4200.
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 
 * `ember test`
-* `ember test --server`
 
 ### Building
 
