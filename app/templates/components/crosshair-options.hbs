@@ -28,10 +28,14 @@
       <label class="Category-label">cl_crosshaircolor</label>
       <div class="Category-description">
         <p>determines if the the crosshair color should be green or a custom color set by the player. </p>
-        <p><strong>off (custom)</strong>: 0, <strong>(on) green</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        <p><strong>green</strong>: 1, <strong>yellow</strong>: 2, <strong>blue</strong>: 3, <strong>lt blue</strong>: 4, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
       </div>
       <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshaircolor" type="checkbox" checked=data.clCrosshaircolor}}
+        <select class="Category-input Category-input--select" data-command="cl_crosshaircolor" onchange={{action 'updateValue' 'clCrosshaircolor'}}>
+          {{#each colorOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshaircolor}}
+          {{/each}}
+        </select>
       </div>
     </li>
 

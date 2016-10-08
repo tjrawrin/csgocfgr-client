@@ -17,6 +17,14 @@ export default Ember.Component.extend({
     {optionName: 'Custom Apperance With Fake Recoil (Inaccurate Feedback)', id: 5}
   ],
 
+  // list of options for the crosshair color select input
+  colorOptions: [
+    {optionName: 'Green', id: 1},
+    {optionName: 'Yellow', id: 2},
+    {optionName: 'Blue', id: 3},
+    {optionName: 'Lt Blue', id: 4}
+  ],
+
   // determines if the component is open or closed
   isOpen: false,
 

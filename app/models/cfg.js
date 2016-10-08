@@ -193,7 +193,7 @@ export default Model.extend({
   keyMouse5: attr('string', { defaultValue: '' }),
   // crosshair
   clCrosshairstyle: attr('number', { defaultValue: 0 }),
-  clCrosshaircolor: attr('boolean', { defaultValue: true }),
+  clCrosshaircolor: attr('number', { defaultValue: 1 }),
   clCrosshaircolorR: attr('number', { defaultValue: 50 }),
   clCrosshaircolorG: attr('number', { defaultValue: 250 }),
   clCrosshaircolorB: attr('number', { defaultValue: 50 }),

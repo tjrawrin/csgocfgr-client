@@ -194,7 +194,7 @@ ${this.showOrHide(this.get('model.keyMouse4'), 'bind mouse4 ' + this.get('model.
 ${this.showOrHide(this.get('model.keyMouse5'), 'bind mouse5 ' + this.get('model.keyMouse5'))}
 // === crosshair ===
 cl_crosshairstyle ${this.get('model.clCrosshairstyle')}
-cl_crosshaircolor ${this.boolToNum(this.get('model.clCrosshaircolor'))}
+cl_crosshaircolor ${this.get('model.clCrosshaircolor')}
 cl_crosshaircolor_r ${this.get('model.clCrosshaircolorR')}
 cl_crosshaircolor_g ${this.get('model.clCrosshaircolorG')}
 cl_crosshaircolor_b ${this.get('model.clCrosshaircolorB')}
