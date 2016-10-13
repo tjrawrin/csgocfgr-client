@@ -1,10 +1,6 @@
 .GettingStarted {
-  background: #cb2d3e;
-  background: -webkit-linear-gradient(to top, #cb2d3e , #ef473a);
-  background: linear-gradient(to top, #cb2d3e , #ef473a);
   color: $cWhite;
   font-size: 14px;
-  height: 100vh;
 
   @include fs-min-width($bpMid) {
     font-size: 16px;
@@ -17,7 +13,14 @@
   }
 
   &-title {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
     margin: 0;
+
+    &-link {
+      color: $cWhite;
+      text-decoration: none;
+    }
   }
 
   &-navigation {
@@ -46,7 +49,7 @@
 
       @include fs-attention {
         background-color: rgba(255,255,255,0.3);
-        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+        box-shadow: 0 0 6px rgba(0,0,0,0.6);
       }
     }
   }

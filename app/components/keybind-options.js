@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   // determines if the component is open or closed
-  isOpen: false,
+  isOpen: true,
 
   // value for the selected key
   selectedKey: '',

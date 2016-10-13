@@ -3,325 +3,321 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">HUD</span>
   </button>
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-  <div class="layout-widthDefault">
-    <ul class="Category-items {{if isOpen "Category-items--open"}}">
+    <li class="Category-item">
+      <label class="Category-label">hud_scaling</label>
+      <div class="Category-description">
+        <p>scales the hud elements.</p>
+        <p><strong>min</strong>: 0.5, <strong>max</strong>: 0.95, <span class="Category-description-default"><strong>default value</strong>: 0.85</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="hud_scaling" type="range" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
+        {{input class="Category-input Category-input--number" type="number" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">hud_scaling</label>
-        <div class="Category-description">
-          <p>scales the hud elements.</p>
-          <p><strong>min</strong>: 0.5, <strong>max</strong>: 0.95, <span class="Category-description-default"><strong>default value</strong>: 0.85</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="hud_scaling" type="range" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
-          {{input class="Category-input Category-input--number" type="number" min="0.5" max="0.95" step="0.01" value=data.hudScaling}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_hud_background_alpha</label>
+      <div class="Category-description">
+        <p>sets the alpha of the background on HUD elements.</p>
+        <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0.5</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_hud_background_alpha" type="range" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
+        {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_hud_background_alpha</label>
-        <div class="Category-description">
-          <p>sets the alpha of the background on HUD elements.</p>
-          <p><strong>min</strong>: 0, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0.5</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_hud_background_alpha" type="range" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
-          {{input class="Category-input Category-input--number" type="number" min="0.0" max="1.0" step="0.05" value=data.clHudBackgroundAlpha}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_hud_color</label>
+      <div class="Category-description">
+        <p>sets the color of HUD elements.</p>
+        <p><strong>default</strong>: 0, <strong>white</strong>: 1, <strong>light blue</strong>: 2, <strong>blue</strong>: 3, <strong>purple</strong>: 4, <strong>red</strong>: 5, <strong>orange</strong>: 6, <strong>yellow</strong>: 7, <strong>green</strong>: 8, <strong>teal</strong>: 9, <strong>pink</strong>: 10, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="cl_hud_color" onchange={{action 'updateValue' 'clHudColor'}}>
+          {{#each hudcolorOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clHudColor}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_hud_color</label>
-        <div class="Category-description">
-          <p>sets the color of HUD elements.</p>
-          <p><strong>default</strong>: 0, <strong>white</strong>: 1, <strong>light blue</strong>: 2, <strong>blue</strong>: 3, <strong>purple</strong>: 4, <strong>red</strong>: 5, <strong>orange</strong>: 6, <strong>yellow</strong>: 7, <strong>green</strong>: 8, <strong>teal</strong>: 9, <strong>pink</strong>: 10, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="cl_hud_color" onchange={{action 'updateValue' 'clHudColor'}}>
-            {{#each hudcolorOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clHudColor}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_loadout_colorweaponnames</label>
+      <div class="Category-description">
+        <p>if set to on, the weapon names are colored in the weapon loadout to match their rarity.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_loadout_colorweaponnames" type="checkbox" checked=data.clLoadoutColorweaponnames}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_loadout_colorweaponnames</label>
-        <div class="Category-description">
-          <p>if set to on, the weapon names are colored in the weapon loadout to match their rarity.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_loadout_colorweaponnames" type="checkbox" checked=data.clLoadoutColorweaponnames}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_hud_healthammo_style</label>
+      <div class="Category-description">
+        <p>hides some HUD elements like health/armor bars and firerate in ammo.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_healthammo_style" type="checkbox" checked=data.clHudHealthammoStyle}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_hud_healthammo_style</label>
-        <div class="Category-description">
-          <p>hides some HUD elements like health/armor bars and firerate in ammo.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_hud_healthammo_style" type="checkbox" checked=data.clHudHealthammoStyle}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_hud_playercount_showcount</label>
+      <div class="Category-description">
+        <p>determines how to display players on the HUD.</p>
+        <p><strong>off, show player avatars</strong>: 0, <strong>on, show count of living players on team (no avatars)</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_showcount" type="checkbox" checked=data.clHudPlayercountShowcount}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_hud_playercount_showcount</label>
-        <div class="Category-description">
-          <p>determines how to display players on the HUD.</p>
-          <p><strong>off, show player avatars</strong>: 0, <strong>on, show count of living players on team (no avatars)</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_showcount" type="checkbox" checked=data.clHudPlayercountShowcount}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_hud_playercount_pos</label>
+      <div class="Category-description">
+        <p>displays the player count HUD element on the bottom of the screen.</p>
+        <p><strong>off, position at top</strong>: 0, <strong>on, position at bottom</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_pos" type="checkbox" checked=data.clHudPlayercountPos}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_hud_playercount_pos</label>
-        <div class="Category-description">
-          <p>displays the player count HUD element on the bottom of the screen.</p>
-          <p><strong>off, position at top</strong>: 0, <strong>on, position at bottom</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_hud_playercount_pos" type="checkbox" checked=data.clHudPlayercountPos}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">viewmodel_fov</label>
+      <div class="Category-description">
+        <p>is the field of view for the player's view model.</p>
+        <p><strong>min</strong>: 54, <strong>max</strong>: 68, <span class="Category-description-default"><strong>default value</strong>: 54</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="viewmodel_fov" type="range" min="54" max="68" step="1" value=data.viewmodelFov}}
+        {{input class="Category-input Category-input--number" type="number" min="54" max="68" step="1" value=data.viewmodelFov}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">viewmodel_fov</label>
-        <div class="Category-description">
-          <p>is the field of view for the player's view model.</p>
-          <p><strong>min</strong>: 54, <strong>max</strong>: 68, <span class="Category-description-default"><strong>default value</strong>: 54</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="viewmodel_fov" type="range" min="54" max="68" step="1" value=data.viewmodelFov}}
-          {{input class="Category-input Category-input--number" type="number" min="54" max="68" step="1" value=data.viewmodelFov}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">viewmodel_offset_x</label>
+      <div class="Category-description">
+        <p>is the offset of the players' view model along the x axis.</p>
+        <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_x" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">viewmodel_offset_x</label>
-        <div class="Category-description">
-          <p>is the offset of the players' view model along the x axis.</p>
-          <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="viewmodel_offset_x" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
-          {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetX}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">viewmodel_offset_y</label>
+      <div class="Category-description">
+        <p>is the offset of the players' view model along the y axis.</p>
+        <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_y" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">viewmodel_offset_y</label>
-        <div class="Category-description">
-          <p>is the offset of the players' view model along the y axis.</p>
-          <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="viewmodel_offset_y" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
-          {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetY}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">viewmodel_offset_z</label>
+      <div class="Category-description">
+        <p>is the offset of the players' view model along the z axis.</p>
+        <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="viewmodel_offset_z" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
+        {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">viewmodel_offset_z</label>
-        <div class="Category-description">
-          <p>is the offset of the players' view model along the z axis.</p>
-          <p><strong>min</strong>: -2, <strong>max</strong>: 2.5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="viewmodel_offset_z" type="range" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
-          {{input class="Category-input Category-input--number" type="number" min="-2.0" max="2.5" step="0.1" value=data.viewmodelOffsetZ}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">viewmodel_presetpos</label>
+      <div class="Category-description">
+        <p>selects a pre-configured viewmodel.</p>
+        <p><strong>desktop</strong>: 1, <strong>couch</strong>: 2, <strong>classic</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="viewmodel_presetpos" onchange={{action 'updateValue' 'viewmodelPresetpos'}}>
+          {{#each viewmodelOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.viewmodelPresetpos}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">viewmodel_presetpos</label>
-        <div class="Category-description">
-          <p>selects a pre-configured viewmodel.</p>
-          <p><strong>desktop</strong>: 1, <strong>couch</strong>: 2, <strong>classic</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="viewmodel_presetpos" onchange={{action 'updateValue' 'viewmodelPresetpos'}}>
-            {{#each viewmodelOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.viewmodelPresetpos}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_viewmodel_shift_left_amt</label>
+      <div class="Category-description">
+        <p>is the amount the viewmodel shifts to the left when shooting accuracy increases.</p>
+        <p><strong>min</strong>: 0.5, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 1.5</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_left_amt" type="range" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_viewmodel_shift_left_amt</label>
-        <div class="Category-description">
-          <p>is the amount the viewmodel shifts to the left when shooting accuracy increases.</p>
-          <p><strong>min</strong>: 0.5, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 1.5</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_left_amt" type="range" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
-          {{input class="Category-input Category-input--number" type="number" min="0.5" max="2.0" step="0.05" value=data.clViewmodelShiftLeftAmt}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_viewmodel_shift_right_amt</label>
+      <div class="Category-description">
+        <p>is the amount the viewmodel shifts to the right when shooting accuracy decreases.</p>
+        <p><strong>min</strong>: 0.25, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.75</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_right_amt" type="range" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_viewmodel_shift_right_amt</label>
-        <div class="Category-description">
-          <p>is the amount the viewmodel shifts to the right when shooting accuracy decreases.</p>
-          <p><strong>min</strong>: 0.25, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.75</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_viewmodel_shift_right_amt" type="range" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
-          {{input class="Category-input Category-input--number" type="number" min="0.25" max="2.0" step="0.05" value=data.clViewmodelShiftRightAmt}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_bobcycle</label>
+      <div class="Category-description">
+        <p>is the frequency at which the viewmodel bobs.</p>
+        <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.98</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_bobcycle" type="range" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_bobcycle</label>
-        <div class="Category-description">
-          <p>is the frequency at which the viewmodel bobs.</p>
-          <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.98</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_bobcycle" type="range" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
-          {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.01" value=data.clBobcycle}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_bob_lower_amt</label>
+      <div class="Category-description">
+        <p>is the amount the viewmodel lowers when running.</p>
+        <p><strong>min</strong>: 5, <strong>max</strong>: 30, <span class="Category-description-default"><strong>default value</strong>: 21</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_bob_lower_amt" type="range" min="5" max="30" step="1" value=data.clBobLowerAmt}}
+        {{input class="Category-input Category-input--number" type="number" min="5" max="30" step="1" value=data.clBobLowerAmt}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_bob_lower_amt</label>
-        <div class="Category-description">
-          <p>is the amount the viewmodel lowers when running.</p>
-          <p><strong>min</strong>: 5, <strong>max</strong>: 30, <span class="Category-description-default"><strong>default value</strong>: 21</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_bob_lower_amt" type="range" min="5" max="30" step="1" value=data.clBobLowerAmt}}
-          {{input class="Category-input Category-input--number" type="number" min="5" max="30" step="1" value=data.clBobLowerAmt}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_bobamt_lat</label>
+      <div class="Category-description">
+        <p>is the amount the viewmodel moves side to side when running.</p>
+        <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.4</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_bobamt_lat" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_bobamt_lat</label>
-        <div class="Category-description">
-          <p>is the amount the viewmodel moves side to side when running.</p>
-          <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.4</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_bobamt_lat" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
-          {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtLat}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_bobamt_vert</label>
+      <div class="Category-description">
+        <p>is the amount the viewmodel moves up and down when running.</p>
+        <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.4</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="cl_bobamt_vert" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
+        {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_bobamt_vert</label>
-        <div class="Category-description">
-          <p>is the amount the viewmodel moves up and down when running.</p>
-          <p><strong>min</strong>: 0.1, <strong>max</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0.4</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="cl_bobamt_vert" type="range" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
-          {{input class="Category-input Category-input--number" type="number" min="0.1" max="2.0" step="0.1" value=data.clBobamtVert}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">hud_showtargetid</label>
+      <div class="Category-description">
+        <p>enables the display of target names.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="hud_showtargetid" type="checkbox" checked=data.hudShowtargetid}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">hud_showtargetid</label>
-        <div class="Category-description">
-          <p>enables the display of target names.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="hud_showtargetid" type="checkbox" checked=data.hudShowtargetid}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_draw_only_deathnotices</label>
+      <div class="Category-description">
+        <p>draws only the crosshair and death notices. (useful for movie making).</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_draw_only_deathnotices" type="checkbox" checked=data.clDrawOnlyDeathnotices}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_draw_only_deathnotices</label>
-        <div class="Category-description">
-          <p>draws only the crosshair and death notices. (useful for movie making).</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_draw_only_deathnotices" type="checkbox" checked=data.clDrawOnlyDeathnotices}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_righthand</label>
+      <div class="Category-description">
+        <p>enables right-handed viewmodels.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_righthand" type="checkbox" checked=data.clRighthand}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_righthand</label>
-        <div class="Category-description">
-          <p>enables right-handed viewmodels.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_righthand" type="checkbox" checked=data.clRighthand}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_showloadout</label>
+      <div class="Category-description">
+        <p>determines whether the loadout is always visible or automatically hides after a short period.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showloadout" type="checkbox" checked=data.clShowloadout}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_showloadout</label>
-        <div class="Category-description">
-          <p>determines whether the loadout is always visible or automatically hides after a short period.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_showloadout" type="checkbox" checked=data.clShowloadout}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_showpos</label>
+      <div class="Category-description">
+        <p>draws the current position at the top of the screen.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showpos" type="checkbox" checked=data.clShowpos}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_showpos</label>
-        <div class="Category-description">
-          <p>draws the current position at the top of the screen.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_showpos" type="checkbox" checked=data.clShowpos}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_showfps</label>
+      <div class="Category-description">
+        <p>draws a fps meter.</p>
+        <p><strong>disabled</strong>: 0, <strong>fps</strong>: 1, <strong>smooth</strong>: 2, <strong>server</strong>: 3, <strong>show &amp; log to file</strong>: 4, <strong>thread and wait times</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="cl_showfps" onchange={{action 'updateValue' 'clShowfps'}}>
+          {{#each showFpsOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clShowfps}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_showfps</label>
-        <div class="Category-description">
-          <p>draws a fps meter.</p>
-          <p><strong>disabled</strong>: 0, <strong>fps</strong>: 1, <strong>smooth</strong>: 2, <strong>server</strong>: 3, <strong>show &amp; log to file</strong>: 4, <strong>thread and wait times</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="cl_showfps" onchange={{action 'updateValue' 'clShowfps'}}>
-            {{#each showFpsOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clShowfps}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">net_graph</label>
+      <div class="Category-description">
+        <p>draws the network usage data.</p>
+        <p><strong>disabled</strong>: 0, <strong>show network data</strong>: 1, <strong>show in/out data</strong>: 2, <strong>draw data on payload</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="net_graph" onchange={{action 'updateValue' 'netGraph'}}>
+          {{#each netGraphOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.netGraph}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">net_graph</label>
-        <div class="Category-description">
-          <p>draws the network usage data.</p>
-          <p><strong>disabled</strong>: 0, <strong>show network data</strong>: 1, <strong>show in/out data</strong>: 2, <strong>draw data on payload</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="net_graph" onchange={{action 'updateValue' 'netGraph'}}>
-            {{#each netGraphOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.netGraph}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">net_graphproportionalfont</label>
+      <div class="Category-description">
+        <p>determines whether or not netgraph font is proportional.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="net_graphproportionalfont" type="checkbox" checked=data.netGraphproportionalfont}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">net_graphproportionalfont</label>
-        <div class="Category-description">
-          <p>determines whether or not netgraph font is proportional.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="net_graphproportionalfont" type="checkbox" checked=data.netGraphproportionalfont}}
-        </div>
-      </li>
-
-    </ul>
-  </div>
-
+  </ul>
 </div>

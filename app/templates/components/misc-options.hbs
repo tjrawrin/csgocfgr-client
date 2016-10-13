@@ -3,259 +3,255 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Miscellaneous</span>
   </button>
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-  <div class="layout-widthDefault">
-    <ul class="Category-items {{if isOpen "Category-items--open"}}">
+    <li class="Category-item">
+      <label class="Category-label">con_filter_enable</label>
+      <div class="Category-description">
+        <p>filters console output based on the setting of con_filter_text.</p>
+        <p><strong>disabled</strong>: 0, <strong>filters completely</strong>: 1, <strong>displays filtered text brighter</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="con_filter_enable" onchange={{action 'updateValue' 'conFilterEnable'}}>
+          {{#each filterEnableOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.conFilterEnable}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">con_filter_enable</label>
-        <div class="Category-description">
-          <p>filters console output based on the setting of con_filter_text.</p>
-          <p><strong>disabled</strong>: 0, <strong>filters completely</strong>: 1, <strong>displays filtered text brighter</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="con_filter_enable" onchange={{action 'updateValue' 'conFilterEnable'}}>
-            {{#each filterEnableOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.conFilterEnable}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">con_filter_text</label>
+      <div class="Category-description">
+        <p>is the text with which to filter console output. set con_filter_enable 1 or 2 to activate.</p>
+        <p><strong>Example</strong>: <em>damage</em></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--text" data-command="con_filter_text" type="text" value=data.conFilterText}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">con_filter_text</label>
-        <div class="Category-description">
-          <p>is the text with which to filter console output. set con_filter_enable 1 or 2 to activate.</p>
-          <p><strong>Example</strong>: <em>damage</em></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--text" data-command="con_filter_text" type="text" value=data.conFilterText}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">con_filter_text_out</label>
+      <div class="Category-description">
+        <p>is the text with which to filter OUT of console output. set con_filter_enable 1 or 2 to activate.</p>
+        <p><strong>Example</strong>: <em>player:</em></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--text" data-command="con_filter_text_out" type="text" value=data.conFilterTextOut}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">con_filter_text_out</label>
-        <div class="Category-description">
-          <p>is the text with which to filter OUT of console output. set con_filter_enable 1 or 2 to activate.</p>
-          <p><strong>Example</strong>: <em>player:</em></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--text" data-command="con_filter_text_out" type="text" value=data.conFilterTextOut}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">mm_dedicated_search_maxping</label>
+      <div class="Category-description">
+        <p>sets the maximum allowable ping to dedicated servers when searching for games.</p>
+        <p><strong>min</strong>: 50, <strong>max</strong>: 350, <span class="Category-description-default"><strong>default value</strong>: 150</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--range" data-command="mm_dedicated_search_maxping" type="range" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
+        {{input class="Category-input Category-input--number" type="number" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">mm_dedicated_search_maxping</label>
-        <div class="Category-description">
-          <p>sets the maximum allowable ping to dedicated servers when searching for games.</p>
-          <p><strong>min</strong>: 50, <strong>max</strong>: 350, <span class="Category-description-default"><strong>default value</strong>: 150</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--range" data-command="mm_dedicated_search_maxping" type="range" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
-          {{input class="Category-input Category-input--number" type="number" min="50" max="350" step="1" value=data.mmDedicatedSearchMaxping}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">ui_steam_overlay_notification_position</label>
+      <div class="Category-description">
+        <p>sets the position of steam overly notifications.</p>
+        <p><strong>topleft</strong>, <strong>topright</strong>, <strong>bottomright</strong>, <strong>bottomleft</strong>, <span class="Category-description-default"><strong>default value</strong>: topleft</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position" onchange={{action 'updateValue' 'uiSteamOverlayNotificationPosition'}}>
+          {{#each notificationOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.uiSteamOverlayNotificationPosition}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">ui_steam_overlay_notification_position</label>
-        <div class="Category-description">
-          <p>sets the position of steam overly notifications.</p>
-          <p><strong>topleft</strong>, <strong>topright</strong>, <strong>bottomright</strong>, <strong>bottomleft</strong>, <span class="Category-description-default"><strong>default value</strong>: topleft</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="ui_steam_overlay_notification_position" onchange={{action 'updateValue' 'uiSteamOverlayNotificationPosition'}}>
-            {{#each notificationOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.uiSteamOverlayNotificationPosition}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_downloadfilter</label>
+      <div class="Category-description">
+        <p>determines which files can be downloaded from the server.</p>
+        <p><strong>all</strong>, <strong>nosounds</strong>, <strong>none</strong>, <span class="Category-description-default"><strong>default value</strong>: all</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="cl_downloadfilter" onchange={{action 'updateValue' 'clDownloadfilter'}}>
+          {{#each downloadOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clDownloadfilter}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_downloadfilter</label>
-        <div class="Category-description">
-          <p>determines which files can be downloaded from the server.</p>
-          <p><strong>all</strong>, <strong>nosounds</strong>, <strong>none</strong>, <span class="Category-description-default"><strong>default value</strong>: all</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="cl_downloadfilter" onchange={{action 'updateValue' 'clDownloadfilter'}}>
-            {{#each downloadOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clDownloadfilter}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">developer</label>
+      <div class="Category-description">
+        <p>sets developer message level.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="developer" type="checkbox" checked=data.developer}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">developer</label>
-        <div class="Category-description">
-          <p>sets developer message level.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="developer" type="checkbox" checked=data.developer}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">con_enable</label>
+      <div class="Category-description">
+        <p>allows the console to be activated.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="con_enable" type="checkbox" checked=data.conEnable}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">con_enable</label>
-        <div class="Category-description">
-          <p>allows the console to be activated.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="con_enable" type="checkbox" checked=data.conEnable}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">player_nevershow_communityservermessage</label>
+      <div class="Category-description">
+        <p>enable or disable community server message.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="player_nevershow_communityservermessage" type="checkbox" checked=data.playerNevershowCommunityservermessage}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">player_nevershow_communityservermessage</label>
-        <div class="Category-description">
-          <p>enable or disable community server message.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="player_nevershow_communityservermessage" type="checkbox" checked=data.playerNevershowCommunityservermessage}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">gameinstructor_enable</label>
+      <div class="Category-description">
+        <p>displays in game lessons that teach new players.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="gameinstructor_enable" type="checkbox" checked=data.gameinstructorEnable}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">gameinstructor_enable</label>
-        <div class="Category-description">
-          <p>displays in game lessons that teach new players.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="gameinstructor_enable" type="checkbox" checked=data.gameinstructorEnable}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">option_duck_method</label>
+      <div class="Category-description">
+        <p>switches between hold to duck and toggle duck on/off.</p>
+        <p><strong>hold to duck</strong>: 0, <strong>toggle duck on/off</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="option_duck_method" type="checkbox" checked=data.optionDuckMethod}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">option_duck_method</label>
-        <div class="Category-description">
-          <p>switches between hold to duck and toggle duck on/off.</p>
-          <p><strong>hold to duck</strong>: 0, <strong>toggle duck on/off</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="option_duck_method" type="checkbox" checked=data.optionDuckMethod}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">option_speed_method</label>
+      <div class="Category-description">
+        <p>switches between hold to walk and toggle walk on/off.</p>
+        <p><strong>hold to walk</strong>: 0, <strong>toggle walk on/off</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="option_speed_method" type="checkbox" checked=data.optionSpeedMethod}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">option_speed_method</label>
-        <div class="Category-description">
-          <p>switches between hold to walk and toggle walk on/off.</p>
-          <p><strong>hold to walk</strong>: 0, <strong>toggle walk on/off</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="option_speed_method" type="checkbox" checked=data.optionSpeedMethod}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_forcepreload</label>
+      <div class="Category-description">
+        <p>whether or not to force preloading.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_forcepreload" type="checkbox" checked=data.clForcepreload}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_forcepreload</label>
-        <div class="Category-description">
-          <p>whether or not to force preloading.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_forcepreload" type="checkbox" checked=data.clForcepreload}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_disablehtmlmotd</label>
+      <div class="Category-description">
+        <p>disables the HTML MOTD message when connecting to servers.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablehtmlmotd" type="checkbox" checked=data.clDisablehtmlmotd}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_disablehtmlmotd</label>
-        <div class="Category-description">
-          <p>disables the HTML MOTD message when connecting to servers.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_disablehtmlmotd" type="checkbox" checked=data.clDisablehtmlmotd}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_autohelp</label>
+      <div class="Category-description">
+        <p>set to 0 to not have automatic help.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autohelp" type="checkbox" checked=data.clAutohelp}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_autohelp</label>
-        <div class="Category-description">
-          <p>set to 0 to not have automatic help.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_autohelp" type="checkbox" checked=data.clAutohelp}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_showhelp</label>
+      <div class="Category-description">
+        <p>set to 0 to not show on-screen help.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_showhelp" type="checkbox" checked=data.clShowhelp}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_showhelp</label>
-        <div class="Category-description">
-          <p>set to 0 to not show on-screen help.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_showhelp" type="checkbox" checked=data.clShowhelp}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_disablefreezecam</label>
+      <div class="Category-description">
+        <p>disables freezecam after death.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_disablefreezecam" type="checkbox" checked=data.clDisablefreezecam}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_disablefreezecam</label>
-        <div class="Category-description">
-          <p>disables freezecam after death.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_disablefreezecam" type="checkbox" checked=data.clDisablefreezecam}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_teammate_colors_show</label>
+      <div class="Category-description">
+        <p>in competitive:</p>
+        <p><strong>show teammates as seperate colors</strong>: 1, <strong>show colors and letters</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show" onchange={{action 'updateValue' 'clTeammateColorsShow'}}>
+          {{#each teammateColorsOptions as |option|}}
+            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clTeammateColorsShow}}
+          {{/each}}
+        </select>
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_teammate_colors_show</label>
-        <div class="Category-description">
-          <p>in competitive:</p>
-          <p><strong>show teammates as seperate colors</strong>: 1, <strong>show colors and letters</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          <select class="Category-input Category-input--select" data-command="cl_teammate_colors_show" onchange={{action 'updateValue' 'clTeammateColorsShow'}}>
-            {{#each teammateColorsOptions as |option|}}
-              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clTeammateColorsShow}}
-            {{/each}}
-          </select>
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_autowepswitch</label>
+      <div class="Category-description">
+        <p>automatically switch to picked up weapons (if more powerful).</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_autowepswitch" type="checkbox" checked=data.clAutowepswitch}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_autowepswitch</label>
-        <div class="Category-description">
-          <p>automatically switch to picked up weapons (if more powerful).</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_autowepswitch" type="checkbox" checked=data.clAutowepswitch}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">cl_use_opens_buy_menu</label>
+      <div class="Category-description">
+        <p>pressing the +use key will open the buy menu if in a buy zone.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="cl_use_opens_buy_menu" type="checkbox" checked=data.clUseOpensBuyMenu}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">cl_use_opens_buy_menu</label>
-        <div class="Category-description">
-          <p>pressing the +use key will open the buy menu if in a buy zone.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="cl_use_opens_buy_menu" type="checkbox" checked=data.clUseOpensBuyMenu}}
-        </div>
-      </li>
+    <li class="Category-item">
+      <label class="Category-label">closeonbuy</label>
+      <div class="Category-description">
+        <p>closes the buy menu after buying something.</p>
+        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+      </div>
+      <div class="Category-inputs">
+        {{input class="Category-input Category-input--checkbox" data-command="closeonbuy" type="checkbox" checked=data.closeonbuy}}
+      </div>
+    </li>
 
-      <li class="Category-item">
-        <label class="Category-label">closeonbuy</label>
-        <div class="Category-description">
-          <p>closes the buy menu after buying something.</p>
-          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-        </div>
-        <div class="Category-inputs">
-          {{input class="Category-input Category-input--checkbox" data-command="closeonbuy" type="checkbox" checked=data.closeonbuy}}
-        </div>
-      </li>
-
-    </ul>
-  </div>
-
+  </ul>
 </div>

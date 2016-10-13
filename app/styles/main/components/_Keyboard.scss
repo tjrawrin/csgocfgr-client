@@ -60,7 +60,7 @@
     width: 32px;
 
     @include fs-attention {
-      background-color: $cAccent;
+      background-color: $cBrownAccent3;
     }
 
     &--disabled {
@@ -171,11 +171,11 @@
     }
 
     &--bound {
-      background-color: $cSecondary;
+      background-color: $cGreen;
     }
 
     &--editing {
-      background-color: $cAccent;
+      background-color: $cGreenAccent;
     }
   }
 }

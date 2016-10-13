@@ -3,197 +3,193 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Keybind</span>
   </button>
-
-  <div class="layout-widthDefault">
-    <ul class="Category-items {{if isOpen "Category-items--open"}}">
-      <li class="Category-item">
-        <div class="Category-description">
-          <p>the following is a list of weapon and gear options you can use to bind to keys.</p>
-          <p><strong>rifles</strong>: ssg08, galilar, famas, ssg550, aug, m4a1, ak47, g3sg1, scar20, awp</p>
-          <p><strong>sub-machine guns</strong>: mac10, ump45, p90, bizon, mp7, mp9</p>
-          <p><strong>heavy</strong>: xm1014, mag7, sawedoff, m249, negev</p>
-          <p><strong>pistol</strong>: p228, glock, elite, tec9, hkp2000, p250</p>
-          <p><strong>grenades &amp; gear</strong>: incgrenade, flashbang, smokegrenade, hegrenade, molotov, decoy, kevlar, vesthelm, taser, defuser</p>
-        </div>
-        <div class="Category-inputs">
-          {{keyboard-input data=data modelKey=selectedKey modelVal=selectedVal}}
-        </div>
-        <div class="Keyboard">
-          <div class="Keyboard-main">
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyEsc onEdit=(action "editKey" "keyEsc")}}Esc{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF1 onEdit=(action "editKey" "keyF1")}}F1{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF2 onEdit=(action "editKey" "keyF2")}}F2{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF3 onEdit=(action "editKey" "keyF3")}}F3{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyF4 onEdit=(action "editKey" "keyF4")}}F4{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF5 onEdit=(action "editKey" "keyF5")}}F5{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF6 onEdit=(action "editKey" "keyF6")}}F6{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF7 onEdit=(action "editKey" "keyF7")}}F7{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyF8 onEdit=(action "editKey" "keyF8")}}F8{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF9 onEdit=(action "editKey" "keyF9")}}F9{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF10 onEdit=(action "editKey" "keyF10")}}F10{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF11 onEdit=(action "editKey" "keyF11")}}F11{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF12 onEdit=(action "editKey" "keyF12")}}F12{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">`</button>
-              {{#keyboard-key modelVal=data.keyK1 onEdit=(action "editKey" "keyK1")}}1{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK2 onEdit=(action "editKey" "keyK2")}}2{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK3 onEdit=(action "editKey" "keyK3")}}3{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK4 onEdit=(action "editKey" "keyK4")}}4{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK5 onEdit=(action "editKey" "keyK5")}}5{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK6 onEdit=(action "editKey" "keyK6")}}6{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK7 onEdit=(action "editKey" "keyK7")}}7{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK8 onEdit=(action "editKey" "keyK8")}}8{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK9 onEdit=(action "editKey" "keyK9")}}9{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK0 onEdit=(action "editKey" "keyK0")}}0{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyHyphen onEdit=(action "editKey" "keyHyphen")}}-{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyEquals onEdit=(action "editKey" "keyEquals")}}={{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--bs" modelVal=data.keyBackspace onEdit=(action "editKey" "keyBackspace")}}&#8592;{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--tb" modelVal=data.keyTab onEdit=(action "editKey" "keyTab")}}Tab{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyQ onEdit=(action "editKey" "keyQ")}}q{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyW onEdit=(action "editKey" "keyW")}}w{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyE onEdit=(action "editKey" "keyE")}}e{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyR onEdit=(action "editKey" "keyR")}}r{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyT onEdit=(action "editKey" "keyT")}}t{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyY onEdit=(action "editKey" "keyY")}}y{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyU onEdit=(action "editKey" "keyU")}}u{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyI onEdit=(action "editKey" "keyI")}}i{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyO onEdit=(action "editKey" "keyO")}}o{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyP onEdit=(action "editKey" "keyP")}}p{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyLbracket onEdit=(action "editKey" "keyLbracket")}}]{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyRbracket onEdit=(action "editKey" "keyRbracket")}}[{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--sb" modelVal=data.keyBkslash onEdit=(action "editKey" "keyBkslash")}}\\{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--cp" modelVal=data.keyCapslock onEdit=(action "editKey" "keyCapslock")}}Caps{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyA onEdit=(action "editKey" "keyA")}}a{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyS onEdit=(action "editKey" "keyS")}}s{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyD onEdit=(action "editKey" "keyD")}}d{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyF onEdit=(action "editKey" "keyF")}}f{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyG onEdit=(action "editKey" "keyG")}}g{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyH onEdit=(action "editKey" "keyH")}}h{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyJ onEdit=(action "editKey" "keyJ")}}j{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyK onEdit=(action "editKey" "keyK")}}k{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyL onEdit=(action "editKey" "keyL")}}l{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keySemicolon onEdit=(action "editKey" "keySemicolon")}};{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyApostrophe onEdit=(action "editKey" "keyApostrophe")}}&#39;{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--rt" modelVal=data.keyEnter onEdit=(action "editKey" "keyEnter")}}&#8629;{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--sft" modelVal=data.keyShift onEdit=(action "editKey" "keyShift")}}&#8679;{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyZ onEdit=(action "editKey" "keyZ")}}z{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyX onEdit=(action "editKey" "keyX")}}x{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyC onEdit=(action "editKey" "keyC")}}c{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyV onEdit=(action "editKey" "keyV")}}v{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyB onEdit=(action "editKey" "keyB")}}b{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyN onEdit=(action "editKey" "keyN")}}n{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyM onEdit=(action "editKey" "keyM")}}m{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyComma onEdit=(action "editKey" "keyComma")}},{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyPeriod onEdit=(action "editKey" "keyPeriod")}}.{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyFwslash onEdit=(action "editKey" "keyFwslash")}}/{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--sft" modelVal=data.keyShift onEdit=(action "editKey" "keyShift")}}&#8679;{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--cl Keyboard-key--pr2" modelVal=data.keyCtrl onEdit=(action "editKey" "keyCtrl")}}Ctrl{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--at" modelVal=data.keyAlt onEdit=(action "editKey" "keyAlt")}}Alt{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--sp" modelVal=data.keySpace onEdit=(action "editKey" "keySpace")}}Space{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--at Keyboard-key--pr3" modelVal=data.keyAlt onEdit=(action "editKey" "keyAlt")}}Alt{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--cl" modelVal=data.keyCtrl onEdit=(action "editKey" "keyCtrl")}}Ctrl{{/keyboard-key}}
-            </div>
+  <ul class="Category-items {{if isOpen "Category-items--open"}}">
+    <li class="Category-item">
+      <div class="Category-description">
+        <p>the following is a list of weapon and gear options you can use to bind to keys.</p>
+        <p><strong>rifles</strong>: ssg08, galilar, famas, ssg550, aug, m4a1, ak47, g3sg1, scar20, awp</p>
+        <p><strong>sub-machine guns</strong>: mac10, ump45, p90, bizon, mp7, mp9</p>
+        <p><strong>heavy</strong>: xm1014, mag7, sawedoff, m249, negev</p>
+        <p><strong>pistol</strong>: p228, glock, elite, tec9, hkp2000, p250</p>
+        <p><strong>grenades &amp; gear</strong>: incgrenade, flashbang, smokegrenade, hegrenade, molotov, decoy, kevlar, vesthelm, taser, defuser</p>
+      </div>
+      <div class="Category-inputs">
+        {{keyboard-input data=data modelKey=selectedKey modelVal=selectedVal}}
+      </div>
+      <div class="Keyboard">
+        <div class="Keyboard-main">
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyEsc onEdit=(action "editKey" "keyEsc")}}Esc{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF1 onEdit=(action "editKey" "keyF1")}}F1{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF2 onEdit=(action "editKey" "keyF2")}}F2{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF3 onEdit=(action "editKey" "keyF3")}}F3{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyF4 onEdit=(action "editKey" "keyF4")}}F4{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF5 onEdit=(action "editKey" "keyF5")}}F5{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF6 onEdit=(action "editKey" "keyF6")}}F6{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF7 onEdit=(action "editKey" "keyF7")}}F7{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--pr" modelVal=data.keyF8 onEdit=(action "editKey" "keyF8")}}F8{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF9 onEdit=(action "editKey" "keyF9")}}F9{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF10 onEdit=(action "editKey" "keyF10")}}F10{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF11 onEdit=(action "editKey" "keyF11")}}F11{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF12 onEdit=(action "editKey" "keyF12")}}F12{{/keyboard-key}}
           </div>
-          <div class="Keyboard-arrows">
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              {{#keyboard-key modelVal=data.keyPause onEdit=(action "editKey" "keyPause")}}Pause{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyIns onEdit=(action "editKey" "keyIns")}}Ins{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyHome onEdit=(action "editKey" "keyHome")}}Home{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyPgup onEdit=(action "editKey" "keyPgup")}}PgUp{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyDel onEdit=(action "editKey" "keyDel")}}Del{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyEnd onEdit=(action "editKey" "keyEnd")}}End{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyPgdn onEdit=(action "editKey" "keyPgdn")}}PgDn{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-            </div>
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              {{#keyboard-key modelVal=data.keyUparrow onEdit=(action "editKey" "keyUparrow")}}&#8593;{{/keyboard-key}}
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyLeftarrow onEdit=(action "editKey" "keyLeftarrow")}}&#8592;{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyDownarrow onEdit=(action "editKey" "keyDownarrow")}}&#8595;{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyRightarrow onEdit=(action "editKey" "keyRightarrow")}}&#8594;{{/keyboard-key}}
-            </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">`</button>
+            {{#keyboard-key modelVal=data.keyK1 onEdit=(action "editKey" "keyK1")}}1{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK2 onEdit=(action "editKey" "keyK2")}}2{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK3 onEdit=(action "editKey" "keyK3")}}3{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK4 onEdit=(action "editKey" "keyK4")}}4{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK5 onEdit=(action "editKey" "keyK5")}}5{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK6 onEdit=(action "editKey" "keyK6")}}6{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK7 onEdit=(action "editKey" "keyK7")}}7{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK8 onEdit=(action "editKey" "keyK8")}}8{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK9 onEdit=(action "editKey" "keyK9")}}9{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK0 onEdit=(action "editKey" "keyK0")}}0{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyHyphen onEdit=(action "editKey" "keyHyphen")}}-{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyEquals onEdit=(action "editKey" "keyEquals")}}={{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--bs" modelVal=data.keyBackspace onEdit=(action "editKey" "keyBackspace")}}&#8592;{{/keyboard-key}}
           </div>
-          <div class="Keyboard-tenkey">
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-            </div>
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">NumLk</button>
-              {{#keyboard-key modelVal=data.keyKpSlash onEdit=(action "editKey" "keyKpSlash")}}/{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpMultiply onEdit=(action "editKey" "keyKpMultiply")}}*{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpMinus onEdit=(action "editKey" "keyKpMinus")}}-{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyKpHome onEdit=(action "editKey" "keyKpHome")}}7{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpUparrow onEdit=(action "editKey" "keyKpUparrow")}}8{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpPgup onEdit=(action "editKey" "keyKpPgup")}}9{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--pl" modelVal=data.keyKpPlus onEdit=(action "editKey" "keyKpPlus")}}+{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyKpLeftarrow onEdit=(action "editKey" "keyKpLeftarrow")}}4{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKp5 onEdit=(action "editKey" "keyKp5")}}5{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpRightarrow onEdit=(action "editKey" "keyKpRightarrow")}}6{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key modelVal=data.keyKpEnd onEdit=(action "editKey" "keyKpEnd")}}1{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpDownarrow onEdit=(action "editKey" "keyKpDownarrow")}}2{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpPgdn onEdit=(action "editKey" "keyKpPgdn")}}3{{/keyboard-key}}
-              {{#keyboard-key classMods="Keyboard-key--ent" modelVal=data.keyKpEnter onEdit=(action "editKey" "keyKpEnter")}}&#8629;{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--zd" modelVal=data.keyKpIns onEdit=(action "editKey" "keyKpIns")}}0{{/keyboard-key}}
-              {{#keyboard-key modelVal=data.keyKpDel onEdit=(action "editKey" "keyKpDel")}}.{{/keyboard-key}}
-            </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--tb" modelVal=data.keyTab onEdit=(action "editKey" "keyTab")}}Tab{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyQ onEdit=(action "editKey" "keyQ")}}q{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyW onEdit=(action "editKey" "keyW")}}w{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyE onEdit=(action "editKey" "keyE")}}e{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyR onEdit=(action "editKey" "keyR")}}r{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyT onEdit=(action "editKey" "keyT")}}t{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyY onEdit=(action "editKey" "keyY")}}y{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyU onEdit=(action "editKey" "keyU")}}u{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyI onEdit=(action "editKey" "keyI")}}i{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyO onEdit=(action "editKey" "keyO")}}o{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyP onEdit=(action "editKey" "keyP")}}p{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyLbracket onEdit=(action "editKey" "keyLbracket")}}]{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyRbracket onEdit=(action "editKey" "keyRbracket")}}[{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--sb" modelVal=data.keyBkslash onEdit=(action "editKey" "keyBkslash")}}\\{{/keyboard-key}}
           </div>
-          <div class="Keyboard-mouse">
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--lmb" modelVal=data.keyMouse1 onEdit=(action "editKey" "keyMouse1")}}MB1{{/keyboard-key}}
-              <div class="Keyboard-row Keyboard-row--mm">
-                {{#keyboard-key classMods="Keyboard-key--mmbu" modelVal=data.keyMwheelup onEdit=(action "editKey" "keyMwheelup")}}&#8593;{{/keyboard-key}}
-                {{#keyboard-key classMods="Keyboard-key--mmbc" modelVal=data.keyMouse3 onEdit=(action "editKey" "keyMouse3")}}MB3{{/keyboard-key}}
-                {{#keyboard-key classMods="Keyboard-key--mmbd" modelVal=data.keyMwheeldown onEdit=(action "editKey" "keyMwheeldown")}}&#8595;{{/keyboard-key}}
-              </div>
-              {{#keyboard-key classMods="Keyboard-key--rmb" modelVal=data.keyMouse2 onEdit=(action "editKey" "keyMouse2")}}MB2{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--mb4" modelVal=data.keyMouse4 onEdit=(action "editKey" "keyMouse4")}}MB4{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              {{#keyboard-key classMods="Keyboard-key--mb5" modelVal=data.keyMouse5 onEdit=(action "editKey" "keyMouse5")}}MB5{{/keyboard-key}}
-            </div>
-            <div class="Keyboard-row">
-              <button class="Keyboard-key Keyboard-key--hidden"></button>
-            </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--cp" modelVal=data.keyCapslock onEdit=(action "editKey" "keyCapslock")}}Caps{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyA onEdit=(action "editKey" "keyA")}}a{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyS onEdit=(action "editKey" "keyS")}}s{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyD onEdit=(action "editKey" "keyD")}}d{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyF onEdit=(action "editKey" "keyF")}}f{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyG onEdit=(action "editKey" "keyG")}}g{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyH onEdit=(action "editKey" "keyH")}}h{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyJ onEdit=(action "editKey" "keyJ")}}j{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyK onEdit=(action "editKey" "keyK")}}k{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyL onEdit=(action "editKey" "keyL")}}l{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keySemicolon onEdit=(action "editKey" "keySemicolon")}};{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyApostrophe onEdit=(action "editKey" "keyApostrophe")}}&#39;{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--rt" modelVal=data.keyEnter onEdit=(action "editKey" "keyEnter")}}&#8629;{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--sft" modelVal=data.keyShift onEdit=(action "editKey" "keyShift")}}&#8679;{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyZ onEdit=(action "editKey" "keyZ")}}z{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyX onEdit=(action "editKey" "keyX")}}x{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyC onEdit=(action "editKey" "keyC")}}c{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyV onEdit=(action "editKey" "keyV")}}v{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyB onEdit=(action "editKey" "keyB")}}b{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyN onEdit=(action "editKey" "keyN")}}n{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyM onEdit=(action "editKey" "keyM")}}m{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyComma onEdit=(action "editKey" "keyComma")}},{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyPeriod onEdit=(action "editKey" "keyPeriod")}}.{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyFwslash onEdit=(action "editKey" "keyFwslash")}}/{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--sft" modelVal=data.keyShift onEdit=(action "editKey" "keyShift")}}&#8679;{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--cl Keyboard-key--pr2" modelVal=data.keyCtrl onEdit=(action "editKey" "keyCtrl")}}Ctrl{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--at" modelVal=data.keyAlt onEdit=(action "editKey" "keyAlt")}}Alt{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--sp" modelVal=data.keySpace onEdit=(action "editKey" "keySpace")}}Space{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--at Keyboard-key--pr3" modelVal=data.keyAlt onEdit=(action "editKey" "keyAlt")}}Alt{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--cl" modelVal=data.keyCtrl onEdit=(action "editKey" "keyCtrl")}}Ctrl{{/keyboard-key}}
           </div>
         </div>
-      </li>
-    </ul>
-  </div>
-
+        <div class="Keyboard-arrows">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            {{#keyboard-key modelVal=data.keyPause onEdit=(action "editKey" "keyPause")}}Pause{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyIns onEdit=(action "editKey" "keyIns")}}Ins{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyHome onEdit=(action "editKey" "keyHome")}}Home{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyPgup onEdit=(action "editKey" "keyPgup")}}PgUp{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyDel onEdit=(action "editKey" "keyDel")}}Del{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyEnd onEdit=(action "editKey" "keyEnd")}}End{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyPgdn onEdit=(action "editKey" "keyPgdn")}}PgDn{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            {{#keyboard-key modelVal=data.keyUparrow onEdit=(action "editKey" "keyUparrow")}}&#8593;{{/keyboard-key}}
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyLeftarrow onEdit=(action "editKey" "keyLeftarrow")}}&#8592;{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyDownarrow onEdit=(action "editKey" "keyDownarrow")}}&#8595;{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyRightarrow onEdit=(action "editKey" "keyRightarrow")}}&#8594;{{/keyboard-key}}
+          </div>
+        </div>
+        <div class="Keyboard-tenkey">
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--disabled" disabled="disabled">NumLk</button>
+            {{#keyboard-key modelVal=data.keyKpSlash onEdit=(action "editKey" "keyKpSlash")}}/{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpMultiply onEdit=(action "editKey" "keyKpMultiply")}}*{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpMinus onEdit=(action "editKey" "keyKpMinus")}}-{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyKpHome onEdit=(action "editKey" "keyKpHome")}}7{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpUparrow onEdit=(action "editKey" "keyKpUparrow")}}8{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpPgup onEdit=(action "editKey" "keyKpPgup")}}9{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--pl" modelVal=data.keyKpPlus onEdit=(action "editKey" "keyKpPlus")}}+{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyKpLeftarrow onEdit=(action "editKey" "keyKpLeftarrow")}}4{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKp5 onEdit=(action "editKey" "keyKp5")}}5{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpRightarrow onEdit=(action "editKey" "keyKpRightarrow")}}6{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key modelVal=data.keyKpEnd onEdit=(action "editKey" "keyKpEnd")}}1{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpDownarrow onEdit=(action "editKey" "keyKpDownarrow")}}2{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpPgdn onEdit=(action "editKey" "keyKpPgdn")}}3{{/keyboard-key}}
+            {{#keyboard-key classMods="Keyboard-key--ent" modelVal=data.keyKpEnter onEdit=(action "editKey" "keyKpEnter")}}&#8629;{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--zd" modelVal=data.keyKpIns onEdit=(action "editKey" "keyKpIns")}}0{{/keyboard-key}}
+            {{#keyboard-key modelVal=data.keyKpDel onEdit=(action "editKey" "keyKpDel")}}.{{/keyboard-key}}
+          </div>
+        </div>
+        <div class="Keyboard-mouse">
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--lmb" modelVal=data.keyMouse1 onEdit=(action "editKey" "keyMouse1")}}MB1{{/keyboard-key}}
+            <div class="Keyboard-row Keyboard-row--mm">
+              {{#keyboard-key classMods="Keyboard-key--mmbu" modelVal=data.keyMwheelup onEdit=(action "editKey" "keyMwheelup")}}&#8593;{{/keyboard-key}}
+              {{#keyboard-key classMods="Keyboard-key--mmbc" modelVal=data.keyMouse3 onEdit=(action "editKey" "keyMouse3")}}MB3{{/keyboard-key}}
+              {{#keyboard-key classMods="Keyboard-key--mmbd" modelVal=data.keyMwheeldown onEdit=(action "editKey" "keyMwheeldown")}}&#8595;{{/keyboard-key}}
+            </div>
+            {{#keyboard-key classMods="Keyboard-key--rmb" modelVal=data.keyMouse2 onEdit=(action "editKey" "keyMouse2")}}MB2{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--mb4" modelVal=data.keyMouse4 onEdit=(action "editKey" "keyMouse4")}}MB4{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            {{#keyboard-key classMods="Keyboard-key--mb5" modelVal=data.keyMouse5 onEdit=(action "editKey" "keyMouse5")}}MB5{{/keyboard-key}}
+          </div>
+          <div class="Keyboard-row">
+            <button class="Keyboard-key Keyboard-key--hidden"></button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>

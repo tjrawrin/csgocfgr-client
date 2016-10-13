@@ -1,9 +1,8 @@
 .Category {
 
   &-title {
-    background-color: $cPrimary;
+    background-color: #262216;
     border: 0;
-    border-bottom: 1px dotted $cWhite;
     color: $cWhite;
     cursor: pointer;
     display: block;
@@ -15,16 +14,12 @@
     position: relative;
     text-align: left;
     text-transform: uppercase;
-    transition: color 200ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
     user-select: none;
     width: 100%;
 
     @include fs-attention {
-      color: $cAccent;
-    }
-
-    &--open {
-
+      background-color: #49412c;
     }
 
     &-text {
@@ -38,7 +33,6 @@
 
   &-items {
     background-color: $cWhite;
-    border-radius: 0 0 3px 3px;
     margin: 0;
     height: 0;
     opacity: 0;
@@ -65,6 +59,7 @@
   }
 
   &-label {
+    font-weight: 700;
     text-transform: lowercase;
   }
 
@@ -83,7 +78,7 @@
     }
 
     &-default {
-      background-color: $cPrimary;
+      background-color: $cBrownAccent2;
       border-radius: 3px;
       color: $cWhite;
       padding: 2px 4px;

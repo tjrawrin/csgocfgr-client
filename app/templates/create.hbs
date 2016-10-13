@@ -1,17 +1,54 @@
 <div class="Header" role="banner">
-  <h1 class="Logo">{{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}</h1>
+  <h1 class="Logo">
+    {{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}
+  </h1>
   <ul class="Navigation" role="navigation">
     <li class="Navigation-item">
-      {{#link-to "create.index" class="Navigation-link" activeClass="active"}}Create{{/link-to}}
+      {{#link-to "create.index" class="Navigation-link" activeClass="active"}}
+        <span class="octicon octicon-plus"></span>
+        <span class="Navigation-text">Create</span>
+      {{/link-to}}
     </li>
     <li class="Navigation-item">
-      {{#link-to "create.import" class="Navigation-link" activeClass="active"}}Import{{/link-to}}
+      {{#link-to "create.import" class="Navigation-link" activeClass="active"}}
+        <span class="octicon octicon-clippy"></span>
+        <span class="Navigation-text">Import</span>
+      {{/link-to}}
+    </li>
+    <li class="Navigation-item">
+      <a href="#" class="Navigation-link Navigation-link--preview">
+        <span class="octicon octicon-eye"></span>
+        <span class="Navigation-text">Preview</span>
+      </a>
+    </li>
+    <li class="Navigation-item">
+      <a href="#" class="Navigation-link Navigation-link--preview">
+        <span class="octicon octicon-desktop-download"></span>
+        <span class="Navigation-text">Download</span>
+      </a>
+    </li>
+    <li class="Navigation-item">
+      <a href="#" class="Navigation-link Navigation-link--preview">
+        <span class="octicon octicon-cloud-upload"></span>
+        <span class="Navigation-text">Save</span>
+      </a>
     </li>
   </ul>
 </div>
 
-<div role="main">
-  {{outlet}}
+<div class="Main" role="main">
+  <div class="layout-widthDefault">
+    {{#each flashMessages.queue as |flash|}}
+      <div class="Alerts">
+        {{#flash-message flash=flash as |component flash|}}
+          <div class="Alerts-message Alerts-message--{{component.flashType}}">
+            {{flash.message}}
+          </div>
+        {{/flash-message}}
+      </div>
+    {{/each}}
+    {{outlet}}
+  </div>
 </div>
 
 <div class="Footer" role="contentinfo">

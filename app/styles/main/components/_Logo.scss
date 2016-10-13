@@ -1,7 +1,8 @@
 .Logo {
-  display: block;
+  font-family: "Pacifico", cursive;
   font-weight: 400;
-  font-size: 16px;
+  display: block;
+  font-size: 22px;
   margin: 0;
   position: relative;
   text-align: center;
@@ -12,22 +13,13 @@
   }
 
   &-link {
-    background-color: rgba(255,255,255,0.2);
-    color: $cWhite;
-    display: inline-block;
-    padding: 8px 16px;
+    color: #262216;
+    display: block;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: all 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
 
     @include fs-attention {
-      background-color: rgba(255,255,255,0.3);
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
-    }
-
-    &.active {
-      background-color: rgba(255,255,255,0.3);
-      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      color: #49412c;
     }
   }
 }
