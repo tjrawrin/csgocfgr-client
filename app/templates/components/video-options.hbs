@@ -3,80 +3,84 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Video</span>
   </button>
-  <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-    <li class="Category-item">
-      <label class="Category-label">mat_monitorgamma</label>
-      <div class="Category-description">
-        <p>sets the gamma of your monitor (typically 2.2 for CRT and 1.7 for LCD).</p>
-        <p><strong>min</strong>: 1.6, <strong>max</strong>: 2.6, <span class="Category-description-default"><strong>default value</strong>: 2.2</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="mat_monitorgamma" type="range" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
-        {{input class="Category-input Category-input--number" type="number" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
-      </div>
-    </li>
+  <div class="layout-widthDefault">
+    <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-    <li class="Category-item">
-      <label class="Category-label">mat_queue_mode</label>
-      <div class="Category-description">
-        <p>is the queue/thread mode the matrial system should use.</p>
-        <p><strong>default</strong>: -1, <strong>synchronus single thread</strong>: 0, <strong>queued single thread</strong>: 1, <strong>queued multithreaded</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: -1</span></p>
-      </div>
-      <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="mat_queue_mode" onchange={{action 'updateValue' 'matQueueMode'}}>
-          {{#each queueModeOptions as |option|}}
-            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.matQueueMode}}
-          {{/each}}
-        </select>
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">mat_monitorgamma</label>
+        <div class="Category-description">
+          <p>sets the gamma of your monitor (typically 2.2 for CRT and 1.7 for LCD).</p>
+          <p><strong>min</strong>: 1.6, <strong>max</strong>: 2.6, <span class="Category-description-default"><strong>default value</strong>: 2.2</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="mat_monitorgamma" type="range" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
+          {{input class="Category-input Category-input--number" type="number" min="1.6" max="2.6" step="0.1" value=data.matMonitorgamma}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">fps_max</label>
-      <div class="Category-description">
-        <p>caps your fps at the specified rate in game.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 300</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max" type="range" min="0" max="999" step="1" value=data.fpsMax}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMax}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">mat_queue_mode</label>
+        <div class="Category-description">
+          <p>is the queue/thread mode the matrial system should use.</p>
+          <p><strong>default</strong>: -1, <strong>synchronus single thread</strong>: 0, <strong>queued single thread</strong>: 1, <strong>queued multithreaded</strong>: 2, <span class="Category-description-default"><strong>default value</strong>: -1</span></p>
+        </div>
+        <div class="Category-inputs">
+          <select class="Category-input Category-input--select" data-command="mat_queue_mode" onchange={{action 'updateValue' 'matQueueMode'}}>
+            {{#each queueModeOptions as |option|}}
+              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.matQueueMode}}
+            {{/each}}
+          </select>
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">fps_max_menu</label>
-      <div class="Category-description">
-        <p>caps your fps at the specified rate in menus.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 120</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="fps_max_menu" type="range" min="0" max="999" step="1" value=data.fpsMaxMenu}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMaxMenu}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">fps_max</label>
+        <div class="Category-description">
+          <p>caps your fps at the specified rate in game.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 300</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="fps_max" type="range" min="0" max="999" step="1" value=data.fpsMax}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMax}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">r_dynamic</label>
-      <div class="Category-description">
-        <p>enables dynamic shadows.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="r_dynamic" type="checkbox" checked=data.rDynamic}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">fps_max_menu</label>
+        <div class="Category-description">
+          <p>caps your fps at the specified rate in menus.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 999, <span class="Category-description-default"><strong>default value</strong>: 120</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="fps_max_menu" type="range" min="0" max="999" step="1" value=data.fpsMaxMenu}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="999" step="1" value=data.fpsMaxMenu}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">r_drawtracers_firstperson</label>
-      <div class="Category-description">
-        <p>toggles the visiblity of first person weapon tracers.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="r_drawtracers_firstperson" type="checkbox" checked=data.rDrawtracersFirstperson}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">r_dynamic</label>
+        <div class="Category-description">
+          <p>enables dynamic shadows.</p>
+          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--checkbox" data-command="r_dynamic" type="checkbox" checked=data.rDynamic}}
+        </div>
+      </li>
 
-  </ul>
+      <li class="Category-item">
+        <label class="Category-label">r_drawtracers_firstperson</label>
+        <div class="Category-description">
+          <p>toggles the visiblity of first person weapon tracers.</p>
+          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--checkbox" data-command="r_drawtracers_firstperson" type="checkbox" checked=data.rDrawtracersFirstperson}}
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
 </div>

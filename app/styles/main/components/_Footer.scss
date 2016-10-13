@@ -9,12 +9,12 @@
   }
 
   &-link {
-    color: $cPrimary;
+    color: #ef473a;
     text-decoration: none;
     transition: color 200ms ease-in-out;
 
     @include fs-attention {
-      color: $cAccent;
+      color: lighten(#ef473a, 15);
     }
   }
 }

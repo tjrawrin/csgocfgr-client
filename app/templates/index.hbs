@@ -1,11 +1,33 @@
-<div class="GettingStarted">
-  <h2>Getting Started</h2>
-  <p>To begin, click on create above to start a new config using the games default settings. Optionally, click on import to load either a .cfg file or paste some correctly formatted commands to being with custom settings.</p>
-  <p>A list of configuration categories will be displayed. Each category provides inputs for modifying the different commands available in game.</p>
-  <p>Each input contains default settings. Adjust them however you like. Once finished, click one of the two download buttons below the preview box.</p>
-  <ul>
-    <li>The "Download" button will download a .cfg file to your computer.</li>
-    <li>The "Save &amp; Download" button will save your settings with a unique url and download a .cfg file to your computer. You can then use your unique URL to share your setttings.</li>
-  </ul>
-  <p>Place the downloaded autoexec.cfg file in your CS:GO cfg directory.</p>
+<div role="main">
+  <div class="GettingStarted">
+    {{#each flashMessages.queue as |flash|}}
+      <div class="Alerts">
+        {{#flash-message flash=flash as |component flash|}}
+          <div class="Alerts-message Alerts-message--{{component.flashType}}">
+            {{flash.message}}
+          </div>
+        {{/flash-message}}
+      </div>
+    {{/each}}
+    <div class="GettingStarted-inner">
+      <div class="layout-widthDefault">
+        <h2 class="GettingStarted-title">CS:GO Configr</h2>
+        <p>This website offers the ability to generate a .cfg file for the game
+          Counter-Strike: Global Offensive. While this website contains a lot of
+          customization options, you do not need to use the whole config file that is
+          generated.</p>
+        <p>To begin, click create to start a new config using the games default settings.
+          Optionally, click import to load either a .cfg file or paste some commands
+          to being with custom settings.</p>
+        <ul class="GettingStarted-navigation" role="navigation">
+          <li class="GettingStarted-navigation-item">
+            {{#link-to "create.index" class="GettingStarted-navigation-link" activeClass="active"}}Create{{/link-to}}
+          </li>
+          <li class="GettingStarted-navigation-item">
+            {{#link-to "create.import" class="GettingStarted-navigation-link" activeClass="active"}}Import{{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

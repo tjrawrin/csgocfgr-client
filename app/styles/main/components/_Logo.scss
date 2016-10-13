@@ -1,15 +1,33 @@
 .Logo {
+  display: block;
   font-weight: 400;
+  font-size: 16px;
   margin: 0;
+  position: relative;
   text-align: center;
 
+  @include fs-min-width($bpMid) {
+    position: absolute;
+    text-align: left;
+  }
+
   &-link {
+    background-color: rgba(255,255,255,0.2);
     color: $cWhite;
+    display: inline-block;
+    padding: 8px 16px;
     text-decoration: none;
-    transition: color 200ms ease-in-out;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out;
 
     @include fs-attention {
-      color: $cAccent;
+      background-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    }
+
+    &.active {
+      background-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
     }
   }
 }

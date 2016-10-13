@@ -1,1 +1,27 @@
-{{outlet}}
+<div class="Header" role="banner">
+  <h1 class="Logo">{{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}</h1>
+  <ul class="Navigation" role="navigation">
+    <li class="Navigation-item">
+      {{#link-to "create.index" class="Navigation-link" activeClass="active"}}Create{{/link-to}}
+    </li>
+    <li class="Navigation-item">
+      {{#link-to "create.import" class="Navigation-link" activeClass="active"}}Import{{/link-to}}
+    </li>
+  </ul>
+</div>
+
+<div role="main">
+  {{outlet}}
+</div>
+
+<div class="Footer" role="contentinfo">
+  <div class="layout-widthDefault">
+    <div class="Footer-content">
+      <p>&copy; 2014-2016 CS:GO Configr. All rights reserved. Valve, the Valve
+        logo, Source, the Source logo, Steam, the Steam logo, Counter-Strike,
+        and the Counter-Strike logo are trademarks and/or registered trademarks
+        of the Valve Corporation. All other trademarks are property of their
+        respective owners. &bull; <a href="https://github.com/haskly/csgocfgr-client/issues" target="_blank" class="Footer-link">found a bug</a>?</p>
+    </div>
+  </div>
+</div>

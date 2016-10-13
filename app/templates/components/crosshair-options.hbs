@@ -3,159 +3,163 @@
     <span class="octicon {{if isOpen "octicon-chevron-down" "octicon-chevron-right"}}"></span>
     <span class="Category-title-text">Crosshair</span>
   </button>
-  <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-    <li class="Category-item">
-      {{crosshair-canvas data=data}}
-    </li>
+  <div class="layout-widthDefault">
+    <ul class="Category-items {{if isOpen "Category-items--open"}}">
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairstyle</label>
-      <div class="Category-description">
-        <p>Sets the animation behavior of the crosshair.</p>
-        <p><strong>default</strong>: 0, <strong>default static</strong>: 1, <strong>accurate split</strong>: 2, <strong>accurate dynamic</strong>: 3, <strong>classic static</strong>: 4, <strong>cs 1.6 style</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
-      </div>
-      <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_crosshairstyle" onchange={{action 'updateValue' 'clCrosshairstyle'}}>
-          {{#each styleOptions as |option|}}
-            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshairstyle}}
-          {{/each}}
-        </select>
-      </div>
-    </li>
+      <li class="Category-item">
+        {{crosshair-canvas data=data}}
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshaircolor</label>
-      <div class="Category-description">
-        <p>determines if the the crosshair color should be green or a custom color set by the player. </p>
-        <p><strong>green</strong>: 1, <strong>yellow</strong>: 2, <strong>blue</strong>: 3, <strong>lt blue</strong>: 4, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        <select class="Category-input Category-input--select" data-command="cl_crosshaircolor" onchange={{action 'updateValue' 'clCrosshaircolor'}}>
-          {{#each colorOptions as |option|}}
-            {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshaircolor}}
-          {{/each}}
-        </select>
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairstyle</label>
+        <div class="Category-description">
+          <p>Sets the animation behavior of the crosshair.</p>
+          <p><strong>default</strong>: 0, <strong>default static</strong>: 1, <strong>accurate split</strong>: 2, <strong>accurate dynamic</strong>: 3, <strong>classic static</strong>: 4, <strong>cs 1.6 style</strong>: 5, <span class="Category-description-default"><strong>default value</strong>: 0</span></p>
+        </div>
+        <div class="Category-inputs">
+          <select class="Category-input Category-input--select" data-command="cl_crosshairstyle" onchange={{action 'updateValue' 'clCrosshairstyle'}}>
+            {{#each styleOptions as |option|}}
+              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshairstyle}}
+            {{/each}}
+          </select>
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshaircolor_r</label>
-      <div class="Category-description">
-        <p>Sets the amount of red in the crosshair color.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 50</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_r" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshaircolor</label>
+        <div class="Category-description">
+          <p>determines if the the crosshair color should be green or a custom color set by the player. </p>
+          <p><strong>green</strong>: 1, <strong>yellow</strong>: 2, <strong>blue</strong>: 3, <strong>lt blue</strong>: 4, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          <select class="Category-input Category-input--select" data-command="cl_crosshaircolor" onchange={{action 'updateValue' 'clCrosshaircolor'}}>
+            {{#each colorOptions as |option|}}
+              {{select-option optionVal=option.id optionName=option.optionName modelVal=data.clCrosshaircolor}}
+            {{/each}}
+          </select>
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshaircolor_g</label>
-      <div class="Category-description">
-        <p>sets the amount of green in the crosshair color.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 250</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_g" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshaircolor_r</label>
+        <div class="Category-description">
+          <p>Sets the amount of red in the crosshair color.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 50</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_r" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorR}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshaircolor_b</label>
-      <div class="Category-description">
-        <p>Sets the amount of blue in the crosshair color.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 50</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_b" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshaircolor_g</label>
+        <div class="Category-description">
+          <p>sets the amount of green in the crosshair color.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 250</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_g" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorG}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairalpha</label>
-      <div class="Category-description">
-        <p>sets the transparency of the crosshair.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 200</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairalpha" type="range" min="0" max="255" step="1" value=data.clCrosshairalpha}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshairalpha}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshaircolor_b</label>
+        <div class="Category-description">
+          <p>Sets the amount of blue in the crosshair color.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 50</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshaircolor_b" type="range" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshaircolorB}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshair_drawoutline</label>
-      <div class="Category-description">
-        <p>draws a black outline around the crosshair for better visibility.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshair_drawoutline" type="checkbox" checked=data.clCrosshairDrawoutline}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairalpha</label>
+        <div class="Category-description">
+          <p>sets the transparency of the crosshair.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 255, <span class="Category-description-default"><strong>default value</strong>: 200</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshairalpha" type="range" min="0" max="255" step="1" value=data.clCrosshairalpha}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="255" step="1" value=data.clCrosshairalpha}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshair_outlinethickness</label>
-      <div class="Category-description">
-        <p>sets the thickness of the crosshair outline</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshair_outlinethickness" type="range" min="0" max="3" step="1" value=data.clCrosshairOutlinethickness}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="3.0" step="1" value=data.clCrosshairOutlinethickness}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshair_drawoutline</label>
+        <div class="Category-description">
+          <p>draws a black outline around the crosshair for better visibility.</p>
+          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--checkbox" data-command="cl_crosshair_drawoutline" type="checkbox" checked=data.clCrosshairDrawoutline}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairsize</label>
-      <div class="Category-description">
-        <p>sets the length of the crosshairs.</p>
-        <p><strong>min</strong>: -1, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 5</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairsize" type="range" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
-        {{input class="Category-input Category-input--number" type="number" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshair_outlinethickness</label>
+        <div class="Category-description">
+          <p>sets the thickness of the crosshair outline</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 3, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshair_outlinethickness" type="range" min="0" max="3" step="1" value=data.clCrosshairOutlinethickness}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="3.0" step="1" value=data.clCrosshairOutlinethickness}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairthickness</label>
-      <div class="Category-description">
-        <p>sets the width of the crosshairs.</p>
-        <p><strong>min</strong>: 0, <strong>max</strong>: 200, <span class="Category-description-default"><strong>default value</strong>: 0.5</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairthickness" type="range" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
-        {{input class="Category-input Category-input--number" type="number" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairsize</label>
+        <div class="Category-description">
+          <p>sets the length of the crosshairs.</p>
+          <p><strong>min</strong>: -1, <strong>max</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 5</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshairsize" type="range" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
+          {{input class="Category-input Category-input--number" type="number" min="-1" max="200" step="0.5" value=data.clCrosshairsize}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairgap</label>
-      <div class="Category-description">
-        <p>sets the amount of space between the crosshairs.</p>
-        <p><strong>min</strong>: -100, <strong>max</strong>: 100, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--range" data-command="cl_crosshairgap" type="range" min="-100" max="100" step="1" value=data.clCrosshairgap}}
-        {{input class="Category-input Category-input--number" type="number" min="-100" max="100" step="1" value=data.clCrosshairgap}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairthickness</label>
+        <div class="Category-description">
+          <p>sets the width of the crosshairs.</p>
+          <p><strong>min</strong>: 0, <strong>max</strong>: 200, <span class="Category-description-default"><strong>default value</strong>: 0.5</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshairthickness" type="range" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
+          {{input class="Category-input Category-input--number" type="number" min="0" max="200" step="0.5" value=data.clCrosshairthickness}}
+        </div>
+      </li>
 
-    <li class="Category-item">
-      <label class="Category-label">cl_crosshairdot</label>
-      <div class="Category-description">
-        <p>determines whether or not to draw a dot in the center of the crosshair.</p>
-        <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
-      </div>
-      <div class="Category-inputs">
-        {{input class="Category-input Category-input--checkbox" data-command="cl_crosshairdot" type="checkbox" checked=data.clCrosshairdot}}
-      </div>
-    </li>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairgap</label>
+        <div class="Category-description">
+          <p>sets the amount of space between the crosshairs.</p>
+          <p><strong>min</strong>: -100, <strong>max</strong>: 100, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--range" data-command="cl_crosshairgap" type="range" min="-100" max="100" step="1" value=data.clCrosshairgap}}
+          {{input class="Category-input Category-input--number" type="number" min="-100" max="100" step="1" value=data.clCrosshairgap}}
+        </div>
+      </li>
 
-  </ul>
+      <li class="Category-item">
+        <label class="Category-label">cl_crosshairdot</label>
+        <div class="Category-description">
+          <p>determines whether or not to draw a dot in the center of the crosshair.</p>
+          <p><strong>off</strong>: 0, <strong>on</strong>: 1, <span class="Category-description-default"><strong>default value</strong>: 1</span></p>
+        </div>
+        <div class="Category-inputs">
+          {{input class="Category-input Category-input--checkbox" data-command="cl_crosshairdot" type="checkbox" checked=data.clCrosshairdot}}
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
 </div>

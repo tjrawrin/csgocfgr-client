@@ -3,29 +3,38 @@
   padding: 0;
   text-align: center;
 
+  @include fs-min-width($bpMid) {
+    margin: 0;
+    text-align: right;
+  }
+
   &-item {
-    display: inline-block;
+    display: inline;
     list-style: none;
-    margin: 0 16px 0 0;
+    margin-right: 16px;
 
     &:last-child {
-      margin: 0;
+      margin-right: 0;
     }
   }
 
   &-link {
+    background-color: rgba(255,255,255,0.2);
     color: $cWhite;
-    display: block;
+    display: inline-block;
+    padding: 8px 16px;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 
     @include fs-attention {
-      color: $cAccent;
+      background-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
     }
 
     &.active {
-      color: $cAccent;
+      background-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
     }
   }
 }

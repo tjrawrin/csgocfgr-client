@@ -1,17 +1,9 @@
 .Category {
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  margin-top: 24px;
-  transition: box-shadow 200ms ease-in-out;
-
-  @include fs-attention {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
 
   &-title {
     background-color: $cPrimary;
     border: 0;
-    border-radius: 3px;
+    border-bottom: 1px dotted $cWhite;
     color: $cWhite;
     cursor: pointer;
     display: block;
@@ -32,7 +24,7 @@
     }
 
     &--open {
-      border-radius: 3px 3px 0 0;
+
     }
 
     &-text {

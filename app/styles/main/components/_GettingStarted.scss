@@ -1,16 +1,53 @@
 .GettingStarted {
+  background: #cb2d3e;
+  background: -webkit-linear-gradient(to top, #cb2d3e , #ef473a);
+  background: linear-gradient(to top, #cb2d3e , #ef473a);
+  color: $cWhite;
   font-size: 14px;
-  margin-top: 24px;
+  height: 100vh;
 
   @include fs-min-width($bpMid) {
     font-size: 16px;
   }
 
-  >:first-child {
-    margin-top: 0;
+  &-inner {
+    @extend %vertcenter;
+    left: 0;
+    right: 0;
   }
 
-  >:last-child {
-    margin-bottom: 0;
+  &-title {
+    margin: 0;
+  }
+
+  &-navigation {
+    margin: 16px 0 0 0;
+    padding: 0;
+    text-align: right;
+
+    &-item {
+      display: inline;
+      list-style: none;
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      background-color: rgba(255,255,255,0.2);
+      color: $cWhite;
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 200ms ease-in-out;
+
+      @include fs-attention {
+        background-color: rgba(255,255,255,0.3);
+        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      }
+    }
   }
 }
