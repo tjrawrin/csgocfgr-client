@@ -1,12 +1,9 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-export default DS.JSONAPISerializer.extend({
-  // underscores key names
-  keyForAttribute(attr) {
-    return Ember.String.underscore(attr);
-  },
+var underscore = Ember.String.underscore;
 
+export default DS.JSONAPISerializer.extend({
   // normalizes the local store id with the permalink from the server
   normalize(type, hash) {
     hash.id = hash.attributes.permalink;

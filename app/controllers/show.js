@@ -11,13 +11,13 @@ export default Ember.Controller.extend({
 
     // edit the config from the server
     edit() {
-      console.log('TODO: finish');
+      return this.transitionToRoute('create', { queryParams: { permalink: this.get('model.permalink') }});
     }
   },
 
   // creates the config which shows up in the preview window, observes the model for changes
   config: function() {
-    const str = `// https://csgocfgr.com
+    const str = `// https://csgocfgr.com/${this.get('model.permalink')}
                 // === rate ===
                 rate ${this.get('model.rate')}
                 cl_cmdrate ${this.get('model.clCmdrate')}

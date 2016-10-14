@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   // inject ember services for flash message plugin
-  flashMessages: Ember.inject.service(),
+  toast: Ember.inject.service(),
 
   // unloads all of the records from the store
   beforeModel() {
@@ -22,13 +22,8 @@ export default Ember.Route.extend({
 
     // redirects to the index page when there is an error
     error() {
-      Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
+      Ember.get(this, 'toast').error('The requested file could not be found.', '', { positionClass: 'toast-bottom-right' });
       return this.transitionTo('index');
-    },
-
-    // redirects to the create page and passes the permalink query param
-    redirectToCreate(permalink) {
-      return this.transitionTo('create.index', { queryParams: { permalink: permalink }});
     }
   }
 });

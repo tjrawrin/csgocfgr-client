@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  // inject ember services for flash message plugin
+  toast: Ember.inject.service(),
+
   // permalink query param
   queryParams: {
     permalink: {
@@ -39,7 +42,7 @@ export default Ember.Route.extend({
   actions: {
     // redirects to the index page if there is an error importing a config file from the server
     error() {
-      Ember.get(this, 'flashMessages').danger('The requested file could not be found.', { timeout: 6000 });
+      Ember.get(this, 'toast').error('The requested file could not be found.', '', { positionClass: 'toast-bottom-right' });
       return this.transitionTo('index');
     }
   }

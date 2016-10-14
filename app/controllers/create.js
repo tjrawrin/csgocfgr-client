@@ -40,7 +40,7 @@ export default Ember.Controller.extend({
         $btn.removeClass('Navigation-link--disabled');
         Ember.get(this, 'toast').success('Configuration settings saved!', '', { positionClass: 'toast-bottom-right' });
         return this.transitionToRoute('show', this.get('model.permalink'));
-      }, error => {
+      }, () => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('Navigation-link--disabled');
