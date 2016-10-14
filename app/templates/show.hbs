@@ -1,1 +1,59 @@
-{{preview-window data=model config=createConfig redirectToCreate="redirectToCreate"}}
+
+<div class="Header" role="banner">
+  <h1 class="Logo">
+    {{#link-to "index" class="Logo-link"}}CS:GO Configr{{/link-to}}
+  </h1>
+  <ul class="Navigation" role="navigation">
+    <li class="Navigation-item">
+      {{#link-to "create.index" class="Navigation-link" activeClass="active"}}
+        <span class="octicon octicon-plus"></span>
+        <span class="Navigation-text">Create</span>
+      {{/link-to}}
+    </li>
+    <li class="Navigation-item">
+      {{#link-to "create.import" class="Navigation-link" activeClass="active"}}
+        <span class="octicon octicon-clippy"></span>
+        <span class="Navigation-text">Import</span>
+      {{/link-to}}
+    </li>
+    <li class="Navigation-item">
+      <button class="Navigation-link Navigation-link--download" {{action 'download'}}>
+        <span class="octicon octicon-desktop-download"></span>
+        <span class="Navigation-text">Download</span>
+      </button>
+    </li>
+    <li class="Navigation-item">
+      <button class="Navigation-link Navigation-link--edit" {{action 'edit'}}>
+        <span class="octicon octicon-pencil"></span>
+        <span class="Navigation-text">Edit</span>
+      </button>
+    </li>
+  </ul>
+</div>
+
+<div class="Main" role="main">
+  <div class="layout-widthDefault">
+    {{#each flashMessages.queue as |flash|}}
+      <div class="Alerts">
+        {{#flash-message flash=flash as |component flash|}}
+          <div class="Alerts-message Alerts-message--{{component.flashType}}">
+            {{flash.message}}
+          </div>
+        {{/flash-message}}
+      </div>
+    {{/each}}
+    {{preview-window data=model config=createConfig redirectToCreate="redirectToCreate"}}
+  </div>
+</div>
+
+<div class="Footer" role="contentinfo">
+  <div class="layout-widthDefault">
+    <div class="Footer-content">
+      <p>&copy; 2014-2016 CS:GO Configr. All rights reserved. Valve, the Valve
+        logo, Source, the Source logo, Steam, the Steam logo, Counter-Strike,
+        and the Counter-Strike logo are trademarks and/or registered trademarks
+        of the Valve Corporation. All other trademarks are property of their
+        respective owners. &bull; <a href="https://github.com/haskly/csgocfgr-client/issues" target="_blank" class="Footer-link">found a bug</a>?</p>
+    </div>
+  </div>
+</div>

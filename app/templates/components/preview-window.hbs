@@ -1,20 +1,17 @@
 <div class="PreviewWindow">
-  <h2 class="PreviewWindow-title">Config Preview</h2>
-  <div class="PreviewWindow-output">
-    {{textarea value=config class="PreviewWindow-textarea" readonly="readonly"}}
-    <ul class="PreviewWindow-actions">
+  {{textarea value=config class="PreviewWindow-textarea" readonly="readonly"}}
+  <!-- <ul class="PreviewWindow-actions">
+    <li class="PreviewWindow-action">
+      <button class="PreviewWindow-button PreviewWindow-button--download" {{action 'download'}}><span class="mega-octicon octicon-file-text"></span> Download</button>
+    </li>
+    {{#if inCreateRoute}}
       <li class="PreviewWindow-action">
-        <button class="PreviewWindow-button PreviewWindow-button--download" {{action 'download'}}><span class="mega-octicon octicon-file-text"></span> Download</button>
+        <button class="PreviewWindow-button PreviewWindow-button--save" {{action 'saveAndDownload'}}><span class="mega-octicon octicon-cloud-download"></span> Save &amp; Download</button>
       </li>
-      {{#if inCreateRoute}}
-        <li class="PreviewWindow-action">
-          <button class="PreviewWindow-button PreviewWindow-button--save" {{action 'saveAndDownload'}}><span class="mega-octicon octicon-cloud-download"></span> Save &amp; Download</button>
-        </li>
-      {{ else }}
-        <li class="PreviewWindow-action">
-          <button class="PreviewWindow-button PreviewWindow-button--edit" {{action 'createEdit' data.id}}><span class="mega-octicon octicon-pencil"></span> Edit</button>
-        </li>
-      {{/if}}
-    </ul>
-  </div>
+    {{ else }}
+      <li class="PreviewWindow-action">
+        <button class="PreviewWindow-button PreviewWindow-button--edit" {{action 'createEdit' data.id}}><span class="mega-octicon octicon-pencil"></span> Edit</button>
+      </li>
+    {{/if}}
+  </ul> -->
 </div>

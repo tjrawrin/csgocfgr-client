@@ -16,13 +16,6 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    // downloads a config file
-    download() {
-      const outputText = this.get('config');
-      const blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
-    },
-
     // saves the config to the server and redirects to the show page or errors out
     saveAndDownload() {
       let spinner = new Spinner().spin();
