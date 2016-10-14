@@ -1,14 +1,5 @@
 <div role="main">
   <div class="GettingStarted">
-    {{#each flashMessages.queue as |flash|}}
-      <div class="Alerts">
-        {{#flash-message flash=flash as |component flash|}}
-          <div class="Alerts-message Alerts-message--{{component.flashType}}">
-            {{flash.message}}
-          </div>
-        {{/flash-message}}
-      </div>
-    {{/each}}
     <div class="GettingStarted-inner">
       <div class="layout-widthDefault">
         <h1 class="GettingStarted-title">

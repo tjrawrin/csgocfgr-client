@@ -3,7 +3,7 @@ import Spinner from 'npm:spin.js';
 
 export default Ember.Controller.extend({
   // inject ember services for flash message plugin
-  flashMessages: Ember.inject.service(),
+  toast: Ember.inject.service(),
 
   // query param for editing a saved config
   queryParams: ['permalink'],
@@ -38,14 +38,13 @@ export default Ember.Controller.extend({
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('Navigation-link--disabled');
-        Ember.get(this, 'flashMessages').success(`Configuration settings saved!`, { timeout: 6000 });
+        Ember.get(this, 'toast').success('Configuration settings saved!', '', { positionClass: 'toast-bottom-right' });
         return this.transitionToRoute('show', this.get('model.permalink'));
       }, error => {
         Ember.$(spinner.el).remove();
         $btn.removeAttr('disabled');
         $btn.removeClass('Navigation-link--disabled');
-        return Ember.get(this, 'flashMessages').danger('Oops, sometihng went wrong while trying to save. Please try again later.', { timeout: 6000 });
-        // return this.transitionToRoute('index', error);
+        return Ember.get(this, 'toast').error('Oops, something went wrong while trying to save. Please try again later.', '', { positionClass: 'toast-bottom-right' });
       });
     }
   },

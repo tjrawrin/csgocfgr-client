@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   // inject ember services for flash message plugin
-  flashMessages: Ember.inject.service(),
+  toast: Ember.inject.service(),
 
   // setting for the file import element
   fileHidden: false,
@@ -50,7 +50,7 @@ export default Ember.Component.extend({
         if (this.get('config').length > 0) {
           return this.sendAction('redirectToCreate', this.get('config'));
         } else {
-          Ember.get(this, 'flashMessages').danger('No file selected for import!');
+          Ember.get(this, 'toast').error('No file selected for import!', '', { positionClass: 'toast-bottom-right' });
           return false;
         }
       }
@@ -59,7 +59,7 @@ export default Ember.Component.extend({
         if (this.get('config').length > 0) {
           return this.sendAction('redirectToCreate', this.get('config'));
         } else {
-          Ember.get(this, 'flashMessages').danger('Text input field is empty!');
+          Ember.get(this, 'toast').error('Text input field is empty!', '', { positionClass: 'toast-bottom-right' });
           return false;
         }
       }

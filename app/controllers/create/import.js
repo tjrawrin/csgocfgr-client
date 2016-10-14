@@ -2,13 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   // inject ember services for flash message plugin
-  flashMessages: Ember.inject.service(),
+  toast: Ember.inject.service(),
 
   actions: {
     // redirects to the create page after importing settings from either text or a file
     redirectToCreate(data) {
       this.setImportedData(data).then(count => {
-        Ember.get(this, 'flashMessages').success(`Imported ${count} setting(s) successfully!`, { timeout: 6000 });
+        Ember.get(this, 'toast').success(`Imported ${count} setting(s) successfully!`, '', { positionClass: 'toast-bottom-right' });
         this.transitionToRoute('create.index');
       });
     }

@@ -38,15 +38,6 @@
 
 <div class="Main" role="main">
   <div class="layout-widthDefault">
-    {{#each flashMessages.queue as |flash|}}
-      <div class="Alerts">
-        {{#flash-message flash=flash as |component flash|}}
-          <div class="Alerts-message Alerts-message--{{component.flashType}}">
-            {{flash.message}}
-          </div>
-        {{/flash-message}}
-      </div>
-    {{/each}}
     {{outlet}}
   </div>
 </div>
