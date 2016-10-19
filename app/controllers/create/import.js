@@ -4,6 +4,19 @@ export default Ember.Controller.extend({
   // inject ember services for flash message plugin
   toast: Ember.inject.service(),
 
+  // injects the create controller
+  create: Ember.inject.controller(),
+
+  // gets the value of the showPreview property from the create controller
+  showPreview: Ember.computed(function() {
+    return this.get('create.showPreview');
+  }).property('create.showPreview'),
+
+  // gets the valye of the config property from the create controller
+  config: Ember.computed(function() {
+    return this.get('create.config');
+  }).property('create.config'),
+
   actions: {
     // redirects to the create page after importing settings from either text or a file
     redirectToCreate(data) {
@@ -11,6 +24,11 @@ export default Ember.Controller.extend({
         Ember.get(this, 'toast').success(`Imported ${count} setting(s) successfully!`, '', { positionClass: 'toast-bottom-right' });
         this.transitionToRoute('create.index');
       });
+    },
+
+    // sends an action to toggle the preview window
+    togglePreview() {
+      this.send('doTogglePreview');
     }
   },
 

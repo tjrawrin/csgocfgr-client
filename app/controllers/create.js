@@ -11,13 +11,10 @@ export default Ember.Controller.extend({
   // starting value of the permalink query param
   permalink: null,
 
-  actions: {
-    // opens the preview modal
-    // TODO: finish
-    preview() {
-      console.log('do something neat');
-    },
+  // determines if the preview window is showing or not
+  showPreview: false,
 
+  actions: {
     // downloads a config file
     download() {
       const outputText = this.get('config');

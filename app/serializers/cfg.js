@@ -1,7 +1,4 @@
 import DS from 'ember-data';
-import Ember from 'ember';
-
-var underscore = Ember.String.underscore;
 
 export default DS.JSONAPISerializer.extend({
   // normalizes the local store id with the permalink from the server

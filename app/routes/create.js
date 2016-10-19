@@ -44,6 +44,16 @@ export default Ember.Route.extend({
     error() {
       Ember.get(this, 'toast').error('The requested file could not be found.', '', { positionClass: 'toast-bottom-right' });
       return this.transitionTo('index');
-    }
+    },
+
+    // opens the preview modal
+    doTogglePreview() {
+      this.controller.toggleProperty('showPreview');
+      if (this.controller.get('showPreview')) {
+        Ember.$('body').css('overflow', 'hidden');
+      } else {
+        Ember.$('body').css('overflow', 'auto');
+      }
+    },
   }
 });
