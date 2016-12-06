@@ -1,10 +1,14 @@
 # csgocfgr-client
 
+***NOTE: This project is no longer being maintained. The project was updated near the end of 2016 with a new layout/design, code refactoring, along with updated packages/dependencies.***
+
+## Version
+
 `v0.2.0`
 
 ## Installation
 
-* `git clone git@github.com:haskly/csgocfgr-client.git` this repository
+* `git clone git@github.com:helioskel/csgocfgr_client.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
