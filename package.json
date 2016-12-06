@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "https://github.com/haskly/csgocfgr-client",
+  "repository": "https://github.com/helioskel/csgocfgr_client",
   "engines": {
     "node": ">= 0.10.0"
   },
