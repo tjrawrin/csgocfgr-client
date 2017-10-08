@@ -1,2 +1,22 @@
-{{yield}}
-<span>Your browser doesn't support canvas. :(</span>
+<div class="CrosshairPreview">
+  <ul class="CrosshairPreview-images">
+    {{#each previewImages as |image index|}}
+      <li class="CrosshairPreview-image" id="crosshair-image-{{index}}">
+        <img src={{image}} width="100%" height="auto"/>
+      </li>
+    {{/each}}
+    <li class="CrosshairPreview-canvasContainer">
+      <canvas class="CrosshairPreview-canvas" width="928" height="522">
+        <span>Your browser doesn't support canvas. :(</span>
+      </canvas>
+    </li>
+  </ul>
+  <ul class="CrosshairPreview-actions">
+    <li class="CrosshairPreview-action CrosshairPreview-action--prev">
+      <button class="CrosshairPreview-button" {{action 'prevImage'}}><span class="octicon octicon-chevron-left"></span></button>
+    </li>
+    <li class="CrosshairPreview-action CrosshairPreview-action--next">
+      <button class="CrosshairPreview-button" {{action 'nextImage'}}><span class="octicon octicon-chevron-right"></span></button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+.Alerts {
+
+  &-message {
+    color: $cWhite;
+    margin: 16px 0;
+    padding: 8px;
+    position: relative;
+
+    &--Success {
+      background-color: $cAlertSuccess;
+    }
+
+    &--Danger {
+      background-color: $cAlertDanger;
+    }
+
+    &--Info {
+      background-color: $cAlertInfo;
+    }
+  }
+}

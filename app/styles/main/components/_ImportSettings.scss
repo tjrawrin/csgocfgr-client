@@ -1,0 +1,82 @@
+.ImportSettings {
+  background-color: $cWhite;
+  font-size: 14px;
+
+  @include fs-min-width($bpMid) {
+    font-size: 16px;
+  }
+
+  &-step {
+    background-color: $cBrown;
+    color: $cWhite;
+    padding: 8px 16px;
+    transition: background-color 200ms ease-in-out;
+
+    @include fs-attention {
+      background-color: $cBrownAccent1;
+    }
+  }
+
+  &-option {
+    padding: 16px;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &-directions {
+    margin: 0;
+  }
+
+  &-inputs,
+  &-actions {
+    display: flex;
+    margin-top: 16px;
+    padding: 8px 16px;
+    text-align: center;
+
+    &-group {
+      width: 100%;
+    }
+  }
+
+  &-label {
+    display: block;
+  }
+
+  &-input {
+
+    &--radio {
+      display: block;
+      height: 24px;
+      margin: 0 auto;
+      width: 24px;
+    }
+
+    &--textarea {
+      font-family: monospace;
+      height: 150px;
+      max-width: 100%;
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  &-button {
+    background-color: $cBrown;
+    border: 0;
+    color: $cWhite;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 300;
+    outline: 0;
+    position: relative;
+    transition: background-color 200ms ease-in-out;
+    width: 100%;
+
+    @include fs-attention {
+      background-color: $cBrownAccent1;
+    }
+  }
+}

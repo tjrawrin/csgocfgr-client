@@ -1,0 +1,25 @@
+.Logo {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  display: block;
+  font-size: 22px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+
+  @include fs-min-width($bpMid) {
+    position: absolute;
+    text-align: left;
+  }
+
+  &-link {
+    color: #262216;
+    display: block;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    @include fs-attention {
+      color: #49412c;
+    }
+  }
+}

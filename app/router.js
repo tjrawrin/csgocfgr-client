@@ -1,26 +1,17 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-var Router = Ember.Router.extend({
-  location: config.locationType
+const Router = Ember.Router.extend({
+  location: config.locationType,
+  rootURL: config.rootURL
 });
 
 Router.map(function() {
-  this.resource('configure', { path: '/' }, function() {
-    this.resource('new', { path: '/n' }, function() {
-      this.route('rate');
-      this.route('audio');
-      this.route('video');
-      this.route('mouse');
-      this.route('misc');
-      this.route('hud');
-      this.route('radar');
-      this.route('keybind');
-      this.route('crosshair');
-    });
-    this.resource('show', { path: ':cfg_id' }, function() {});
-    this.resource('404', { path: '*path' });
+  this.route('create', function() {
+    this.route('import');
   });
+  this.route('show', { path: ':permalink' });
+  this.route('notfound', { path: '*path' });
 });
 
 Router.reopen({

@@ -1,0 +1,122 @@
+.Category {
+
+  &-title {
+    background-color: #262216;
+    border: 0;
+    color: $cWhite;
+    cursor: pointer;
+    display: block;
+    font-weight: 300;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 8px 16px;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    transition: background-color 200ms ease-in-out;
+    user-select: none;
+    width: 100%;
+
+    @include fs-attention {
+      background-color: #49412c;
+    }
+
+    &-text {
+      margin-left: 16px;
+    }
+
+    .octicon {
+      @extend %vertcenter;
+    }
+  }
+
+  &-items {
+    background-color: $cWhite;
+    margin: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    visibility: hidden;
+
+    &--open {
+      height: 100%;
+      opacity: 1;
+      padding: 16px;
+      visibility: visible;
+    }
+  }
+
+  &-item {
+    list-style: none;
+    margin-bottom: 16px;
+    padding: 8px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-label {
+    font-weight: 700;
+    text-transform: lowercase;
+  }
+
+  &-description {
+    border-left: 1px solid $cGray;
+    color: $cDarkGray;
+    font-size: 12px;
+    padding-left: 8px;
+
+    >:first-child {
+      margin-top: 0;
+    }
+
+    >:last-child {
+      margin-bottom: 0;
+    }
+
+    &-default {
+      background-color: $cBrownAccent2;
+      border-radius: 3px;
+      color: $cWhite;
+      padding: 2px 4px;
+      white-space: nowrap;
+    }
+  }
+
+  &-inputs {
+    display: flex;
+  }
+
+  &-input {
+    margin-top: 6px;
+    outline: none;
+
+    &--range {
+      flex: 4;
+      margin-right: 16px;
+    }
+
+    &--number {
+      flex: 1;
+      min-width: 100px;
+    }
+
+    &--checkbox {
+      height: 24px;
+      width: 24px;
+    }
+
+    &--text {
+      padding: 8px;
+      width: 100%;
+    }
+
+    &--select {
+      padding: 8px;
+      width: 100%;
+    }
+  }
+}

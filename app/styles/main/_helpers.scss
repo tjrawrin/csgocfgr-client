@@ -1,0 +1,15 @@
+%vertcenter {
+  @include fs-vert-center($position: absolute);
+}
+
+%clearfix {
+  @include fs-clearfix;
+}
+
+%visually-hidden {
+  @include fs-visually-hidden;
+}
+
+%undo-visually-hidden {
+  @include fs-undo-visually-hidden;
+}
