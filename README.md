@@ -1,6 +1,6 @@
 # CS:GO Configr (client)
 
-`v0.1.4`
+`v0.1.5`
 
 This README outlines the details of collaborating on this Ember application.
 
