@@ -2,9 +2,10 @@
 
 ***NOTE: This project is no longer being maintained. The project was updated near the end of 2016 with a new layout/design, code refactoring, along with updated packages/dependencies.***
 
+
 ## Version
 
-`v0.2.0`
+`v0.2.1`
 
 ## Installation
 
