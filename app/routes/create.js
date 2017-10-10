@@ -14,7 +14,7 @@ export default Ember.Route.extend({
   },
 
   // if there is no record in the store and no query param is passed, then create a default new record
-  // if there is a query parm, load the record from the server
+  // if there is a query param, load the record from the server
   model(params) {
     if (!params.permalink && !this.store.peekAll('cfg').content.length) {
       return this.store.createRecord('cfg');
