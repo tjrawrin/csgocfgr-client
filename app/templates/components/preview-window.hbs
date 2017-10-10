@@ -1,0 +1,11 @@
+<div class="PreviewWindow {{if visible "PreviewWindow--active"}}">
+  <button class="PreviewWindow-close" {{action 'doClosePreview'}}>
+    <span class="mega-octicon octicon-x"></span>
+    <span class="PreviewWindow-close-text">Close</span>
+  </button>
+  <div class="PreviewWindow-inner">
+    <div class="layout-widthDefault">
+      {{textarea value=data class="PreviewWindow-textarea" readonly="readonly"}}
+    </div>
+  </div>
+</div>

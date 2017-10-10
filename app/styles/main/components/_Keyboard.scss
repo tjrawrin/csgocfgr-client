@@ -1,0 +1,181 @@
+.Keyboard {
+  display: flex;
+  margin-top: 16px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-bottom: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+
+  &-main {
+    display: inline-block;
+    margin-right: 16px;
+    width: 100%;
+  }
+
+  &-arrows {
+    display: inline-block;
+    margin-right: 16px;
+    width: 100%;
+  }
+
+  &-tenkey {
+    display: inline-block;
+    margin-right: 16px;
+    width: 100%;
+  }
+
+  &-mouse {
+    display: inline-block;
+    width: 100%;
+  }
+
+  &-row {
+    white-space: nowrap;
+
+    &--mm {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  &-key {
+    background-color: $cWhite;
+    border: 1px solid $cGray;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    height: 32px;
+    margin: 2px;
+    outline: none;
+    overflow: hidden;
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    transition: background-color 200ms ease-in-out;
+    width: 32px;
+
+    @include fs-attention {
+      background-color: $cBrownAccent3;
+    }
+
+    &--disabled {
+      background-color: $cGray;
+      color: $cDarkGray;
+      cursor: default;
+
+      @include fs-attention {
+        background-color: $cGray;
+      }
+    }
+
+    &--hidden {
+      visibility: hidden;
+      vertical-align: bottom;
+    }
+
+    &--pr {
+      margin-right: 26px;
+    }
+
+    &--pr2 {
+      margin-right: 64px;
+    }
+
+    &--pr3 {
+      margin-right: 80px;
+    }
+
+    &--bs {
+      width: 64px;
+    }
+
+    &--tb,
+    &--sb {
+      width: 48px;
+    }
+
+    &--cp {
+      width: 58px;
+    }
+
+    &--rt {
+      width: 78px;
+    }
+
+    &--sft {
+      width: 88px;
+    }
+
+    &--cl {
+      width: 42px;
+    }
+
+    &--at {
+      width: 42px;
+    }
+
+    &--sp {
+      width: 245px;
+    }
+
+    &--pl,
+    &--ent {
+      height: 68px;
+      float: right;
+    }
+
+    &--zd {
+      width: 72px;
+    }
+
+    &--lmb {
+      height: 73px;
+      width: 36px;
+      border-radius: 50% 50% 3px 3px / 60% 0% 3px 3px;
+    }
+
+    &--mmbu {
+      display: block;
+      border-radius: 50% 50% 3px 3px / 25% 25% 3px 3px;
+      height: 23px;
+    }
+
+    &--mmbc {
+      display: block;
+      height: 23px;
+    }
+
+    &--mmbd {
+      display: block;
+      border-radius: 3px 3px 50% 50% / 3px 3px 25% 25%;
+      height: 23px;
+    }
+
+    &--rmb {
+      height: 73px;
+      width: 36px;
+      border-radius: 50% 50% 3px 3px / 0% 60% 3px 3px;
+    }
+
+    &--mb4 {
+      width: 36px;
+    }
+
+    &--mb5 {
+      width: 36px;
+    }
+
+    &--bound {
+      background-color: $cGreen;
+    }
+
+    &--editing {
+      background-color: $cGreenAccent;
+    }
+  }
+}

@@ -1,12 +1,9 @@
 import DS from 'ember-data';
 
-export default DS.ActiveModelSerializer.extend({
-  /**
-  * Serialize the slug returned from the server as the ID for
-  * the ember model being shown
-  */
-  normalize: function(type, hash, property) {
-    hash.id = hash.slug;
-    return this._super(type, hash, property);
+export default DS.JSONAPISerializer.extend({
+  // normalizes the local store id with the permalink from the server
+  normalize(type, hash) {
+    hash.id = hash.attributes.permalink;
+    return this._super(type, hash);
   }
 });

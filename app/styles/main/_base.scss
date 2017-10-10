@@ -1,0 +1,37 @@
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// Scale images globally, even if they have inline dimensions
+// (which all images should have)
+// http://www.456bereastreet.com/archive/201306/how_to_proportionally_scale_images_that_have_dimension_attributes/
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+// Ensure 3rd-party iframe embeds do not overlap sticky headers,
+// nav dropdowns, modals, or other similar elements
+iframe,
+object,
+embed {
+  z-index: 1 !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  background-image: url("/assets/images/bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-color: #000000;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}

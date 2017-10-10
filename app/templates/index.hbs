@@ -1,0 +1,26 @@
+<div role="main">
+  <div class="GettingStarted">
+    <div class="GettingStarted-inner">
+      <div class="layout-widthDefault">
+        <h1 class="GettingStarted-title">
+          {{#link-to "index" class="GettingStarted-title-link"}}CS:GO Configr{{/link-to}}
+        </h1>
+        <p>This website offers the ability to generate a .cfg file for the game
+          Counter-Strike: Global Offensive. While this website contains a lot of
+          customization options, you do not need to use the whole configuration
+          file that is generated.</p>
+        <p>To begin, click create to start a new file using the games default settings.
+          Optionally, click import to load either a .cfg file or paste some commands
+          to being with custom settings.</p>
+        <ul class="GettingStarted-navigation" role="navigation">
+          <li class="GettingStarted-navigation-item">
+            {{#link-to "create.index" class="GettingStarted-navigation-link" activeClass="active"}}Create{{/link-to}}
+          </li>
+          <li class="GettingStarted-navigation-item">
+            {{#link-to "create.import" class="GettingStarted-navigation-link" activeClass="active"}}Import{{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

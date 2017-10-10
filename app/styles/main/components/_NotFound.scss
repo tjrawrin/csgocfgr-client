@@ -1,0 +1,21 @@
+.NotFound {
+
+  &-title {
+    font-size: 96px;
+    text-align: center;
+  }
+
+  &-message {
+    text-align: center;
+
+    a {
+      color: $cPrimary;
+      text-decoration: none;
+      transition: color 200ms ease-in-out;
+
+      @include fs-attention {
+        color: $cAccent;
+      }
+    }
+  }
+}

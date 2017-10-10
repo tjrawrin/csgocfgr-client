@@ -1,0 +1,67 @@
+.CrosshairPreview {
+  position: relative;
+
+  &-images {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  &-image {
+    left: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+
+    &--active {
+      position: relative;
+      visibility: visible;
+    }
+  }
+
+  &-canvasContainer {
+    list-style: none;
+  }
+
+  &-canvas {
+    left: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &-actions {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-action {
+    list-style: none;
+    width: 100%;
+
+    &--prev {
+      text-align: left;
+    }
+
+    &--next {
+      text-align: right;
+    }
+  }
+
+  &-button {
+    background-color: $cBrown;
+    border: 0;
+    color: $cWhite;
+    cursor: pointer;
+    outline: 0;
+    transition: background-color 200ms ease-in-out;
+
+    @include fs-attention {
+      background-color: $cBrownAccent1;
+    }
+  }
+}

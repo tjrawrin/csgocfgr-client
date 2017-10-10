@@ -1,0 +1,56 @@
+.GettingStarted {
+  color: $cWhite;
+  font-size: 14px;
+
+  @include fs-min-width($bpMid) {
+    font-size: 16px;
+  }
+
+  &-inner {
+    @extend %vertcenter;
+    left: 0;
+    right: 0;
+  }
+
+  &-title {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    margin: 0;
+
+    &-link {
+      color: $cWhite;
+      text-decoration: none;
+    }
+  }
+
+  &-navigation {
+    margin: 16px 0 0 0;
+    padding: 0;
+    text-align: right;
+
+    &-item {
+      display: inline;
+      list-style: none;
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      background-color: rgba(255,255,255,0.2);
+      color: $cWhite;
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 200ms ease-in-out;
+
+      @include fs-attention {
+        background-color: rgba(255,255,255,0.3);
+        box-shadow: 0 0 6px rgba(0,0,0,0.6);
+      }
+    }
+  }
+}

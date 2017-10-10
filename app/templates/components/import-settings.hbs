@@ -1,0 +1,39 @@
+<div class="ImportSettings">
+
+    <div class="ImportSettings-step">STEP 1</div>
+    <div class="ImportSettings-option">
+      <p class="ImportSettings-directions">How are you importing your settings?</p>
+      <div class="ImportSettings-inputs">
+        <div class="ImportSettings-inputs-group">
+          <label class="ImportSettings-label">File
+            <input id="file-radio" class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" checked onchange={{action 'fileImport'}}/>
+          </label>
+        </div>
+        <div class="ImportSettings-inputs-group">
+          <label class="ImportSettings-label">Text
+            <input id="text-radio" class="ImportSettings-input ImportSettings-input--radio" type="radio" name="import-type" onchange={{action 'textImport'}}/>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="ImportSettings-step">STEP 2</div>
+    <div class="ImportSettings-option {{if fileHidden "ImportSettings-option--hidden"}}">
+      <div class="ImportSettings-directions">Choose a .cfg file to import. Commands found in the file that are adjustable on this site will be applied. Any settings not supported by the site will be ignored.</div>
+      <div class="ImportSettings-inputs">
+        {{file-upload}}
+      </div>
+    </div>
+    <div class="ImportSettings-option {{if textHidden "ImportSettings-option--hidden"}}">
+      <div class="ImportSettings-directions">Type or paste valid settings to import. Commands entered that are adjustable on this site will be applied. Any settings not supported by the site will be ignored.</div>
+      <div class="ImportSettings-inputs">
+        {{textarea id="import-text" class="ImportSettings-input ImportSettings-input--textarea"}}
+      </div>
+    </div>
+    <div class="ImportSettings-step">STEP 3</div>
+    <div class="ImportSettings-option">
+      <div class="ImportSettings-directions">Click the button to import your settings.</div>
+      <div class="ImportSettings-actions">
+        <button class="ImportSettings-button" {{action 'parseConfig'}}><i class="mega-octicon octicon-cloud-upload"></i> Import</button>
+      </div>
+    </div>
+</div>

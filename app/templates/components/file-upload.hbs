@@ -1,5 +1,7 @@
-<div class="file-upload">
-  <span class="file-upload__browse" aria-hidden="true">Browse</span>
-  <span class="file-upload__feedback" aria-hidden="true">{{selectedFileName}}</span>
-  <input type="file" name="file" class="file-upload__input" {{bind-attr data-upload=dataUploadName}}>
+<div class="FileUpload">
+  <input id="file-upload-preview" class="FileUpload-input FileUpload-input--preview" placeholder="choose a file" disabled="disabled" />
+  <div class="FileUpload-button">
+    <span>Browse</span>
+    <input type="file" id="import-file" class="FileUpload-input FileUpload-input--file" onchange={{action 'updatePreview'}} />
+  </div>
 </div>

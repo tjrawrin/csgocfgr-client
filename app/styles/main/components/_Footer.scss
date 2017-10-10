@@ -1,0 +1,20 @@
+.Footer {
+  margin: 64px 0;
+
+  &-content {
+    border-top: 1px solid $cWhite;
+    color: $cWhite;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  &-link {
+    color: #97743a;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    @include fs-attention {
+      color: #b0a18e;
+    }
+  }
+}

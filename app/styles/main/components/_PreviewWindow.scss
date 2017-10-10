@@ -1,0 +1,56 @@
+.PreviewWindow {
+  background-color: rgba(0,0,0,0.9);
+  bottom: 0;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  &-inner {
+    @extend %vertcenter;
+    left: 0;
+    right: 0;
+  }
+
+  &-textarea {
+    background-color: $cWhite;
+    border: 16px solid $cWhite;
+    font-family: monospace;
+    height: 500px;
+    max-width: 100%;
+    outline: 0;
+    resize: none;
+    width: 100%;
+  }
+
+  &-close {
+    background: transparent;
+    border: 0;
+    color: $cWhite;
+    cursor: pointer;
+    height: 64px;
+    outline: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: color 200ms ease-in-out;
+    width: 64px;
+
+    @include fs-attention {
+      color: rgba(255,255,255,0.6);
+    }
+
+    &-text {
+      @extend %visually-hidden;
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+}

@@ -1,27 +1,29 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  controllerName: 'show.index',
-  model: function(params) {
-    return this.store.findById('cfg', params.cfg_id);
+  // inject ember services for flash message plugin
+  toast: Ember.inject.service(),
+
+  // unloads all of the records from the store
+  beforeModel() {
+    return this.store.unloadAll('cfg');
   },
+
+  // finds a record from the server
+  model(params) {
+    return this.store.findRecord('cfg', params.permalink);
+  },
+
   actions: {
-    error: function(error) {
-      if (error.status === 404) {
-        this.simpleFlashMessage('The config you requested does not exist or could not be found.', 'error');
-        this.transitionTo('new');
-      } else {
-        this.simpleFlashMessage('Oh noes! Something seriously went wrong. We\'re working on it!', 'error');
-        this.transitionTo('new');
-      }
+    // unloads all records from the store before transitioning to a new route
+    willTransition() {
+      return this.store.unloadAll('cfg');
     },
-    downloadSavedFile: function() {
-      var outputText = this.get('controller.renderConfig');
-      var blob = new Blob([outputText], { type: 'text/plain' });
-      saveAs(blob, 'autoexec.cfg');
-    },
-    newEdit: function(data) {
-      this.transitionTo('new', {queryParams: {slug: data}});
+
+    // redirects to the index page when there is an error
+    error() {
+      Ember.get(this, 'toast').error('The requested file could not be found.', '', { positionClass: 'toast-bottom-right' });
+      return this.transitionTo('index');
     }
   }
 });

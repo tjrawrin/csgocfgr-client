@@ -1,0 +1,7 @@
+.Main {
+  padding-top: 192px;
+
+  @include fs-min-width($bpMid) {
+    padding-top: 128px;
+  }
+}

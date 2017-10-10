@@ -1,15 +1,15 @@
 {
-  "predef": {
-    "document": true,
-    "window": true,
-    "-Promise": true,
-    "CsgocfgrENV": true,
-    "saveAs": true,
-    "ga": true,
-    "HoverPopup": true
-  },
-  "browser" : true,
-  "boss" : true,
+  "predef": [
+    "document",
+    "window",
+    "-Promise",
+    "CsgocfgrENV",
+    "saveAs",
+    "ga",
+    "HoverPopup"
+  ],
+  "browser": true,
+  "boss": true,
   "curly": true,
   "debug": false,
   "devel": true,
@@ -31,6 +31,6 @@
   "strict": false,
   "white": false,
   "eqnull": true,
-  "esnext": true,
+  "esversion": 6,
   "unused": true
 }
