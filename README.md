@@ -9,7 +9,7 @@
 
 ## Installation
 
-* `git clone git@github.com:tjrawrin/csgocfgr_client.git` this repository
+* `git clone git@github.com:tjrawrin/csgocfgr-client.git` this repository
 * change into the new directory
 * `npm install`
 * `bower install`
